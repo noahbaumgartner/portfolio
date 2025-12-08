@@ -1,0 +1,29 @@
+<script lang="ts">
+    import { annotate } from 'rough-notation';
+    
+    let { href, color = "#000", children } = $props();
+    let annotation: any;
+    let isActive = false;
+
+    function underlineHover(node: HTMLElement) {
+        annotation = annotate(node, {
+            type: 'underline',
+            color,
+            multiline: false,
+            animationDuration: 300,
+            padding: 1
+        });
+
+        const show = () => annotation.show();
+        const hide = () => {
+            if (!isActive) annotation.hide();
+        };
+
+        node.addEventListener('mouseenter', show);
+        node.addEventListener('mouseleave', hide);
+    }
+</script>
+
+<a {@attach underlineHover} href={href} class="text-neutral-500">
+    {@render children()}
+</a>
