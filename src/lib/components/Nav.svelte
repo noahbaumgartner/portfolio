@@ -4,7 +4,7 @@
     let { children } = $props();
     let mobileNavActive = $state(false);
 
-    const isLargeScreen = new MediaQuery('(min-width: 1024px)');
+    const isSmallScreen = new MediaQuery('(max-width: 1024px)');
 </script>
 
 <div class="border-b border-neutral-300 px-4 sm:px-10 lg:px-16">
@@ -12,12 +12,12 @@
         <span class="font-bold text-xl font-[Google_Sans] cursor-pointer">
             noahbaumgartner
         </span>
-        {#if isLargeScreen.current}
+        {#if isSmallScreen.current}
+            <span class="cursor-pointer text-sm leading-7" onclick={() => mobileNavActive = !mobileNavActive}>/næv/</span>
+        {:else}
             <nav class="space-x-6 text-sm flex flex-row">
                 {@render children()}
             </nav>
-        {:else}
-            <span class="cursor-pointer text-sm leading-7" onclick={() => mobileNavActive = !mobileNavActive}>/næv/</span>
         {/if}
     </div>
 
