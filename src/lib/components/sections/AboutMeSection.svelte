@@ -16,7 +16,7 @@ import Link from "../Link.svelte";
                 </span>
             </div>
             <div class="flex flex-col items-center">
-                <img src="https://media.licdn.com/dms/image/v2/D4E03AQEzlR2sWweJ3w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1693304718563?e=2147483647&v=beta&t=Tii5x4n6rrnK4aiYKkpjxpB1McmK8r9wSDzjf9Rcy_s" alt="Noah Baumgartner" class="object-cover max-w-60" />
+                <img src="/images/me.jpg" alt="Noah Baumgartner" class="object-cover max-w-60" />
             </div>
         </div>
     </div>
