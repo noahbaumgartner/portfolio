@@ -1,7 +1,8 @@
 <script lang="ts">
     import { MediaQuery } from 'svelte/reactivity';
     import { gsap } from 'gsap';
-    import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
+    import ScrambleTextPluginPkg from "gsap/ScrambleTextPlugin.js";
+    const { ScrambleTextPlugin } = ScrambleTextPluginPkg;
 
     let { children } = $props();
 
