@@ -36,6 +36,8 @@
     });
 </script>
 
-<a {@attach highlightHover} href={href} class="leading-7 text-sm">
-    {@render children()}
-</a>
+<div>
+    <a {@attach highlightHover} href={href} class="leading-7">
+        {@render children()}
+    </a>
+</div>
