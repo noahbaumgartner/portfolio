@@ -22,8 +22,10 @@
         node.addEventListener('mouseenter', show);
         node.addEventListener('mouseleave', hide);
     }
+
+    const target = href.startsWith('http') ? '_blank' : '_self';
 </script>
 
-<a {@attach underlineHover} href={href} class="text-neutral-500">
+<a {@attach underlineHover} href={href} target={target} class="text-neutral-500">
     {@render children()}
 </a>
