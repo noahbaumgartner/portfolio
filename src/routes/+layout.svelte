@@ -12,7 +12,8 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<title>noahbaumgartner</title>
+	<title>Noah Baumgartner | Portfolio</title>
+	<meta name="og:image" content="/images/og.jpg" />
 </svelte:head>
 
 <Nav>
