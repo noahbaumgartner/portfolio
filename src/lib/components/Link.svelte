@@ -26,6 +26,6 @@
     const target = href.startsWith('http') ? '_blank' : '_self';
 </script>
 
-<a {@attach underlineHover} href={href} target={target} class="text-neutral-500">
+<a {@attach underlineHover} href={href} target={target} class="text-neutral-500" data-sveltekit-preload-data>
     {@render children()}
 </a>
