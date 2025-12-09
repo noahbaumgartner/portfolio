@@ -9,7 +9,7 @@ import Link from "../Link.svelte";
         <div class="flex flex-col space-y-2 items-center">
             <span class="text-2xl font-semibold font-[Google_Sans] text-center">Software Entwickler</span>
             <span class="text-center text-lg max-w-xl">
-                Ich entwickle Software bei <Link href="https://buildagil.com" color="#006666">buildagil</Link> und für <Link href="https://adminity.ch" color="#f13608">adminity</Link>. Zudem arbeite ich auch an privaten <Link href="/projects">Projekten</Link>.
+                Ich entwickle Software bei <Link href="https://buildagil.com" color="#006666">buildagil</Link> und Open Source für <Link href="https://stack.swiss" color="#f13608">STACK</Link>. Zudem arbeite ich auch an privaten <Link href="/projects">Projekten</Link>.
             </span>
         </div>
     </div>
