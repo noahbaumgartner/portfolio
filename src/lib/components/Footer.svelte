@@ -1,8 +1,8 @@
 <script>
 	import ComponentName from "./ComponentName.svelte";
 	import ParagraphNumber from "./ParagraphNumber.svelte";
-
 </script>
+
 <div class="border-b border-neutral-300 px-4 sm:px-10 lg:px-16">
     <div class="mx-auto lg:max-w-7xl border-l border-r border-neutral-300 min-h-92 flex items-center justify-center relative">
         <ParagraphNumber number="<>"  />
