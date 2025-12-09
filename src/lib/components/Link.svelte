@@ -23,7 +23,7 @@
         node.addEventListener('mouseleave', hide);
     }
 
-    const target = href.startsWith('http') ? '_blank' : '_self';
+    const target = $derived(href.startsWith('http') ? '_blank' : '_self');
 </script>
 
 <a {@attach underlineHover} href={href} target={target} class="text-neutral-500" data-sveltekit-preload-data>

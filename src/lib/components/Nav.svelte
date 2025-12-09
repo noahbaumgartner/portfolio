@@ -6,6 +6,15 @@
     let mobileNavActive = $state(false);
 
     const isSmallScreen = new MediaQuery('(max-width: 1024px)');
+
+    function toggleMobileNav(node: HTMLElement) {
+        const links = node.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNavActive = false;
+            });
+        });
+    }
 </script>
 
 <div class="border-b border-neutral-300 px-4 sm:px-10 lg:px-16">
@@ -27,8 +36,8 @@
                     <button type="button" class="text-sm cursor-pointer leading-7 bg-transparent border-none p-0" onclick={() => mobileNavActive = false}>/kloʊz/</button>
                 </div>
             </div>
-            <div class="border-neutral-300 px-4 text-lg text-right grow sm:px-10 lg:px-16" onclick={() => mobileNavActive = false}>
-                <div class="border-l border-r border-neutral-300 py-6 px-6 flex flex-col space-y-4 h-full">
+            <div class="border-neutral-300 px-4 text-lg text-right grow sm:px-10 lg:px-16">
+                <div {@attach toggleMobileNav} class="border-l border-r border-neutral-300 py-6 px-6 flex flex-col space-y-4 h-full">
                     {@render children()}
                 </div>
             </div>

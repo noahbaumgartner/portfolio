@@ -1,17 +1,17 @@
 <script lang="ts">
     import { gsap } from 'gsap';
     import { ScrambleTextPlugin } from "gsap/dist/ScrambleTextPlugin";
-    
+
     gsap.registerPlugin(ScrambleTextPlugin);
 
     function scrambleText(node: HTMLElement) {
         const animation = gsap.to(node, {
             scrambleText: {
                 text: node.textContent || '',
-                chars: '0123456789abcdefghijklmnopqrstuvwxyz',
-                speed: 0.3
+                chars: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+                speed: 1
             },
-            duration: 0.3,
+            duration: 1,
             ease: 'power1.inOut'
         });
 
@@ -21,6 +21,8 @@
     }
 </script>
 
-<span {@attach scrambleText} class="font-bold text-xl font-[Google_Sans] cursor-pointer">
-    noahbaumgartner
-</span>
+<a href="/">
+    <span {@attach scrambleText} class="font-bold text-xl font-[Google_Sans] cursor-pointer" data-sveltekit-preload-data>
+        noahbaumgartner
+    </span>
+</a>
