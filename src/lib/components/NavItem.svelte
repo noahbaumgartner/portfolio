@@ -9,15 +9,13 @@
     function highlightHover(node: HTMLElement) {
         annotation = annotate(node, {
             type: 'highlight',
-            color: '#bef264', // lime-300
+            color: '#bef264',
             multiline: false,
             animationDuration: 300
         });
 
         const show = () => annotation.show();
-        
         const hide = () => {
-            // 2. Only hide on mouseleave if this is NOT the active route
             if (!isActive) annotation.hide();
         };
 
