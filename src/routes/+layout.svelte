@@ -4,8 +4,10 @@
 	import Nav from '$lib/components/Nav.svelte';
 	import NavItem from '$lib/components/NavItem.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 
 	let { children } = $props();
+	injectAnalytics();
 </script>
 
 <svelte:head>
