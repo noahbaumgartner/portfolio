@@ -1,7 +1,8 @@
 <script lang="ts">
     import { gsap } from 'gsap';
-    import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
+    import ScrambleTextPackage from "gsap/ScrambleTextPlugin";
 
+    const { ScrambleTextPlugin } = ScrambleTextPackage;
     gsap.registerPlugin(ScrambleTextPlugin);
 
     function scrambleText(node: HTMLElement) {
