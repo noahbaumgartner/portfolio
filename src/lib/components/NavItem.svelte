@@ -37,7 +37,7 @@
 </script>
 
 <div>
-    <a {@attach highlightHover} href={href} class="leading-7">
+    <a {@attach highlightHover} href={href} class="leading-7" data-sveltekit-preload-data>
         {@render children()}
     </a>
 </div>

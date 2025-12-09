@@ -28,8 +28,8 @@
                     <span class="text-sm cursor-pointer leading-7" onclick={() => mobileNavActive = false}>/kloʊz/</span>
                 </div>
             </div>
-            <div class="border-neutral-300 px-4 text-lg text-right grow sm:px-10 lg:px-16">
-                <div class="border-l border-r border-neutral-300 py-6 px-6 flex flex-col space-y-4 h-full" onclick={() => mobileNavActive = false}>
+            <div class="border-neutral-300 px-4 text-lg text-right grow sm:px-10 lg:px-16" onclick={() => mobileNavActive = false}>
+                <div class="border-l border-r border-neutral-300 py-6 px-6 flex flex-col space-y-4 h-full">
                     {@render children()}
                 </div>
             </div>
