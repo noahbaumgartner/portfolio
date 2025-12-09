@@ -13,6 +13,7 @@
 <svelte:head>
 	<link rel="icon" href={favicon} />
 	<title>Noah Baumgartner | Portfolio</title>
+	<meta name="image" content="/images/og.jpg" />
 	<meta name="og:image" content="/images/og.jpg" />
 </svelte:head>
 
