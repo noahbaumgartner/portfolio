@@ -7,8 +7,8 @@
 <svelte:head>
 	<title>Noah Baumgartner | Portfolio</title>
 	<meta name="og:title" content="Noah Baumgartner | Portfolio" />
-	<meta name="description" content="Hallo, ich bin Noah Baumgartner, Software-Entwickler aus der Schweiz. Mehr zu meiner Person und meinen Projekten findest du hier." />
-	<meta name="og:description" content="Hallo, ich bin Noah Baumgartner, Software-Entwickler aus der Schweiz. Mehr zu meiner Person und meinen Projekten findest du hier." />
+	<meta name="description" content="Ich bin Software-Entwickler, Student und komme aus dem Rheintal. Mehr zu meiner Person und meinen Projekten findest du hier." />
+	<meta name="description" content="Ich bin Software-Entwickler, Student und komme aus dem Rheintal. Mehr zu meiner Person und meinen Projekten findest du hier." />
 </svelte:head>
 
 <HeroSection />

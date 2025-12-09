@@ -13,8 +13,8 @@
 <svelte:head>
 	<link rel="icon" href={favicon} />
 	<title>Noah Baumgartner | Portfolio</title>
-	<meta name="image" content="/images/og.jpg" />
-	<meta name="og:image" content="/images/og.jpg" />
+	<meta name="og:url" content="https://noahbaumgartner.ch" />
+	<meta name="og:image" content="https://noahbaumgartner.ch/images/og.jpg" />
 </svelte:head>
 
 <Nav>
