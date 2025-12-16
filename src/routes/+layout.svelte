@@ -5,6 +5,7 @@
 	import NavItem from '$lib/components/NavItem.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
+	import Copyright from '$lib/components/Copyright.svelte';
 
 	let { children } = $props();
 	injectAnalytics();
@@ -24,3 +25,4 @@
 </Nav>
 {@render children()}
 <Footer	/>
+<Copyright />

@@ -1,7 +1,7 @@
 <script lang="ts">
     import { annotate } from 'rough-notation';
     
-    let { href, color = "#000", children } = $props();
+    let { href, color = "#000", textClass = "text-neutral-500", children } = $props();
     let annotation: any;
     let isActive = false;
 
@@ -23,9 +23,11 @@
         node.addEventListener('mouseleave', hide);
     }
 
-    const target = $derived(href.startsWith('http') ? '_blank' : '_self');
+    const target = $derived(href.startsWith('http') ? '_blank' : '');
 </script>
 
-<a {@attach underlineHover} href={href} target={target} class="text-neutral-500" data-sveltekit-preload-data>
-    {@render children()}
-</a>
+<span>
+    <a {@attach underlineHover} href={href} target={target} class={`${textClass} cursor-pointer`} data-sveltekit-preload-data>
+        {@render children()}
+    </a>
+</span>
