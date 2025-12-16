@@ -9,7 +9,7 @@
 <div class="border-b border-neutral-300 px-4 sm:px-10 lg:px-16">
     <div class="mx-auto lg:max-w-7xl border-l border-r border-neutral-300 min-h-64 flex items-center justify-center relative">
         <ParagraphNumber number="01" />
-        <ComponentName name="ImprintSection.svelte" position="bottom-left" />
+        <ComponentName name="ImprintSection.svelte" position="bottom-right" />
         <div class="p-10">
         	<Heading2 class="mb-4">Adresse</Heading2>
             <address class="not-italic">
