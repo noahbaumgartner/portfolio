@@ -26,6 +26,8 @@
     const target = $derived(href.startsWith('http') ? '_blank' : '');
 </script>
 
-<a {@attach underlineHover} href={href} target={target} class={textClass} data-sveltekit-preload-data>
-    {@render children()}
-</a>
+<span>
+    <a {@attach underlineHover} href={href} target={target} class={`${textClass} cursor-pointer`} data-sveltekit-preload-data>
+        {@render children()}
+    </a>
+</span>

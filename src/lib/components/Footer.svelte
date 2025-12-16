@@ -15,15 +15,13 @@
             <div class="grow flex space-x-4 flex-col sm:flex-row space-y-6 sm:space-y-0">
                 <div class="grow flex flex-col space-y-2 text-neutral-300 text-md">
                     <span class="font-bold text-neutral-100">Weiteres</span>
-                    <div>
-                        <Link href="/imprint" color="#bef264" textClass="text-neutral-300">Impressum</Link>
-                    </div>
+                    <Link href="/imprint" color="#fff" textClass="text-neutral-300">Impressum</Link>
                 </div>
                 <div class="grow flex flex-col space-y-2 text-neutral-300 text-md">
                     <span class="font-bold text-neutral-100">Social Media</span>
-                    <span>Instagram</span>
-                    <span>GitHub</span>
-                    <span>LinkedIn</span>
+                    <Link href="https://www.instagram.com/noahbaumgartner/" color="#dd2a7b" textClass="text-neutral-300">Instagram</Link>
+                    <Link href="https://www.linkedin.com/in/noahbaumgartner/" color="#0072b1" textClass="text-neutral-300">LinkedIn</Link>
+                    <Link href="https://www.strava.com/athletes/noahbaumgartner" color="#fc4c02" textClass="text-neutral-300">Strava</Link>
                 </div>
             </div>
         </div>
