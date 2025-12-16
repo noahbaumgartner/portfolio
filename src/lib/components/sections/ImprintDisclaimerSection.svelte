@@ -8,24 +8,10 @@
 
 <div class="border-b border-neutral-300 px-4 sm:px-10 lg:px-16">
     <div class="mx-auto lg:max-w-7xl border-l border-r border-neutral-300 min-h-64 flex items-center justify-center relative">
-        <ParagraphNumber number="01" />
-        <ComponentName name="ImprintSection.svelte" position="bottom-right" />
-        <div class="p-10">
-        	<Heading2 class="mb-4">Adresse</Heading2>
-            <address class="not-italic">
-        		Noah Baumgarnter<br />
-        		Distelweg 2<br />
-        		9451 Kriessern<br />
-        		CH-Schweiz
-        	</address>
-        
-        	<Heading2 class="mt-6 mb-4">Kontakt</Heading2>
-        	<p>
-        		E-Mail: <Link href="mailto:baumgartner.noah@outlook.com">baumgartner.noah@outlook.com</Link><br />
-        		Web: <Link href="/">https://noahbaumgartner.ch</Link>
-        	</p>
-        
-        	<Heading2 class="mt-6 mb-4">Haftungsausschluss</Heading2>
+        <ParagraphNumber number="03" />
+        <ComponentName name="ImprintDisclaimerSection.svelte" position="bottom-left" />
+        <div class="p-10">        
+        	<Heading2 class="mb-4">Haftungsausschluss</Heading2>
             <ol>
                 <li>
         	        <Heading3 class="mt-3 mb-2">Kontakt</Heading3>
