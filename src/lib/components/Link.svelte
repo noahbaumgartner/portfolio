@@ -1,7 +1,7 @@
 <script lang="ts">
     import { annotate } from 'rough-notation';
     
-    let { href, color = "#000", textClass = "text-neutral-500", children } = $props();
+    let { href, color = "#000", variant = "light", children }: { href: string; color?: string; variant?: "light" | "dark"; children: any } = $props();
     let annotation: any;
     let isActive = false;
 
@@ -27,7 +27,7 @@
 </script>
 
 <span>
-    <a {@attach underlineHover} href={href} target={target} class={`${textClass} cursor-pointer`} data-sveltekit-preload-data>
+    <a {@attach underlineHover} href={href} target={target} class={["cursor-pointer", variant === "light" ? "text-neutral-500" : "text-neutral-300"]} data-sveltekit-preload-data>
         {@render children()}
     </a>
 </span>

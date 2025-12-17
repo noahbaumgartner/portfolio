@@ -1,5 +1,5 @@
 <script lang="ts">
-    let { name, position }: { name: string; position: 'top-left' | 'top-right' | 'bottom-right' | 'bottom-left' } = $props();
+    let { name, variant = "light", position }: { name: string; variant?: "light" | "dark"; position: 'top-left' | 'top-right' | 'bottom-right' | 'bottom-left' } = $props();
     
     const positionClasses = {
         'top-left': 'left-3 top-2',
@@ -9,6 +9,6 @@
     };
 </script>
 
-<span class={`${positionClasses[position] || 'right-3 bottom-2'} absolute text-xs text-neutral-300 font-[Source_Code_Pro]`}>
+<span class={["absolute text-xs text-neutral-300 font-[Source_Code_Pro]", positionClasses[position] || 'right-3 bottom-2', variant === 'light' ? 'text-neutral-300' : 'text-neutral-500']}>
     {name}
 </span>

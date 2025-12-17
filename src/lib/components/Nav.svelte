@@ -1,6 +1,8 @@
 <script lang="ts">
     import { MediaQuery } from 'svelte/reactivity';
     import NavLogo from './NavLogo.svelte';
+	import Footer from './Footer.svelte';
+	import Copyright from './Copyright.svelte';
 
     let { children } = $props();
     let mobileNavActive = $state(false);
@@ -36,11 +38,13 @@
                     <button type="button" class="text-sm cursor-pointer leading-7 bg-transparent border-none p-0" onclick={() => mobileNavActive = false}>/kloʊz/</button>
                 </div>
             </div>
-            <div class="border-neutral-300 px-4 text-lg text-right grow sm:px-10 lg:px-16">
-                <div {@attach toggleMobileNav} class="border-l border-r border-neutral-300 py-6 px-6 flex flex-col space-y-4 h-full">
+            <div class="border-neutral-300 px-4 text-lg text-right grow sm:px-10 lg:px-16 border-b">
+                <div {@attach toggleMobileNav} class="border-l border-r border-neutral-300 py-6 px-6 flex flex-col space-y-4 h-full grid-background">
                     {@render children()}
                 </div>
             </div>
+            <Footer {@attach toggleMobileNav} />
+            <Copyright />
         </div>
     {/if}
 </div>
