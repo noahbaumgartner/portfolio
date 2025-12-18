@@ -12,7 +12,7 @@ import Link from "../Link.svelte";
             <div class="flex flex-col justify-center space-y-2">
                 <span class="text-lg font-semibold font-[Google_Sans]">Über mich</span>
                 <span>
-                    Neben meiner Tätigkeit als Software Entwickler studiere ich aktuell Informatik (Master) am "Center for Artificial Intelligence" der <Link href="https://www.zhaw.ch" color="#0064a6">ZHAW</Link>. Meine Forschungsinteressen liegen in Maschinellem Lernen und Künstlicher Intelligenz, insbesondere im Bereich Computer Vision. Mehr zu meiner Person: <Link href="/about">Über mich</Link>.
+                    Wenn ich nicht gerade an neuen Features für buildagil arbeite oder für mein Studium lerne, beschäftige ich mich mit privaten Projekten. Ich bin Entwickler aus Leidenschaft und immer auf der Suche nach der nächsten technischen Herausforderung.
                 </span>
             </div>
             <div class="flex flex-col items-center">
