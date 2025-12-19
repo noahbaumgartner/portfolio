@@ -52,7 +52,7 @@
         <ComponentName name="HeroSection.svelte" position="bottom-left" />
         <div class="flex flex-col space-y-2 items-center">
             <span class="text-left text-2xl font-[Google_Sans] p-2 rounded-sm flex space-x-1">
-                <h1 {@attach animateGreeting} class="font-semibold">.</h1>
+                <h1 {@attach animateGreeting} class="font-semibold">-</h1>
                 <span {@attach animateBlinking} class="font-extralight">_</span>
             </span>
             <span class="text-center text-lg max-w-xl">
