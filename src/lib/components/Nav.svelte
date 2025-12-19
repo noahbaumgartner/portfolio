@@ -19,8 +19,8 @@
     }
 </script>
 
-<div class="border-b border-neutral-400 px-4 sm:px-10 lg:px-16">
-    <div class="py-4 mx-auto max-w-7xl border-l border-r px-6 border-neutral-400 flex justify-between">
+<div class="border-b border-neutral-500 px-4 sm:px-10 lg:px-16">
+    <div class="py-4 mx-auto max-w-7xl border-l border-r px-6 border-neutral-500 flex justify-between">
         <NavLogo />
         {#if isSmallScreen.current}
             <button type="button" class="text-sm leading-7 bg-transparent border-none cursor-pointer p-0" onclick={() => mobileNavActive = !mobileNavActive}>/næv/</button>
@@ -33,13 +33,13 @@
 
     {#if mobileNavActive}
         <div class="flex flex-col fixed inset-0 bg-white z-50">
-            <div class="border-neutral-400 border-b px-4 text-right sm:px-10 lg:px-16">
-                <div class="border-l border-r border-neutral-400 py-4 px-6">
+            <div class="border-neutral-500 border-b px-4 text-right sm:px-10 lg:px-16">
+                <div class="border-l border-r border-neutral-500 py-4 px-6">
                     <button type="button" class="text-sm cursor-pointer leading-7 bg-transparent border-none p-0" onclick={() => mobileNavActive = false}>/kloʊz/</button>
                 </div>
             </div>
-            <div class="border-neutral-400 px-4 text-lg text-right grow sm:px-10 lg:px-16 border-b">
-                <div {@attach toggleMobileNav} class="border-l border-r border-neutral-400 py-6 px-6 flex flex-col space-y-4 h-full grid-background">
+            <div class="border-neutral-500 px-4 text-lg text-right grow sm:px-10 lg:px-16 border-b">
+                <div {@attach toggleMobileNav} class="border-l border-r border-neutral-500 py-6 px-6 flex flex-col space-y-4 h-full grid-background">
                     {@render children()}
                 </div>
             </div>
