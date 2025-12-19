@@ -58,6 +58,12 @@
 @font-face {
     font-family: 'Google Sans';
     font-style: normal;
+    font-weight: 200;
+    src: url("/fonts/GoogleSans.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
     font-weight: 500;
     src: url("/fonts/GoogleSans.ttf") format('truetype');
 }
