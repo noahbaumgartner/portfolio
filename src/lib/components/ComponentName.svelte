@@ -9,6 +9,6 @@
     };
 </script>
 
-<span class={["absolute text-xs text-neutral-300 font-[Source_Code_Pro]", positionClasses[position] || 'right-3 bottom-2', variant === 'light' ? 'text-neutral-300' : 'text-neutral-500']}>
+<span class={["absolute text-xs text-neutral-400 font-[Source_Code_Pro]", positionClasses[position] || 'right-3 bottom-2', variant === 'light' ? 'text-neutral-400' : 'text-neutral-500']}>
     {name}
 </span>

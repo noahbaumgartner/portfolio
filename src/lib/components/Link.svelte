@@ -27,7 +27,7 @@
 </script>
 
 <span>
-    <a {@attach underlineHover} href={href} target={target} class={["cursor-pointer", variant === "light" ? "text-neutral-500" : "text-neutral-300"]} data-sveltekit-preload-data>
+    <a {@attach underlineHover} href={href} target={target} class={["cursor-pointer", variant === "light" ? "text-neutral-500" : "text-neutral-400"]} data-sveltekit-preload-data>
         {@render children()}
     </a>
 </span>
