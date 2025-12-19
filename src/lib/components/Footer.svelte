@@ -5,8 +5,8 @@
 	import ParagraphNumber from "./ParagraphNumber.svelte";
 </script>
 
-<div class="border-b border-neutral-400 px-4 sm:px-10 lg:px-16">
-    <div class="mx-auto lg:max-w-7xl border-l border-r border-neutral-400 min-h-64 flex items-center justify-center relative bg-linear-150 from-neutral-950 from-50% via-neutral-900 via-70% to-neutral-950 to-90%">
+<div class="border-b border-neutral-500 px-4 sm:px-10 lg:px-16">
+    <div class="mx-auto lg:max-w-7xl border-l border-r border-neutral-500 min-h-64 flex items-center justify-center relative bg-linear-150 from-neutral-950 from-50% via-neutral-900 via-70% to-neutral-950 to-90%">
         <ParagraphNumber number="<>"  />
         <ComponentName name="Footer.svelte" variant="dark" position="bottom-left" />
         <div class="flex flex-col sm:flex-row w-full space-y-10 sm:space-y-0 p-10">
