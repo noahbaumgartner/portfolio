@@ -1,7 +1,8 @@
 <script lang="ts">
 	import ComponentName from "../ComponentName.svelte";
-import Link from "../Link.svelte";
 	import ParagraphNumber from "../ParagraphNumber.svelte";
+
+    import { ArrowUpRight } from "@lucide/svelte";
 </script>
 
 <div class="border-b border-neutral-500 px-4 sm:px-10 lg:px-16">
@@ -17,8 +18,9 @@ import Link from "../Link.svelte";
                     </span>
                 </div>
                 <div class="w-full p-2">
-                    <button class="w-full p-4 bg-linear-150 from-neutral-950 from-50% via-neutral-900 via-70% to-neutral-950 to-90% cursor-pointer text-white text-md font-[Google_Sans]">
-                        Mehr erfahren
+                    <button class="group w-full p-4 bg-linear-150 from-neutral-950 from-50% via-neutral-900 via-70% to-neutral-950 to-90% cursor-pointer text-white text-md font-[Google_Sans] flex space-x-2 justify-center">
+                        <span>Mehr erfahren</span>
+                        <ArrowUpRight class="size-6 group-hover:-translate-y-1 group-hover:translate-x-1 duration-150"/>
                     </button>
                 </div>
             </div>
