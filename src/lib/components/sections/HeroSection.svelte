@@ -48,7 +48,7 @@
 </script> 
 
 <div class="border-b border-neutral-500 px-4 sm:px-10 lg:px-16">
-    <div class="py-4 mx-auto max-w-7xl border-l border-r px-6 border-neutral-500 min-h-96 flex items-center justify-center grid-background relative">
+    <div class="pt-15 mx-auto max-w-7xl border-l border-r px-6 border-neutral-500 min-h-100 flex items-center justify-center grid-background relative">
         <ComponentName name="HeroSection.svelte" position="bottom-left" />
         <div class="flex flex-col space-y-2 items-center">
             <span class="text-left text-2xl font-[Google_Sans] p-2 rounded-sm flex space-x-1">
