@@ -8,7 +8,7 @@ import Link from "../Link.svelte";
     <div class="mx-auto lg:max-w-7xl border-l border-r border-neutral-400 min-h-64 flex items-center justify-center relative">
         <ParagraphNumber number="01" />
         <ComponentName name="AboutMeSection.svelte" position="bottom-right" />
-        <div class="flex flex-col md:flex-row space-y-8 md:space-y-0 justify-between">
+        <div class="flex flex-col md:flex-row justify-between">
             <div class="flex flex-col">
                 <div class="grow flex flex-col justify-center space-y-2 p-10 border-b border-neutral-400">
                     <span class="text-lg font-semibold font-[Google_Sans]">Über mich</span>
@@ -22,7 +22,7 @@ import Link from "../Link.svelte";
                     </button>
                 </div>
             </div>
-            <div class="flex flex-col items-center p-10 border-l border-neutral-400">
+            <div class="flex flex-col items-center p-10 border-t md:border-t-0 md:border-l border-neutral-400">
                 <img src="/images/me.jpg" alt="Noah Baumgartner" class="object-cover max-w-60" height="240" width="240" />
             </div>
         </div>
