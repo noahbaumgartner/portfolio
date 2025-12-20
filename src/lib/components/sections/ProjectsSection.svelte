@@ -11,17 +11,17 @@
     <div class="mx-auto lg:max-w-7xl border-l border-r border-neutral-500 flex items-center justify-center relative">
         <ParagraphNumber number="02" />
         <ComponentName name="ProjectsSection.svelte" position="bottom-left" />
-        <div class="flex w-full h-full">
-            <div class="grid-background px-10 py-10 border-r border-neutral-500 flex items-center justify-center">
-                <Heading2 class="[writing-mode:sideways-lr]">Projekte</Heading2>
+        <div class="flex w-full h-full flex-col lg:flex-row">
+            <div class="grid-background px-10 py-10 border-b lg:border-b-0 lg:border-r border-neutral-500 flex items-center justify-center">
+                <Heading2 class="lg:[writing-mode:sideways-lr]">Projekte</Heading2>
             </div>
             <div class="grow flex flex-col">
                 {#each projects as project}
-                <div class="border-b border-gray-500 flex">
-                    <div class="p-5">
-                        <img src={project.image} alt={project.title} class="aspect-video h-40 border-2 border-black object-cover" />
+                <div class="border-b border-gray-500 flex flex-col md:flex-row">
+                    <div class="p-5 flex items-center justify-center">
+                        <img src={project.image} alt={project.title} class="aspect-video w-full md:w-72 border-2 border-black object-cover" />
                     </div>
-                    <div class="flex flex-col space-y-1 justify-center pl-5 pr-10">
+                    <div class="flex flex-col space-y-1 justify-center px-10 pb-10 pt-5 md:py-0 md:pl-5 md:pr-10">
                         <Heading2>{project.title}</Heading2>
                         <span>{project.description}</span>
                     </div>
