@@ -51,9 +51,9 @@
     <div class="pt-15 mx-auto max-w-7xl border-l border-r px-6 border-neutral-500 min-h-100 flex items-center justify-center grid-background relative">
         <ComponentName name="HeroSection.svelte" position="bottom-left" />
         <div class="flex flex-col space-y-2 items-center">
-            <span class="text-left text-2xl font-[Google_Sans] p-2 rounded-sm flex space-x-1">
-                <h1 {@attach animateGreeting} class="font-semibold">S</h1>
-                <span {@attach animateBlinking} class="font-extralight">_</span>
+            <span class="text-center text-2xl font-[Google_Sans] p-2 rounded-sm flex space-x-1 -mr-2">
+                <span {@attach animateGreeting} class="font-semibold"></span>
+                <span {@attach animateBlinking} class="font-extralight">|</span>
             </span>
             <span class="text-center text-lg max-w-xl">
                 Ich entwickle Software bei <Link href="https://buildagil.com" color="#006666">buildagil</Link> und Open Source für <Link href="https://stack.swiss" color="#f13608">STACK</Link>.  Zudem absolviere ich meinen MSc an der <Link href="https://zhaw.ch" color="#0064a6">ZHAW</Link>.

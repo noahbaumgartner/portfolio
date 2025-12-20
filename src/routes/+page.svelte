@@ -2,6 +2,9 @@
 	import AboutMeSection from "$lib/components/sections/AboutMeSection.svelte";
 	import HeroSection from "$lib/components/sections/HeroSection.svelte";
 	import ProjectsSection from "$lib/components/sections/ProjectsSection.svelte";
+
+	let { data } = $props();
+	let { projects } = $derived(data);
 </script>
 
 <svelte:head>
@@ -13,4 +16,4 @@
 
 <HeroSection />
 <AboutMeSection />
-<ProjectsSection />
+<ProjectsSection projects={projects} />
