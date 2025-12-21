@@ -48,7 +48,7 @@
     }
 </script> 
 
-<Section class="pt-15 min-h-100 bg-grid">
+<Section class="pt-15 min-h-100 bg-grid px-10">
     <ComponentName name="HeroSection.svelte" position="bottom-left" />
     <div class="flex flex-col space-y-2 items-center">
         <span class="text-center text-2xl font-[Google_Sans] p-2 rounded-sm flex space-x-1 -mr-2">
@@ -56,7 +56,7 @@
             <span {@attach animateBlinking} class="font-extralight">|</span>
         </span>
         <span class="text-center text-lg max-w-xl">
-            Ich entwickle Software bei <Link href="https://buildagil.com" color="#006666">buildagil</Link> und Open Source für <Link href="https://stack.swiss" color="#f13608">STACK</Link>.  Zudem absolviere ich meinen MSc an der <Link href="https://zhaw.ch" color="#0064a6">ZHAW</Link>.
+            Ich entwickle Software bei <Link href="https://buildagil.com">buildagil</Link> und Open Source für <Link href="https://stack.swiss">STACK</Link>.  Zudem absolviere ich meinen MSc an der <Link href="https://zhaw.ch">ZHAW</Link>.
         </span>
     </div>
 </Section>
