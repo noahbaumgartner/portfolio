@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="flex flex-col items-center p-10 border-t md:border-t-0 md:border-l border-neutral-500">
-                <img src="/images/me.jpg" alt="Noah Baumgartner" class="object-cover max-w-60" height="240" width="240" />
+                <img src="/images/me.webp" alt="Noah Baumgartner" class="object-cover max-w-60" height="240" width="240" />
             </div>
         </div>
     </div>

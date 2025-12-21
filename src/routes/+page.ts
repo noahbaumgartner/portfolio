@@ -13,7 +13,7 @@ export const load = async () => {
         const projects = Object.entries(files).map(([path, module]) => {
             const { metadata: projectMetadata } = module as { metadata: ProjectMetadata };
             projectMetadata.slug = path.split('/')[3].split('.')[0];
-            projectMetadata.image = `/images/projects/${projectMetadata.slug}.png`;
+            projectMetadata.image = `/images/projects/${projectMetadata.slug}.webp`;
             return projectMetadata;
         });
 
