@@ -1,8 +1,8 @@
 <script lang="ts">
     import { MediaQuery } from 'svelte/reactivity';
     import NavLogo from './NavLogo.svelte';
-	import Footer from '../sections/Footer.svelte';
-	import Copyright from '../sections/Copyright.svelte';
+	import Footer from '../sections/FooterSection.svelte';
+	import Copyright from '../sections/CopyrightSection.svelte';
 
     let { children } = $props();
     let mobileNavActive = $state(false);

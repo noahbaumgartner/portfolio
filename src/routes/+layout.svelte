@@ -3,9 +3,9 @@
 	import favicon from '$lib/assets/favicon.svg';
 	import Nav from '$lib/components/navigation/Nav.svelte';
 	import NavItem from '$lib/components/navigation/NavItem.svelte';
-	import Footer from '$lib/components/sections/Footer.svelte';
+	import Footer from '$lib/components/sections/FooterSection.svelte';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
-	import Copyright from '$lib/components/sections/Copyright.svelte';
+	import Copyright from '$lib/components/sections/CopyrightSection.svelte';
 
 	let { children } = $props();
 	injectAnalytics();
