@@ -1,7 +1,7 @@
 <script>
-	import ComponentName from "../ComponentName.svelte";
+	import ComponentName from "./ComponentName.svelte";
 	import Heading1 from "../Heading1.svelte";
-	import Section from "../Section.svelte";
+	import Section from "./Section.svelte";
 
     let { title } = $props();
 </script>
