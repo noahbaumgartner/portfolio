@@ -1,8 +1,8 @@
 <script lang="ts">
     import { MediaQuery } from 'svelte/reactivity';
     import NavLogo from './NavLogo.svelte';
-	import Footer from './Footer.svelte';
-	import Copyright from './Copyright.svelte';
+	import Footer from '../sections/FooterSection.svelte';
+	import Copyright from '../sections/CopyrightSection.svelte';
 
     let { children } = $props();
     let mobileNavActive = $state(false);
@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="border-neutral-500 px-4 text-lg text-right grow sm:px-10 lg:px-16 border-b">
-                <div {@attach toggleMobileNav} class="border-l border-r border-neutral-500 py-6 px-6 flex flex-col space-y-4 h-full grid-background">
+                <div {@attach toggleMobileNav} class="border-l border-r border-neutral-500 py-6 px-6 flex flex-col space-y-4 h-full bg-grid">
                     {@render children()}
                 </div>
             </div>

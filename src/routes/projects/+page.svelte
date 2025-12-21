@@ -1,5 +1,9 @@
 <script lang="ts">
+	import ProjectsSection from "$lib/components/sections/ProjectsSection.svelte";
 	import TitleSection from "$lib/components/sections/TitleSection.svelte";
+
+	let { data } = $props();
+	let { projects } = $derived(data);
 </script>
 
 <svelte:head>
@@ -10,3 +14,4 @@
 </svelte:head>
 
 <TitleSection title="Projekte" />
+<ProjectsSection projects={projects} />
