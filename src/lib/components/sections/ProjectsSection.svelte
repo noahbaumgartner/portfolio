@@ -10,7 +10,7 @@
 <Section sectionNumber="02">
     <ComponentName name="ProjectsSection.svelte" position="bottom-left" />
     <div class="flex w-full h-full flex-col lg:flex-row">
-        <div class="grid-background px-10 py-10 border-b lg:border-b-0 lg:border-r border-neutral-500 flex items-center justify-center">
+        <div class="bg-grid px-10 py-10 border-b lg:border-b-0 lg:border-r border-neutral-500 flex items-center justify-center">
             <Heading2 class="lg:[writing-mode:sideways-lr]">Projekte</Heading2>
         </div>
         <div class="grow flex flex-col">

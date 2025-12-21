@@ -2,6 +2,6 @@
   let { number } = $props();
 </script>
 
-<span class="absolute -left-10 top-0 text-lg font-[Source_Code_Pro] font-semibold border-b border-l border-neutral-500 px-2 py-1 hidden sm:block">
+<span class="absolute -left-[39px] top-0 text-lg font-[Source_Code_Pro] font-semibold border-b border-l border-neutral-500 px-2 py-1 hidden sm:block">
     {number}
 </span>

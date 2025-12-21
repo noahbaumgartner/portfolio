@@ -48,7 +48,7 @@
     }
 </script> 
 
-<Section class="pt-15 min-h-100 grid-background">
+<Section class="pt-15 min-h-100 bg-grid">
     <ComponentName name="HeroSection.svelte" position="bottom-left" />
     <div class="flex flex-col space-y-2 items-center">
         <span class="text-center text-2xl font-[Google_Sans] p-2 rounded-sm flex space-x-1 -mr-2">
