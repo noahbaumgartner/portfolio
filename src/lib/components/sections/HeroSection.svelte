@@ -1,6 +1,6 @@
 <script lang="ts">
 	import ComponentName from "./ComponentName.svelte";
-    import Link from "../Link.svelte";
+    import Link from "../text/Link.svelte";
 	import Section from "./Section.svelte";
 
     function animateGreeting(node: HTMLElement) {
