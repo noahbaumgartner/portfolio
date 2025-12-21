@@ -1,5 +1,5 @@
 <script>
-	import SectionNumber from '$lib/components/SectionNumber.svelte';
+	import SectionNumber from '$lib/components/sections/SectionNumber.svelte';
 	import TitleSection from '$lib/components/sections/TitleSection.svelte';
 
 	let { data } = $props();
