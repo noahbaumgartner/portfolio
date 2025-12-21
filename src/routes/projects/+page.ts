@@ -9,10 +9,10 @@ interface ProjectMetadata {
 
 export const load = async () => {
     try {
-        const files = await import.meta.glob('../lib/projects/*', { eager: true });
+        const files = await import.meta.glob('../../lib/projects/*', { eager: true });
         const projects = Object.entries(files).map(([path, module]) => {
             const { metadata: projectMetadata } = module as { metadata: ProjectMetadata };
-            projectMetadata.slug = path.split('/')[3].split('.')[0];
+            projectMetadata.slug = path.split('/')[4].split('.')[0];
             projectMetadata.image = `/images/projects/${projectMetadata.slug}.webp`;
             return projectMetadata;
         });

@@ -1,11 +1,11 @@
 <script lang="ts">
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.svg';
-	import Nav from '$lib/components/Nav.svelte';
-	import NavItem from '$lib/components/NavItem.svelte';
-	import Footer from '$lib/components/Footer.svelte';
+	import Nav from '$lib/components/navigation/Nav.svelte';
+	import NavItem from '$lib/components/navigation/NavItem.svelte';
+	import Footer from '$lib/components/sections/FooterSection.svelte';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
-	import Copyright from '$lib/components/Copyright.svelte';
+	import Copyright from '$lib/components/sections/CopyrightSection.svelte';
 
 	let { children } = $props();
 	injectAnalytics();
