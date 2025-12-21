@@ -3,7 +3,7 @@
     import Link from "../Link.svelte";
 
     function animateGreeting(node: HTMLElement) {
-        const texts = ["Software Entwickler", "Student"];
+        const texts = ["Hallo, ich bin Noah", "Software Entwickler", "Student"];
         const typeSpeed = 30;
 
         let i = 0;
