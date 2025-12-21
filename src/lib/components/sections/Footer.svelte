@@ -1,7 +1,7 @@
 <script>
 	import ComponentName from "./ComponentName.svelte";
-	import Heading2 from "./Heading2.svelte";
-	import Link from "./Link.svelte";
+	import Heading2 from "../Heading2.svelte";
+	import Link from "../Link.svelte";
 	import SectionNumber from "./SectionNumber.svelte";
 </script>
 

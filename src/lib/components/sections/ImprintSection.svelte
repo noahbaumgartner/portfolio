@@ -1,9 +1,9 @@
 <script>
-	import ComponentName from "../ComponentName.svelte";
+	import ComponentName from "./ComponentName.svelte";
 	import Heading2 from "../Heading2.svelte";
 	import Heading3 from "../Heading3.svelte";
 	import Link from "../Link.svelte";
-	import Section from "../Section.svelte";
+	import Section from "./Section.svelte";
 </script>
 
 <Section sectionNumber="01">

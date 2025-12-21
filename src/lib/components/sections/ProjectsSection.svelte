@@ -1,8 +1,8 @@
 <script>
 	import { ArrowUpRight } from "@lucide/svelte";
-	import ComponentName from "../ComponentName.svelte";
+	import ComponentName from "./ComponentName.svelte";
 	import Heading2 from "../Heading2.svelte";
-	import Section from "../Section.svelte";
+	import Section from "./Section.svelte";
 
     let { projects } = $props();
 </script>

@@ -1,8 +1,8 @@
 <script lang="ts">
-	import ComponentName from "../ComponentName.svelte";
+	import ComponentName from "./ComponentName.svelte";
 	import Heading2 from "../Heading2.svelte";
     import { ArrowUpRight } from "@lucide/svelte";
-	import Section from "../Section.svelte";
+	import Section from "./Section.svelte";
 </script>
 
 <Section class="min-h-64" sectionNumber="01">
