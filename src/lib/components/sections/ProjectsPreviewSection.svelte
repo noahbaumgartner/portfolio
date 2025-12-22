@@ -3,27 +3,20 @@
 	import ComponentName from "./ComponentName.svelte";
 	import Heading2 from "../text/Heading2.svelte";
 	import Section from "./Section.svelte";
+	import ProjectPreview from "../ProjectPreview.svelte";
 
     let { projects } = $props();
 </script>
 
 <Section sectionNumber="02">
-    <ComponentName name="ProjectsSection.svelte" position="bottom-left" />
+    <ComponentName name="PreviewProjectsSection.svelte" position="bottom-left" />
     <div class="flex w-full h-full flex-col lg:flex-row">
         <div class="bg-grid px-10 py-10 border-b lg:border-b-0 lg:border-r border-neutral-500 flex items-center justify-center">
             <Heading2 class="lg:[writing-mode:sideways-lr]">Projekte</Heading2>
         </div>
         <div class="grow flex flex-col">
             {#each projects as project}
-            <div class="border-b border-gray-500 flex flex-col md:flex-row">
-                <div class="p-5 flex items-center justify-center">
-                    <img src={project.image} alt={project.title} class="aspect-video w-full md:w-72 border-2 border-black object-cover" />
-                </div>
-                <div class="flex flex-col space-y-1 justify-center px-10 pb-10 pt-5 md:py-0 md:pl-5 md:pr-10">
-                    <Heading2>{project.title}</Heading2>
-                    <span>{project.description}</span>
-                </div>
-            </div>
+                <ProjectPreview {project} />
             {/each}
             <div class="w-full p-2">
                 <a href="/projects" data-sveltekit-preload-data>

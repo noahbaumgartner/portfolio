@@ -1,5 +1,6 @@
 <script lang="ts">
-	import ProjectsSection from "$lib/components/sections/ProjectsSection.svelte";
+	import ProjectPreview from "$lib/components/ProjectPreview.svelte";
+	import Section from "$lib/components/sections/Section.svelte";
 	import TitleSection from "$lib/components/sections/TitleSection.svelte";
 
 	let { data } = $props();
@@ -14,4 +15,10 @@
 </svelte:head>
 
 <TitleSection title="Projekte" />
-<ProjectsSection projects={projects} />
+<Section sectionNumber="01">
+	<div class="flex flex-col w-full">
+		{#each projects as project}
+			<ProjectPreview {project} />
+		{/each}
+	</div>
+</Section>
