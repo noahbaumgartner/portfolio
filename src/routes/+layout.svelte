@@ -23,6 +23,10 @@
 	<NavItem href="/about">Über mich</NavItem>
 	<NavItem href="/projects">Projekte</NavItem>
 </Nav>
-{@render children()}
-<Footer	/>
-<Copyright />
+<main>
+	{@render children()}
+</main>
+<footer>
+	<Footer	/>
+	<Copyright />
+</footer>
