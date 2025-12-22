@@ -1,7 +1,7 @@
 <script lang="ts">
-	import AboutMeSection from "$lib/components/sections/AboutMeSection.svelte";
+	import AboutMePreviewSection from "$lib/components/sections/AboutMePreviewSection.svelte";
 	import HeroSection from "$lib/components/sections/HeroSection.svelte";
-	import ProjectsSection from "$lib/components/sections/ProjectsSection.svelte";
+	import ProjectsPreviewSection from "$lib/components/sections/ProjectsPreviewSection.svelte";
 
 	let { data } = $props();
 	let { projects } = $derived(data);
@@ -15,5 +15,5 @@
 </svelte:head>
 
 <HeroSection />
-<AboutMeSection />
-<ProjectsSection projects={projects} />
+<AboutMePreviewSection />
+<ProjectsPreviewSection projects={projects} />
