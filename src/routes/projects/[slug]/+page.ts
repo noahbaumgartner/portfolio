@@ -11,10 +11,11 @@ export const load = async ({ params }) => {
             description: metadata.description,
             image: `/images/projects/${params.slug}.webp`,
             period: `${new Date(metadata.year, metadata.month - 1).toLocaleString('default', { month: 'long' })} ${metadata.year}`,
+            url: metadata.url || "",
             tags: metadata.tags.split(",") || [],
         }
 
-        return { metadata: project, Content: page.default };
+        return { project, Content: page.default };
     } catch (err) {
         console.error(err);
         error(404, 'Not found');

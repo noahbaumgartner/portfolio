@@ -4,5 +4,6 @@ export interface ProjectDTO {
     title: string;
     description: string;
     image: string;
+    url: string;
     tags: string[];
 }
