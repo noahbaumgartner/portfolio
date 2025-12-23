@@ -1,8 +1,8 @@
 <script lang="ts">
 	import ComponentName from "./ComponentName.svelte";
 	import Heading2 from "../text/Heading2.svelte";
-    import { ArrowUpRight } from "@lucide/svelte";
 	import Section from "./Section.svelte";
+	import PanelCtaButton from "../PanelCtaButton.svelte";
 </script>
 
 <Section class="min-h-64" sectionNumber="01">
@@ -16,12 +16,7 @@
                 </span>
             </div>
             <div class="w-full p-2">
-                <a href="/about" data-sveltekit-preload-data>
-                    <button class="group w-full p-4 bg-linear-150 from-neutral-950 from-50% via-neutral-900 via-70% to-neutral-950 to-90% cursor-pointer text-white text-md font-[Google_Sans] flex space-x-2 justify-center">
-                        <span>Mehr erfahren</span>
-                        <ArrowUpRight class="size-6 group-hover:-translate-y-1 group-hover:translate-x-1 duration-150"/>
-                    </button>
-                </a>
+                <PanelCtaButton href="/about">Mehr erfahren</PanelCtaButton>
             </div>
         </div>
         <div class="flex flex-col items-center p-10 border-t md:border-t-0 md:border-l border-neutral-500">

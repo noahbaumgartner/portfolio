@@ -4,6 +4,7 @@
 	import Heading2 from "../text/Heading2.svelte";
 	import Section from "./Section.svelte";
 	import ProjectPreview from "../ProjectPreview.svelte";
+	import PanelCtaButton from "../PanelCtaButton.svelte";
 
     let { projects } = $props();
 </script>
@@ -19,12 +20,7 @@
                 <ProjectPreview {project} />
             {/each}
             <div class="w-full p-2">
-                <a href="/projects" data-sveltekit-preload-data>
-                    <button class="group w-full p-4 bg-linear-150 from-neutral-950 from-50% via-neutral-900 via-70% to-neutral-950 to-90% cursor-pointer text-white text-md font-[Google_Sans] flex space-x-2 justify-center">
-                        <span>Alle Projekte</span>
-                        <ArrowUpRight class="size-6 group-hover:-translate-y-1 group-hover:translate-x-1 duration-150"/>
-                    </button>
-                </a>
+                <PanelCtaButton href="/projects">Alle Projekte</PanelCtaButton>
             </div>
         </div>
     </div>
