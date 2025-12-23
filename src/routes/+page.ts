@@ -14,6 +14,7 @@ export const load = async () => {
                 description: metadata.description,
                 image: `/images/projects/${slug}.webp`,
                 period: `${new Date(metadata.year, metadata.month - 1).toLocaleString('default', { month: 'long' })} ${metadata.year}`,
+                url: metadata.url,
                 tags: metadata.tags.split(",") || [],
             }
 
