@@ -1,6 +1,0 @@
----
-title: "Bettenhof"
-description: "Eine Webseite aufgebaut mit Wix Studio."
----
-
-# 234234
