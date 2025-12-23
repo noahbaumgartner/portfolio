@@ -1,6 +1,6 @@
 <script lang="ts">
     import type { ProjectDTO } from '$lib/dtos/ProjectDTO';
-	import { ArrowUpRight, CalendarIcon } from '@lucide/svelte';
+	import { ArrowUpRight, CalendarIcon, LinkIcon } from '@lucide/svelte';
 	import Heading2 from './text/Heading2.svelte';
 	import Badge from './Badge.svelte';
 
@@ -18,7 +18,7 @@
                 <ArrowUpRight class="size-6 group-hover:-translate-y-1 group-hover:translate-x-1 duration-150"/>
             </div>
             <span>{project.description}</span>
-            <div class="flex space-x-1">
+            <div class="flex flex-wrap gap-1">
                 <Badge>
                     <CalendarIcon />
                     {project.period}
