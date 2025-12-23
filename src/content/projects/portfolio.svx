@@ -1,6 +1,9 @@
 ---
+year: 2026
+month: 1
 title: "Portfolio"
 description: "Persönliches Portfolio mit Projektübersicht und Infos zu meiner Person."
+tags: "Webseite,SPA"
 ---
 
 # 234234

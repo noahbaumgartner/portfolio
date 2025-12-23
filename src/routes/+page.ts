@@ -5,9 +5,18 @@ export const load = async () => {
     try {
         const files = await import.meta.glob('../content/projects/*', { eager: true });
         const projects = Object.entries(files).map(([path, module]) => {
-            const { metadata: project } = module as { metadata: ProjectDTO };
-            project.slug = path.split('/')[3].split('.')[0];
-            project.image = `/images/projects/${project.slug}.webp`;
+            const { metadata } = module as { metadata: any };
+
+            const slug = path.split('/')[3].split('.')[0];
+            const project: ProjectDTO = {
+                slug,
+                title: metadata.title,
+                description: metadata.description,
+                image: `/images/projects/${slug}.webp`,
+                period: `${new Date(metadata.year, metadata.month - 1).toLocaleString('default', { month: 'long' })} ${metadata.year}`,
+                tags: metadata.tags.split(",") || [],
+            }
+
             return project;
         });
 
