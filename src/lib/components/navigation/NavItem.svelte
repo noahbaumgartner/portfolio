@@ -3,7 +3,7 @@
     import { page } from '$app/state';
     
     let { href, children } = $props();
-    let isActive = $derived(page.url.pathname === href);
+    let isActive = $derived(page.url.pathname === href || page.url.pathname.startsWith(`${href}/`));
     let annotation: any;
 
     function highlightHover(node: HTMLElement) {
