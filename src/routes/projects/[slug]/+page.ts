@@ -3,7 +3,7 @@ import { error } from '@sveltejs/kit'
 
 export const load = async ({ params }) => {
     try {
-        const page = await import(`../../../content/projects/${params.slug}.svx`)
+        const page = await import(`../../../content/projects/${params.slug}.md`)
         const { metadata } = page;
         const project: ProjectDTO = {
             slug: params.slug,

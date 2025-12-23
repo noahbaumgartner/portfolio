@@ -1,6 +1,5 @@
 <script lang="ts">
 	import ComponentName from "./ComponentName.svelte";
-	import Heading2 from "../text/Heading2.svelte";
 	import Section from "./Section.svelte";
 	import PanelCtaButton from "../PanelCtaButton.svelte";
 </script>
@@ -10,7 +9,7 @@
     <div class="flex flex-col md:flex-row justify-between">
         <div class="flex flex-col">
             <div class="grow flex flex-col justify-center space-y-2 p-10 border-b border-neutral-500">
-                <Heading2>Über mich</Heading2>
+                <h2>Über mich</h2>
                 <span>
                     Wenn ich nicht gerade an neuen Features für buildagil arbeite oder für mein Studium lerne, beschäftige ich mich mit privaten Projekten. Ich bin Entwickler aus Leidenschaft und immer auf der Suche nach der nächsten technischen Herausforderung.
                 </span>
