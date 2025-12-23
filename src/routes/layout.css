@@ -119,3 +119,15 @@ body {
 		linear-gradient(rgb(246, 246, 246) 1px, rgba(0, 0, 0, 0) 1px);
 	background-size: 14px 14px;
 }
+
+h1 {
+	@apply font-[Google_Sans] text-2xl font-semibold;
+}
+
+h2 {
+	@apply font-[Google_Sans] text-xl font-semibold;
+}
+
+h3 {
+	@apply font-[Google_Sans] text-lg font-semibold;
+}

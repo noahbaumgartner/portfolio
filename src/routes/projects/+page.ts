@@ -1,20 +1,24 @@
+import type { ProjectDTO } from '$lib/dtos/ProjectDTO';
 import { error } from '@sveltejs/kit'
-
-interface ProjectMetadata {
-    slug: string;
-    title: string;
-    description: string;
-    image: string;
-}
 
 export const load = async () => {
     try {
-        const files = await import.meta.glob('../../lib/projects/*', { eager: true });
+        const files = await import.meta.glob('../../content/projects/*', { eager: true });
         const projects = Object.entries(files).map(([path, module]) => {
-            const { metadata: projectMetadata } = module as { metadata: ProjectMetadata };
-            projectMetadata.slug = path.split('/')[4].split('.')[0];
-            projectMetadata.image = `/images/projects/${projectMetadata.slug}.webp`;
-            return projectMetadata;
+            const { metadata } = module as { metadata: any };
+
+            const slug = path.split('/')[4].split('.')[0];
+            const project: ProjectDTO = {
+                slug,
+                title: metadata.title,
+                description: metadata.description,
+                image: `/images/projects/${slug}.webp`,
+                period: `${new Date(metadata.year, metadata.month - 1).toLocaleString('default', { month: 'long' })} ${metadata.year}`,
+                url: metadata.url,
+                tags: metadata.tags.split(",") || [],
+            }
+
+            return project;
         });
 
         return { projects };
