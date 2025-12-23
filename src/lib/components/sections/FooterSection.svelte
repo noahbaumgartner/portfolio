@@ -1,6 +1,5 @@
 <script lang="ts">
 	import ComponentName from "./ComponentName.svelte";
-	import Heading2 from "../text/Heading2.svelte";
 	import Link from "../text/Link.svelte";
 	import Section from "./Section.svelte";
 </script>
@@ -9,7 +8,7 @@
     <ComponentName name="Footer.svelte" variant="dark" position="bottom-left" />
     <div class="flex flex-col sm:flex-row w-full space-y-10 sm:space-y-0 p-10">
         <div class="grow">
-            <Heading2 class="text-neutral-100">Danke fürs<br>Vorbeischauen.</Heading2>
+            <h2 class="text-neutral-100">Danke fürs<br>Vorbeischauen.</h2>
         </div>
         <div class="grow flex space-x-4 flex-col sm:flex-row space-y-10 sm:space-y-0">
             <div class="grow flex flex-col space-y-2 text-neutral-400 text-md">
