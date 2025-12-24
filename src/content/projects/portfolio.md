@@ -18,4 +18,4 @@ Das Portfolio wurde mit **SvelteKit** entwickelt. Für das Styling kam **Tailwin
 
 <h2 class="mt-4 mb-2">Funktionen</h2>
 
-Das Portfolio bietet Informationen über mich sowie eine Übersicht meiner persönlichen Projekte.
+Das Portfolio bietet Informationen über mich sowie eine Übersicht meiner persönlichen Projekte. Weitere Dinge folgen.
