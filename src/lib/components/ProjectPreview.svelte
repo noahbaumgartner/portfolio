@@ -6,8 +6,8 @@
     let { project }: { project: ProjectDTO }= $props();
 </script>
 
-<a href={`/projects/${project.slug}`} data-sveltekit-preload-data>
-    <div class="group border-b border-neutral-300 flex flex-col md:flex-row cursor-pointer">
+<a href={`/projects/${project.slug}`} data-sveltekit-preload-data class="[&:not(:last-child)>div]:border-b [&:not(:last-child)>div]:border-neutral-300">
+    <div class="group flex flex-col md:flex-row cursor-pointer">
         <div class="p-3 flex items-center justify-center">
             <img src={project.image} alt={project.title} class="aspect-[1.531/1] w-full md:min-w-74 md:w-74 object-contain grayscale group-hover:grayscale-0 transition-[filter] duration-300" />
         </div>
