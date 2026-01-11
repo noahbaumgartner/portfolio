@@ -5,7 +5,7 @@
 </script>
 
 <Section class="min-h-64" sectionNumber="01">
-    <ComponentName name="AboutMeSection.svelte" position="bottom-right" />
+    <ComponentName name="AboutPreviewSection.svelte" position="bottom-right" />
     <div class="flex flex-col md:flex-row justify-between">
         <div class="flex flex-col">
             <div class="grow flex flex-col justify-center space-y-2 p-10 border-b border-neutral-300">
