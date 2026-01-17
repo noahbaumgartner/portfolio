@@ -1,5 +1,9 @@
 <script lang="ts">
 	import TitleSection from "$lib/components/sections/TitleSection.svelte";
+	import AboutPhilosophySection from "$lib/components/sections/AboutPhilosophySection.svelte";
+	import AboutWorkExperienceSection from "$lib/components/sections/AboutWorkExperienceSection.svelte";
+	import AboutImageSection from "$lib/components/sections/AboutImageSection.svelte";
+	import AboutEducationSection from "$lib/components/sections/AboutEducationSection.svelte";
 </script>
 
 <svelte:head>
@@ -10,3 +14,7 @@
 </svelte:head>
 
 <TitleSection title="Über mich" />
+<AboutImageSection />
+<AboutWorkExperienceSection />
+<AboutPhilosophySection />
+<AboutEducationSection />

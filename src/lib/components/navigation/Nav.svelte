@@ -19,7 +19,7 @@
     }
 </script>
 
-<nav class={["border-b border-neutral-300 px-4 sm:px-10 lg:px-16 fixed top-0 left-0 right-0 z-50", mobileNavActive ? 'bg-white' : 'bg-white/30 backdrop-blur-sm']}>
+<nav class={["border-b border-neutral-300 px-4 sm:px-10 lg:px-16 fixed top-0 left-0 right-0 z-50", mobileNavActive ? 'bg-white' : 'bg-white/50 backdrop-blur-sm']}>
     <div class="py-4 mx-auto max-w-7xl border-l border-r px-6 border-neutral-300 flex justify-between items-center">
         <NavLogo />
         {#if isSmallScreen.current}

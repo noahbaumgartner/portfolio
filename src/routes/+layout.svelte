@@ -16,6 +16,10 @@
 	<title>Noah Baumgartner | Portfolio</title>
 	<meta name="og:url" content="https://noahbaumgartner.ch" />
 	<meta name="og:image" content="https://noahbaumgartner.ch/images/og.jpg" />
+
+	<link rel="preload" href="/fonts/GoogleSans.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+	<link rel="preload" href="/fonts/Inter.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+	<link rel="preload" href="/fonts/SourceCodePro.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 </svelte:head>
 
 <Nav>
