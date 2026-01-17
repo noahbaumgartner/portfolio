@@ -1,5 +1,5 @@
 <script lang="ts">
-	import AboutMePreviewSection from "$lib/components/sections/AboutMePreviewSection.svelte";
+	import AboutPreviewSection from "$lib/components/sections/AboutPreviewSection.svelte";
 	import HeroSection from "$lib/components/sections/HeroSection.svelte";
 	import ProjectsPreviewSection from "$lib/components/sections/ProjectsPreviewSection.svelte";
 
@@ -15,5 +15,5 @@
 </svelte:head>
 
 <HeroSection />
-<AboutMePreviewSection />
+<AboutPreviewSection />
 <ProjectsPreviewSection projects={projects} />

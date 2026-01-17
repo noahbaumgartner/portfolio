@@ -1,6 +1,7 @@
 <script lang="ts">
 	import ComponentName from "./ComponentName.svelte";
 	import Section from "./Section.svelte";
+<<<<<<< Updated upstream
 	import Link from "../text/Link.svelte";
 	import { onMount } from 'svelte';
 
@@ -27,11 +28,14 @@
 
 		setTimeout(type, 300);
 	}
+=======
+>>>>>>> Stashed changes
 </script>
 
 <Section class="min-h-96" sectionNumber="03" variant="dark">
 	<ComponentName name="AboutPhilosophySection.svelte" position="bottom-right" variant="dark" />
 	<div class="p-10 md:p-16 space-y-12">
+<<<<<<< Updated upstream
 		<div
 			class="space-y-4 transition-all duration-1000"
 			style="opacity: {textVisible ? '1' : '0'}; transform: translateY({textVisible ? '0' : '20px'})"
@@ -75,5 +79,15 @@
 			<Link href="https://linkedin.com/in/noahbaumgartner" variant="dark">LinkedIn</Link>
 			<Link href="mailto:hello@noahbaumgartner.ch" variant="dark">Kontakt</Link>
 		</div>
+=======
+		<div class="space-y-4 max-w-2xl">
+			<h2 class="text-white">Meine Philosophie</h2>
+			<div class="space-y-4 text-neutral-300 max-w-3xl">
+				<p>Code ist mehr als nur Syntax und Funktionen. Es ist ein Werkzeug, um Probleme zu lösen, Prozesse zu optimieren und Menschen das Leben zu erleichtern.</p>
+				<p>Ich glaube an <b class="text-white">Clean Code</b>, <b class="text-white">kontinuierliches Lernen</b> und <b class="text-white">pragmatische Lösungen</b>. Perfektion ist nicht das Ziel – stetige Verbesserung ist es.</p>
+				<p>Meine Leidenschaft liegt darin, komplexe technische Herausforderungen in intuitive, performante Anwendungen zu verwandeln, die echten Mehrwert schaffen.</p>
+			</div>
+		</div>
+>>>>>>> Stashed changes
 	</div>
 </Section>

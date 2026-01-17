@@ -1,5 +1,4 @@
 ---
-layout: $lib/components/layouts/ProjectLayout.svelte
 year: 2025
 month: 12
 title: 'Bettenhof'

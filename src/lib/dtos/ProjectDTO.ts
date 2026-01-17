@@ -5,5 +5,6 @@ export interface ProjectDTO {
     description: string;
     image: string;
     url: string;
+    github?: string;
     tags: string[];
 }
