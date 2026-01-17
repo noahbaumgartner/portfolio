@@ -2,10 +2,11 @@
 	import ComponentName from "./ComponentName.svelte";
 	import Section from "./Section.svelte";
 	import PanelCtaButton from "../PanelCtaButton.svelte";
+	import Image from "../Image.svelte";
 </script>
 
 <Section class="min-h-64" sectionNumber="01">
-    <ComponentName name="AboutMeSection.svelte" position="bottom-right" />
+    <ComponentName name="AboutPreviewSection.svelte" position="bottom-right" />
     <div class="flex flex-col md:flex-row justify-between">
         <div class="flex flex-col">
             <div class="grow flex flex-col justify-center space-y-2 p-10 border-b border-neutral-300">
@@ -19,7 +20,7 @@
             </div>
         </div>
         <div class="flex flex-col items-center p-10 border-t md:border-t-0 md:border-l border-neutral-300">
-            <img src="/images/me.webp" alt="Noah Baumgartner" class="object-cover max-w-60" height="240" width="240" />
+            <Image src="/images/me.webp" class="size-60" />
         </div>
     </div>
 </Section>

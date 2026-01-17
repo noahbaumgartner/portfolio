@@ -2,7 +2,7 @@
 	import ComponentName from "./ComponentName.svelte";
 	import Section from "./Section.svelte";
 	import Badge from "../Badge.svelte";
-	import { CalendarIcon, LinkIcon } from "@lucide/svelte";
+	import { CalendarIcon, GithubIcon, LinkIcon } from "@lucide/svelte";
 
     let { project } = $props();
 </script>
@@ -17,10 +17,18 @@
                 <CalendarIcon />
                 {project.period}
             </Badge>
-            <Badge href={project.url}>
-                <LinkIcon />
-                {project.url}
-            </Badge>
+            {#if project.url}
+                <Badge href={project.url}>
+                    <LinkIcon />
+                    {project.url}
+                </Badge>
+            {/if}
+            {#if project.github}
+                <Badge href={project.github}>
+                    <GithubIcon />
+                    Code
+                </Badge>
+            {/if}
             {#each project.tags as tag}
                 <Badge>
                     {tag}</Badge>
