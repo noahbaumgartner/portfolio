@@ -1,10 +1,10 @@
 ---
-layout: $lib/components/layouts/ProjectLayout.svelte
 year: 2026
 month: 1
 title: 'Portfolio'
 description: 'Persönliches Portfolio mit Projektübersicht und Infos zu meiner Person.'
 url: 'https://noahbaumgartner.ch/'
+github: https://github.com/noahbaumgartner/portfolio
 tags: 'Webseite,SPA'
 ---
 

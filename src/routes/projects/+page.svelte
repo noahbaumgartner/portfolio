@@ -5,6 +5,9 @@
 
 	let { data } = $props();
 	let { projects } = $derived(data);
+
+	let featuredProject = $derived(projects[0]);
+	let otherProjects = $derived(projects.slice(1));
 </script>
 
 <svelte:head>
@@ -17,7 +20,10 @@
 <TitleSection title="Projekte" />
 <Section sectionNumber="01">
 	<div class="flex flex-col w-full">
-		{#each projects as project}
+		{#if featuredProject}
+			<ProjectPreview project={featuredProject} featured />
+		{/if}
+		{#each otherProjects as project}
 			<ProjectPreview {project} />
 		{/each}
 	</div>
