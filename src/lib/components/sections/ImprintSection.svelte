@@ -10,8 +10,6 @@
     	<h2 class="mb-4">Adresse</h2>
         <address class="not-italic">
     		Noah Baumgarnter<br />
-    		Distelweg 2<br />
-    		9451 Kriessern<br />
     		CH-Schweiz
     	</address>
     
