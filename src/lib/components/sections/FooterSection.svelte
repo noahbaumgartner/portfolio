@@ -19,7 +19,6 @@
                 <span class="font-bold text-neutral-100">Social Media</span>
                 <Link href="https://www.instagram.com/noahbaumgartner/" variant="dark">Instagram</Link>
                 <Link href="https://www.linkedin.com/in/noahbaumgartner/" variant="dark">LinkedIn</Link>
-                <Link href="https://www.strava.com/athletes/noahbaumgartner" variant="dark">Strava</Link>
             </div>
         </div>
     </div>
