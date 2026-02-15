@@ -11,7 +11,11 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href="/images/favicon.svg" />
+	<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+	<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon-48x48.png" />
+	<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png" />
+	<link rel="icon" type="image/png" sizes="144x144" href="/images/favicon-144x144.png" />
+
 	<title>Noah Baumgartner | Portfolio</title>
 	<meta name="og:url" content="https://noahbaumgartner.ch" />
 	<meta name="og:image" content="https://noahbaumgartner.ch/images/og.jpg" />
