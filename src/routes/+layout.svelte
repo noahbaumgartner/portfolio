@@ -1,6 +1,5 @@
 <script lang="ts">
 	import './layout.css';
-	import favicon from '$lib/assets/favicon.svg';
 	import Nav from '$lib/components/navigation/Nav.svelte';
 	import NavItem from '$lib/components/navigation/NavItem.svelte';
 	import Footer from '$lib/components/sections/FooterSection.svelte';
@@ -12,7 +11,7 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
+	<link rel="icon" href="/images/favicon.svg" />
 	<title>Noah Baumgartner | Portfolio</title>
 	<meta name="og:url" content="https://noahbaumgartner.ch" />
 	<meta name="og:image" content="https://noahbaumgartner.ch/images/og.jpg" />
