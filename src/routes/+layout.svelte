@@ -20,9 +20,9 @@
 	<meta name="og:url" content="https://noahbaumgartner.ch" />
 	<meta name="og:image" content="https://noahbaumgartner.ch/images/og.jpg" />
 
-	<link rel="preload" href="/fonts/GoogleSans.ttf" as="font" type="font/ttf" crossorigin="anonymous">
-	<link rel="preload" href="/fonts/Inter.ttf" as="font" type="font/ttf" crossorigin="anonymous">
-	<link rel="preload" href="/fonts/SourceCodePro.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+	<link rel="preload" href="/fonts/GoogleSans.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="/fonts/Inter.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="/fonts/SourceCodePro.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 </svelte:head>
 
 <Nav>
