@@ -5,9 +5,22 @@
 	import Footer from '$lib/components/sections/FooterSection.svelte';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 	import Copyright from '$lib/components/sections/CopyrightSection.svelte';
+	import { onMount } from 'svelte';
 
 	let { children } = $props();
 	injectAnalytics();
+
+	let fontsLoaded = $state(false);
+	let showScreen = $state(true);
+
+	onMount(() => {
+		document.fonts.ready.then(() => {
+			fontsLoaded = true;
+			setTimeout(() => {
+				showScreen = false;
+			}, 300);
+		});
+	});
 </script>
 
 <svelte:head>
@@ -24,6 +37,10 @@
 	<link rel="preload" href="/fonts/Inter.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 	<link rel="preload" href="/fonts/SourceCodePro.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 </svelte:head>
+
+{#if showScreen}
+	<div class="fixed inset-0 z-9999 bg-white transition-opacity duration-300" class:opacity-0={fontsLoaded}></div>
+{/if}
 
 <Nav>
 	<NavItem href="/">Home</NavItem>
