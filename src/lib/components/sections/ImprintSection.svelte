@@ -15,7 +15,7 @@
     
     	<h2 class="mt-6 mb-4">Kontakt</h2>
     	<p>
-    		E-Mail: <Link href="mailto:baumgartner.noah@outlook.com">baumgartner.noah@outlook.com</Link><br />
+    		E-Mail: <Link href="mailto:noahbaumg@outlook.com">noahbaumg@outlook.com</Link><br />
     		Web: <Link href="/">https://noahbaumgartner.ch</Link>
     	</p>
     
