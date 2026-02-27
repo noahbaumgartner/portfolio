@@ -114,10 +114,6 @@
 	src: url('/fonts/SourceCodePro.woff2') format('woff2');
 }
 
-*, *::before, *::after {
-	cursor: none !important;
-}
-
 body {
 	font-family: 'Inter', sans-serif;
 }
