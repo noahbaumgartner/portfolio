@@ -1,5 +1,6 @@
 <script lang="ts">
 	import './layout.css';
+	import CustomCursor from '$lib/components/CustomCursor.svelte';
 	import Nav from '$lib/components/navigation/Nav.svelte';
 	import NavItem from '$lib/components/navigation/NavItem.svelte';
 	import Footer from '$lib/components/sections/FooterSection.svelte';
@@ -25,6 +26,7 @@
 	<link rel="preload" href="/fonts/SourceCodePro.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 </svelte:head>
 
+<CustomCursor />
 <Nav>
 	<NavItem href="/">Home</NavItem>
 	<NavItem href="/about">Über mich</NavItem>
