@@ -55,8 +55,8 @@
             <span {@attach animateGreeting} class="font-semibold"></span>
             <span {@attach animateBlinking} class="font-extralight">|</span>
         </span>
-        <span class="text-center text-lg max-w-xl">
-            Ich entwickle Software bei <Link href="https://buildagil.com">buildagil</Link> und Open Source für <Link href="https://stack.swiss">STACK</Link>.  Zudem absolviere ich meinen MSc an der <Link href="https://zhaw.ch">ZHAW</Link>.
+        <span class="text-center text-lg max-w-lg">
+            Ich entwickle Software bei <Link href="https://buildagil.com">buildagil</Link> und absolviere meinen MSc an der <Link href="https://zhaw.ch">ZHAW</Link>.
         </span>
     </div>
 </Section>
