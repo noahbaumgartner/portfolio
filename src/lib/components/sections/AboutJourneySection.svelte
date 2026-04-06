@@ -18,12 +18,6 @@
 			description: "Full-Stack Entwicklung moderner Web-Applikationen mit Focus auf User Experience und Performance."
 		},
 		{
-			year: "2024",
-			title: "Open Source Entwickler",
-			organization: "STACK",
-			description: "Entwicklung von Open-Source-Projekten und Tools für die Developer Community."
-		},
-		{
 			year: "2023",
 			title: "MSc Student",
 			organization: "ZHAW",
