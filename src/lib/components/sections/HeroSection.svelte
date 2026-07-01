@@ -55,7 +55,7 @@
             <span {@attach animateGreeting} class="font-semibold"></span>
             <span {@attach animateBlinking} class="font-extralight">|</span>
         </span>
-        <span class="text-center text-lg max-w-lg">
+        <span class="text-center text-lg max-w-md">
             Ich entwickle Software bei <Link href="https://buildagil.com">buildagil</Link> und absolviere meinen MSc an der <Link href="https://zhaw.ch">ZHAW</Link>.
         </span>
     </div>
