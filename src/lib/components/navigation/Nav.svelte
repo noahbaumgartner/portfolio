@@ -24,8 +24,8 @@
 <svelte:window bind:scrollY />
 
 <nav class={["px-4 sm:px-10 lg:px-16 fixed top-0 left-0 right-0 z-50 topbar", scrolled ? 'pt-4 scrolled' : 'pt-0']}>
-    <div class={["mx-auto max-w-7xl transition-all duration-300 ease-out", scrolled ? 'px-3 sm:px-4' : 'px-0']}>
-        <div class={["py-4 px-6 border-l border-r border-neutral-300 flex justify-between items-center transition-all duration-300 ease-out", scrolled ? 'rounded-xl border-t border-b shadow-sm' : 'rounded-none', mobileNavActive ? 'bg-white' : 'bg-white/50 backdrop-blur-sm']}>
+    <div class={["mx-auto max-w-7xl transition-[padding] duration-300 ease-out", scrolled ? 'px-4' : 'px-0']}>
+        <div class={["py-4 px-6 border-l border-r border-neutral-300 flex justify-between items-center transition-[border-radius,border-width,box-shadow] duration-300 ease-out", scrolled ? 'rounded-xl border-t border-b shadow-sm' : 'rounded-none', mobileNavActive ? 'bg-white' : 'bg-white/50 backdrop-blur-sm']}>
             <NavLogo />
         {#if isSmallScreen.current}
             <button type="button" class="text-sm leading-7 bg-transparent border-none cursor-pointer p-0" onclick={() => mobileNavActive = !mobileNavActive}>/næv/</button>
@@ -60,10 +60,10 @@
        reappears only after the padding animation finishes (end of transition). */
     .topbar {
         border-bottom: 1px solid var(--color-neutral-300);
-        transition: padding 300ms ease-out, border-color 250ms ease-out 300ms;
+        transition: padding-top 300ms ease-out, border-color 250ms ease-out 300ms;
     }
     .topbar.scrolled {
         border-bottom-color: transparent;
-        transition: padding 300ms ease-out, border-color 0s linear 0s;
+        transition: padding-top 300ms ease-out, border-color 0s linear 0s;
     }
 </style>
