@@ -53,8 +53,8 @@
 
 <svelte:window bind:scrollY />
 
-<nav class={["px-4 sm:px-10 lg:px-16 fixed top-0 left-0 right-0 z-50 topbar", scrolled ? 'pt-4 scrolled' : 'pt-0']}>
-    <div class={["mx-auto max-w-7xl transition-[padding] duration-300 ease-out", scrolled ? 'px-4' : 'px-0']}>
+<nav class={["px-4 sm:px-10 lg:px-16 fixed top-0 left-0 right-0 z-50 topbar", scrolled ? 'pt-2 sm:pt-4 scrolled' : 'pt-0']}>
+    <div class={["mx-auto max-w-7xl transition-[padding] duration-300 ease-out", scrolled ? 'px-2 sm:px-4' : 'px-0']}>
         <div class={["py-4 px-6 border-l border-r flex justify-between items-center edge", transitioning ? 'edge-hidden' : '', scrolled ? 'rounded-xl border-t border-b shadow-sm' : 'rounded-none', mobileNavActive ? 'bg-white' : 'bg-white/50 backdrop-blur-sm']}>
             <NavLogo />
         {#if isSmallScreen.current}
