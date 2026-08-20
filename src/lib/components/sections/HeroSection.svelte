@@ -68,7 +68,7 @@
         min-height: 25rem;
         padding: 3.75rem 1.5rem;
         background-color: #f5f5f5;
-        border-radius: 10px;
+        border-radius: 6px;
         display: flex;
         align-items: center;
         justify-content: center;
