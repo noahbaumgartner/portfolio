@@ -1,11 +1,18 @@
 <script lang="ts">
-    import { Menu } from '@lucide/svelte';
+    import { slide } from 'svelte/transition';
+    import { Menu, X } from '@lucide/svelte';
     import SiteHeaderLogo from './SiteHeaderLogo.svelte';
-    import Copyright from '../sections/CopyrightSection.svelte';
     import Button from '../ui/Button.svelte';
 
     let { left, right } = $props();
     let mobileNavActive = $state(false);
+
+    $effect(() => {
+        document.body.style.overflow = mobileNavActive ? 'hidden' : '';
+        return () => {
+            document.body.style.overflow = '';
+        };
+    });
 
     function closeOnLinkClick(node: HTMLElement) {
         const links = node.querySelectorAll('a');
@@ -15,40 +22,39 @@
     }
 </script>
 
-<nav class="header page-padding">
-    <div class="bar">
-        <div class="left-cluster">
-            <SiteHeaderLogo />
+<nav class="header">
+    <div class="bar-padding page-padding">
+        <div class="bar">
+            <div class="left-cluster">
+                <SiteHeaderLogo />
 
-            <div class="nav-items nav-items--desktop">
-                {@render left()}
+                <div class="nav-items nav-items--desktop">
+                    {@render left()}
+                </div>
+            </div>
+
+            <div class="right-group">
+                <div class="right-cluster">
+                    {@render right()}
+                </div>
+
+                <div class="mobile-toggle">
+                    <Button variant="secondary" icon={mobileNavActive ? X : Menu} onclick={() => (mobileNavActive = !mobileNavActive)} />
+                </div>
             </div>
         </div>
-
-        <div class="right-cluster">
-            {@render right()}
-        </div>
-
-        <div class="mobile-toggle">
-            <Button variant="secondary" icon={Menu} onclick={() => (mobileNavActive = !mobileNavActive)} />
-        </div>
     </div>
+
+    {#if mobileNavActive}
+        <div class="mobile-panel" transition:slide={{ duration: 300 }}>
+            <div class="mobile-panel-inner">
+                <div {@attach closeOnLinkClick} class="nav-items nav-items--mobile">
+                    {@render left()}
+                </div>
+            </div>
+        </div>
+    {/if}
 </nav>
-
-{#if mobileNavActive}
-    <div class="mobile-menu">
-        <div class="mobile-menu-bar page-padding">
-            <SiteHeaderLogo />
-            <button type="button" class="toggle-btn" onclick={() => (mobileNavActive = false)}>
-                /kloʊz/
-            </button>
-        </div>
-        <div {@attach closeOnLinkClick} class="nav-items nav-items--mobile page-padding">
-            {@render left()}
-        </div>
-        <Copyright />
-    </div>
-{/if}
 
 <style>
     .header {
@@ -57,8 +63,7 @@
         left: 0;
         right: 0;
         z-index: 50;
-        background-color: rgba(255, 255, 255, 0.9);
-        backdrop-filter: blur(4px);
+        background-color: #fff;
     }
 
     .bar {
@@ -79,48 +84,34 @@
         display: none;
     }
 
-    .toggle-btn {
-        background: none;
-        border: none;
-        padding: 0;
-        cursor: pointer;
-        font-family: 'Google Sans', sans-serif;
-        font-size: 0.75rem;
-        color: #737373;
-        transition: color 150ms ease;
-    }
-
-    .toggle-btn:hover {
-        color: #000;
+    .right-group {
+        display: flex;
+        align-items: center;
+        gap: 0.375rem;
     }
 
     .right-cluster {
-        display: none;
+        display: flex;
     }
 
-    .mobile-menu {
-        position: fixed;
-        inset: 0;
-        z-index: 50;
+    .mobile-panel {
+        background-color: #fff;
+        overflow: hidden;
+    }
+
+    .mobile-panel-inner {
         display: flex;
         flex-direction: column;
-        background-color: #fff;
-    }
-
-    .mobile-menu-bar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding-block: 0.875rem;
-        border-bottom: 1px solid #d4d4d4;
+        min-height: calc(100dvh - 60px);
+        padding: 2rem;
     }
 
     .nav-items--mobile {
+        flex-grow: 1;
         display: flex;
         flex-direction: column;
-        flex-grow: 1;
         justify-content: center;
-        gap: 1.5rem;
+        gap: 1.25rem;
         font-size: 1.875rem;
         font-weight: 600;
     }
@@ -137,15 +128,11 @@
             font-size: 0.75rem;
         }
 
-        .right-cluster {
-            display: flex;
-        }
-
         .mobile-toggle {
             display: none;
         }
 
-        .mobile-menu {
+        .mobile-panel {
             display: none;
         }
     }

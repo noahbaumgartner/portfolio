@@ -37,7 +37,7 @@
     }
 
     .button:focus-visible {
-        box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--button-accent);
+        box-shadow: 0 0 0 2px #fff, 0 0 0 4px #000;
     }
 
     .button--icon-only {
@@ -60,8 +60,7 @@
     }
 
     .button--primary {
-        --button-accent: #000;
-        background-color: var(--button-accent);
+        background-color: #000;
         color: #fff;
     }
 
@@ -70,8 +69,7 @@
     }
 
     .button--secondary {
-        --button-accent: #f5f5f5;
-        background-color: var(--button-accent);
+        background-color: #f5f5f5;
         color: #000;
     }
 
@@ -80,7 +78,6 @@
     }
 
     .button--ghost {
-        --button-accent: #f5f5f5;
         background-color: transparent;
         color: #000;
     }
