@@ -10,7 +10,7 @@
     .item {
         font-family: 'Google Sans', sans-serif;
         font-weight: 400;
-        line-height: 1.75rem;
+        line-height: 28px;
         color: #000;
         text-decoration: none;
         transition: color 200ms ease;

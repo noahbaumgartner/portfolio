@@ -5,6 +5,7 @@ title: 'Compass'
 description: 'Stimmungs- und Arbeitszeiterfassung für die Stadtmuur Winterthur.'
 github: https://github.com/ZHAW-PM4-Compass/compass
 tags: 'SPA,Web-App'
+icon: compass
 ---
 
 <script>

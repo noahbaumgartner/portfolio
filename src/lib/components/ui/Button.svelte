@@ -22,14 +22,14 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: 0.375rem;
+        gap: 6px;
         box-sizing: border-box;
-        height: 2.25rem;
+        height: 36px;
         border: none;
         border-radius: 10px;
-        padding: 0 1rem 0 1.25rem;
+        padding: 0 16px 0 20px;
         font-family: 'Google Sans', sans-serif;
-        font-size: 0.75rem;
+        font-size: 12px;
         text-decoration: none;
         outline: none;
         cursor: pointer;
@@ -42,26 +42,26 @@
     }
 
     .button--icon-only {
-        padding: 0 0.625rem;
+        padding: 0 10px;
     }
 
     .button--no-icon {
-        padding: 0 1.25rem;
+        padding: 0 20px;
     }
 
     .button :global(.button-icon) {
-        width: 0.875rem;
-        height: 0.875rem;
+        width: 14px;
+        height: 14px;
         transition: transform 200ms ease;
     }
 
     .button--icon-only :global(.button-icon) {
-        width: 1rem;
-        height: 1rem;
+        width: 16px;
+        height: 16px;
     }
 
     .button:not(.button--icon-only):hover :global(.button-icon) {
-        transform: translate(0.125rem, -0.125rem);
+        transform: translate(2px, -2px);
     }
 
     .button--primary {

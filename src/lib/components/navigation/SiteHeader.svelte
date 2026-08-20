@@ -69,11 +69,11 @@
 
     .bar {
         margin-inline: auto;
-        max-width: 80rem;
+        max-width: 1280px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding-block: 0.875rem;
+        padding-block: 14px;
     }
 
     .left-cluster {
@@ -88,7 +88,7 @@
     .right-group {
         display: flex;
         align-items: center;
-        gap: 0.375rem;
+        gap: 6px;
     }
 
     .right-cluster {
@@ -104,7 +104,7 @@
         display: flex;
         flex-direction: column;
         min-height: calc(100dvh - 64px);
-        padding: 2rem;
+        padding: 32px;
     }
 
     .nav-items--mobile {
@@ -112,21 +112,21 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 1.25rem;
-        font-size: 1.875rem;
+        gap: 20px;
+        font-size: 30px;
         font-weight: 600;
     }
 
     @media (min-width: 640px) {
         .left-cluster {
-            gap: 2.5rem;
+            gap: 40px;
         }
 
         .nav-items--desktop {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
-            font-size: 0.75rem;
+            gap: 24px;
+            font-size: 14px;
         }
 
         .mobile-toggle {

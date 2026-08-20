@@ -27,21 +27,22 @@
     .footer-wrapper {
         display: flex;
         flex-direction: column;
-        gap: 1.25rem;
+        gap: 20px;
+        margin-bottom: 0;
     }
 
     .footer {
         margin-inline: auto;
         width: 100%;
-        max-width: 80rem;
-        min-height: 16rem;
+        max-width: 1280px;
+        min-height: 256px;
         border-radius: 6px;
         background-color: #0a0a0a;
         background-image: linear-gradient(150deg, #0a0a0a 50%, #262626 70%, #0a0a0a 90%);
         display: flex;
         flex-direction: column;
-        gap: 2.5rem;
-        padding: 2.5rem;
+        gap: 40px;
+        padding: 40px;
     }
 
     .footer-title {
@@ -51,23 +52,24 @@
     .footer-copyright {
         margin-inline: auto;
         width: 100%;
-        max-width: 80rem;
+        max-width: 1280px;
+        padding-bottom: 20px;
         text-align: center;
-        font-size: 0.875rem;
+        font-size: 14px;
         color: #737373;
     }
 
     .footer-columns {
         display: flex;
         flex-direction: column;
-        gap: 2.5rem;
+        gap: 40px;
         flex-grow: 1;
     }
 
     .footer-column {
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 8px;
         flex-grow: 1;
         color: #a3a3a3;
     }

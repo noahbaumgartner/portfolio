@@ -11,6 +11,7 @@ export async function loadProjects(limit?: number): Promise<ProjectDTO[]> {
             title: metadata.title,
             description: metadata.description,
             image: `/images/projects/${slug}.webp`,
+            icon: metadata.icon,
             period: `${new Date(metadata.year, metadata.month - 1).toLocaleString('de-DE', { month: 'long' })} ${metadata.year}`,
             url: metadata.url,
             github: metadata.github,
