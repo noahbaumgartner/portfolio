@@ -1,13 +1,9 @@
 <script lang="ts">
 	import ProjectPreview from "$lib/components/ProjectPreview.svelte";
-	import Section from "$lib/components/sections/Section.svelte";
 	import TitleSection from "$lib/components/sections/TitleSection.svelte";
 
 	let { data } = $props();
 	let { projects } = $derived(data);
-
-	let featuredProject = $derived(projects[0]);
-	let otherProjects = $derived(projects.slice(1));
 </script>
 
 <svelte:head>
@@ -18,11 +14,47 @@
 </svelte:head>
 
 <TitleSection title="Projekte" />
-<Section>
-	{#if featuredProject}
-		<ProjectPreview project={featuredProject} featured />
-	{/if}
-	{#each otherProjects as project}
-		<ProjectPreview {project} />
-	{/each}
-</Section>
+<section class="projects-wrapper page-padding">
+	<div class="projects-grid">
+		{#each projects as project}
+			<ProjectPreview {project} />
+		{/each}
+	</div>
+</section>
+
+<style>
+	.projects-wrapper {
+		margin-bottom: 24px;
+	}
+
+	.projects-grid {
+		margin-inline: auto;
+		max-width: 1280px;
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 24px;
+	}
+
+	@media (min-width: 640px) {
+		.projects-wrapper {
+			margin-bottom: 40px;
+		}
+
+		.projects-grid {
+			gap: 40px;
+		}
+	}
+
+	@media (min-width: 768px) {
+		.projects-grid {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 30px;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.projects-wrapper {
+			margin-bottom: 64px;
+		}
+	}
+</style>
