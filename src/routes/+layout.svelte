@@ -1,7 +1,8 @@
 <script lang="ts">
 	import './layout.css';
-	import Nav from '$lib/components/navigation/Nav.svelte';
-	import NavItem from '$lib/components/navigation/NavItem.svelte';
+	import SiteHeader from '$lib/components/navigation/SiteHeader.svelte';
+	import SiteHeaderItem from '$lib/components/navigation/SiteHeaderItem.svelte';
+	import Button from '$lib/components/ui/Button.svelte';
 	import Footer from '$lib/components/sections/FooterSection.svelte';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 	import Copyright from '$lib/components/sections/CopyrightSection.svelte';
@@ -42,12 +43,17 @@
 	<div class="fixed inset-0 z-9999 bg-white transition-opacity duration-300" class:opacity-0={fontsLoaded}></div>
 {/if}
 
-<Nav>
-	<NavItem href="/">Home</NavItem>
-	<NavItem href="/about">Über mich</NavItem>
-	<NavItem href="/projects">Projekte</NavItem>
-</Nav>
-<main>
+<SiteHeader>
+	{#snippet left()}
+		<SiteHeaderItem href="/">Start</SiteHeaderItem>
+		<SiteHeaderItem href="/about">Über mich</SiteHeaderItem>
+		<SiteHeaderItem href="/projects">Projekte</SiteHeaderItem>
+	{/snippet}
+	{#snippet right()}
+		<Button href="mailto:noahbaumg@outlook.com">Kontakt</Button>
+	{/snippet}
+</SiteHeader>
+<main class="pt-[60px]">
 	{@render children()}
 </main>
 <footer>

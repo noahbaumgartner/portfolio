@@ -74,6 +74,13 @@
 @font-face {
 	font-family: 'Google Sans';
 	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('/fonts/GoogleSans.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Google Sans';
+	font-style: normal;
 	font-weight: 500;
 	font-display: swap;
 	src: url('/fonts/GoogleSans.woff2') format('woff2');
@@ -145,4 +152,26 @@ h2 {
 
 h3 {
 	@apply font-[Google_Sans] text-lg font-semibold;
+}
+
+/* Reusable page gutter, kept in sync with the site's content sections
+   (Section.svelte's px-4 sm:px-10 lg:px-16) so plain-CSS components can
+   match the same left/right breathing room without depending on Tailwind. */
+.page-padding {
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+}
+
+@media (min-width: 640px) {
+	.page-padding {
+		padding-left: 2.5rem;
+		padding-right: 2.5rem;
+	}
+}
+
+@media (min-width: 1024px) {
+	.page-padding {
+		padding-left: 4rem;
+		padding-right: 4rem;
+	}
 }
