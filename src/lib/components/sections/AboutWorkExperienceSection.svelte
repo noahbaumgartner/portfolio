@@ -1,48 +1,126 @@
-<script>
-	import Section from "./Section.svelte";
-
-	const experiences = [
-		{
-			period: "Juli 2023 - Heute",
-			title: "Fullstack Software Entwickler",
-			company: "B3 Digital AG",
-			description: "Bei B3 Digital AG bin ich als Fullstack Software Entwickler tätig, wo ich vor allem an der Web-Applikation buildagil arbeite."
-		},
+<script lang="ts">
+    const experiences = [
+        {
+            period: "Juli 2023 - Heute",
+            title: "Fullstack Software Entwickler",
+            company: "B3 Digital AG",
+            description: "Bei B3 Digital AG bin ich als Fullstack Software Entwickler tätig, wo ich vor allem an der Web-Applikation buildagil arbeite."
+        },
         {
             period: "Mai 2023 - Juli 2023",
             title: "SAP PI Consultant",
             company: "Swisscom",
             description: "Als SAP PI Consultant bei Swisscom sammelte ich wertvolle Erfahrungen in der Integration von SAP-Systemen, bevor ich mich für eine neue berufliche Herausforderung entschied."
-		},
-		{
-			period: "August 2016 - April 2023",
-			title: "Software Entwickler",
-			company: "SFS Group",
+        },
+        {
+            period: "August 2016 - April 2023",
+            title: "Software Entwickler",
+            company: "SFS Group",
             description: "Während meiner Lehre bei der SFS Group konzentrierte ich mich auf Java- und Webentwicklung. Nach erfolgreichem Abschluss spezialisierte ich mich auf SAP-Entwicklung mit ABAP und SAP Fiori."
-		}
-	];
+        }
+    ];
 </script>
 
-<Section>
-    <div class="flex w-full h-full flex-col lg:flex-row">
-        <div class="bg-grid px-10 py-10 border-b lg:border-b-0 lg:border-r border-neutral-300 flex items-center justify-center">
-            <h2 class="lg:[writing-mode:sideways-lr]">Berufserfahrung</h2>
+<section class="experience-wrapper page-padding section-gap">
+    <div class="experience">
+        <div class="experience-header">
+            <h2 class="experience-title">Berufserfahrung</h2>
         </div>
-        <div class="grow flex flex-col">
+
+        <div class="experience-list">
             {#each experiences as experience}
-                <div class="p-10 flex flex-col space-y-2 border-b border-neutral-300">
-                    <div>
-                        <span class="text-xs font-[Source_Code_Pro] bg-black text-white px-2 py-0.5">
-                            {experience.period}
-                        </span>
+                <div class="experience-card">
+                    <span class="experience-period">{experience.period}</span>
+                    <div class="experience-heading">
+                        <h3 class="experience-role">{experience.title}</h3>
+                        <span class="experience-company">/{experience.company}/</span>
                     </div>
-                    <div class="flex space-x-2">
-                        <h2 class="text-2xl font-semibold mb-2">{experience.title}</h2>
-                        <span class="text-neutral-500 text-sm leading-8">/{experience.company}/</span>
-                    </div>
-                    <p class="max-w-2xl">{experience.description}</p>
+                    <p class="experience-description">{experience.description}</p>
                 </div>
             {/each}
         </div>
     </div>
-</Section>
+</section>
+
+<style>
+    .experience {
+        margin-inline: auto;
+        max-width: 1280px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .experience-header {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .experience-title {
+        font-weight: 500;
+        font-size: 22px;
+    }
+
+    .experience-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        width: 100%;
+    }
+
+    .experience-card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 24px;
+        border: 1px solid #e5e5e5;
+        border-radius: 6px;
+    }
+
+    .experience-period {
+        font-size: 14px;
+        color: #737373;
+    }
+
+    .experience-heading {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 8px;
+    }
+
+    .experience-role {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .experience-company {
+        font-size: 14px;
+        color: #737373;
+    }
+
+    .experience-description {
+        max-width: 640px;
+    }
+
+    @media (min-width: 768px) {
+        .experience-list {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .experience-list > :last-child:nth-child(odd) {
+            grid-column: 1 / -1;
+            width: calc(50% - 12px);
+            margin-inline: auto;
+        }
+
+        .experience-card {
+            padding: 32px;
+        }
+    }
+</style>

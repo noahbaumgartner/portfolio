@@ -1,9 +1,24 @@
 <script lang="ts">
-    let props: { class?: string; children?: any, variant?: "light" | "dark", noBottomBorder?: boolean } = $props();
+    let { class: className, variant = "light", children }: { class?: string; variant?: "light" | "dark"; children: any } = $props();
 </script>
 
-<section class="{props.noBottomBorder ? '' : 'border-b border-neutral-300'} px-4 sm:px-10 lg:px-16">
-    <div class={["mx-auto lg:max-w-7xl border-l border-r border-neutral-300 flex items-center justify-center relative", props.class, props.variant === "dark" ? "bg-linear-150 from-neutral-950 from-50% via-neutral-900 via-70% to-neutral-950 to-90%" : ""]}>
-        {@render props.children()}
+<section class="section-wrapper page-padding section-gap">
+    <div class={["section-box", `section-box--${variant}`, className]}>
+        {@render children()}
     </div>
 </section>
+
+<style>
+    .section-box {
+        margin-inline: auto;
+        max-width: 1280px;
+        border-radius: 6px;
+        background-color: #f5f5f5;
+    }
+
+    .section-box--dark {
+        background-color: #0a0a0a;
+        background-image: linear-gradient(150deg, #0a0a0a 50%, #262626 70%, #0a0a0a 90%);
+        color: #fff;
+    }
+</style>

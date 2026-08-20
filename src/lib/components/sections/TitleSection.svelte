@@ -1,11 +1,30 @@
-<script>
-	import Section from "./Section.svelte";
-
-    let { title } = $props();
+<script lang="ts">
+    let { title }: { title: string } = $props();
 </script>
 
-<Section class="pt-15 px-16 min-h-48 bg-grid">
-    <div class="flex flex-col space-y-2 w-full text-center sm:text-left">
-        <h1>{title}</h1>
+<section class="title-wrapper page-padding">
+    <div class="title-box">
+        <h1 class="title">{title}</h1>
     </div>
-</Section>
+</section>
+
+<style>
+    .title-box {
+        margin-inline: auto;
+        max-width: 1280px;
+        padding: 48px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    @media (min-width: 640px) {
+        .title-box {
+            padding: 64px 24px;
+        }
+    }
+</style>

@@ -143,15 +143,21 @@ body {
 }
 
 h1 {
-	@apply font-[Google_Sans] text-2xl font-semibold;
+	font-family: 'Google Sans', sans-serif;
+	font-size: 1.5rem;
+	font-weight: 600;
 }
 
 h2 {
-	@apply font-[Google_Sans] text-xl font-semibold;
+	font-family: 'Google Sans', sans-serif;
+	font-size: 1.25rem;
+	font-weight: 600;
 }
 
 h3 {
-	@apply font-[Google_Sans] text-lg font-semibold;
+	font-family: 'Google Sans', sans-serif;
+	font-size: 1.125rem;
+	font-weight: 600;
 }
 
 /* Reusable page gutter, kept in sync with the site's content sections
