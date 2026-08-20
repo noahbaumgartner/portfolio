@@ -1,5 +1,4 @@
 <script>
-	import ComponentName from "./ComponentName.svelte";
 	import Section from "./Section.svelte";
 
 	const experiences = [
@@ -24,8 +23,7 @@
 	];
 </script>
 
-<Section sectionNumber="02">
-    <ComponentName name="AboutWorkExperience.svelte" position="bottom-left" />
+<Section>
     <div class="flex w-full h-full flex-col lg:flex-row">
         <div class="bg-grid px-10 py-10 border-b lg:border-b-0 lg:border-r border-neutral-300 flex items-center justify-center">
             <h2 class="lg:[writing-mode:sideways-lr]">Berufserfahrung</h2>

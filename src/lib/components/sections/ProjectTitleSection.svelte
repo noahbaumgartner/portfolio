@@ -1,5 +1,4 @@
 <script>
-	import ComponentName from "./ComponentName.svelte";
 	import Section from "./Section.svelte";
 	import Badge from "../Badge.svelte";
 	import { CalendarIcon, GithubIcon, LinkIcon } from "@lucide/svelte";
@@ -8,7 +7,6 @@
 </script>
 
 <Section class="pt-15 px-16 min-h-76 bg-grid">
-    <ComponentName name="ProjectTitleSection.svelte" position="bottom-right" />
     <div class="flex flex-col space-y-2 w-full text-center sm:text-left py-10">
         <h1>{project.title}</h1>
         <p>{project.description}</p>

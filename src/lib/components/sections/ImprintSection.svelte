@@ -1,11 +1,9 @@
 <script lang="ts">
-	import ComponentName from "./ComponentName.svelte";
 	import Link from "../text/Link.svelte";
 	import Section from "./Section.svelte";
 </script>
 
-<Section sectionNumber="01">
-    <ComponentName name="ImprintSection.svelte" position="bottom-left" />
+<Section>
     <div class="p-10">
     	<h2 class="mb-4">Adresse</h2>
         <address class="not-italic">

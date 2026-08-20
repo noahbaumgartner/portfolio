@@ -64,6 +64,7 @@
         right: 0;
         z-index: 50;
         background-color: #fff;
+        user-select: none;
     }
 
     .bar {
@@ -102,7 +103,7 @@
     .mobile-panel-inner {
         display: flex;
         flex-direction: column;
-        min-height: calc(100dvh - 60px);
+        min-height: calc(100dvh - 64px);
         padding: 2rem;
     }
 

@@ -1,11 +1,9 @@
 <script lang="ts">
-	import ComponentName from "./ComponentName.svelte";
 	import Link from "../text/Link.svelte";
 	import Section from "./Section.svelte";
 </script>
 
-<Section class="min-h-64" sectionNumber="<>" variant="dark">
-    <ComponentName name="Footer.svelte" variant="dark" position="bottom-left" />
+<Section class="min-h-64" variant="dark">
     <div class="flex flex-col sm:flex-row w-full space-y-10 sm:space-y-0 p-10">
         <div class="grow">
             <h2 class="text-neutral-100">Danke fürs<br>Vorbeischauen.</h2>

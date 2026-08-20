@@ -1,7 +1,6 @@
 <script>
 	import Image from '$lib/components/Image.svelte';
 	import ProjectTitleSection from '$lib/components/sections/ProjectTitleSection.svelte';
-	import SectionNumber from '$lib/components/sections/SectionNumber.svelte';
 
 	let { data } = $props();
     let { Content, project } = $derived(data);
@@ -10,7 +9,6 @@
 <ProjectTitleSection project={project} />
 <div class="border-b border-neutral-300 px-4 sm:px-10 lg:px-16">
     <div class="mx-auto lg:max-w-7xl border-l border-r border-neutral-300 min-h-64 relative flex flex-col lg:flex-row">
-        <SectionNumber number="01" />
         <div class="grow p-10">
             <Content class="border-b border-neutral-300" />
         </div>

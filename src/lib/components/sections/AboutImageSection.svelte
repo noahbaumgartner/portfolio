@@ -1,5 +1,4 @@
 <script lang="ts">
-	import ComponentName from "./ComponentName.svelte";
 	import Section from "./Section.svelte";
 	import Image from "../Image.svelte";
 	import Badge from "../Badge.svelte";
@@ -17,8 +16,7 @@
 	const interests = ["Software Architektur", "Software Entwicklung", "Computer Vision", "KI / ML", "Cloud Technologien"];
 </script>
 
-<Section class="min-h-64" sectionNumber="01">
-	<ComponentName name="AboutImageSection.svelte" position="bottom-right" />
+<Section class="min-h-64">
 	<div class="flex flex-col md:flex-row w-full">
 		<div class="grow p-10 flex flex-col space-y-4 justify-center">
             <h2>Wer ich bin</h2>

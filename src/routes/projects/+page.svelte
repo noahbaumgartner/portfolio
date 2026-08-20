@@ -18,7 +18,7 @@
 </svelte:head>
 
 <TitleSection title="Projekte" />
-<Section sectionNumber="01">
+<Section>
 	<div class="flex flex-col w-full">
 		{#if featuredProject}
 			<ProjectPreview project={featuredProject} featured />

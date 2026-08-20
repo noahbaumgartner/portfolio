@@ -53,7 +53,7 @@
 		<Button href="mailto:noahbaumg@outlook.com">Kontakt</Button>
 	{/snippet}
 </SiteHeader>
-<main class="pt-[60px]">
+<main class="pt-[64px]">
 	{@render children()}
 </main>
 <footer>
