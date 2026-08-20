@@ -1,5 +1,4 @@
 <script lang="ts">
-	import ComponentName from "./ComponentName.svelte";
 	import Section from "./Section.svelte";
 	import { onMount } from 'svelte';
 
@@ -35,8 +34,7 @@
 	});
 </script>
 
-<Section class="min-h-96" sectionNumber="02">
-	<ComponentName name="AboutSkillsSection.svelte" position="bottom-left" />
+<Section class="min-h-96">
 	<div class="p-10 space-y-8">
 		<div class="space-y-2">
 			<h2>Skills & Technologien</h2>

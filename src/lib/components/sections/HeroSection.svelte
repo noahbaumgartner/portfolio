@@ -1,7 +1,5 @@
 <script lang="ts">
-	import ComponentName from "./ComponentName.svelte";
-    import Link from "../text/Link.svelte";
-	import Section from "./Section.svelte";
+    import Link from "../ui/Link.svelte";
 
     function animateGreeting(node: HTMLElement) {
         const texts = ["Hallo, ich bin Noah", "Software Entwickler", "Student"];
@@ -46,17 +44,63 @@
             visible = !visible;
         }, 300);
     }
-</script> 
+</script>
 
-<Section class="pt-15 min-h-100 bg-grid px-10">
-    <ComponentName name="HeroSection.svelte" position="bottom-left" />
-    <div class="flex flex-col space-y-2 items-center">
-        <span class="text-center text-2xl font-[Google_Sans] p-2 rounded-sm flex space-x-1 -mr-2">
-            <span {@attach animateGreeting} class="font-semibold"></span>
-            <span {@attach animateBlinking} class="font-extralight">|</span>
-        </span>
-        <span class="text-center text-lg max-w-md">
-            Ich entwickle Software bei <Link href="https://buildagil.com">buildagil</Link> und absolviere meinen MSc an der <Link href="https://zhaw.ch">ZHAW</Link>.
-        </span>
+<section class="hero-wrapper page-padding">
+    <div class="hero">
+        <div class="hero-content">
+            <span class="hero-greeting">
+                <span {@attach animateGreeting} class="hero-greeting-text"></span>
+                <span {@attach animateBlinking} class="hero-cursor">|</span>
+            </span>
+            <span class="hero-subtitle">
+                Ich entwickle Software bei <Link href="https://buildagil.com">buildagil</Link> und absolviere meinen MSc an der <Link href="https://zhaw.ch">ZHAW</Link>.
+            </span>
+        </div>
     </div>
-</Section>
+</section>
+
+<style>
+    .hero {
+        position: relative;
+        margin-inline: auto;
+        max-width: 80rem;
+        min-height: 25rem;
+        padding: 3.75rem 1.5rem;
+        background-color: #f5f5f5;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        user-select: none;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .hero-greeting {
+        display: flex;
+        gap: 0.25rem;
+        font-family: 'Google Sans', sans-serif;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .hero-greeting-text {
+        font-weight: 600;
+    }
+
+    .hero-cursor {
+        font-weight: 200;
+    }
+
+    .hero-subtitle {
+        max-width: 28rem;
+        font-size: 1.125rem;
+        text-align: center;
+    }
+</style>

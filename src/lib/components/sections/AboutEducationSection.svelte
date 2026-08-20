@@ -1,5 +1,4 @@
 <script>
-	import ComponentName from "./ComponentName.svelte";
 	import Section from "./Section.svelte";
 
 	const educations = [
@@ -30,8 +29,7 @@
 	];
 </script>
 
-<Section sectionNumber="04">
-	<ComponentName name="AboutEducation.svelte" position="bottom-left" />
+<Section>
 	<div class="flex w-full h-full flex-col-reverse lg:flex-row">
 		<div class="grow flex flex-col">
 			{#each educations as education}

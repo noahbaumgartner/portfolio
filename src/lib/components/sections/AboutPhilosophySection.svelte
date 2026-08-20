@@ -1,10 +1,8 @@
 <script lang="ts">
-	import ComponentName from "./ComponentName.svelte";
 	import Section from "./Section.svelte";
 </script>
 
-<Section class="min-h-96" sectionNumber="03" variant="dark">
-	<ComponentName name="AboutPhilosophySection.svelte" position="bottom-right" variant="dark" />
+<Section class="min-h-96" variant="dark">
 	<div class="p-10 md:p-16 space-y-12">
 		<div class="space-y-4 max-w-2xl">
 			<h2 class="text-white">Meine Philosophie</h2>

@@ -33,6 +33,7 @@
         text-decoration: none;
         outline: none;
         cursor: pointer;
+        user-select: none;
         transition: background-color 200ms ease, color 200ms ease;
     }
 
