@@ -6,14 +6,14 @@
 </script>
 
 {#if href}
-    <a {href} class="button button--{variant}" class:button--icon-only={iconOnly}>
+    <a {href} class="button button--{variant}" class:button--icon-only={iconOnly} class:button--no-icon={!Icon}>
         {#if children}{@render children()}{/if}
-        <Icon class="button-icon" />
+        {#if Icon}<Icon class="button-icon" />{/if}
     </a>
 {:else}
-    <button type="button" {onclick} class="button button--{variant}" class:button--icon-only={iconOnly}>
+    <button type="button" {onclick} class="button button--{variant}" class:button--icon-only={iconOnly} class:button--no-icon={!Icon}>
         {#if children}{@render children()}{/if}
-        <Icon class="button-icon" />
+        {#if Icon}<Icon class="button-icon" />{/if}
     </button>
 {/if}
 
@@ -43,6 +43,10 @@
 
     .button--icon-only {
         padding: 0 0.625rem;
+    }
+
+    .button--no-icon {
+        padding: 0 1.25rem;
     }
 
     .button :global(.button-icon) {

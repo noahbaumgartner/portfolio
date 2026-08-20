@@ -175,3 +175,21 @@ h3 {
 		padding-right: 4rem;
 	}
 }
+
+/* Vertical gap between sections, matching the same responsive scale as
+   .page-padding so top/bottom breathing room lines up with left/right. */
+.section-gap {
+	margin-block: 1.5rem;
+}
+
+@media (min-width: 640px) {
+	.section-gap {
+		margin-block: 2.5rem;
+	}
+}
+
+@media (min-width: 1024px) {
+	.section-gap {
+		margin-block: 4rem;
+	}
+}
