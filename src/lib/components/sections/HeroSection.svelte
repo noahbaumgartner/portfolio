@@ -64,9 +64,9 @@
     .hero {
         position: relative;
         margin-inline: auto;
-        max-width: 80rem;
-        min-height: 25rem;
-        padding: 3.75rem 1.5rem;
+        max-width: 1280px;
+        min-height: 400px;
+        padding: 60px 24px;
         background-color: #f5f5f5;
         border-radius: 6px;
         display: flex;
@@ -79,14 +79,14 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 0.5rem;
+        gap: 8px;
     }
 
     .hero-greeting {
         display: flex;
-        gap: 0.25rem;
+        gap: 4px;
         font-family: 'Google Sans', sans-serif;
-        font-size: 1.5rem;
+        font-size: 24px;
         text-align: center;
     }
 
@@ -99,8 +99,8 @@
     }
 
     .hero-subtitle {
-        max-width: 28rem;
-        font-size: 1.125rem;
+        max-width: 448px;
+        font-size: 18px;
         text-align: center;
     }
 </style>

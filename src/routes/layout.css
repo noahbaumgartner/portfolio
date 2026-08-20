@@ -158,38 +158,38 @@ h3 {
    (Section.svelte's px-4 sm:px-10 lg:px-16) so plain-CSS components can
    match the same left/right breathing room without depending on Tailwind. */
 .page-padding {
-	padding-left: 1.5rem;
-	padding-right: 1.5rem;
+	padding-left: 24px;
+	padding-right: 24px;
 }
 
 @media (min-width: 640px) {
 	.page-padding {
-		padding-left: 2.5rem;
-		padding-right: 2.5rem;
+		padding-left: 40px;
+		padding-right: 40px;
 	}
 }
 
 @media (min-width: 1024px) {
 	.page-padding {
-		padding-left: 4rem;
-		padding-right: 4rem;
+		padding-left: 64px;
+		padding-right: 64px;
 	}
 }
 
 /* Vertical gap between sections, matching the same responsive scale as
    .page-padding so top/bottom breathing room lines up with left/right. */
 .section-gap {
-	margin-block: 1.5rem;
+	margin-block: max(24px, 30px);
 }
 
 @media (min-width: 640px) {
 	.section-gap {
-		margin-block: 2.5rem;
+		margin-block: 40px;
 	}
 }
 
 @media (min-width: 1024px) {
 	.section-gap {
-		margin-block: 4rem;
+		margin-block: 64px;
 	}
 }

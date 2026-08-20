@@ -5,6 +5,7 @@ title: '100 Jahre STV Kriessern'
 description: 'Wordpress Theme für die Webseite zum 100 Jahre Jubiläum vom STV Kriessern.'
 github: https://github.com/noahbaumgartner/stvk100
 tags: 'Webseite,Wordpress,Theme'
+icon: party-popper
 ---
 
 <script>

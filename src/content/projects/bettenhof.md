@@ -5,6 +5,7 @@ title: 'Bettenhof'
 description: 'Webseite für einen Bauernhof zur Präsentation hofeigener Produkte und Angebote.'
 url: 'https://bettenhof.ch/'
 tags: 'Webseite,Wix Studio'
+icon: wheat
 ---
 
 <script>

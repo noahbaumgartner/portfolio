@@ -39,7 +39,7 @@
 </svelte:head>
 
 {#if showScreen}
-	<div class="fixed inset-0 z-9999 bg-white transition-opacity duration-300" class:opacity-0={fontsLoaded}></div>
+	<div class="loading-screen" class:loading-screen--hidden={fontsLoaded}></div>
 {/if}
 
 <SiteHeader>
@@ -52,9 +52,27 @@
 		<Button href="mailto:noahbaumg@outlook.com">Kontakt</Button>
 	{/snippet}
 </SiteHeader>
-<main class="pt-[64px]">
+<main class="main">
 	{@render children()}
 </main>
 <footer>
 	<Footer	/>
 </footer>
+
+<style>
+	.loading-screen {
+		position: fixed;
+		inset: 0;
+		z-index: 9999;
+		background-color: #fff;
+		transition: opacity 300ms ease;
+	}
+
+	.loading-screen--hidden {
+		opacity: 0;
+	}
+
+	.main {
+		padding-top: 64px;
+	}
+</style>
