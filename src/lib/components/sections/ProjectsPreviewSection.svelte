@@ -9,6 +9,7 @@
         portfolio: '/images/projects/preview-portfolio.png',
         bettenhof: '/images/projects/preview-bettenhof.png',
         compass: '/images/projects/preview-compass.png',
+        stvk100: '/images/projects/preview-stvk100.png',
     };
 
     const icons: Record<string, any> = {
@@ -39,7 +40,7 @@
                         {/if}
                     </div>
                     <div class="project-info">
-                        <span class="project-title">{project.title}</span>
+                        <p class="project-headline"><span class="project-title">{project.title}:</span> {project.description}</p>
                         <span class="project-period">{project.period}</span>
                     </div>
                 </a>
@@ -97,7 +98,7 @@
         flex-direction: column;
         flex: 1 1 0;
         min-width: 0;
-        gap: 12px;
+        gap: 20px;
         text-decoration: none;
         color: inherit;
     }
@@ -164,7 +165,7 @@
     .project-info {
         display: flex;
         flex-direction: column;
-        gap: 6px;
+        gap: 10px;
     }
 
     @media (max-width: 899px) {
@@ -184,10 +185,13 @@
         }
     }
 
+    .project-headline {
+        font-size: 16px;
+    }
+
     .project-title {
         font-family: 'Google Sans', sans-serif;
         font-weight: 500;
-        font-size: 16px;
     }
 
     .project-period {
