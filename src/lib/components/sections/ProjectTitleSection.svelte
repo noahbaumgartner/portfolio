@@ -1,36 +1,66 @@
-<script>
-	import Section from "./Section.svelte";
-	import Badge from "../Badge.svelte";
-	import { CalendarIcon, GithubIcon, LinkIcon } from "@lucide/svelte";
+<script lang="ts">
+    import { CalendarIcon, GithubIcon, LinkIcon } from "@lucide/svelte";
+    import Tag from "../ui/Tag.svelte";
 
     let { project } = $props();
 </script>
 
-<Section class="pt-15 px-16 min-h-76 bg-grid">
-    <div class="flex flex-col space-y-2 w-full text-center sm:text-left py-10">
-        <h1>{project.title}</h1>
-        <p>{project.description}</p>
-        <div class="flex flex-wrap gap-1 justify-center sm:justify-start mt-2 sm:mt-0">
-            <Badge>
+<section class="project-title-wrapper page-padding">
+    <div class="project-title-box">
+        <h1 class="project-title">{project.title}</h1>
+        <p class="project-description">{project.description}</p>
+
+        <div class="project-tags">
+            <Tag>
                 <CalendarIcon />
                 {project.period}
-            </Badge>
+            </Tag>
             {#if project.url}
-                <Badge href={project.url}>
+                <Tag href={project.url}>
                     <LinkIcon />
                     {project.url}
-                </Badge>
+                </Tag>
             {/if}
             {#if project.github}
-                <Badge href={project.github}>
+                <Tag href={project.github}>
                     <GithubIcon />
                     Code
-                </Badge>
+                </Tag>
             {/if}
             {#each project.tags as tag}
-                <Badge>
-                    {tag}</Badge>
+                <Tag>{tag}</Tag>
             {/each}
         </div>
     </div>
-</Section>
+</section>
+
+<style>
+    .project-title-box {
+        margin-inline: auto;
+        max-width: 1280px;
+        padding: 48px 24px;
+        background-color: #f5f5f5;
+        border-radius: 6px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .project-description {
+        max-width: 640px;
+        color: #404040;
+    }
+
+    .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 8px;
+    }
+
+    @media (min-width: 640px) {
+        .project-title-box {
+            padding: 64px 56px;
+        }
+    }
+</style>

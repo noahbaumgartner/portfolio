@@ -19,12 +19,10 @@
 
 <TitleSection title="Projekte" />
 <Section>
-	<div class="flex flex-col w-full">
-		{#if featuredProject}
-			<ProjectPreview project={featuredProject} featured />
-		{/if}
-		{#each otherProjects as project}
-			<ProjectPreview {project} />
-		{/each}
-	</div>
+	{#if featuredProject}
+		<ProjectPreview project={featuredProject} featured />
+	{/if}
+	{#each otherProjects as project}
+		<ProjectPreview {project} />
+	{/each}
 </Section>

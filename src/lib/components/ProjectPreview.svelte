@@ -1,42 +1,114 @@
 <script lang="ts">
     import type { ProjectDTO } from '$lib/dtos/ProjectDTO';
-	import { ArrowUpRight } from '@lucide/svelte';
-	import Badge from './Badge.svelte';
-	import Image from './Image.svelte';
+    import { ArrowUpRight } from '@lucide/svelte';
+    import Tag from './ui/Tag.svelte';
+    import Image from './Image.svelte';
 
-    let { project, featured = false }: { project: ProjectDTO, featured?: boolean } = $props();
+    let { project, featured = false }: { project: ProjectDTO; featured?: boolean } = $props();
 </script>
 
-{#if featured}
-<a href={`/projects/${project.slug}`} data-sveltekit-preload-data class="block group border-b border-neutral-300 cursor-pointer">
-    <div class="flex flex-col-reverse md:flex-row justify-between">
-        <div class="flex flex-col space-y-2 justify-center px-10 pb-10 pt-5 md:p-10 lg:px-20">
-            <Badge>{project.period}</Badge>
-            <div class="flex space-x-2">
-                <h2>{project.title}</h2>
-                <ArrowUpRight class="size-6 group-hover:-translate-y-1 group-hover:translate-x-1 duration-150"/>
-            </div>
-            <span class="max-w-lg">{project.description}</span>
+<a href={`/projects/${project.slug}`} data-sveltekit-preload-data class="preview" class:preview--featured={featured}>
+    <div class="preview-image-wrap">
+        <Image src={project.image} alt={project.title} class="preview-image" />
+    </div>
+    <div class="preview-info">
+        <Tag>{project.period}</Tag>
+        <div class="preview-heading">
+            <h2 class="preview-title">{project.title}</h2>
+            <ArrowUpRight class="preview-arrow" />
         </div>
-        <div class="flex items-center p-5">
-            <Image src={project.image} alt={project.title} class="aspect-[30/17] w-full md:w-sm grayscale group-hover:grayscale-0 transition-[filter] duration-300 border" />
-        </div>
+        <p class="preview-description">{project.description}</p>
     </div>
 </a>
-{:else}
-<a href={`/projects/${project.slug}`} data-sveltekit-preload-data class="block group [&:not(:last-child)>div]:border-b [&:not(:last-child)>div]:border-neutral-300 cursor-pointer">
-    <div class="flex flex-col md:flex-row">
-        <div class="p-5 flex items-center justify-center">
-            <Image src={project.image} alt={project.title} class="aspect-[30/17] w-full md:min-w-74 md:w-74 grayscale group-hover:grayscale-0 transition-[filter] duration-300 border" />
-        </div>
-        <div class="flex flex-col space-y-2 justify-center p-10 pt-5 md:pt-10 md:pl-5">
-            <Badge>{project.period}</Badge>
-            <div class="flex space-x-2">
-                <h2>{project.title}</h2>
-                <ArrowUpRight class="size-6 group-hover:-translate-y-1 group-hover:translate-x-1 duration-150"/>
-            </div>
-            <span class="max-w-lg">{project.description}</span>
-        </div>
-    </div>
-</a>
-{/if}
+
+<style>
+    .preview {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 24px;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .preview:not(:last-child) {
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .preview-image-wrap {
+        position: relative;
+        width: 100%;
+    }
+
+    .preview-image-wrap::before {
+        content: '';
+        display: block;
+        padding-top: 100%;
+    }
+
+    :global(.preview-image) {
+        position: absolute !important;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 6px;
+    }
+
+    :global(.preview-image) :global(img) {
+        filter: grayscale(1);
+        transition: filter 300ms ease;
+    }
+
+    .preview:hover :global(.preview-image) :global(img) {
+        filter: grayscale(0);
+    }
+
+    .preview-info {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .preview-heading {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .preview-title {
+        font-weight: 600;
+    }
+
+    .preview :global(.preview-arrow) {
+        width: 20px;
+        height: 20px;
+        transition: transform 200ms ease;
+    }
+
+    .preview:hover :global(.preview-arrow) {
+        transform: translate(2px, -2px);
+    }
+
+    .preview-description {
+        max-width: 560px;
+        color: #404040;
+    }
+
+    @media (min-width: 768px) {
+        .preview {
+            flex-direction: row;
+            align-items: center;
+            gap: 40px;
+            padding: 32px;
+        }
+
+        .preview-image-wrap {
+            flex-shrink: 0;
+            width: 320px;
+        }
+
+        .preview--featured .preview-image-wrap {
+            width: 400px;
+        }
+    }
+</style>

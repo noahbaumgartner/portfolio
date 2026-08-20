@@ -104,6 +104,13 @@
 
     .project-image-wrap {
         position: relative;
+        width: 100%;
+    }
+
+    .project-image-wrap::before {
+        content: '';
+        display: block;
+        padding-top: 100%;
     }
 
     .project-icon-badge {
@@ -127,8 +134,10 @@
     }
 
     :global(.project-image) {
+        position: absolute !important;
+        inset: 0;
         width: 100%;
-        aspect-ratio: 1;
+        height: 100%;
         border-radius: 6px;
     }
 
@@ -172,12 +181,6 @@
         .project-card {
             flex: 0 0 auto;
             width: 250px;
-        }
-
-        :global(.project-image) {
-            width: 250px;
-            height: 250px;
-            aspect-ratio: auto;
         }
     }
 
