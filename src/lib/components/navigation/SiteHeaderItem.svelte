@@ -16,11 +16,11 @@
         transition: color 200ms ease;
     }
 
-    :global(.nav-items):hover .item {
+    :global(.nav-items--desktop:has(.item:hover) .item:not(:hover)) {
         color: #a3a3a3;
     }
 
-    .item:hover {
-        color: #000 !important;
+    :global(.nav-items--mobile) .item:hover {
+        color: #a3a3a3;
     }
 </style>
