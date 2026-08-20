@@ -41,7 +41,7 @@
     :global(.about-image) {
         width: 100%;
         aspect-ratio: 1;
-        border-radius: 10px;
+        border-radius: 6px;
     }
 
     @media (min-width: 768px) {

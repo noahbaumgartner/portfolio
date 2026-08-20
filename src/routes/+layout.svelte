@@ -5,7 +5,6 @@
 	import Button from '$lib/components/ui/Button.svelte';
 	import Footer from '$lib/components/sections/FooterSection.svelte';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
-	import Copyright from '$lib/components/sections/CopyrightSection.svelte';
 	import { onMount } from 'svelte';
 
 	let { children } = $props();
@@ -58,5 +57,4 @@
 </main>
 <footer>
 	<Footer	/>
-	<Copyright />
 </footer>
