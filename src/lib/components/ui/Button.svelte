@@ -38,7 +38,7 @@
     }
 
     .button:focus-visible {
-        box-shadow: 0 0 0 2px #fff, 0 0 0 4px #000;
+        box-shadow: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--color-ink);
     }
 
     .button--icon-only {
@@ -65,29 +65,29 @@
     }
 
     .button--primary {
-        background-color: #000;
-        color: #fff;
+        background-color: var(--color-ink);
+        color: var(--color-base);
     }
 
     .button--primary:hover {
-        background-color: #262626;
+        background-color: var(--color-emphasis);
     }
 
     .button--secondary {
-        background-color: #f5f5f5;
-        color: #000;
+        background-color: var(--color-surface);
+        color: var(--color-text);
     }
 
     .button--secondary:hover {
-        background-color: #e5e5e5;
+        background-color: var(--color-border);
     }
 
     .button--ghost {
         background-color: transparent;
-        color: #000;
+        color: var(--color-text);
     }
 
     .button--ghost:hover {
-        background-color: #f5f5f5;
+        background-color: var(--color-surface);
     }
 </style>

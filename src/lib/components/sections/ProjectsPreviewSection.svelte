@@ -124,14 +124,14 @@
         justify-content: center;
         width: 40px;
         height: 40px;
-        background-color: #000;
+        background-color: var(--color-ink);
         border-radius: 6px 0 0 0;
     }
 
     .project-icon-badge :global(svg) {
         width: 20px;
         height: 20px;
-        color: #fff;
+        color: var(--color-base);
     }
 
     :global(.project-image) {
@@ -196,6 +196,6 @@
 
     .project-period {
         font-size: 14px;
-        color: #737373;
+        color: var(--color-text-muted);
     }
 </style>

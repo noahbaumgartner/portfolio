@@ -68,14 +68,14 @@
         justify-content: center;
         width: 32px;
         height: 32px;
-        background-color: #000;
+        background-color: var(--color-ink);
         border-radius: 6px 0 0 0;
     }
 
     .preview-icon-badge :global(svg) {
         width: 16px;
         height: 16px;
-        color: #fff;
+        color: var(--color-base);
     }
 
     :global(.preview-image) {
@@ -123,7 +123,7 @@
 
     .preview-period {
         font-size: 14px;
-        color: #737373;
+        color: var(--color-text-muted);
     }
 
     @media (min-width: 640px) {

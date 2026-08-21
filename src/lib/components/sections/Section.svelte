@@ -13,12 +13,11 @@
         margin-inline: auto;
         max-width: 1280px;
         border-radius: 6px;
-        background-color: #f5f5f5;
+        background-color: var(--color-surface);
     }
 
     .section-box--dark {
-        background-color: #0a0a0a;
-        background-image: linear-gradient(150deg, #0a0a0a 50%, #262626 70%, #0a0a0a 90%);
-        color: #fff;
+        background-color: var(--color-surface-inverse);
+        color: var(--color-on-inverse);
     }
 </style>

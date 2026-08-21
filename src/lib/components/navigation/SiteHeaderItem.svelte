@@ -11,16 +11,16 @@
         font-family: 'Google Sans', sans-serif;
         font-weight: 400;
         line-height: 28px;
-        color: #000;
+        color: var(--color-text);
         text-decoration: none;
         transition: color 200ms ease;
     }
 
     :global(.nav-items--desktop:has(.item:hover) .item:not(:hover)) {
-        color: #a3a3a3;
+        color: var(--color-text-faint);
     }
 
     :global(.nav-items--mobile) .item:hover {
-        color: #a3a3a3;
+        color: var(--color-text-faint);
     }
 </style>

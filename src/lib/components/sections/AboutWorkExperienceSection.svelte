@@ -46,7 +46,7 @@
 
 <style>
     .experience-wrapper {
-        background-color: #f5f5f5;
+        background-color: var(--color-surface);
     }
 
     .experience-inner {
@@ -87,13 +87,13 @@
         align-items: flex-start;
         gap: 10px;
         padding: 24px;
-        border: 1px solid #e5e5e5;
+        border: 1px solid var(--color-border-strong);
         border-radius: 6px;
     }
 
     .experience-period {
         font-size: 14px;
-        color: #737373;
+        color: var(--color-text-muted);
     }
 
     .experience-heading {
@@ -110,7 +110,7 @@
 
     .experience-company {
         font-size: 14px;
-        color: #737373;
+        color: var(--color-text-muted);
     }
 
     .experience-description {

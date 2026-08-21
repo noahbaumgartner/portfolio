@@ -25,6 +25,6 @@
     }
 
     .link--dark {
-        color: #d4d4d4;
+        color: var(--color-on-inverse-secondary);
     }
 </style>

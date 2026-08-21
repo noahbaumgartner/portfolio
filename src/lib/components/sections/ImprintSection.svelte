@@ -40,7 +40,7 @@
 
 <style>
     .contact-wrapper {
-        background-color: #f5f5f5;
+        background-color: var(--color-surface);
         margin-bottom: 24px;
     }
 
@@ -53,9 +53,7 @@
         max-width: 1280px;
         display: flex;
         flex-direction: column;
-        align-items: center;
         gap: 8px;
-        text-align: center;
     }
 
     .contact-title {
@@ -76,7 +74,6 @@
 
     .disclaimer-title {
         margin-top: 0;
-        text-align: center;
     }
 
     .disclaimer-list {
@@ -93,7 +90,7 @@
         flex-direction: column;
         gap: 8px;
         padding: 24px;
-        border: 1px solid #e5e5e5;
+        border: 1px solid var(--color-border);
         border-radius: 6px;
     }
 
@@ -103,7 +100,7 @@
     }
 
     .disclaimer-card p {
-        color: #404040;
+        color: var(--color-text-secondary);
         line-height: 1.6;
     }
 

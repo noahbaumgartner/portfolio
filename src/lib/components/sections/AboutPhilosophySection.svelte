@@ -13,7 +13,7 @@
 
 <style>
     .philosophy-wrapper {
-        background-color: #fff;
+        background-color: var(--color-bg);
     }
 
     .philosophy-inner {
@@ -31,7 +31,7 @@
     }
 
     .philosophy-title {
-        color: #000;
+        color: var(--color-text);
     }
 
     .philosophy-text {
@@ -39,11 +39,11 @@
         flex-direction: column;
         gap: 16px;
         max-width: 640px;
-        color: #000;
+        color: var(--color-text);
     }
 
     .philosophy-text b {
-        color: #000;
+        color: var(--color-text);
     }
 
     @media (min-width: 768px) {

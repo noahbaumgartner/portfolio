@@ -39,7 +39,7 @@
         margin-inline: auto;
         max-width: 1280px;
         padding: 48px 24px;
-        background-color: #f5f5f5;
+        background-color: var(--color-surface);
         border-radius: 6px;
         display: flex;
         flex-direction: column;
@@ -48,7 +48,7 @@
 
     .project-description {
         max-width: 640px;
-        color: #404040;
+        color: var(--color-text-secondary);
     }
 
     .project-tags {

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Link from "../ui/Link.svelte";
+	import ThemeToggle from "../ui/ThemeToggle.svelte";
 </script>
 
 <div class="footer-wrapper page-padding section-gap">
@@ -20,7 +21,10 @@
         </div>
     </div>
 
-    <span class="footer-copyright">© 2025 Noah Baumgartner</span>
+    <div class="footer-bottom">
+        <span class="footer-copyright">© 2025 Noah Baumgartner</span>
+        <ThemeToggle />
+    </div>
 </div>
 
 <style>
@@ -37,8 +41,7 @@
         max-width: 1280px;
         min-height: 256px;
         border-radius: 6px;
-        background-color: #0a0a0a;
-        background-image: linear-gradient(150deg, #0a0a0a 50%, #262626 70%, #0a0a0a 90%);
+        background-color: var(--color-surface-inverse);
         display: flex;
         flex-direction: column;
         gap: 40px;
@@ -46,17 +49,28 @@
     }
 
     .footer-title {
-        color: #f5f5f5;
+        color: var(--color-on-inverse);
     }
 
-    .footer-copyright {
+    .footer-bottom {
         margin-inline: auto;
         width: 100%;
         max-width: 1280px;
         padding-bottom: 20px;
-        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .footer-copyright {
         font-size: 14px;
-        color: #737373;
+        color: var(--color-text-muted);
+    }
+
+    .footer-bottom :global(.theme-toggle) {
+        position: absolute;
+        right: 0;
     }
 
     .footer-columns {
@@ -71,12 +85,12 @@
         flex-direction: column;
         gap: 8px;
         flex-grow: 1;
-        color: #a3a3a3;
+        color: var(--color-on-inverse-muted);
     }
 
     .footer-heading {
         font-weight: 700;
-        color: #f5f5f5;
+        color: var(--color-on-inverse);
     }
 
     @media (min-width: 640px) {
