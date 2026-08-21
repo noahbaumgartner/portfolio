@@ -6,7 +6,7 @@ This portfolio is built using a modern, high-performance stack focused on develo
 
 - Framework: SvelteKit
 - Language: TypeScript
-- Styling: Tailwind CSS, CSS
+- Styling: CSS
 - Package Manager: pnpm
 - Build Tooling: vite
 - Runtime Environment: Node.js v24+

@@ -9,11 +9,11 @@ icon: party-popper
 ---
 
 <script>
-    import Link from '$lib/components/text/Link.svelte'
+    import Link from '$lib/components/ui/Link.svelte'
 </script>
 
-<h2 class="mb-2">Allgemein</h2>
+<h2>Allgemein</h2>
 
-<h2 class="mt-4 mb-2">Technologien</h2>
+<h2>Technologien</h2>
 
-<h2 class="mt-4 mb-2">Funktionen</h2>
+<h2>Funktionen</h2>
