@@ -14,7 +14,7 @@
         font-family: 'Google Sans', sans-serif;
         font-size: 18px;
         font-weight: 600;
-        color: #000;
+        color: var(--color-text);
         cursor: pointer;
     }
 </style>

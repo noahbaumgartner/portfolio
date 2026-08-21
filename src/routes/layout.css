@@ -1,3 +1,49 @@
+/* Color system: every gray is a mix between a base color and an ink color at
+   a given step. Light mode mixes toward black on a white base; dark mode
+   mixes toward white on a near-black base — flipping the two variables is
+   the whole theme switch. Components should always reference the semantic
+   --color-* tokens below, never raw hex values, so dark mode stays free. */
+:root {
+	--base: #fff;
+	--ink: #000;
+
+	--color-bg: var(--base);
+	--color-surface: color-mix(in srgb, var(--base), var(--ink) 6%);
+	--color-border: color-mix(in srgb, var(--base), var(--ink) 10%);
+	--color-border-strong: color-mix(in srgb, var(--base), var(--ink) 17%);
+	--color-text-faint: color-mix(in srgb, var(--base), var(--ink) 36%);
+	--color-text-muted: color-mix(in srgb, var(--base), var(--ink) 55%);
+	--color-text-secondary: color-mix(in srgb, var(--base), var(--ink) 75%);
+	--color-emphasis: color-mix(in srgb, var(--base), var(--ink) 85%);
+	--color-text: var(--ink);
+	--color-ink: var(--ink);
+	--color-base: var(--base);
+
+	/* Inverse surface: the site's decorative accent panels (footer, dark hero
+	   variant) always contrast against the page — dark card on a light page,
+	   light card on a dark page — so they mix in the opposite direction from
+	   the regular surface tokens above. */
+	--color-surface-inverse: var(--ink);
+	--color-surface-inverse-accent: color-mix(in srgb, var(--ink), var(--base) 15%);
+	--color-on-inverse: var(--base);
+	--color-on-inverse-secondary: color-mix(in srgb, var(--ink), var(--base) 83%);
+	--color-on-inverse-muted: color-mix(in srgb, var(--ink), var(--base) 64%);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme='light']) {
+		--base: #0a0a0a;
+		--ink: #fff;
+		--color-bg: #0a0a0a;
+	}
+}
+
+:root[data-theme='dark'] {
+	--base: #0a0a0a;
+	--ink: #fff;
+	--color-bg: #0a0a0a;
+}
+
 *,
 *::before,
 *::after {
@@ -164,6 +210,9 @@ select {
 
 body {
 	font-family: 'Inter', sans-serif;
+	background-color: var(--color-bg);
+	color: var(--color-text);
+	transition: background-color 200ms ease, color 200ms ease;
 }
 
 ::selection {

@@ -64,7 +64,7 @@
 		position: fixed;
 		inset: 0;
 		z-index: 9999;
-		background-color: #fff;
+		background-color: var(--color-bg);
 		transition: opacity 300ms ease;
 	}
 

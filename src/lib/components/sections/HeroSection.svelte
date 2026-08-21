@@ -67,7 +67,7 @@
         max-width: 1280px;
         min-height: 400px;
         padding: 60px 24px;
-        background-color: #f5f5f5;
+        background-color: var(--color-surface);
         border-radius: 6px;
         display: flex;
         align-items: center;

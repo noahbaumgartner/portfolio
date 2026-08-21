@@ -63,7 +63,7 @@
         left: 0;
         right: 0;
         z-index: 50;
-        background-color: #fff;
+        background-color: var(--color-bg);
         user-select: none;
     }
 
@@ -96,7 +96,7 @@
     }
 
     .mobile-panel {
-        background-color: #fff;
+        background-color: var(--color-bg);
         overflow: hidden;
     }
 

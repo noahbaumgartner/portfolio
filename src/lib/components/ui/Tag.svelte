@@ -15,8 +15,8 @@
         gap: 4px;
         width: fit-content;
         padding: 2px 8px;
-        background-color: #000;
-        color: #fff;
+        background-color: var(--color-ink);
+        color: var(--color-base);
         font-family: 'Source Code Pro', monospace;
         font-size: 12px;
         border-radius: 4px;
@@ -34,6 +34,6 @@
     }
 
     .tag--link:hover {
-        background-color: #262626;
+        background-color: var(--color-emphasis);
     }
 </style>
