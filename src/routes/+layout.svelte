@@ -2,7 +2,7 @@
 	import './layout.css';
 	import SiteHeader from '$lib/components/navigation/SiteHeader.svelte';
 	import SiteHeaderItem from '$lib/components/navigation/SiteHeaderItem.svelte';
-	import Button from '$lib/components/ui/Button.svelte';
+	import ThemeToggle from '$lib/components/ui/ThemeToggle.svelte';
 	import Footer from '$lib/components/sections/FooterSection.svelte';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 	import { onMount } from 'svelte';
@@ -46,10 +46,10 @@
 	{#snippet left()}
 		<SiteHeaderItem href="/">Start</SiteHeaderItem>
 		<SiteHeaderItem href="/about">Über mich</SiteHeaderItem>
-		<SiteHeaderItem href="/projects">Projekte</SiteHeaderItem>
+		<SiteHeaderItem href="/posts">Beiträge</SiteHeaderItem>
 	{/snippet}
 	{#snippet right()}
-		<Button href="mailto:noahbaumg@outlook.com">Kontakt</Button>
+		<ThemeToggle />
 	{/snippet}
 </SiteHeader>
 <main class="main">

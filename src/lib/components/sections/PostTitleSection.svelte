@@ -2,32 +2,32 @@
     import { CalendarIcon, GithubIcon, LinkIcon } from "@lucide/svelte";
     import Tag from "../ui/Tag.svelte";
 
-    let { project } = $props();
+    let { post } = $props();
 </script>
 
-<section class="project-title-wrapper page-padding">
-    <div class="project-title-box">
-        <h1 class="project-title">{project.title}</h1>
-        <p class="project-description">{project.description}</p>
+<section class="post-title-wrapper page-padding">
+    <div class="post-title-box">
+        <h1 class="post-title">{post.title}</h1>
+        <p class="post-description">{post.description}</p>
 
-        <div class="project-tags">
+        <div class="post-tags">
             <Tag>
                 <CalendarIcon />
-                {project.period}
+                {post.period}
             </Tag>
-            {#if project.url}
-                <Tag href={project.url}>
+            {#if post.url}
+                <Tag href={post.url}>
                     <LinkIcon />
-                    {project.url}
+                    {post.url}
                 </Tag>
             {/if}
-            {#if project.github}
-                <Tag href={project.github}>
+            {#if post.github}
+                <Tag href={post.github}>
                     <GithubIcon />
                     Code
                 </Tag>
             {/if}
-            {#each project.tags as tag}
+            {#each post.tags as tag}
                 <Tag>{tag}</Tag>
             {/each}
         </div>
@@ -35,7 +35,7 @@
 </section>
 
 <style>
-    .project-title-box {
+    .post-title-box {
         margin-inline: auto;
         max-width: 1280px;
         padding: 48px 24px;
@@ -46,12 +46,12 @@
         gap: 16px;
     }
 
-    .project-description {
+    .post-description {
         max-width: 640px;
         color: var(--color-text-secondary);
     }
 
-    .project-tags {
+    .post-tags {
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
@@ -59,7 +59,7 @@
     }
 
     @media (min-width: 640px) {
-        .project-title-box {
+        .post-title-box {
             padding: 64px 56px;
         }
     }

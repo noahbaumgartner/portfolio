@@ -1,10 +1,10 @@
 import { error } from '@sveltejs/kit'
-import { loadProjects } from '$lib/services/projectService';
+import { loadPosts } from '$lib/services/postService';
 
 export const load = async () => {
     try {
-        const projects = await loadProjects();
-        return { projects };
+        const posts = await loadPosts();
+        return { posts };
     } catch (err) {
         error(404, 'Not found');
     }

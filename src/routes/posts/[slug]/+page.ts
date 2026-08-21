@@ -1,22 +1,23 @@
-import type { ProjectDTO } from '$lib/dtos/ProjectDTO';
+import type { PostDTO } from '$lib/dtos/PostDTO';
 import { error } from '@sveltejs/kit'
 
 export const load = async ({ params }) => {
     try {
-        const page = await import(`../../../content/projects/${params.slug}.md`)
+        const page = await import(`../../../content/posts/${params.slug}.md`)
         const { metadata } = page;
-        const project: ProjectDTO = {
+        const post: PostDTO = {
             slug: params.slug,
             title: metadata.title,
             description: metadata.description,
-            image: `/images/projects/${params.slug}.webp`,
+            icon: metadata.icon,
             period: `${new Date(metadata.year, metadata.month - 1).toLocaleString('de-DE', { month: 'long' })} ${metadata.year}`,
             url: metadata.url || "",
             github: metadata.github || "",
             tags: metadata.tags.split(",") || [],
+            colors: metadata.colors.split(",").map((c: string) => c.trim()),
         }
 
-        return { project, Content: page.default };
+        return { post, Content: page.default };
     } catch (err) {
         console.error(err);
         error(404, 'Not found');

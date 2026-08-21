@@ -1,11 +1,11 @@
-export interface ProjectDTO {
+export interface PostDTO {
     slug: string;
     period: string;
     title: string;
     description: string;
-    image: string;
     icon: string;
     url: string;
     github?: string;
     tags: string[];
+    colors: string[];
 }

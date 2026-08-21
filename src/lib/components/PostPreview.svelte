@@ -1,30 +1,24 @@
 <script lang="ts">
-    import type { ProjectDTO } from '$lib/dtos/ProjectDTO';
-    import { Compass, Wheat, PersonStanding, PartyPopper } from '@lucide/svelte';
-    import Image from './Image.svelte';
+    import type { PostDTO } from '$lib/dtos/PostDTO';
+    import { Compass, Wheat, PersonStanding, PartyPopper, Scale } from '@lucide/svelte';
+    import MeshGradient from './MeshGradient.svelte';
 
-    let { project }: { project: ProjectDTO } = $props();
-
-    const previewImages: Record<string, string> = {
-        portfolio: '/images/projects/preview-portfolio.png',
-        bettenhof: '/images/projects/preview-bettenhof.png',
-        compass: '/images/projects/preview-compass.png',
-        stvk100: '/images/projects/preview-stvk100.png',
-    };
+    let { post }: { post: PostDTO } = $props();
 
     const icons: Record<string, any> = {
         compass: Compass,
         wheat: Wheat,
         'person-standing': PersonStanding,
         'party-popper': PartyPopper,
+        scale: Scale,
     };
 
-    const Icon = $derived(icons[project.icon]);
+    const Icon = $derived(icons[post.icon]);
 </script>
 
-<a href={`/projects/${project.slug}`} data-sveltekit-preload-data class="preview">
+<a href={`/posts/${post.slug}`} data-sveltekit-preload-data class="preview">
     <div class="preview-image-wrap">
-        <Image src={previewImages[project.slug] ?? project.image} alt={project.title} class="preview-image" />
+        <MeshGradient colors={post.colors} seed={post.title} class="preview-image" />
         {#if Icon}
             <div class="preview-icon-badge">
                 <Icon size={20} />
@@ -32,8 +26,8 @@
         {/if}
     </div>
     <div class="preview-info">
-        <p class="preview-headline"><span class="preview-title">{project.title}:</span> {project.description}</p>
-        <span class="preview-period">{project.period}</span>
+        <p class="preview-headline"><span class="preview-title">{post.title}:</span> {post.description}</p>
+        <span class="preview-period">{post.period}</span>
     </div>
 </a>
 
@@ -84,15 +78,6 @@
         width: 100%;
         height: 100%;
         border-radius: 6px;
-    }
-
-    :global(.preview-image) :global(img) {
-        filter: brightness(0.85);
-        transition: transform 300ms ease;
-    }
-
-    .preview:hover :global(.preview-image) :global(img) {
-        transform: scale(1.2);
     }
 
     :global(.preview-image)::after {

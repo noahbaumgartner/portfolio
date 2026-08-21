@@ -1,47 +1,41 @@
 <script lang="ts">
-	import { Compass, Wheat, PersonStanding, PartyPopper } from '@lucide/svelte';
-	import Image from "../Image.svelte";
+	import { Compass, Wheat, PersonStanding, PartyPopper, Scale } from '@lucide/svelte';
+	import MeshGradient from "../MeshGradient.svelte";
 	import Link from "../ui/Link.svelte";
 
-    let { projects } = $props();
-
-    const previewImages: Record<string, string> = {
-        portfolio: '/images/projects/preview-portfolio.png',
-        bettenhof: '/images/projects/preview-bettenhof.png',
-        compass: '/images/projects/preview-compass.png',
-        stvk100: '/images/projects/preview-stvk100.png',
-    };
+    let { posts } = $props();
 
     const icons: Record<string, any> = {
         compass: Compass,
         wheat: Wheat,
         'person-standing': PersonStanding,
         'party-popper': PartyPopper,
+        scale: Scale,
     };
 </script>
 
-<section class="projects-wrapper page-padding section-gap">
-    <div class="projects">
-        <div class="projects-header">
-            <h2 class="projects-title">Projekte</h2>
-            <Link href="/projects">Alle Projekte</Link>
+<section class="posts-wrapper page-padding section-gap">
+    <div class="posts">
+        <div class="posts-header">
+            <h2 class="posts-title">Beiträge</h2>
+            <Link href="/posts">Alle Beiträge</Link>
         </div>
 
-        <div class="project-list">
-            {#each projects.slice(0, 4) as project}
-                {@const Icon = icons[project.icon]}
-                <a href={`/projects/${project.slug}`} data-sveltekit-preload-data class="project-card">
-                    <div class="project-image-wrap">
-                        <Image src={previewImages[project.slug] ?? project.image} alt={project.title} class="project-image" />
+        <div class="post-list">
+            {#each posts.slice(0, 4) as post}
+                {@const Icon = icons[post.icon]}
+                <a href={`/posts/${post.slug}`} data-sveltekit-preload-data class="post-card">
+                    <div class="post-image-wrap">
+                        <MeshGradient colors={post.colors} seed={post.title} class="post-image" />
                         {#if Icon}
-                            <div class="project-icon-badge">
+                            <div class="post-icon-badge">
                                 <Icon size={20} />
                             </div>
                         {/if}
                     </div>
-                    <div class="project-info">
-                        <p class="project-headline"><span class="project-title">{project.title}:</span> {project.description}</p>
-                        <span class="project-period">{project.period}</span>
+                    <div class="post-info">
+                        <p class="post-headline"><span class="post-title">{post.title}:</span> {post.description}</p>
+                        <span class="post-period">{post.period}</span>
                     </div>
                 </a>
             {/each}
@@ -50,7 +44,7 @@
 </section>
 
 <style>
-    .projects {
+    .posts {
         margin-inline: auto;
         max-width: 1280px;
         display: flex;
@@ -59,41 +53,41 @@
         gap: 24px;
     }
 
-    .projects-header {
+    .posts-header {
         display: flex;
         align-items: baseline;
         justify-content: space-between;
         width: 100%;
     }
 
-    .projects-header :global(.link) {
+    .posts-header :global(.link) {
         font-size: 14px;
     }
 
-    .projects-title {
+    .posts-title {
         font-weight: 500;
         font-size: 22px;
     }
 
-    .project-list {
+    .post-list {
         display: flex;
         gap: 24px;
         width: 100%;
     }
 
     @media (min-width: 640px) {
-        .project-list {
+        .post-list {
             gap: 40px;
         }
     }
 
     @media (min-width: 1024px) {
-        .project-list {
+        .post-list {
             gap: 64px;
         }
     }
 
-    .project-card {
+    .post-card {
         display: flex;
         flex-direction: column;
         flex: 1 1 0;
@@ -103,18 +97,18 @@
         color: inherit;
     }
 
-    .project-image-wrap {
+    .post-image-wrap {
         position: relative;
         width: 100%;
     }
 
-    .project-image-wrap::before {
+    .post-image-wrap::before {
         content: '';
         display: block;
         padding-top: 100%;
     }
 
-    .project-icon-badge {
+    .post-icon-badge {
         position: absolute;
         top: 0;
         left: 0;
@@ -128,13 +122,13 @@
         border-radius: 6px 0 0 0;
     }
 
-    .project-icon-badge :global(svg) {
+    .post-icon-badge :global(svg) {
         width: 20px;
         height: 20px;
         color: var(--color-base);
     }
 
-    :global(.project-image) {
+    :global(.post-image) {
         position: absolute !important;
         inset: 0;
         width: 100%;
@@ -142,16 +136,7 @@
         border-radius: 6px;
     }
 
-    :global(.project-image) :global(img) {
-        filter: brightness(0.85);
-        transition: transform 300ms ease;
-    }
-
-    .project-card:hover :global(.project-image) :global(img) {
-        transform: scale(1.2);
-    }
-
-    :global(.project-image)::after {
+    :global(.post-image)::after {
         content: '';
         position: absolute;
         inset: 0;
@@ -162,39 +147,39 @@
         pointer-events: none;
     }
 
-    .project-info {
+    .post-info {
         display: flex;
         flex-direction: column;
         gap: 10px;
     }
 
     @media (max-width: 899px) {
-        .project-list {
+        .post-list {
             overflow-x: auto;
             padding-bottom: 8px;
             scrollbar-width: none;
         }
 
-        .project-list::-webkit-scrollbar {
+        .post-list::-webkit-scrollbar {
             display: none;
         }
 
-        .project-card {
+        .post-card {
             flex: 0 0 auto;
             width: 250px;
         }
     }
 
-    .project-headline {
+    .post-headline {
         font-size: 16px;
     }
 
-    .project-title {
+    .post-title {
         font-family: 'Google Sans', sans-serif;
         font-weight: 500;
     }
 
-    .project-period {
+    .post-period {
         font-size: 14px;
         color: var(--color-text-muted);
     }

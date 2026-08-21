@@ -1,21 +1,26 @@
 <script lang="ts">
+    import Link from "../ui/Link.svelte";
+
     const experiences = [
         {
             period: "Juli 2023 - Heute",
             title: "Fullstack Software Entwickler",
-            company: "B3 Digital AG",
-            description: "Bei B3 Digital AG bin ich als Fullstack Software Entwickler tätig, wo ich vor allem an der Web-Applikation buildagil arbeite."
+            company: "B3 Digital",
+            url: "https://www.b-3.ch/",
+            description: "Bei B3 Digital bin ich als Fullstack Software Entwickler tätig, wo ich vor allem an der Web-Applikation buildagil arbeite."
         },
         {
             period: "Mai 2023 - Juli 2023",
             title: "SAP PI Consultant",
             company: "Swisscom",
+            url: "https://www.swisscom.ch",
             description: "Als SAP PI Consultant bei Swisscom sammelte ich wertvolle Erfahrungen in der Integration von SAP-Systemen, bevor ich mich für eine neue berufliche Herausforderung entschied."
         },
         {
             period: "August 2016 - April 2023",
             title: "Software Entwickler",
             company: "SFS Group",
+            url: "https://www.sfs.com",
             description: "Während meiner Lehre bei der SFS Group konzentrierte ich mich auf Java- und Webentwicklung. Nach erfolgreichem Abschluss spezialisierte ich mich auf SAP-Entwicklung mit ABAP und SAP Fiori."
         }
     ];
@@ -31,12 +36,12 @@
             <div class="experience-list">
                 {#each experiences as experience}
                     <div class="experience-card">
-                        <span class="experience-period">{experience.period}</span>
                         <div class="experience-heading">
                             <h3 class="experience-role">{experience.title}</h3>
-                            <span class="experience-company">/{experience.company}/</span>
+                            <span class="experience-period">{experience.period}</span>
                         </div>
                         <p class="experience-description">{experience.description}</p>
+                        <Link href={experience.url}>{experience.company}</Link>
                     </div>
                 {/each}
             </div>
@@ -85,15 +90,11 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        justify-content: center;
         gap: 10px;
         padding: 24px;
         border: 1px solid var(--color-border-strong);
         border-radius: 6px;
-    }
-
-    .experience-period {
-        font-size: 14px;
-        color: var(--color-text-muted);
     }
 
     .experience-heading {
@@ -108,9 +109,10 @@
         font-weight: 500;
     }
 
-    .experience-company {
+    .experience-period {
         font-size: 14px;
         color: var(--color-text-muted);
+        white-space: nowrap;
     }
 
     .experience-description {

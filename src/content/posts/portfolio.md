@@ -6,6 +6,7 @@ description: 'Persönliches Portfolio mit Projektübersicht und Infos zu meiner 
 url: 'https://noahbaumgartner.ch/'
 github: https://github.com/noahbaumgartner/portfolio
 tags: 'Webseite,SPA'
+colors: '#ff7a36,#ff504a,#fdc538,#ff673d'
 icon: person-standing
 ---
 
