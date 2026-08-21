@@ -1,30 +1,30 @@
-import type { ProjectDTO } from '$lib/dtos/ProjectDTO';
+import type { PostDTO } from '$lib/dtos/PostDTO';
 
-export async function loadProjects(limit?: number): Promise<ProjectDTO[]> {
-    const files = import.meta.glob('../../content/projects/*', { eager: true });
-    const projects = Object.entries(files).map(([path, module]) => {
+export async function loadPosts(limit?: number): Promise<PostDTO[]> {
+    const files = import.meta.glob('../../content/posts/*', { eager: true });
+    const posts = Object.entries(files).map(([path, module]) => {
         const { metadata } = module as { metadata: any };
 
         const slug = path.split('/').pop()?.split('.')[0] || '';
-        const project: ProjectDTO = {
+        const post: PostDTO = {
             slug,
             title: metadata.title,
             description: metadata.description,
-            image: `/images/projects/${slug}.webp`,
             icon: metadata.icon,
             period: `${new Date(metadata.year, metadata.month - 1).toLocaleString('de-DE', { month: 'long' })} ${metadata.year}`,
             url: metadata.url,
             github: metadata.github,
             tags: metadata.tags.split(",") || [],
+            colors: metadata.colors.split(",").map((c: string) => c.trim()),
         }
 
-        return { ...project, year: metadata.year, month: metadata.month };
+        return { ...post, year: metadata.year, month: metadata.month };
     }).sort((a, b) => {
         if (a.year !== b.year) {
             return b.year - a.year;
         }
         return b.month - a.month;
-    }).map(({ year, month, ...project }) => project);
+    }).map(({ year, month, ...post }) => post);
 
-    return limit ? projects.slice(0, limit) : projects;
+    return limit ? posts.slice(0, limit) : posts;
 }

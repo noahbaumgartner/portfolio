@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Link from "../ui/Link.svelte";
-	import ThemeToggle from "../ui/ThemeToggle.svelte";
 </script>
 
 <div class="footer-wrapper page-padding section-gap">
@@ -23,7 +22,6 @@
 
     <div class="footer-bottom">
         <span class="footer-copyright">© 2025 Noah Baumgartner</span>
-        <ThemeToggle />
     </div>
 </div>
 
@@ -57,20 +55,12 @@
         width: 100%;
         max-width: 1280px;
         padding-bottom: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
+        text-align: center;
     }
 
     .footer-copyright {
         font-size: 14px;
         color: var(--color-text-muted);
-    }
-
-    .footer-bottom :global(.theme-toggle) {
-        position: absolute;
-        right: 0;
     }
 
     .footer-columns {

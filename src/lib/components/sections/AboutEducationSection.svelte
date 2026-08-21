@@ -1,27 +1,33 @@
 <script lang="ts">
+    import Link from "../ui/Link.svelte";
+
     const educations = [
         {
             period: "2025 - Heute",
             title: "Master of Science in Engineering",
-            institution: "ZHAW",
+            institution: "Zürcher Hochschule für Angewandte Wissenschaften",
+            url: "https://www.zhaw.ch",
             description: "Masterstudium mit Vertiefung im Bereich Künstliche Intelligenz und maschinelles Lernen."
         },
         {
             period: "2021 - 2025",
             title: "Bachelor of Science in Informatik",
-            institution: "ZHAW",
+            institution: "Zürcher Hochschule für Angewandte Wissenschaften",
+            url: "https://www.zhaw.ch",
             description: "Bachelorstudium in Informatik mit Schwerpunkt auf Software Engineering."
         },
         {
             period: "2016 - 2020",
             title: "Berufsmatura",
-            institution: "GBSSG",
+            institution: "Gewerbliches Berufs- und Weiterbildungszentrum St.Gallen",
+            url: "https://www.gbssg.ch",
             description: "Vorbereitung auf das Studium mit Fokus auf technische und naturwissenschaftliche Fächer."
         },
         {
             period: "2016 - 2020",
             title: "Informatiker EFZ",
-            institution: "GBSSG",
+            institution: "Gewerbliches Berufs- und Weiterbildungszentrum St.Gallen",
+            url: "https://www.gbssg.ch",
             description: "Lehre als Informatiker EFZ mit Fachrichtung Applikationsentwicklung."
         }
     ];
@@ -37,12 +43,12 @@
             <div class="education-list">
                 {#each educations as education}
                     <div class="education-card">
-                        <span class="education-period">{education.period}</span>
                         <div class="education-heading">
                             <h3 class="education-role">{education.title}</h3>
-                            <span class="education-institution">/{education.institution}/</span>
+                            <span class="education-period">{education.period}</span>
                         </div>
                         <p class="education-description">{education.description}</p>
+                        <Link href={education.url}>{education.institution}</Link>
                     </div>
                 {/each}
             </div>
@@ -91,15 +97,11 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        justify-content: center;
         gap: 10px;
         padding: 24px;
         border: 1px solid var(--color-border-strong);
         border-radius: 6px;
-    }
-
-    .education-period {
-        font-size: 14px;
-        color: var(--color-text-muted);
     }
 
     .education-heading {
@@ -114,9 +116,10 @@
         font-weight: 500;
     }
 
-    .education-institution {
+    .education-period {
         font-size: 14px;
         color: var(--color-text-muted);
+        white-space: nowrap;
     }
 
     .education-description {
