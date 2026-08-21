@@ -1,4 +1,45 @@
-@import 'tailwindcss';
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+
+ol,
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+a {
+	color: inherit;
+	text-decoration: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+	font: inherit;
+}
 
 @font-face {
 	font-family: 'Inter';
@@ -135,13 +176,6 @@ body {
 	color: black;
 }
 
-.bg-grid {
-	background-image:
-		linear-gradient(90deg, rgb(246, 246, 246) 1px, rgba(0, 0, 0, 0) 1px),
-		linear-gradient(rgb(246, 246, 246) 1px, rgba(0, 0, 0, 0) 1px);
-	background-size: 14px 14px;
-}
-
 h1 {
 	font-family: 'Google Sans', sans-serif;
 	font-size: 1.5rem;
@@ -160,9 +194,8 @@ h3 {
 	font-weight: 600;
 }
 
-/* Reusable page gutter, kept in sync with the site's content sections
-   (Section.svelte's px-4 sm:px-10 lg:px-16) so plain-CSS components can
-   match the same left/right breathing room without depending on Tailwind. */
+/* Reusable page gutter, shared across all section components so they
+   line up on the same left/right breathing room. */
 .page-padding {
 	padding-left: 24px;
 	padding-right: 24px;

@@ -27,6 +27,18 @@
 		flex-grow: 1;
 	}
 
+	.project-body :global(h2) {
+		margin-bottom: 8px;
+	}
+
+	.project-body :global(h2:not(:first-child)) {
+		margin-top: 16px;
+	}
+
+	.project-body :global(p) {
+		line-height: 1.6;
+	}
+
 	:global(.project-hero-image) {
 		width: 100%;
 		border-radius: 6px;
