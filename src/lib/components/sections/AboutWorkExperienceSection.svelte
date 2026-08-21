@@ -21,28 +21,38 @@
     ];
 </script>
 
-<section class="experience-wrapper page-padding section-gap">
-    <div class="experience">
-        <div class="experience-header">
-            <h2 class="experience-title">Berufserfahrung</h2>
-        </div>
+<section class="experience-wrapper section-gap">
+    <div class="experience-inner page-padding">
+        <div class="experience">
+            <div class="experience-header">
+                <h2 class="experience-title">Berufserfahrung</h2>
+            </div>
 
-        <div class="experience-list">
-            {#each experiences as experience}
-                <div class="experience-card">
-                    <span class="experience-period">{experience.period}</span>
-                    <div class="experience-heading">
-                        <h3 class="experience-role">{experience.title}</h3>
-                        <span class="experience-company">/{experience.company}/</span>
+            <div class="experience-list">
+                {#each experiences as experience}
+                    <div class="experience-card">
+                        <span class="experience-period">{experience.period}</span>
+                        <div class="experience-heading">
+                            <h3 class="experience-role">{experience.title}</h3>
+                            <span class="experience-company">/{experience.company}/</span>
+                        </div>
+                        <p class="experience-description">{experience.description}</p>
                     </div>
-                    <p class="experience-description">{experience.description}</p>
-                </div>
-            {/each}
+                {/each}
+            </div>
         </div>
     </div>
 </section>
 
 <style>
+    .experience-wrapper {
+        background-color: #f5f5f5;
+    }
+
+    .experience-inner {
+        padding-block: 24px;
+    }
+
     .experience {
         margin-inline: auto;
         max-width: 1280px;
@@ -107,6 +117,12 @@
         max-width: 640px;
     }
 
+    @media (min-width: 640px) {
+        .experience-inner {
+            padding-block: 40px;
+        }
+    }
+
     @media (min-width: 768px) {
         .experience-list {
             grid-template-columns: repeat(2, 1fr);
@@ -121,6 +137,12 @@
 
         .experience-card {
             padding: 32px;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .experience-inner {
+            padding-block: 64px;
         }
     }
 </style>
