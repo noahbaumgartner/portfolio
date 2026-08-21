@@ -27,28 +27,38 @@
     ];
 </script>
 
-<section class="education-wrapper page-padding section-gap">
-    <div class="education">
-        <div class="education-header">
-            <h2 class="education-title">Ausbildung</h2>
-        </div>
+<section class="education-wrapper section-gap">
+    <div class="education-inner page-padding">
+        <div class="education">
+            <div class="education-header">
+                <h2 class="education-title">Ausbildung</h2>
+            </div>
 
-        <div class="education-list">
-            {#each educations as education}
-                <div class="education-card">
-                    <span class="education-period">{education.period}</span>
-                    <div class="education-heading">
-                        <h3 class="education-role">{education.title}</h3>
-                        <span class="education-institution">/{education.institution}/</span>
+            <div class="education-list">
+                {#each educations as education}
+                    <div class="education-card">
+                        <span class="education-period">{education.period}</span>
+                        <div class="education-heading">
+                            <h3 class="education-role">{education.title}</h3>
+                            <span class="education-institution">/{education.institution}/</span>
+                        </div>
+                        <p class="education-description">{education.description}</p>
                     </div>
-                    <p class="education-description">{education.description}</p>
-                </div>
-            {/each}
+                {/each}
+            </div>
         </div>
     </div>
 </section>
 
 <style>
+    .education-wrapper {
+        background-color: #f5f5f5;
+    }
+
+    .education-inner {
+        padding-block: 24px;
+    }
+
     .education {
         margin-inline: auto;
         max-width: 1280px;
@@ -113,6 +123,12 @@
         max-width: 640px;
     }
 
+    @media (min-width: 640px) {
+        .education-inner {
+            padding-block: 40px;
+        }
+    }
+
     @media (min-width: 768px) {
         .education-list {
             grid-template-columns: repeat(2, 1fr);
@@ -127,6 +143,12 @@
 
         .education-card {
             padding: 32px;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .education-inner {
+            padding-block: 64px;
         }
     }
 </style>
