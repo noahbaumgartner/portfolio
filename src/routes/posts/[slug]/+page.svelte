@@ -1,5 +1,4 @@
 <script>
-	import MeshGradient from '$lib/components/MeshGradient.svelte';
 	import PostTitleSection from '$lib/components/sections/PostTitleSection.svelte';
 	import Section from '$lib/components/sections/Section.svelte';
 
@@ -8,52 +7,71 @@
 </script>
 
 <PostTitleSection {post} />
-<Section class="post-content">
-	<div class="post-body">
-		<Content />
-	</div>
-	<MeshGradient colors={post.colors} seed={post.title} class="post-hero-image" />
-</Section>
+<div class="post-content-spacer">
+	<Section class="post-content">
+		<div class="post-body">
+			<Content />
+		</div>
+	</Section>
+</div>
 
 <style>
-	:global(.post-content) {
-		display: flex;
-		flex-direction: column;
-		padding: 24px;
-		gap: 32px;
+	.post-content-spacer {
+		padding-bottom: 30px;
 	}
 
-	.post-body {
-		flex-grow: 1;
-	}
-
-	.post-body :global(h2) {
-		margin-bottom: 8px;
-	}
-
-	.post-body :global(h2:not(:first-child)) {
-		margin-top: 16px;
-	}
-
-	.post-body :global(p) {
-		line-height: 1.6;
-	}
-
-	:global(.post-hero-image) {
-		width: 100%;
-		border-radius: 6px;
-		aspect-ratio: 30 / 17;
+	@media (min-width: 640px) {
+		.post-content-spacer {
+			padding-bottom: 40px;
+		}
 	}
 
 	@media (min-width: 1024px) {
-		:global(.post-content) {
-			flex-direction: row;
-			padding: 40px;
+		.post-content-spacer {
+			padding-bottom: 64px;
 		}
+	}
 
-		:global(.post-hero-image) {
-			width: 360px;
-			flex-shrink: 0;
-		}
+	:global(.post-content) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 0;
+		gap: 32px;
+	}
+
+	:global(.post-content.section-box) {
+		background-color: transparent;
+	}
+
+	.post-body {
+		width: 100%;
+		max-width: 1000px;
+	}
+
+	.post-body :global(h2) {
+		max-width: 660px;
+		margin-inline: auto;
+		font-family: 'Inter', sans-serif;
+		margin-bottom: 16px;
+	}
+
+	.post-body :global(h2:not(:first-child)) {
+		margin-top: 32px;
+	}
+
+	.post-body :global(p) {
+		max-width: 660px;
+		margin-inline: auto;
+		line-height: 1.8;
+	}
+
+	.post-body :global(img) {
+		display: block;
+		width: 100%;
+		max-width: 1000px;
+		margin-block: 48px;
+		margin-inline: auto;
+		border-radius: 6px;
 	}
 </style>

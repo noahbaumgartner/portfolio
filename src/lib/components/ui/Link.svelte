@@ -13,11 +13,11 @@
         cursor: pointer;
         text-decoration: underline;
         text-underline-offset: 4px;
-        transition: text-decoration-thickness 300ms;
+        transition: opacity 300ms;
     }
 
     .link:hover {
-        text-decoration-thickness: 2px;
+        opacity: 0.6;
     }
 
     .link--light {

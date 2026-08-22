@@ -4,7 +4,6 @@ month: 12
 title: 'Bettenhof'
 description: 'Webseite für einen Bauernhof zur Präsentation hofeigener Produkte und Angebote.'
 url: 'https://bettenhof.ch/'
-tags: 'Webseite,Wix Studio'
 colors: '#a953b8,#a93c8a,#c26ac1,#e186c4'
 icon: wheat
 ---
@@ -12,8 +11,6 @@ icon: wheat
 <script>
     import Link from '$lib/components/ui/Link.svelte'
 </script>
-
-<h2>Allgemein</h2>
 
 Ein Kollege betreibt einen Bauernhof und benötigte eine Webseite zur Präsentation seiner hofeigenen Produkte sowie weiterer Angebote rund um den Betrieb. Ziel war es, mit geringstem Aufwand eine funktionale Webseite zu erstellen.
 
