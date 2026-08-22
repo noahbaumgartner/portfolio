@@ -12,6 +12,6 @@ icon: compass
     import Link from '$lib/components/ui/Link.svelte'
 </script>
 
-<h2>Technologien</h2>
+<h1>Technologien</h1>
 
-<h2>Funktionen</h2>
+<h1>Funktionen</h1>

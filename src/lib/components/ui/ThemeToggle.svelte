@@ -1,22 +1,38 @@
 <script lang="ts">
     import { onMount } from 'svelte';
-    import { Sun, Moon } from '@lucide/svelte';
+    import { Sun, Moon, Monitor } from '@lucide/svelte';
     import Button from './Button.svelte';
+    import ContextMenu from './context-menu/ContextMenu.svelte';
+    import ContextMenuItem from './context-menu/ContextMenuItem.svelte';
 
-    let theme: 'light' | 'dark' = $state('light');
+    type ThemeChoice = 'light' | 'dark' | 'system';
+
+    let choice: ThemeChoice = $state('system');
+
+    const icons = { light: Sun, dark: Moon, system: Monitor };
 
     onMount(() => {
-        const stored = document.documentElement.dataset.theme;
-        theme = stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+        const stored = localStorage.getItem('theme');
+        choice = stored === 'light' || stored === 'dark' ? stored : 'system';
     });
 
-    function toggle() {
-        theme = theme === 'dark' ? 'light' : 'dark';
-        document.documentElement.dataset.theme = theme;
-        localStorage.setItem('theme', theme);
+    function select(next: ThemeChoice) {
+        choice = next;
+        if (next === 'system') {
+            delete document.documentElement.dataset.theme;
+            localStorage.removeItem('theme');
+        } else {
+            document.documentElement.dataset.theme = next;
+            localStorage.setItem('theme', next);
+        }
     }
 </script>
 
-<div class="theme-toggle">
-    <Button variant="ghost" icon={theme === 'dark' ? Sun : Moon} onclick={toggle} />
-</div>
+<ContextMenu align="end">
+    {#snippet trigger(toggle)}
+        <Button variant="ghost" icon={icons[choice]} onclick={toggle} />
+    {/snippet}
+    <ContextMenuItem icon={Sun} selected={choice === 'light'} onclick={() => select('light')}>Hell</ContextMenuItem>
+    <ContextMenuItem icon={Moon} selected={choice === 'dark'} onclick={() => select('dark')}>Dunkel</ContextMenuItem>
+    <ContextMenuItem icon={Monitor} selected={choice === 'system'} onclick={() => select('system')}>System</ContextMenuItem>
+</ContextMenu>
