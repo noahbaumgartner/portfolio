@@ -1,12 +1,21 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
+    import { ChevronDown } from '@lucide/svelte';
 
-    let { container }: { container: HTMLElement | undefined } = $props();
+    let {
+        container,
+        variant = 'sidebar'
+    }: {
+        container: HTMLElement | undefined;
+        variant?: 'sidebar' | 'mobile';
+    } = $props();
 
     type TocItem = { id: string; text: string; level: number };
 
     let items: TocItem[] = $state([]);
     let activeId: string | null = $state(null);
+    let expanded = $state(false);
+
+    let activeItem = $derived(items.find((item) => item.id === activeId) ?? items[0]);
 
     function slugify(text: string) {
         return text
@@ -58,10 +67,11 @@
         return () => observer.disconnect();
     });
 
-    const SCROLL_OFFSET = 64;
+    const SCROLL_OFFSET = variant === 'mobile' ? 150 : 64;
 
     function handleClick(event: MouseEvent, id: string) {
         event.preventDefault();
+        expanded = false;
         const target = document.getElementById(id);
         if (!target) return;
         const top = target.getBoundingClientRect().top + window.scrollY - SCROLL_OFFSET;
@@ -71,19 +81,67 @@
 </script>
 
 {#if items.length > 0}
-    <nav class="toc" aria-label="Inhaltsverzeichnis">
-        {#each items as item (item.id)}
-            <a
-                href="#{item.id}"
-                class="toc-item"
-                class:toc-item--sub={item.level === 2}
-                class:toc-item--active={activeId === item.id}
-                onclick={(event) => handleClick(event, item.id)}
-            >
-                {item.text}
-            </a>
-        {/each}
-    </nav>
+    {#if variant === 'mobile'}
+        <div class="toc-mobile">
+            {#if expanded}
+                <div class="toc-mobile-trigger">
+                    <a
+                        href="#{items[0].id}"
+                        class="toc-item toc-mobile-title"
+                        class:toc-item--sub={items[0].level === 2}
+                        class:toc-item--active={activeId === items[0].id}
+                        onclick={(event) => handleClick(event, items[0].id)}
+                    >
+                        {items[0].text}
+                    </a>
+                    <button
+                        type="button"
+                        class="toc-mobile-chevron-btn"
+                        onclick={() => (expanded = !expanded)}
+                        aria-expanded={expanded}
+                        aria-label="Inhaltsverzeichnis einklappen"
+                    >
+                        <ChevronDown class="toc-mobile-chevron" style="transform: rotate(180deg)" />
+                    </button>
+                </div>
+            {:else}
+                <button type="button" class="toc-mobile-trigger" onclick={() => (expanded = !expanded)} aria-expanded={expanded} aria-label="Inhaltsverzeichnis ausklappen">
+                    <span class="toc-mobile-title">{activeItem?.text}</span>
+                    <ChevronDown class="toc-mobile-chevron" />
+                </button>
+            {/if}
+
+            {#if expanded}
+                <nav class="toc-mobile-panel" aria-label="Inhaltsverzeichnis">
+                    {#each items.slice(1) as item (item.id)}
+                        <a
+                            href="#{item.id}"
+                            class="toc-item"
+                            class:toc-item--sub={item.level === 2}
+                            class:toc-item--active={activeId === item.id}
+                            onclick={(event) => handleClick(event, item.id)}
+                        >
+                            {item.text}
+                        </a>
+                    {/each}
+                </nav>
+            {/if}
+        </div>
+    {:else}
+        <nav class="toc" aria-label="Inhaltsverzeichnis">
+            {#each items as item (item.id)}
+                <a
+                    href="#{item.id}"
+                    class="toc-item"
+                    class:toc-item--sub={item.level === 2}
+                    class:toc-item--active={activeId === item.id}
+                    onclick={(event) => handleClick(event, item.id)}
+                >
+                    {item.text}
+                </a>
+            {/each}
+        </nav>
+    {/if}
 {/if}
 
 <style>
@@ -94,7 +152,7 @@
     }
 
     .toc-item {
-        font-size: 13px;
+        font-size: 12px;
         color: var(--color-text-muted);
         text-decoration: none;
         line-height: 1.4;
@@ -112,5 +170,81 @@
     .toc-item--active {
         color: var(--color-text);
         font-weight: 600;
+    }
+
+    .toc-mobile {
+        background-color: var(--color-bg);
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .toc-mobile-trigger {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        width: 100%;
+        padding: 14px 24px;
+        font-size: 14px;
+    }
+
+    button.toc-mobile-trigger {
+        background-color: transparent;
+        border: none;
+        font: inherit;
+        font-size: 14px;
+        color: var(--color-text);
+        text-align: left;
+        cursor: pointer;
+    }
+
+    .toc-mobile-title {
+        flex: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    a.toc-mobile-title {
+        font-size: 14px;
+    }
+
+    span.toc-mobile-title {
+        color: var(--color-text);
+    }
+
+    .toc-mobile-chevron-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        color: var(--color-text);
+        cursor: pointer;
+    }
+
+    .toc-mobile-trigger :global(.toc-mobile-chevron) {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+        transition: transform 200ms ease;
+    }
+
+    .toc-mobile-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 4px 24px 20px;
+    }
+
+    .toc-mobile-panel .toc-item {
+        font-size: 14px;
+    }
+
+    @media (min-width: 640px) {
+        .toc-mobile {
+            display: none;
+        }
     }
 </style>

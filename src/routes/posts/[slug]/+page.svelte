@@ -9,6 +9,9 @@
 	let bodyEl = $state();
 </script>
 
+<div class="mobile-toc-sticky">
+	<TableOfContents container={bodyEl} variant="mobile" />
+</div>
 <PostTitleSection {post} />
 <div class="post-content-spacer">
 	<Section class="post-content">
@@ -26,6 +29,18 @@
 </div>
 
 <style>
+	.mobile-toc-sticky {
+		position: sticky;
+		top: 64px;
+		z-index: 40;
+	}
+
+	@media (min-width: 640px) {
+		.mobile-toc-sticky {
+			display: none;
+		}
+	}
+
 	.post-content-spacer {
 		padding-bottom: 30px;
 	}
@@ -65,15 +80,15 @@
 		margin-inline: auto;
 	}
 
-	@media (min-width: 1280px) {
+	@media (min-width: 640px) {
 		:global(.post-content) {
 			max-width: none;
 		}
 
 		.post-layout {
 			display: grid;
-			grid-template-columns: minmax(140px, 1fr) minmax(0, 1000px) minmax(140px, 1fr);
-			column-gap: 24px;
+			grid-template-columns: minmax(120px, 1fr) minmax(0, 1000px) minmax(120px, 1fr);
+			column-gap: 16px;
 		}
 
 		.post-toc {
