@@ -51,5 +51,18 @@
         .post-title-box {
             padding: 72px 24px;
         }
+
+        .post-title-divider {
+            /* Mirrors the post content grid (TableOfContents column + gap)
+               so the divider tracks the text column's width once the TOC
+               sidebar squeezes it below 660px, instead of staying static. */
+            max-width: min(660px, 100vw - 352px);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .post-title-divider {
+            max-width: min(660px, 100vw - 400px);
+        }
     }
 </style>
