@@ -54,7 +54,7 @@
                 <span {@attach animateBlinking} class="hero-cursor">|</span>
             </span>
             <span class="hero-subtitle">
-                Ich entwickle Software bei <Link href="https://buildagil.com">buildagil</Link> und absolviere meinen MSc an der <Link href="https://zhaw.ch">ZHAW</Link>.
+                Ich entwickle Software bei der <Link href="https://b-3.ch">B3 Digital</Link> und absolviere meinen MSc an der <Link href="https://zhaw.ch">ZHAW</Link>.
             </span>
         </div>
     </div>
