@@ -1,10 +1,10 @@
 <script lang="ts">
 	import './layout.css';
-	import Nav from '$lib/components/navigation/Nav.svelte';
-	import NavItem from '$lib/components/navigation/NavItem.svelte';
+	import SiteHeader from '$lib/components/navigation/SiteHeader.svelte';
+	import SiteHeaderItem from '$lib/components/navigation/SiteHeaderItem.svelte';
+	import ThemeToggle from '$lib/components/ui/ThemeToggle.svelte';
 	import Footer from '$lib/components/sections/FooterSection.svelte';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
-	import Copyright from '$lib/components/sections/CopyrightSection.svelte';
 	import { onMount } from 'svelte';
 
 	let { children } = $props();
@@ -33,24 +33,46 @@
 	<meta name="og:url" content="https://noahbaumgartner.ch" />
 	<meta name="og:image" content="https://noahbaumgartner.ch/images/og.jpg" />
 
-	<link rel="preload" href="/fonts/GoogleSans.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="/fonts/Outfit.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 	<link rel="preload" href="/fonts/Inter.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 	<link rel="preload" href="/fonts/SourceCodePro.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 </svelte:head>
 
 {#if showScreen}
-	<div class="fixed inset-0 z-9999 bg-white transition-opacity duration-300" class:opacity-0={fontsLoaded}></div>
+	<div class="loading-screen" class:loading-screen--hidden={fontsLoaded}></div>
 {/if}
 
-<Nav>
-	<NavItem href="/">Home</NavItem>
-	<NavItem href="/about">Über mich</NavItem>
-	<NavItem href="/projects">Projekte</NavItem>
-</Nav>
-<main>
+<SiteHeader>
+	{#snippet left()}
+		<SiteHeaderItem href="/">Start</SiteHeaderItem>
+		<SiteHeaderItem href="/about">Über mich</SiteHeaderItem>
+		<SiteHeaderItem href="/posts">Beiträge</SiteHeaderItem>
+	{/snippet}
+	{#snippet right()}
+		<ThemeToggle />
+	{/snippet}
+</SiteHeader>
+<main class="main">
 	{@render children()}
 </main>
 <footer>
 	<Footer	/>
-	<Copyright />
 </footer>
+
+<style>
+	.loading-screen {
+		position: fixed;
+		inset: 0;
+		z-index: 9999;
+		background-color: var(--color-bg);
+		transition: opacity 300ms ease;
+	}
+
+	.loading-screen--hidden {
+		opacity: 0;
+	}
+
+	.main {
+		padding-top: 64px;
+	}
+</style>
