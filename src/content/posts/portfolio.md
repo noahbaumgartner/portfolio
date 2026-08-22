@@ -5,7 +5,6 @@ title: 'Portfolio'
 description: 'Persönliches Portfolio mit Projektübersicht und Infos zu meiner Person.'
 url: 'https://noahbaumgartner.ch/'
 github: https://github.com/noahbaumgartner/portfolio
-tags: 'Webseite,SPA'
 colors: '#ff7a36,#ff504a,#fdc538,#ff673d'
 icon: person-standing
 ---
@@ -13,8 +12,6 @@ icon: person-standing
 <script>
     import Link from '$lib/components/ui/Link.svelte'
 </script>
-
-<h2>Allgemein</h2>
 
 Für die Arbeit wollte ich mich im privaten Rahmen ein erstes Mal mit Svelte bzw. SvelteKit auseinander setzen anhand eines praxisnahen Beispiels. Ziel dieses Portfolios ist es, meine Person sowie eigene Projekte vorzustellen.
 

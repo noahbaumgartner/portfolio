@@ -6,6 +6,5 @@ export interface PostDTO {
     icon: string;
     url: string;
     github?: string;
-    tags: string[];
     colors: string[];
 }
