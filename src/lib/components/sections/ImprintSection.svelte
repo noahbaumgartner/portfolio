@@ -53,9 +53,9 @@
         max-width: 1280px;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         gap: 8px;
-        text-align: center;
+        text-align: left;
     }
 
     .contact-title {
@@ -76,7 +76,7 @@
 
     .disclaimer-title {
         margin-top: 0;
-        text-align: center;
+        text-align: left;
     }
 
     .disclaimer-list {

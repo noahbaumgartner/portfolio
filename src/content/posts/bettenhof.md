@@ -14,10 +14,10 @@ icon: wheat
 
 Ein Kollege betreibt einen Bauernhof und benötigte eine Webseite zur Präsentation seiner hofeigenen Produkte sowie weiterer Angebote rund um den Betrieb. Ziel war es, mit geringstem Aufwand eine funktionale Webseite zu erstellen.
 
-<h2>Technologien</h2>
+<h1>Technologien</h1>
 
 Die Webseite wurde mit Wix Studio entwickelt. Diese Plattform bot den Vorteil, dass einfach Formulare erstellt und Inhalte über das eigene CMS des Anbieters gepflegt werden können.
 
-<h2>Funktionen</h2>
+<h1>Funktionen</h1>
 
 Die Webseite präsentiert hofeigene Produkte und weitere Angebote des Bauernhofs. Zusätzlich wurde ein Google Business Profil eingerichtet, damit der Bauernhof prägnanter in der Google-Suche erscheint.
