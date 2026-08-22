@@ -85,7 +85,7 @@
     .hero-greeting {
         display: flex;
         gap: 4px;
-        font-family: 'Google Sans', sans-serif;
+        font-family: 'Outfit', sans-serif;
         font-size: 24px;
         text-align: center;
     }

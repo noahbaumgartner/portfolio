@@ -8,7 +8,7 @@
 
 <style>
     .item {
-        font-family: 'Google Sans', sans-serif;
+        font-family: 'Outfit', sans-serif;
         font-weight: 400;
         line-height: 28px;
         color: var(--color-text);

@@ -28,7 +28,7 @@
         border: none;
         border-radius: 10px;
         padding: 0 16px 0 20px;
-        font-family: 'Google Sans', sans-serif;
+        font-family: 'Outfit', sans-serif;
         font-size: 12px;
         text-decoration: none;
         outline: none;

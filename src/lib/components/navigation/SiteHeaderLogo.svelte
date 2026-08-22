@@ -11,7 +11,7 @@
     }
 
     .logo-text {
-        font-family: 'Google Sans', sans-serif;
+        font-family: 'Outfit', sans-serif;
         font-size: 18px;
         font-weight: 600;
         color: var(--color-text);

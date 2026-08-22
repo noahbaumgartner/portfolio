@@ -175,7 +175,7 @@
     }
 
     .post-title {
-        font-family: 'Google Sans', sans-serif;
+        font-family: 'Outfit', sans-serif;
         font-weight: 500;
     }
 
