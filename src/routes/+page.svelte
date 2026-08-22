@@ -1,10 +1,10 @@
 <script lang="ts">
 	import AboutPreviewSection from "$lib/components/sections/AboutPreviewSection.svelte";
 	import HeroSection from "$lib/components/sections/HeroSection.svelte";
-	import ProjectsPreviewSection from "$lib/components/sections/ProjectsPreviewSection.svelte";
+	import PostsPreviewSection from "$lib/components/sections/PostsPreviewSection.svelte";
 
 	let { data } = $props();
-	let { projects } = $derived(data);
+	let { posts } = $derived(data);
 </script>
 
 <svelte:head>
@@ -16,4 +16,4 @@
 
 <HeroSection />
 <AboutPreviewSection />
-<ProjectsPreviewSection projects={projects} />
+<PostsPreviewSection posts={posts} />
