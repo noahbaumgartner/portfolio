@@ -75,7 +75,15 @@
         const target = document.getElementById(id);
         if (!target) return;
         const top = target.getBoundingClientRect().top + window.scrollY - SCROLL_OFFSET;
-        window.scrollTo({ top, behavior: 'smooth' });
+
+        // Mobile Safari can silently drop a new smooth scroll if one is still
+        // animating, so snap to the current position first to clear it before
+        // requesting the next smooth scroll on the following frame.
+        window.scrollTo({ top: window.scrollY, behavior: 'instant' });
+        requestAnimationFrame(() => {
+            window.scrollTo({ top, behavior: 'smooth' });
+        });
+
         history.replaceState(null, '', `#${id}`);
     }
 </script>
