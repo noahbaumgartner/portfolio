@@ -1,16 +1,20 @@
 <script>
+	import { ArrowLeft, ArrowRight } from '@lucide/svelte';
 	import PostTitleSection from '$lib/components/sections/PostTitleSection.svelte';
 	import Section from '$lib/components/sections/Section.svelte';
+	import Button from '$lib/components/ui/Button.svelte';
 	import TableOfContents from '$lib/components/ui/TableOfContents.svelte';
 
 	let { data } = $props();
-	let { Content, post } = $derived(data);
+	let { Content, post, previous, next } = $derived(data);
 
 	let bodyEl = $state();
 </script>
 
 <div class="mobile-toc-sticky">
-	<TableOfContents container={bodyEl} variant="mobile" />
+	{#key post.slug}
+		<TableOfContents container={bodyEl} variant="mobile" />
+	{/key}
 </div>
 <PostTitleSection {post} />
 <div class="post-content-spacer">
@@ -18,7 +22,9 @@
 		<div class="post-layout">
 			<aside class="post-toc">
 				<div class="post-toc-sticky">
-					<TableOfContents container={bodyEl} />
+					{#key post.slug}
+						<TableOfContents container={bodyEl} />
+					{/key}
 				</div>
 			</aside>
 			<div class="post-body" bind:this={bodyEl}>
@@ -26,6 +32,21 @@
 			</div>
 		</div>
 	</Section>
+
+	{#if previous || next}
+		<div class="post-nav-wrapper page-padding">
+			<nav class="post-nav" aria-label="Beitragsnavigation">
+				{#if previous}
+					<Button variant="secondary" size="lg" icon={ArrowLeft} href={`/posts/${previous.slug}`}>{previous.title}</Button>
+				{/if}
+				{#if next}
+					<div class="post-nav-next">
+						<Button variant="secondary" size="lg" icon={ArrowRight} href={`/posts/${next.slug}`}>{next.title}</Button>
+					</div>
+				{/if}
+			</nav>
+		</div>
+	{/if}
 </div>
 
 <style>
@@ -149,5 +170,46 @@
 		margin-block: 48px;
 		margin-inline: auto;
 		border-radius: 6px;
+	}
+
+	.post-nav-wrapper {
+		/* Matches .section-gap's top spacing so this reads as the same
+		   rhythm as the gap between any two sections on the site. */
+		margin-top: 30px;
+	}
+
+	.post-nav {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		margin-inline: auto;
+		max-width: 660px;
+	}
+
+	.post-nav-next {
+		margin-left: auto;
+	}
+
+	@media (min-width: 640px) {
+		.post-nav-wrapper {
+			margin-top: 40px;
+		}
+
+		.post-nav {
+			/* Mirrors the post content grid (TableOfContents column + gap)
+			   so the nav tracks the text column's width once the TOC
+			   sidebar squeezes it below 660px, instead of staying static. */
+			max-width: min(660px, 100vw - 352px);
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.post-nav-wrapper {
+			margin-top: 64px;
+		}
+
+		.post-nav {
+			max-width: min(660px, 100vw - 400px);
+		}
 	}
 </style>

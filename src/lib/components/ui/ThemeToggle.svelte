@@ -30,7 +30,7 @@
 
 <ContextMenu align="end">
     {#snippet trigger(toggle)}
-        <Button variant="ghost" icon={icons[choice]} onclick={toggle} />
+        <Button variant="ghost" size="lg" icon={icons[choice]} onclick={toggle} />
     {/snippet}
     <ContextMenuItem icon={Sun} selected={choice === 'light'} onclick={() => select('light')}>Hell</ContextMenuItem>
     <ContextMenuItem icon={Moon} selected={choice === 'dark'} onclick={() => select('dark')}>Dunkel</ContextMenuItem>

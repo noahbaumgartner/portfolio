@@ -95,6 +95,7 @@
         gap: 20px;
         text-decoration: none;
         color: inherit;
+        user-select: none;
     }
 
     .post-image-wrap {

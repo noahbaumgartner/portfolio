@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { tick } from 'svelte';
     import { ChevronDown } from '@lucide/svelte';
 
     let {
@@ -67,11 +68,15 @@
         return () => observer.disconnect();
     });
 
-    const SCROLL_OFFSET = variant === 'mobile' ? 150 : 64;
+    const SCROLL_OFFSET = variant === 'mobile' ? 130 : 64;
 
-    function handleClick(event: MouseEvent, id: string) {
+    async function handleClick(event: MouseEvent, id: string) {
         event.preventDefault();
         expanded = false;
+        // Wait for the mobile panel's collapse to actually reach the DOM before
+        // measuring the heading position, otherwise the still-expanded panel's
+        // extra height gets baked into the scroll target and it overshoots.
+        await tick();
         const target = document.getElementById(id);
         if (!target) return;
         const top = target.getBoundingClientRect().top + window.scrollY - SCROLL_OFFSET;
@@ -157,6 +162,7 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
+        user-select: none;
     }
 
     .toc-item {
@@ -183,6 +189,7 @@
     .toc-mobile {
         background-color: var(--color-bg);
         border-bottom: 1px solid var(--color-border);
+        user-select: none;
     }
 
     .toc-mobile-trigger {

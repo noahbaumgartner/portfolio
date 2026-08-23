@@ -5,7 +5,8 @@ title: 'Portfolio'
 description: 'Persönliches Portfolio mit Projektübersicht und Infos zu meiner Person.'
 url: 'https://noahbaumgartner.ch/'
 github: https://github.com/noahbaumgartner/portfolio
-colors: '#ff7a36,#ff504a,#fdc538,#ff673d'
+gif: '/videos/posts/portfolio.gif'
+colors: '#d9d9d9,#c2c2c2,#141414'
 icon: person-standing
 ---
 
@@ -13,12 +14,16 @@ icon: person-standing
     import Link from '$lib/components/ui/Link.svelte'
 </script>
 
-Für die Arbeit wollte ich mich im privaten Rahmen ein erstes Mal mit Svelte bzw. SvelteKit auseinander setzen anhand eines praxisnahen Beispiels. Ziel dieses Portfolios ist es, meine Person sowie eigene Projekte vorzustellen.
+Diese Webseite ist mein persönliches Portfolio und gleichzeitig das Projekt, das du dir gerade ansiehst. Ich habe sie gebaut, um einen digitalen Lebenslauf zu haben, der jederzeit aktuell ist, und um mich vertieft mit Svelte auseinanderzusetzen.
 
-<h1>Technologien</h1>
+<h1>Motivation</h1>
 
-Das Portfolio wurde mit SvelteKit entwickelt. Für das Styling kommt eigenes, plain CSS zum Einsatz. Die Website ist als Single Page Application (SPA) konzipiert und verwendet Icons von Lucide.
+Ich wollte eine Webseite haben, auf der sich Besucher selbst ein Bild von mir und meinen Projekten machen können, quasi als digitaler Lebenslauf. Gleichzeitig war das Projekt für mich eine gute Gelegenheit, Svelte und SvelteKit ausserhalb meines Jobs in einem eigenen Kontext einzusetzen und dadurch besser kennen zu lernen.
+
+<h1>Technischer Aufbau</h1>
+
+Die Seite basiert auf <Link href="https://svelte.dev/docs/kit/introduction">SvelteKit</Link> und ist vollständig mit TypeScript geschrieben. Sämtliche Komponenten wie Buttons, Links oder das Kontextmenü habe ich selbst entwickelt, für die Icons greife ich auf die Bibliothek <Link href="https://lucide.dev/">Lucide</Link> zurück. Die Projektbeiträge, wie diesen hier, schreibe ich in Markdown und binde sie über <Link href="https://mdsvex.pngwn.io/">mdsvex</Link> ein, wodurch ich innerhalb der Texte auch eigene Svelte-Komponenten wie diesen Link verwenden kann. Gehostet wird die Seite auf <Link href="https://vercel.com/">Vercel</Link>.
 
 <h1>Funktionen</h1>
 
-Das Portfolio bietet Informationen über mich sowie eine Übersicht meiner persönlichen Projekte. Ein Highlight ist die Definition von Projekten, welche über <Link href="">mdsvex</Link> funktioniert.
+Neben einer kurzen Übersicht zu mir auf der Startseite gibt es einen Bereich über mich mit Ausbildung und Berufserfahrung sowie eine Übersicht über Projekte wie dieses hier, jeweils mit Inhaltsverzeichnis für längere Beiträge. Zusätzlich gibt es einen Hell- und Dunkelmodus sowie ein Impressum.
