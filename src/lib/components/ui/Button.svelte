@@ -28,7 +28,7 @@
         border: none;
         border-radius: 10px;
         font-family: 'Outfit', sans-serif;
-        font-size: 12px;
+        font-size: 13px;
         text-decoration: none;
         outline: none;
         cursor: pointer;
@@ -47,7 +47,7 @@
 
     .button--md {
         height: 32px;
-        padding: 0 16px 0 12px;
+        padding: 0 15px 0 11px;
     }
 
     .button--icon-only.button--lg {
