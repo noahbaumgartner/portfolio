@@ -162,6 +162,7 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
+        user-select: none;
     }
 
     .toc-item {
@@ -188,6 +189,7 @@
     .toc-mobile {
         background-color: var(--color-bg);
         border-bottom: 1px solid var(--color-border);
+        user-select: none;
     }
 
     .toc-mobile-trigger {

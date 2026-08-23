@@ -112,6 +112,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        user-select: none;
     }
 
     .post-period {
@@ -192,6 +193,7 @@
         color: var(--color-text);
         outline: none;
         cursor: pointer;
+        user-select: none;
         transition: background-color 200ms ease, color 200ms ease;
     }
 

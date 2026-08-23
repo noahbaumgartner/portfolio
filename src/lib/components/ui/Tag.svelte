@@ -21,6 +21,7 @@
         font-size: 12px;
         border-radius: 4px;
         text-decoration: none;
+        user-select: none;
     }
 
     .tag :global(svg) {
