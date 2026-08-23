@@ -8,13 +8,13 @@
 
 {#if href}
     <a {href} {target} rel={target ? 'noopener' : undefined} data-sveltekit-preload-data class="button button--{variant} button--{size}" class:button--icon-only={iconOnly} class:button--no-icon={!Icon}>
-        {#if children}{@render children()}{/if}
         {#if Icon}<Icon class="button-icon" />{/if}
+        {#if children}{@render children()}{/if}
     </a>
 {:else}
     <button type="button" {onclick} class="button button--{variant} button--{size}" class:button--icon-only={iconOnly} class:button--no-icon={!Icon}>
-        {#if children}{@render children()}{/if}
         {#if Icon}<Icon class="button-icon" />{/if}
+        {#if children}{@render children()}{/if}
     </button>
 {/if}
 
@@ -42,12 +42,12 @@
 
     .button--lg {
         height: 36px;
-        padding: 0 16px 0 20px;
+        padding: 0 20px 0 16px;
     }
 
     .button--md {
         height: 32px;
-        padding: 0 12px 0 16px;
+        padding: 0 16px 0 12px;
     }
 
     .button--icon-only.button--lg {
@@ -69,18 +69,8 @@
     }
 
     .button :global(.button-icon) {
-        width: 14px;
-        height: 14px;
-        transition: transform 200ms ease;
-    }
-
-    .button--icon-only :global(.button-icon) {
         width: 16px;
         height: 16px;
-    }
-
-    .button:not(.button--icon-only):hover :global(.button-icon) {
-        transform: translate(2px, -2px);
     }
 
     .button--primary {

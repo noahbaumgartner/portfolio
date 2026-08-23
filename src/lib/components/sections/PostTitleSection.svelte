@@ -150,7 +150,7 @@
     .post-title-actions {
         display: flex;
         align-items: center;
-        gap: 4px;
+        gap: 2px;
         flex-shrink: 0;
     }
 
