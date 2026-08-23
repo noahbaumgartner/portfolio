@@ -17,11 +17,11 @@ Compass ist im Rahmen eines Projektmoduls während meines Bachelorstudiums an de
 
 <h1>Meine Rolle</h1>
 
-Innerhalb der Gruppe war ich für die Umsetzung des Frontends zuständig, das ich mit <Link href="https://nextjs.org/">Next.js</Link> realisiert habe. Auf eine bestehende UI-Bibliothek haben wir dabei verzichtet, ich habe sämtliche UI-Komponenten eigenständig entwickelt, für das Styling kam Tailwind CSS zum Einsatz. Zusätzlich habe ich die Authentifizierung über <Link href="https://auth0.com/">Auth0</Link> integriert, sowohl im Frontend als auch im Backend, das auf <Link href="https://spring.io/projects/spring-boot">Spring Boot</Link> aufbaut.
+Innerhalb der Gruppe war ich für die Umsetzung des Frontends zuständig, das ich mit <Link href="https://nextjs.org/">Next.js</Link> realisiert habe. Auf eine bestehende UI-Bibliothek haben wir dabei verzichtet, ich habe sämtliche UI-Komponenten eigenständig entwickelt, für das Styling kam <Link href="https://tailwindcss.com/">Tailwind CSS</Link> zum Einsatz. Zusätzlich habe ich die Authentifizierung über <Link href="https://auth0.com/">Auth0</Link> integriert, sowohl im Frontend als auch im Backend, das auf <Link href="https://spring.io/projects/spring-boot">Spring Boot</Link> aufbaut.
 
 <h1>Qualitätssicherung</h1>
 
-Damit die Anwendung auch bei vier Personen im Team konsistent blieb, hatten wir automatisierte Tests im Einsatz, Unit-Tests mit Jest und End-to-End-Tests mit Playwright. Über eine GitHub-Actions-Pipeline wurden diese bei jedem Commit ausgeführt und Codequalität sowie Testabdeckung zusätzlich mit SonarQube und Codecov überwacht. Für den Betrieb war die Anwendung containerisiert und liess sich mit Docker und Kubernetes ausrollen.
+Damit die Anwendung auch bei vier Personen im Team konsistent blieb, hatten wir automatisierte Tests im Einsatz, Unit-Tests mit <Link href="https://jestjs.io/">Jest</Link> und End-to-End-Tests mit <Link href="https://playwright.dev/">Playwright</Link>. Über eine <Link href="https://github.com/features/actions">GitHub-Actions</Link>-Pipeline wurden diese bei jedem Commit ausgeführt und Codequalität sowie Testabdeckung zusätzlich mit <Link href="https://www.sonarsource.com/products/sonarqube/">SonarQube</Link> und <Link href="https://about.codecov.io/">Codecov</Link> überwacht. Für den Betrieb war die Anwendung containerisiert und liess sich mit <Link href="https://www.docker.com/">Docker</Link> und <Link href="https://kubernetes.io/">Kubernetes</Link> ausrollen.
 
 <h1>Stand des Projekts</h1>
 
