@@ -39,7 +39,7 @@
                 </div>
 
                 <div class="mobile-toggle">
-                    <Button variant="secondary" icon={mobileNavActive ? X : Menu} onclick={() => (mobileNavActive = !mobileNavActive)} />
+                    <Button variant="secondary" size="lg" icon={mobileNavActive ? X : Menu} onclick={() => (mobileNavActive = !mobileNavActive)} />
                 </div>
             </div>
         </div>
@@ -111,8 +111,9 @@
         flex-grow: 1;
         display: flex;
         flex-direction: column;
+        align-items: center;
         justify-content: center;
-        gap: 20px;
+        gap: 24px;
         font-size: 30px;
         font-weight: 600;
     }

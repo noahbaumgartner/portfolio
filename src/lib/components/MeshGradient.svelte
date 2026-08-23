@@ -21,13 +21,12 @@
 
     const blobs = $derived.by(() => {
         const rand = mulberry32(hashSeed(seed || colors.join("")));
-        const sharpIndex = Math.floor(rand() * colors.length);
         return colors.map((color, i) => ({
             color,
             x: 10 + rand() * 80,
             y: 10 + rand() * 80,
             size: 70 + rand() * 60,
-            blur: i === sharpIndex ? 0 : 6 + rand() * 34,
+            blur: rand() * 20,
             z: i
         }));
     });

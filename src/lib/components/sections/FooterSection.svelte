@@ -48,6 +48,7 @@
 
     .footer-title {
         color: var(--color-on-inverse);
+        user-select: none;
     }
 
     .footer-bottom {
@@ -61,6 +62,7 @@
     .footer-copyright {
         font-size: 14px;
         color: var(--color-text-muted);
+        user-select: none;
     }
 
     .footer-columns {
@@ -81,6 +83,7 @@
     .footer-heading {
         font-weight: 700;
         color: var(--color-on-inverse);
+        user-select: none;
     }
 
     @media (min-width: 640px) {

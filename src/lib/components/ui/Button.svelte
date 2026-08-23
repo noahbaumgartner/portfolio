@@ -1,19 +1,20 @@
 <script lang="ts">
     import { ArrowUpRight } from '@lucide/svelte';
 
-    let { href, variant = 'primary', icon: Icon = ArrowUpRight, onclick, children } = $props();
+    let { href, variant = 'primary', size = 'md', icon: Icon = ArrowUpRight, onclick, children } = $props();
     let iconOnly = $derived(!children);
+    let target = $derived(href?.startsWith('http') ? '_blank' : undefined);
 </script>
 
 {#if href}
-    <a {href} class="button button--{variant}" class:button--icon-only={iconOnly} class:button--no-icon={!Icon}>
-        {#if children}{@render children()}{/if}
+    <a {href} {target} rel={target ? 'noopener' : undefined} data-sveltekit-preload-data class="button button--{variant} button--{size}" class:button--icon-only={iconOnly} class:button--no-icon={!Icon}>
         {#if Icon}<Icon class="button-icon" />{/if}
+        {#if children}{@render children()}{/if}
     </a>
 {:else}
-    <button type="button" {onclick} class="button button--{variant}" class:button--icon-only={iconOnly} class:button--no-icon={!Icon}>
-        {#if children}{@render children()}{/if}
+    <button type="button" {onclick} class="button button--{variant} button--{size}" class:button--icon-only={iconOnly} class:button--no-icon={!Icon}>
         {#if Icon}<Icon class="button-icon" />{/if}
+        {#if children}{@render children()}{/if}
     </button>
 {/if}
 
@@ -24,12 +25,10 @@
         justify-content: center;
         gap: 6px;
         box-sizing: border-box;
-        height: 36px;
         border: none;
         border-radius: 10px;
-        padding: 0 16px 0 20px;
         font-family: 'Outfit', sans-serif;
-        font-size: 12px;
+        font-size: 13px;
         text-decoration: none;
         outline: none;
         cursor: pointer;
@@ -41,27 +40,37 @@
         box-shadow: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--color-ink);
     }
 
-    .button--icon-only {
+    .button--lg {
+        height: 36px;
+        padding: 0 20px 0 16px;
+    }
+
+    .button--md {
+        height: 32px;
+        padding: 0 15px 0 11px;
+    }
+
+    .button--icon-only.button--lg {
+        /* Square: (36px height - 16px icon) / 2 */
         padding: 0 10px;
     }
 
-    .button--no-icon {
+    .button--icon-only.button--md {
+        /* Square: (32px height - 16px icon) / 2 */
+        padding: 0 8px;
+    }
+
+    .button--no-icon.button--lg {
         padding: 0 20px;
     }
 
-    .button :global(.button-icon) {
-        width: 14px;
-        height: 14px;
-        transition: transform 200ms ease;
+    .button--no-icon.button--md {
+        padding: 0 16px;
     }
 
-    .button--icon-only :global(.button-icon) {
+    .button :global(.button-icon) {
         width: 16px;
         height: 16px;
-    }
-
-    .button:not(.button--icon-only):hover :global(.button-icon) {
-        transform: translate(2px, -2px);
     }
 
     .button--primary {
