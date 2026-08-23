@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Image from "../Image.svelte";
+    import Image from "../ui/Image.svelte";
     import Link from "../ui/Link.svelte";
 </script>
 
