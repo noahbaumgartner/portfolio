@@ -14,6 +14,7 @@ export async function loadPosts(limit?: number): Promise<PostDTO[]> {
             period: `${new Date(metadata.year, metadata.month - 1).toLocaleString('de-DE', { month: 'long' })} ${metadata.year}`,
             url: metadata.url,
             github: metadata.github,
+            gif: metadata.gif,
             colors: metadata.colors.split(",").map((c: string) => c.trim()),
         }
 
