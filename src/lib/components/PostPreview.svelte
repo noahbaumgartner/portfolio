@@ -1,6 +1,6 @@
 <script lang="ts">
     import type { PostDTO } from '$lib/dtos/PostDTO';
-    import { Compass, Wheat, PersonStanding, PartyPopper, Scale } from '@lucide/svelte';
+    import { Compass, Wheat, PersonStanding, PartyPopper, Scale, Search, Car, Image } from '@lucide/svelte';
     import MeshGradient from './MeshGradient.svelte';
 
     let { post }: { post: PostDTO } = $props();
@@ -11,6 +11,9 @@
         'person-standing': PersonStanding,
         'party-popper': PartyPopper,
         scale: Scale,
+        search: Search,
+        car: Car,
+        image: Image,
     };
 
     const Icon = $derived(icons[post.icon]);
