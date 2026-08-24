@@ -5,7 +5,7 @@ title: 'Compass'
 description: 'Stimmungs- und Arbeitszeiterfassung für die Stadtmuur Winterthur.'
 github: https://github.com/ZHAW-PM4-Compass/compass
 gif: '/videos/posts/compass.png'
-colors: '#dde3e8,#e2e8e0,#a3b4c5'
+colors: '#c9d6e1,#e2e8e0,#a3b4c5'
 icon: compass
 ---
 
