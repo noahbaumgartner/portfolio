@@ -1,0 +1,68 @@
+<svg viewBox="0 0 1100 430" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+  <defs>
+    <marker id="arrow-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6b74b0" />
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1100" height="430" rx="16" fill="#f5f6fb" stroke="#e1e4f2" stroke-width="1.5" />
+
+  <!-- Row labels -->
+  <text x="70" y="48" font-size="14" font-weight="600" fill="#262b52">Indexierungs-Pipeline</text>
+  <text x="70" y="268" font-size="14" font-weight="600" fill="#262b52">Such-Pipeline</text>
+
+  <!-- Row 1: Indexierung -->
+  <g font-size="13" fill="#262b52">
+    <rect x="70" y="70" width="160" height="70" rx="10" fill="#ffffff" stroke="#c7cce8" stroke-width="1.5" />
+    <text x="150" y="99" text-anchor="middle">Inhalt</text>
+    <text x="150" y="116" text-anchor="middle">geändert</text>
+
+    <rect x="270" y="70" width="160" height="70" rx="10" fill="#ffffff" stroke="#c7cce8" stroke-width="1.5" />
+    <text x="350" y="99" text-anchor="middle">Text</text>
+    <text x="350" y="116" text-anchor="middle">extrahieren</text>
+
+    <rect x="470" y="70" width="160" height="70" rx="10" fill="#ffffff" stroke="#c7cce8" stroke-width="1.5" />
+    <text x="550" y="110" text-anchor="middle">Chunking</text>
+
+    <rect x="670" y="70" width="160" height="70" rx="10" fill="#eef0fb" stroke="#8891d6" stroke-width="1.5" />
+    <text x="750" y="110" text-anchor="middle">Embedding</text>
+
+    <rect x="870" y="70" width="160" height="70" rx="10" fill="#eef0fb" stroke="#8891d6" stroke-width="1.5" />
+    <text x="950" y="99" text-anchor="middle">Vektor-</text>
+    <text x="950" y="116" text-anchor="middle">datenbank</text>
+  </g>
+
+  <path d="M235,105 L265,105" stroke="#6b74b0" stroke-width="1.5" fill="none" marker-end="url(#arrow-a)" />
+  <path d="M435,105 L465,105" stroke="#6b74b0" stroke-width="1.5" fill="none" marker-end="url(#arrow-a)" />
+  <path d="M635,105 L665,105" stroke="#6b74b0" stroke-width="1.5" fill="none" marker-end="url(#arrow-a)" />
+  <path d="M835,105 L865,105" stroke="#6b74b0" stroke-width="1.5" fill="none" marker-end="url(#arrow-a)" />
+
+  <!-- Row 2: Suche -->
+  <g font-size="13" fill="#262b52">
+    <rect x="70" y="290" width="160" height="70" rx="10" fill="#ffffff" stroke="#c7cce8" stroke-width="1.5" />
+    <text x="150" y="330" text-anchor="middle">Suchanfrage</text>
+
+    <rect x="270" y="290" width="160" height="70" rx="10" fill="#ffffff" stroke="#c7cce8" stroke-width="1.5" />
+    <text x="350" y="319" text-anchor="middle">Abfrage-</text>
+    <text x="350" y="336" text-anchor="middle">Erweiterung</text>
+
+    <rect x="470" y="290" width="160" height="70" rx="10" fill="#eef0fb" stroke="#8891d6" stroke-width="1.5" />
+    <text x="550" y="330" text-anchor="middle">Embedding</text>
+
+    <rect x="670" y="290" width="160" height="70" rx="10" fill="#eef0fb" stroke="#8891d6" stroke-width="1.5" />
+    <text x="750" y="319" text-anchor="middle">Vektorsuche</text>
+    <text x="750" y="336" text-anchor="middle">+ Filter</text>
+
+    <rect x="870" y="290" width="160" height="70" rx="10" fill="#ffffff" stroke="#c7cce8" stroke-width="1.5" />
+    <text x="950" y="330" text-anchor="middle">Resultate</text>
+  </g>
+
+  <path d="M235,325 L265,325" stroke="#6b74b0" stroke-width="1.5" fill="none" marker-end="url(#arrow-a)" />
+  <path d="M435,325 L465,325" stroke="#6b74b0" stroke-width="1.5" fill="none" marker-end="url(#arrow-a)" />
+  <path d="M635,325 L665,325" stroke="#6b74b0" stroke-width="1.5" fill="none" marker-end="url(#arrow-a)" />
+  <path d="M835,325 L865,325" stroke="#6b74b0" stroke-width="1.5" fill="none" marker-end="url(#arrow-a)" />
+
+  <!-- Connector: vector database feeds the vector search -->
+  <path d="M950,140 L950,215 L750,215 L750,285" stroke="#8891d6" stroke-width="1.5" stroke-dasharray="5 4" fill="none" marker-end="url(#arrow-a)" />
+  <text x="850" y="208" text-anchor="middle" font-size="12" fill="#8891d6">gespeicherte Vektoren</text>
+</svg>

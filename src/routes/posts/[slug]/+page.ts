@@ -16,6 +16,7 @@ export const load = async ({ params }) => {
             github: metadata.github || "",
             gif: metadata.gif || "",
             colors: metadata.colors.split(",").map((c: string) => c.trim()),
+            sources: metadata.sources || [],
         }
 
         const posts = await loadPosts();

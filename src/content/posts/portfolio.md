@@ -1,6 +1,6 @@
 ---
 year: 2026
-month: 1
+month: 8
 title: 'Portfolio'
 description: 'Persönliches Portfolio mit Projektübersicht und Infos zu meiner Person.'
 url: 'https://noahbaumgartner.ch/'

@@ -3,6 +3,7 @@
 	import PostTitleSection from '$lib/components/sections/PostTitleSection.svelte';
 	import Section from '$lib/components/sections/Section.svelte';
 	import Button from '$lib/components/ui/Button.svelte';
+	import Link from '$lib/components/ui/Link.svelte';
 	import TableOfContents from '$lib/components/ui/TableOfContents.svelte';
 
 	let { data } = $props();
@@ -32,6 +33,20 @@
 			</div>
 		</div>
 	</Section>
+
+	{#if post.sources?.length}
+		<Section class="post-sources">
+			<h2 class="post-sources-title">Quellen</h2>
+			<ol class="post-sources-list">
+				{#each post.sources as source, i}
+					<li id={`quelle-${i + 1}`}>
+						<span class="post-sources-index">[{i + 1}]</span>
+						<Link href={source.url}>{source.title}</Link>
+					</li>
+				{/each}
+			</ol>
+		</Section>
+	{/if}
 
 	{#if previous || next}
 		<div class="post-nav-wrapper page-padding">
@@ -163,6 +178,19 @@
 		line-height: 1.8;
 	}
 
+	.post-body :global(p:not(:last-child)) {
+		margin-bottom: 16px;
+	}
+
+	.post-body :global(.katex-display) {
+		max-width: 660px;
+		margin-inline: auto;
+		margin-block: 24px;
+		overflow-x: auto;
+		overflow-y: hidden;
+		padding-block: 4px;
+	}
+
 	.post-body :global(img) {
 		display: block;
 		width: 100%;
@@ -170,6 +198,77 @@
 		margin-block: 48px;
 		margin-inline: auto;
 		border-radius: 6px;
+	}
+
+	.post-body :global(figcaption) {
+		max-width: 660px;
+		margin-inline: auto;
+		margin-top: -32px;
+		margin-bottom: 16px;
+		font-size: 13px;
+		text-align: center;
+		color: var(--color-text-muted);
+	}
+
+	.post-body :global(sup) {
+		font-size: 0.7em;
+	}
+
+	.post-body :global(sup a) {
+		color: var(--color-text-secondary);
+		text-decoration: none;
+	}
+
+	.post-body :global(sup a:hover) {
+		text-decoration: underline;
+	}
+
+	:global(.post-sources) {
+		padding: 32px 24px;
+	}
+
+	@media (min-width: 640px) {
+		:global(.post-sources) {
+			padding: 40px 40px;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		:global(.post-sources) {
+			padding: 48px 64px;
+		}
+	}
+
+	.post-sources-title {
+		max-width: 660px;
+		margin-inline: auto;
+		font-family: 'Inter', sans-serif;
+		font-size: 1rem;
+		font-weight: 600;
+		margin-bottom: 16px;
+	}
+
+	.post-sources-list {
+		max-width: 660px;
+		margin-inline: auto;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		counter-reset: source;
+	}
+
+	.post-sources-list li {
+		display: flex;
+		gap: 8px;
+		font-size: 14px;
+		line-height: 1.6;
+		scroll-margin-top: 120px;
+	}
+
+	.post-sources-index {
+		flex-shrink: 0;
+		color: var(--color-text-muted);
+		font-variant-numeric: tabular-nums;
 	}
 
 	.post-nav-wrapper {

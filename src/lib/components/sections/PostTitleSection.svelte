@@ -166,6 +166,7 @@
         border: 1px solid var(--color-border);
         border-radius: 10px;
         background-color: var(--color-surface);
+        box-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.25);
     }
 
     .post-gif-video {
