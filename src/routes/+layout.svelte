@@ -1,5 +1,6 @@
 <script lang="ts">
 	import './layout.css';
+	import 'katex/dist/katex.min.css';
 	import SiteHeader from '$lib/components/navigation/SiteHeader.svelte';
 	import SiteHeaderItem from '$lib/components/navigation/SiteHeaderItem.svelte';
 	import ThemeToggle from '$lib/components/ui/ThemeToggle.svelte';

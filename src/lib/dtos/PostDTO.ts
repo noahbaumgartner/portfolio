@@ -1,3 +1,8 @@
+export interface PostSourceDTO {
+    title: string;
+    url: string;
+}
+
 export interface PostDTO {
     slug: string;
     period: string;
@@ -8,4 +13,5 @@ export interface PostDTO {
     github?: string;
     gif?: string;
     colors: string[];
+    sources?: PostSourceDTO[];
 }

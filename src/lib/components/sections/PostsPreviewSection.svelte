@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Compass, Wheat, PersonStanding, PartyPopper, Scale } from '@lucide/svelte';
+	import { Compass, Wheat, PersonStanding, PartyPopper, Scale, Search, Car, Image } from '@lucide/svelte';
 	import MeshGradient from "../MeshGradient.svelte";
 	import Link from "../ui/Link.svelte";
 
@@ -11,6 +11,9 @@
         'person-standing': PersonStanding,
         'party-popper': PartyPopper,
         scale: Scale,
+        search: Search,
+        car: Car,
+        image: Image,
     };
 </script>
 
