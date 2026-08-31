@@ -1,6 +1,6 @@
 <script lang="ts">
-    import Image from "../ui/Image.svelte";
-    import Link from "../ui/Link.svelte";
+    import Image from "../ui/image/Image.svelte";
+    import Link from "../ui/link/Link.svelte";
 </script>
 
 <section class="intro-wrapper page-padding">
