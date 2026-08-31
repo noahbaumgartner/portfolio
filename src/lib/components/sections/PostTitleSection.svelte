@@ -1,6 +1,6 @@
 <script lang="ts">
     import { Pause, Play, Github, Globe } from '@lucide/svelte';
-    import Button from '$lib/components/ui/Button.svelte';
+    import Button from '$lib/components/ui/button/Button.svelte';
 
     let { post } = $props();
 

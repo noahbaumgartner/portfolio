@@ -31,7 +31,7 @@ sources:
 ---
 
 <script>
-    import Link from '$lib/components/ui/Link.svelte'
+    import Link from '$lib/components/ui/link/Link.svelte'
 </script>
 
 Für meine Bachelorarbeit an der ZHAW habe ich mich zusammen mit einem Studienkollegen mit der Frage beschäftigt, wie sich eine klassische Stichwortsuche durch eine semantische Suche ablösen lässt, die Inhalte nicht nach exakten Begriffstreffern, sondern nach ihrer inhaltlichen Bedeutung findet. Im Zentrum stand dabei die Konzeption und die prototypische Umsetzung eines entsprechenden Suchsystems, das wir anschliessend sowohl technisch als auch mit echten Nutzenden evaluiert haben.

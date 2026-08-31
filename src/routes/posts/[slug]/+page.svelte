@@ -2,9 +2,9 @@
 	import { ArrowLeft, ArrowRight } from '@lucide/svelte';
 	import PostTitleSection from '$lib/components/sections/PostTitleSection.svelte';
 	import Section from '$lib/components/sections/Section.svelte';
-	import Button from '$lib/components/ui/Button.svelte';
-	import Link from '$lib/components/ui/Link.svelte';
-	import TableOfContents from '$lib/components/ui/TableOfContents.svelte';
+	import Button from '$lib/components/ui/button/Button.svelte';
+	import Link from '$lib/components/ui/link/Link.svelte';
+	import TableOfContents from '$lib/components/ui/table-of-contents/TableOfContents.svelte';
 
 	let { data } = $props();
 	let { Content, post, previous, next } = $derived(data);

@@ -10,7 +10,7 @@ icon: compass
 ---
 
 <script>
-    import Link from '$lib/components/ui/Link.svelte'
+    import Link from '$lib/components/ui/link/Link.svelte'
 </script>
 
 Compass ist im Rahmen eines Projektmoduls während meines Bachelorstudiums an der ZHAW entstanden. In einer vierköpfigen Gruppe haben wir für die <Link href="https://stadtmuur.ch/">Stadtmuur</Link> in Winterthur eine Anwendung entwickelt, mit der Sozialarbeitende Arbeitszeit, Stimmung und Vorfälle der Teilnehmenden in der Arbeitsintegration erfassen und auswerten können.
