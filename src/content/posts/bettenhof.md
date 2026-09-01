@@ -10,7 +10,7 @@ icon: wheat
 ---
 
 <script>
-    import Link from '$lib/components/ui/Link.svelte'
+    import Link from '$lib/components/ui/link/Link.svelte'
 </script>
 
 Ein Freund von mir betreibt einen Bauernhof und wollte seine hofeigenen Produkte sowie weitere Angebote rund um den Betrieb online präsentieren. Da bisher keine eigene Webseite existierte, habe ich ihm angeboten, diese für ihn zu entwickeln.

@@ -3,7 +3,7 @@
 	import 'katex/dist/katex.min.css';
 	import SiteHeader from '$lib/components/navigation/SiteHeader.svelte';
 	import SiteHeaderItem from '$lib/components/navigation/SiteHeaderItem.svelte';
-	import ThemeToggle from '$lib/components/ui/ThemeToggle.svelte';
+	import ThemeToggle from '$lib/components/ui/theme-toggle/ThemeToggle.svelte';
 	import Footer from '$lib/components/sections/FooterSection.svelte';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 	import { onMount } from 'svelte';

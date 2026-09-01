@@ -32,7 +32,16 @@
 		max-width: 1280px;
 		display: grid;
 		grid-template-columns: 1fr;
+		justify-items: start;
 		gap: 24px;
+	}
+
+	.posts-grid :global(.preview) {
+		width: 100%;
+	}
+
+	.posts-grid :global(.preview-inner) {
+		max-width: 650px;
 	}
 
 	@media (min-width: 640px) {
@@ -45,16 +54,19 @@
 		}
 	}
 
-	@media (min-width: 768px) {
-		.posts-grid {
-			grid-template-columns: repeat(2, 1fr);
-			gap: 30px;
-		}
-	}
-
 	@media (min-width: 1024px) {
 		.posts-wrapper {
 			margin-bottom: 64px;
+		}
+
+		.posts-grid {
+			grid-template-columns: repeat(2, 1fr);
+			justify-items: stretch;
+			gap: 30px;
+		}
+
+		.posts-grid :global(.preview-inner) {
+			max-width: none;
 		}
 	}
 </style>

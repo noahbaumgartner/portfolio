@@ -170,11 +170,18 @@
         color: var(--color-text-muted);
         text-decoration: none;
         line-height: 1.4;
+        border-radius: 4px;
+        outline: none;
         transition: color 150ms ease;
     }
 
     .toc-item:hover {
         color: var(--color-text);
+    }
+
+    .toc-item:focus-visible {
+        outline: 2px solid var(--color-ink);
+        outline-offset: 2px;
     }
 
     .toc-item--sub {
@@ -209,7 +216,13 @@
         font-size: 14px;
         color: var(--color-text);
         text-align: left;
+        outline: none;
         cursor: pointer;
+    }
+
+    button.toc-mobile-trigger:focus-visible {
+        outline: 2px solid var(--color-ink);
+        outline-offset: -2px;
     }
 
     .toc-mobile-title {
@@ -235,8 +248,15 @@
         padding: 0;
         background-color: transparent;
         border: none;
+        border-radius: 4px;
         color: var(--color-text);
+        outline: none;
         cursor: pointer;
+    }
+
+    .toc-mobile-chevron-btn:focus-visible {
+        outline: 2px solid var(--color-ink);
+        outline-offset: 2px;
     }
 
     .toc-mobile-trigger :global(.toc-mobile-chevron) {

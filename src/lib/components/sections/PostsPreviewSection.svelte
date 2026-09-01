@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Compass, Wheat, PersonStanding, PartyPopper, Scale, Search, Car, Image } from '@lucide/svelte';
 	import MeshGradient from "../MeshGradient.svelte";
-	import Link from "../ui/Link.svelte";
+	import Link from "../ui/link/Link.svelte";
 
     let { posts } = $props();
 
@@ -99,11 +99,20 @@
         text-decoration: none;
         color: inherit;
         user-select: none;
+        border-radius: 6px;
+        outline: none;
+    }
+
+    .post-card:focus-visible {
+        outline: 2px solid var(--color-ink);
+        outline-offset: 2px;
     }
 
     .post-image-wrap {
         position: relative;
         width: 100%;
+        overflow: hidden;
+        border-radius: 6px;
     }
 
     .post-image-wrap::before {
@@ -138,6 +147,11 @@
         width: 100%;
         height: 100%;
         border-radius: 6px;
+        transition: transform 0.3s ease;
+    }
+
+    .post-card:hover :global(.post-image) {
+        transform: scale(1.05);
     }
 
     :global(.post-image)::after {

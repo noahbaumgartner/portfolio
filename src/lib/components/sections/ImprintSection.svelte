@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Link from "../ui/Link.svelte";
+    import Link from "../ui/link/Link.svelte";
 </script>
 
 <section class="contact-wrapper">
@@ -20,7 +20,7 @@
         <ol class="disclaimer-list">
             <li class="disclaimer-card">
                 <h3>Kontakt</h3>
-                <p>Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Gewähr für die Aktualität, Vollständigkeit und Richtigkeit der bereitgestellten Informationen. Jegliche Haftungsansprüche gegen uns, die sich auf Schäden materieller oder ideeller Art beziehen – verursacht durch die Nutzung oder Nichtnutzung der dargebotenen Inhalte bzw. durch Nutzung fehlerhafter und unvollständiger Informationen – sind grundsätzlich ausgeschlossen.</p>
+                <p>Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Gewähr für die Aktualität, Vollständigkeit und Richtigkeit der bereitgestellten Informationen. Jegliche Haftungsansprüche gegen uns, die sich auf Schäden materieller oder ideeller Art beziehen, verursacht durch die Nutzung oder Nichtnutzung der dargebotenen Inhalte bzw. durch Nutzung fehlerhafter und unvollständiger Informationen, sind grundsätzlich ausgeschlossen.</p>
             </li>
             <li class="disclaimer-card">
                 <h3>Externe Links</h3>
@@ -28,7 +28,7 @@
             </li>
             <li class="disclaimer-card">
                 <h3>Urheberrecht</h3>
-                <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf dieser Website unterliegen dem schweizerischen Urheberrecht. Beiträge Dritter sind als solche gekennzeichnet. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen unserer schriftlichen Zustimmung.</p>
+                <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf dieser Website unterliegen dem schweizerischen Urheberrecht. Beiträge Dritter sind als solche gekennzeichnet. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung ausserhalb der Grenzen des Urheberrechts bedürfen unserer schriftlichen Zustimmung.</p>
             </li>
             <li class="disclaimer-card">
                 <h3>Änderungen und Irrtümer</h3>

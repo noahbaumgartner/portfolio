@@ -6,35 +6,35 @@ description: 'Konzeption und prototypische Entwicklung einer semantischen Suche 
 colors: '#d7e0f8,#b9c8f2,#26305c'
 icon: search
 sources:
-    - title: 'IBM – What is Vector Embedding?'
+    - title: 'IBM: What is Vector Embedding?'
       url: 'https://www.ibm.com/think/topics/vector-embedding'
-    - title: 'IBM – What Is A Vector Database?'
+    - title: 'IBM: What Is A Vector Database?'
       url: 'https://www.ibm.com/think/topics/vector-database'
-    - title: 'Pinecone – Chunking Strategies for LLM Applications'
+    - title: 'Pinecone: Chunking Strategies for LLM Applications'
       url: 'https://www.pinecone.io/learn/chunking-strategies/'
-    - title: 'Chroma Research – Evaluating Chunking Strategies for Retrieval'
+    - title: 'Chroma Research: Evaluating Chunking Strategies for Retrieval'
       url: 'https://research.trychroma.com/evaluating-chunking'
-    - title: 'Muennighoff et al. – MTEB: Massive Text Embedding Benchmark'
+    - title: 'Muennighoff et al.: MTEB: Massive Text Embedding Benchmark'
       url: 'https://arxiv.org/abs/2210.07316'
-    - title: 'Jagerman et al. – Query Expansion by Prompting Large Language Models'
+    - title: 'Jagerman et al.: Query Expansion by Prompting Large Language Models'
       url: 'https://arxiv.org/abs/2305.03653'
-    - title: 'Cormack, Clarke & Buettcher – Reciprocal Rank Fusion Outperforms Condorcet and Individual Rank Learning Methods'
+    - title: 'Cormack, Clarke & Buettcher: Reciprocal Rank Fusion Outperforms Condorcet and Individual Rank Learning Methods'
       url: 'https://dl.acm.org/doi/10.1145/1571941.1572114'
-    - title: 'Zhang et al. – mGTE: Generalized Long-Context Text Representation and Reranking Models for Multilingual Text Retrieval'
+    - title: 'Zhang et al.: mGTE: Generalized Long-Context Text Representation and Reranking Models for Multilingual Text Retrieval'
       url: 'https://arxiv.org/abs/2407.19669'
-    - title: 'Thakur et al. – BEIR: A Heterogeneous Benchmark for Zero-shot Evaluation of Information Retrieval Models'
+    - title: 'Thakur et al.: BEIR: A Heterogeneous Benchmark for Zero-shot Evaluation of Information Retrieval Models'
       url: 'https://openreview.net/forum?id=wCu6T5xFjeJ'
-    - title: 'Kamalloo et al. – Resources for Brewing BEIR: Reproducible Reference Models and an Official Leaderboard'
+    - title: 'Kamalloo et al.: Resources for Brewing BEIR: Reproducible Reference Models and an Official Leaderboard'
       url: 'https://arxiv.org/abs/2306.07471'
-    - title: 'Lewis et al. – Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks'
+    - title: 'Lewis et al.: Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks'
       url: 'https://arxiv.org/abs/2005.11401'
 ---
 
 <script>
-    import Link from '$lib/components/ui/Link.svelte'
+    import Link from '$lib/components/ui/link/Link.svelte'
 </script>
 
-Für meine Bachelorarbeit an der ZHAW habe ich mich zusammen mit einem Studienkollegen mit der Frage beschäftigt, wie sich eine klassische Stichwortsuche durch eine semantische Suche ablösen lässt, die Inhalte nicht nach exakten Begriffstreffern, sondern nach ihrer inhaltlichen Bedeutung findet. Im Zentrum stand dabei die Konzeption und die prototypische Umsetzung eines entsprechenden Suchsystems, das wir anschliessend sowohl technisch als auch mit echten Nutzenden evaluiert haben.
+Für meine Bachelorarbeit an der ZHAW habe ich zusammen mit einem Studienkollegen ein System entwickelt, das Suchanfragen nicht mehr nach exakten Wörtern, sondern nach ihrer Bedeutung beantwortet: Man findet also auch dann das Richtige, wenn man nicht genau die im Dokument verwendeten Begriffe eintippt. Wir haben dieses System konzipiert, prototypisch umgesetzt und anschliessend sowohl technisch als auch mit echten Nutzenden getestet.
 
 <h1>Wie funktioniert eine semantische Suche</h1>
 
@@ -42,7 +42,7 @@ Eine klassische Stichwortsuche vergleicht nur Zeichenketten und scheitert deshal
 
 <h2>Von Text zu Vektor</h2>
 
-Möglich wird das durch Text-Embeddings: Ein Embedding-Modell wandelt einen Text in einen Vektor um, also eine Liste von einigen hundert bis mehreren tausend Zahlen, welche die Bedeutung des Textes im sogenannten Vektorraum kodieren<sup><a href="#quelle-1">1</a></sup>. Inhaltlich ähnliche Texte landen dabei nahe beieinander, unabhängig davon, mit welchen Wörtern sie formuliert sind. Wie nahe zwei Vektoren beieinanderliegen, lässt sich über Distanzfunktionen wie die Kosinus-Distanz oder das Skalarprodukt berechnen. Am gebräuchlichsten ist die Kosinus-Ähnlichkeit, welche den Winkel zwischen zwei Vektoren $\mathbf{a}$ und $\mathbf{b}$ bewertet, unabhängig von deren Länge:
+Möglich wird das durch Text-Embeddings: Ein Embedding-Modell wandelt einen Text in einen Vektor um, also eine Liste von einigen hundert bis mehreren tausend Zahlen, welche die Bedeutung des Textes im sogenannten Vektorraum kodieren<sup><a href="#source-1">1</a></sup>. Inhaltlich ähnliche Texte landen dabei nahe beieinander, unabhängig davon, mit welchen Wörtern sie formuliert sind. Wie nahe zwei Vektoren beieinanderliegen, lässt sich über Distanzfunktionen wie die Kosinus-Distanz oder das Skalarprodukt berechnen. Am gebräuchlichsten ist die Kosinus-Ähnlichkeit, welche den Winkel zwischen zwei Vektoren $\mathbf{a}$ und $\mathbf{b}$ bewertet, unabhängig von deren Länge:
 
 $$
 \cos(\mathbf{a}, \mathbf{b}) = \frac{\mathbf{a} \cdot \mathbf{b}}{\lVert \mathbf{a} \rVert \, \lVert \mathbf{b} \rVert}
@@ -57,11 +57,11 @@ Der Wert liegt zwischen $-1$ und $1$, wobei $1$ bedeutet, dass beide Vektoren ex
 
 <h2>Chunking</h2>
 
-Damit auch lange Dokumente sinnvoll durchsucht werden können, werden sie vor dem Einbetten in kleinere Abschnitte aufgeteilt, sogenannte Chunks<sup><a href="#quelle-3">3</a></sup>. Ein Embedding pro ganzem Dokument würde dessen Bedeutung zu stark verwässern, ein Embedding pro Chunk bleibt dagegen präzise genug, um gezielt auf den relevanten Abschnitt zu verweisen. Wie ein Text am besten aufgeteilt wird, unterscheidet sich je nach Strategie: von fixer Grösse über rekursives Chunking bis hin zu satz- oder LLM-basierten Ansätzen. Anhand einer vergleichenden Auswertung verschiedener Chunking-Strategien<sup><a href="#quelle-4">4</a></sup> haben wir uns für rekursives Chunking mit einer Grösse von 400 Tokens ohne Überlappung entschieden, da dieser Ansatz einen guten Kompromiss zwischen Trefferqualität und Rechenaufwand bietet.
+Damit auch lange Dokumente sinnvoll durchsucht werden können, werden sie vor dem Einbetten in kleinere Abschnitte aufgeteilt, sogenannte Chunks<sup><a href="#source-3">3</a></sup>. Ein Embedding pro ganzem Dokument würde dessen Bedeutung zu stark verwässern, ein Embedding pro Chunk bleibt dagegen präzise genug, um gezielt auf den relevanten Abschnitt zu verweisen. Wie ein Text am besten aufgeteilt wird, unterscheidet sich je nach Strategie: von fixer Grösse über rekursives Chunking bis hin zu satz- oder LLM-basierten Ansätzen. Anhand einer vergleichenden Auswertung verschiedener Chunking-Strategien<sup><a href="#source-4">4</a></sup> haben wir uns für rekursives Chunking mit einer Grösse von 400 Tokens ohne Überlappung entschieden, da dieser Ansatz einen guten Kompromiss zwischen Trefferqualität und Rechenaufwand bietet.
 
 <h2>Ähnlichkeitssuche in der Vektordatenbank</h2>
 
-Die entstehenden Vektoren landen zusammen mit Metadaten in einer Vektordatenbank<sup><a href="#quelle-2">2</a></sup>. Sucht eine Person, wird die Anfrage nach demselben Prinzip in einen Vektor überführt. Statt diesen mit jedem gespeicherten Vektor einzeln zu vergleichen, was bei grossen Datenmengen zu langsam wäre, nutzt die Datenbank sogenannte Approximate-Nearest-Neighbour-Algorithmen, um effizient die ähnlichsten Vektoren zu finden. Zusätzlich lassen sich Metadaten wie Zugriffsrechte oder Änderungsdatum direkt in die Anfrage einbinden, wodurch sich die Suche gezielt filtern lässt.
+Die entstehenden Vektoren landen zusammen mit Metadaten in einer Vektordatenbank<sup><a href="#source-2">2</a></sup>. Sucht eine Person, wird die Anfrage nach demselben Prinzip in einen Vektor überführt. Statt diesen mit jedem gespeicherten Vektor einzeln zu vergleichen, was bei grossen Datenmengen zu langsam wäre, nutzt die Datenbank sogenannte Approximate-Nearest-Neighbour-Algorithmen, um effizient die ähnlichsten Vektoren zu finden. Zusätzlich lassen sich Metadaten wie Zugriffsrechte oder Änderungsdatum direkt in die Anfrage einbinden, wodurch sich die Suche gezielt filtern lässt.
 
 <h1>Architektur</h1>
 
@@ -88,17 +88,17 @@ Für den Prototyp haben wir ein eigenständiges Backend mit <Link href="https://
 
 <h2>Auswahl der Komponenten</h2>
 
-Für die einzelnen Komponenten haben wir jeweils mehrere Optionen verglichen. Beim Embedding-Modell fiel die Wahl anhand des Massive Text Embedding Benchmark<sup><a href="#quelle-5">5</a></sup> auf text-embedding-3-large von OpenAI, welches unter den evaluierten mehrsprachigen Modellen die beste Retrieval-Performance erzielte. Für die Abfrage-Erweiterung haben wir uns für einen Zero-Shot-Query2Expansion-Ansatz entschieden, bei dem ein Sprachmodell die Suchanfrage vorgängig um passende Stichworte anreichert<sup><a href="#quelle-6">6</a></sup>. Als Modell dafür kommt Ministral 3B zum Einsatz, das im Vergleich zu den Alternativen den besten Kompromiss aus Kosten und Antwortgeschwindigkeit bot.
+Für die einzelnen Komponenten haben wir jeweils mehrere Optionen verglichen. Beim Embedding-Modell fiel die Wahl anhand des Massive Text Embedding Benchmark<sup><a href="#source-5">5</a></sup> auf text-embedding-3-large von OpenAI, welches unter den evaluierten mehrsprachigen Modellen die beste Retrieval-Performance erzielte. Für die Abfrage-Erweiterung haben wir uns für einen Zero-Shot-Query2Expansion-Ansatz entschieden, bei dem ein Sprachmodell die Suchanfrage vorgängig um passende Stichworte anreichert<sup><a href="#source-6">6</a></sup>. Als Modell dafür kommt Ministral 3B zum Einsatz, das im Vergleich zu den Alternativen den besten Kompromiss aus Kosten und Antwortgeschwindigkeit bot.
 
 <h2>Verworfene Erweiterungen</h2>
 
-Nicht jede Erweiterung, die wir prototypisch umgesetzt haben, hat es in die finale Architektur geschafft. Eine hybride Suche, welche Vektor- und Volltextsuche über Reciprocal Rank Fusion kombiniert<sup><a href="#quelle-7">7</a></sup>, lieferte zwar leicht bessere Resultate, benötigte aber teilweise mehrere Sekunden pro Anfrage. Auch ein nachgelagertes Re-Ranking der Resultate mit einem Cross-Encoder-Modell<sup><a href="#quelle-8">8</a></sup> konnte die Ergebnisqualität nicht spürbar genug verbessern, um die zusätzliche Latenz zu rechtfertigen. Da eine Suche mit Antwortzeiten von unter einer Sekunde als hartes Ziel definiert war, haben wir uns am Ende für die reine Vektorsuche mit Abfrage-Erweiterung entschieden.
+Nicht jede Erweiterung, die wir prototypisch umgesetzt haben, hat es in die finale Architektur geschafft. Eine hybride Suche, welche Vektor- und Volltextsuche über Reciprocal Rank Fusion kombiniert<sup><a href="#source-7">7</a></sup>, lieferte zwar leicht bessere Resultate, benötigte aber teilweise mehrere Sekunden pro Anfrage. Auch ein nachgelagertes Re-Ranking der Resultate mit einem Cross-Encoder-Modell<sup><a href="#source-8">8</a></sup> konnte die Ergebnisqualität nicht spürbar genug verbessern, um die zusätzliche Latenz zu rechtfertigen. Da eine Suche mit Antwortzeiten von unter einer Sekunde als hartes Ziel definiert war, haben wir uns am Ende für die reine Vektorsuche mit Abfrage-Erweiterung entschieden.
 
 <h1>Evaluation</h1>
 
 <h2>Technische Evaluation mit BEIR</h2>
 
-Um die verschiedenen Kombinationen aus Chunking, Embedding-Modell und Erweiterungen objektiv zu vergleichen, haben wir den BEIR-Benchmark verwendet, eine Sammlung von Datensätzen für unterschiedliche Information-Retrieval-Aufgaben<sup><a href="#quelle-9">9</a></sup>. Bewertet wurde jeweils mit der NDCG@10-Metrik, welche berücksichtigt, wie gut ein System relevante Dokumente ermittelt und wie weit oben es sie einordnet. Als Referenz diente uns die öffentliche BEIR-Bestenliste<sup><a href="#quelle-10">10</a></sup>. Die finale Kombination aus Vektorsuche, text-embedding-3-large und Abfrage-Erweiterung erzielte über die drei getesteten Datensätze hinweg die besten Werte innerhalb unserer Evaluation und lag damit deutlich näher an den publizierten Bestwerten als die einfache Vektorsuche ohne Erweiterungen.
+Um die verschiedenen Kombinationen aus Chunking, Embedding-Modell und Erweiterungen objektiv zu vergleichen, haben wir den BEIR-Benchmark verwendet, eine Sammlung von Datensätzen für unterschiedliche Information-Retrieval-Aufgaben<sup><a href="#source-9">9</a></sup>. Bewertet wurde jeweils mit der NDCG@10-Metrik, welche berücksichtigt, wie gut ein System relevante Dokumente ermittelt und wie weit oben es sie einordnet. Als Referenz diente uns die öffentliche BEIR-Bestenliste<sup><a href="#source-10">10</a></sup>. Die finale Kombination aus Vektorsuche, text-embedding-3-large und Abfrage-Erweiterung erzielte über die drei getesteten Datensätze hinweg die besten Werte innerhalb unserer Evaluation und lag damit deutlich näher an den publizierten Bestwerten als die einfache Vektorsuche ohne Erweiterungen.
 
 <h2>Evaluation durch Nutzerfeedback</h2>
 
@@ -106,4 +106,4 @@ Zusätzlich zur technischen Auswertung haben zehn Testpersonen den Prototyp anha
 
 <h1>Fazit und Ausblick</h1>
 
-Die Arbeit zeigt, dass sich eine performante und kontextbewusste semantische Suche mit vertretbarem Aufwand realisieren lässt, die einer klassischen Stichwortsuche in Trefferqualität und Nutzererlebnis deutlich überlegen ist. Ein spannender nächster Schritt wäre die Kombination mit Retrieval-Augmented Generation, bei der ein Sprachmodell basierend auf den gefundenen Resultaten direkt Antworten oder Zusammenfassungen generiert, statt nur eine Trefferliste zurückzugeben<sup><a href="#quelle-11">11</a></sup>.
+Die Arbeit zeigt, dass sich eine performante und kontextbewusste semantische Suche mit vertretbarem Aufwand realisieren lässt, die einer klassischen Stichwortsuche in Trefferqualität und Nutzererlebnis deutlich überlegen ist. Ein spannender nächster Schritt wäre die Kombination mit Retrieval-Augmented Generation, bei der ein Sprachmodell basierend auf den gefundenen Resultaten direkt Antworten oder Zusammenfassungen generiert, statt nur eine Trefferliste zurückzugeben<sup><a href="#source-11">11</a></sup>.

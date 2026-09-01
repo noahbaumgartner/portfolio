@@ -13,14 +13,17 @@
         line-height: 28px;
         color: var(--color-text);
         text-decoration: none;
-        transition: color 200ms ease;
+        border-radius: 4px;
+        outline: none;
+        transition: opacity 200ms;
     }
 
-    :global(.nav-items--desktop:has(.item:hover) .item:not(:hover)) {
-        color: var(--color-text-faint);
+    .item:hover {
+        opacity: 0.6;
     }
 
-    :global(.nav-items--mobile) .item:hover {
-        color: var(--color-text-faint);
+    .item:focus-visible {
+        outline: 2px solid var(--color-ink);
+        outline-offset: 2px;
     }
 </style>
