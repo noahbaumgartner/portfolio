@@ -4,7 +4,6 @@
 	import AboutHobbiesSection from "$lib/components/sections/AboutHobbiesSection.svelte";
 	import AboutWorkExperienceSection from "$lib/components/sections/AboutWorkExperienceSection.svelte";
 	import AboutEducationSection from "$lib/components/sections/AboutEducationSection.svelte";
-	import AboutCertificatesSection from "$lib/components/sections/AboutCertificatesSection.svelte";
 </script>
 
 <svelte:head>
@@ -19,4 +18,3 @@
 <AboutWorkExperienceSection />
 <AboutHobbiesSection />
 <AboutEducationSection />
-<AboutCertificatesSection />
