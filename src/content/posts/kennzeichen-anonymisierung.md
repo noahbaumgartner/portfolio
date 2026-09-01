@@ -7,15 +7,15 @@ gif: '/images/posts/license-plate-anonymization/detection.jpg'
 colors: '#ebe0c9,#d8b869,#26221b'
 icon: car
 sources:
-    - title: 'Goodfellow et al. – Generative Adversarial Networks'
+    - title: 'Goodfellow et al.: Generative Adversarial Networks'
       url: 'https://arxiv.org/abs/1406.2661'
-    - title: 'Radford, Metz & Chintala – Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks (DCGAN)'
+    - title: 'Radford, Metz & Chintala: Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks (DCGAN)'
       url: 'https://arxiv.org/abs/1511.06434'
-    - title: 'Canny – A Computational Approach to Edge Detection'
+    - title: 'Canny: A Computational Approach to Edge Detection'
       url: 'https://doi.org/10.1109/TPAMI.1986.4767851'
-    - title: 'Duda & Hart – Use of the Hough Transformation to Detect Lines and Curves in Pictures'
+    - title: 'Duda & Hart: Use of the Hough Transformation to Detect Lines and Curves in Pictures'
       url: 'https://dl.acm.org/doi/10.1145/361237.361242'
-    - title: 'Johnson, Alahi & Fei-Fei – Perceptual Losses for Real-Time Style Transfer and Super-Resolution'
+    - title: 'Johnson, Alahi & Fei-Fei: Perceptual Losses for Real-Time Style Transfer and Super-Resolution'
       url: 'https://arxiv.org/abs/1603.08155'
 ---
 
@@ -23,7 +23,7 @@ sources:
     import Link from '$lib/components/ui/link/Link.svelte'
 </script>
 
-Für ein Modul zu Computer Vision habe ich als Übungsaufgabe eine kleine Pipeline gebaut, die Kontrollschilder in Bildern automatisch erkennt und durch künstlich generierte Kennzeichen ersetzt. Die Aufgabe war in fünf Teilschritte gegliedert, von der reinen Erkennung bis zum realistischen Ersetzen der Kennzeichen. Es handelt sich dabei ausdrücklich um eine Übungsarbeit und keinen fertigen Produktionscode, trotzdem funktioniert die Grundidee bereits erstaunlich gut.
+Für ein Modul zu Computer Vision habe ich als Übungsaufgabe eine kleine Pipeline gebaut, die Kontrollschilder auf Fotos automatisch erkennt und durch künstlich erzeugte, nicht mehr lesbare Kennzeichen ersetzt, ähnlich wie Gesichter oder Kennzeichen, die auf Strassenfotos unkenntlich gemacht werden. Die Aufgabe war in fünf Teilschritte gegliedert, von der reinen Erkennung bis zum realistischen Ersetzen der Kennzeichen. Es handelt sich dabei ausdrücklich um eine Übungsarbeit und keinen fertigen Produktionscode, trotzdem funktioniert die Grundidee bereits erstaunlich gut.
 
 <h1>Kennzeichen erkennen</h1>
 

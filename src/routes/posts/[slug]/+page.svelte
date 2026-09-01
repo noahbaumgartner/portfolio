@@ -124,7 +124,7 @@
 		.post-layout {
 			display: grid;
 			grid-template-columns: minmax(120px, 1fr) minmax(0, 1000px) minmax(120px, 1fr);
-			column-gap: 16px;
+			column-gap: 32px;
 		}
 
 		.post-toc {
