@@ -48,6 +48,8 @@
         position: relative;
         width: 140px;
         flex-shrink: 0;
+        overflow: hidden;
+        border-radius: 6px;
     }
 
     .preview-image-wrap::before {
@@ -82,6 +84,11 @@
         width: 100%;
         height: 100%;
         border-radius: 6px;
+        transition: transform 0.3s ease;
+    }
+
+    .preview:hover :global(.preview-image) {
+        transform: scale(1.05);
     }
 
     :global(.preview-image)::after {

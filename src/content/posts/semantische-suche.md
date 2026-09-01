@@ -6,27 +6,27 @@ description: 'Konzeption und prototypische Entwicklung einer semantischen Suche 
 colors: '#d7e0f8,#b9c8f2,#26305c'
 icon: search
 sources:
-    - title: 'IBM – What is Vector Embedding?'
+    - title: 'IBM: What is Vector Embedding?'
       url: 'https://www.ibm.com/think/topics/vector-embedding'
-    - title: 'IBM – What Is A Vector Database?'
+    - title: 'IBM: What Is A Vector Database?'
       url: 'https://www.ibm.com/think/topics/vector-database'
-    - title: 'Pinecone – Chunking Strategies for LLM Applications'
+    - title: 'Pinecone: Chunking Strategies for LLM Applications'
       url: 'https://www.pinecone.io/learn/chunking-strategies/'
-    - title: 'Chroma Research – Evaluating Chunking Strategies for Retrieval'
+    - title: 'Chroma Research: Evaluating Chunking Strategies for Retrieval'
       url: 'https://research.trychroma.com/evaluating-chunking'
-    - title: 'Muennighoff et al. – MTEB: Massive Text Embedding Benchmark'
+    - title: 'Muennighoff et al.: MTEB: Massive Text Embedding Benchmark'
       url: 'https://arxiv.org/abs/2210.07316'
-    - title: 'Jagerman et al. – Query Expansion by Prompting Large Language Models'
+    - title: 'Jagerman et al.: Query Expansion by Prompting Large Language Models'
       url: 'https://arxiv.org/abs/2305.03653'
-    - title: 'Cormack, Clarke & Buettcher – Reciprocal Rank Fusion Outperforms Condorcet and Individual Rank Learning Methods'
+    - title: 'Cormack, Clarke & Buettcher: Reciprocal Rank Fusion Outperforms Condorcet and Individual Rank Learning Methods'
       url: 'https://dl.acm.org/doi/10.1145/1571941.1572114'
-    - title: 'Zhang et al. – mGTE: Generalized Long-Context Text Representation and Reranking Models for Multilingual Text Retrieval'
+    - title: 'Zhang et al.: mGTE: Generalized Long-Context Text Representation and Reranking Models for Multilingual Text Retrieval'
       url: 'https://arxiv.org/abs/2407.19669'
-    - title: 'Thakur et al. – BEIR: A Heterogeneous Benchmark for Zero-shot Evaluation of Information Retrieval Models'
+    - title: 'Thakur et al.: BEIR: A Heterogeneous Benchmark for Zero-shot Evaluation of Information Retrieval Models'
       url: 'https://openreview.net/forum?id=wCu6T5xFjeJ'
-    - title: 'Kamalloo et al. – Resources for Brewing BEIR: Reproducible Reference Models and an Official Leaderboard'
+    - title: 'Kamalloo et al.: Resources for Brewing BEIR: Reproducible Reference Models and an Official Leaderboard'
       url: 'https://arxiv.org/abs/2306.07471'
-    - title: 'Lewis et al. – Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks'
+    - title: 'Lewis et al.: Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks'
       url: 'https://arxiv.org/abs/2005.11401'
 ---
 
@@ -34,7 +34,7 @@ sources:
     import Link from '$lib/components/ui/link/Link.svelte'
 </script>
 
-Für meine Bachelorarbeit an der ZHAW habe ich mich zusammen mit einem Studienkollegen mit der Frage beschäftigt, wie sich eine klassische Stichwortsuche durch eine semantische Suche ablösen lässt, die Inhalte nicht nach exakten Begriffstreffern, sondern nach ihrer inhaltlichen Bedeutung findet. Im Zentrum stand dabei die Konzeption und die prototypische Umsetzung eines entsprechenden Suchsystems, das wir anschliessend sowohl technisch als auch mit echten Nutzenden evaluiert haben.
+Für meine Bachelorarbeit an der ZHAW habe ich zusammen mit einem Studienkollegen ein System entwickelt, das Suchanfragen nicht mehr nach exakten Wörtern, sondern nach ihrer Bedeutung beantwortet: Man findet also auch dann das Richtige, wenn man nicht genau die im Dokument verwendeten Begriffe eintippt. Wir haben dieses System konzipiert, prototypisch umgesetzt und anschliessend sowohl technisch als auch mit echten Nutzenden getestet.
 
 <h1>Wie funktioniert eine semantische Suche</h1>
 

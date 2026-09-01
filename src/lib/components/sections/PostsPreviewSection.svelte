@@ -104,6 +104,8 @@
     .post-image-wrap {
         position: relative;
         width: 100%;
+        overflow: hidden;
+        border-radius: 6px;
     }
 
     .post-image-wrap::before {
@@ -138,6 +140,11 @@
         width: 100%;
         height: 100%;
         border-radius: 6px;
+        transition: transform 0.3s ease;
+    }
+
+    .post-card:hover :global(.post-image) {
+        transform: scale(1.05);
     }
 
     :global(.post-image)::after {
