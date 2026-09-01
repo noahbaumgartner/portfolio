@@ -31,7 +31,7 @@ Als Grundlage für die Erkennung habe ich kein eigenes Modell trainiert, sondern
 
 <h1>Orientierung bestimmen und zuschneiden</h1>
 
-Die Bounding Box aus dem ersten Schritt ist achsenparallel und schliesst bei schräg fotografierten Kennzeichen oft unnötig viel Hintergrund mit ein. Um die exakte Ausrichtung zu bestimmen, habe ich bewusst auf klassische Bildverarbeitung statt auf ein weiteres Deep-Learning-Modell gesetzt: Im Ausschnitt der Bounding Box wird zuerst mit dem Canny-Algorithmus die Kantenkarte berechnet<sup><a href="#quelle-3">3</a></sup>, anschliessend werden über die Hough-Transformation die vier dominantesten Geraden gefunden, welche die Ränder des Kennzeichens bilden<sup><a href="#quelle-4">4</a></sup>. Jede Gerade wird dabei nicht mit Steigung und Achsenabschnitt beschrieben, sondern über ihren Normalenabstand $\rho$ zum Ursprung und den Winkel $\theta$ dieser Normalen:
+Die Bounding Box aus dem ersten Schritt ist achsenparallel und schliesst bei schräg fotografierten Kennzeichen oft unnötig viel Hintergrund mit ein. Um die exakte Ausrichtung zu bestimmen, habe ich bewusst auf klassische Bildverarbeitung statt auf ein weiteres Deep-Learning-Modell gesetzt: Im Ausschnitt der Bounding Box wird zuerst mit dem Canny-Algorithmus die Kantenkarte berechnet<sup><a href="#source-3">3</a></sup>, anschliessend werden über die Hough-Transformation die vier dominantesten Geraden gefunden, welche die Ränder des Kennzeichens bilden<sup><a href="#source-4">4</a></sup>. Jede Gerade wird dabei nicht mit Steigung und Achsenabschnitt beschrieben, sondern über ihren Normalenabstand $\rho$ zum Ursprung und den Winkel $\theta$ dieser Normalen:
 
 $$
 \rho = x \cos\theta + y \sin\theta
@@ -46,13 +46,13 @@ Diese Parametrisierung erlaubt es auch, senkrechte Kanten ohne Sonderfall zu erf
 
 <h1>Neue Kennzeichen generieren</h1>
 
-Für den nächsten Schritt sollten neue, künstliche Kennzeichen generiert werden, welche später die echten ersetzen. Dazu habe ich ein eigenes Generative Adversarial Network trainiert<sup><a href="#quelle-1">1</a></sup>: Ein Generator $G$ versucht aus zufälligem Rauschen $z$ plausible Kennzeichen-Bilder zu erzeugen, während ein Diskriminator $D$ gleichzeitig lernt, diese von echten, zuvor zugeschnittenen Kennzeichen $x$ zu unterscheiden. Beide Netzwerke werden dabei über dasselbe gegensätzliche Ziel trainiert:
+Für den nächsten Schritt sollten neue, künstliche Kennzeichen generiert werden, welche später die echten ersetzen. Dazu habe ich ein eigenes Generative Adversarial Network trainiert<sup><a href="#source-1">1</a></sup>: Ein Generator $G$ versucht aus zufälligem Rauschen $z$ plausible Kennzeichen-Bilder zu erzeugen, während ein Diskriminator $D$ gleichzeitig lernt, diese von echten, zuvor zugeschnittenen Kennzeichen $x$ zu unterscheiden. Beide Netzwerke werden dabei über dasselbe gegensätzliche Ziel trainiert:
 
 $$
 \min_G \max_D \; \mathbb{E}_{x}[\log D(x)] + \mathbb{E}_{z}[\log(1 - D(G(z)))]
 $$
 
-Der Diskriminator versucht diesen Ausdruck zu maximieren, indem er echte Bilder als echt und generierte als gefälscht erkennt, während der Generator ihn zu minimieren versucht, indem er den Diskriminator möglichst gut täuscht. Architektonisch orientiert sich mein Generator und Diskriminator an einem DCGAN mit transponierten beziehungsweise gewöhnlichen Convolutions, Batch-Normalization und einem 64-dimensionalen latenten Vektor als Eingabe<sup><a href="#quelle-2">2</a></sup>. Trainiert wurde das Netz für 150 Epochen auf den zuvor zugeschnittenen Kennzeichen.
+Der Diskriminator versucht diesen Ausdruck zu maximieren, indem er echte Bilder als echt und generierte als gefälscht erkennt, während der Generator ihn zu minimieren versucht, indem er den Diskriminator möglichst gut täuscht. Architektonisch orientiert sich mein Generator und Diskriminator an einem DCGAN mit transponierten beziehungsweise gewöhnlichen Convolutions, Batch-Normalization und einem 64-dimensionalen latenten Vektor als Eingabe<sup><a href="#source-2">2</a></sup>. Trainiert wurde das Netz für 150 Epochen auf den zuvor zugeschnittenen Kennzeichen.
 
 <figure>
 <img src="/images/posts/license-plate-anonymization/gan-samples.png" alt="Vier vom GAN generierte, kennzeichenähnliche Bilder mit verwaschenen, aber plausibel wirkenden Zeichenfolgen." />
@@ -70,4 +70,4 @@ Im letzten Schritt werden Erkennung, Zuschnitt und Generierung zusammengeführt:
 
 <h1>Grenzen und Ausblick</h1>
 
-Als Übungsaufgabe hatte diese Pipeline nie den Anspruch, produktionsreif zu sein: Das GAN erzeugt keine scharfen, individuellen Zeichen, sondern eher plausibel wirkende Muster, und auch die Einpassung ist rein geometrisch, ohne Beleuchtung, Schatten oder Bildrauschen des Originals zu berücksichtigen. Um die generierten Kennzeichen wirklich an die Aufnahmebedingungen anzupassen, würde sich ein Style-Transfer-Ansatz anbieten, der Farbgebung und Textur des Zielbilds auf das generierte Kennzeichen überträgt<sup><a href="#quelle-5">5</a></sup>. Für eine Übungsaufgabe zeigt das Ergebnis aber bereits deutlich, dass sich die Grundidee, Kennzeichen automatisiert zu erkennen und realistisch zu anonymisieren, mit vertretbarem Aufwand umsetzen lässt.
+Als Übungsaufgabe hatte diese Pipeline nie den Anspruch, produktionsreif zu sein: Das GAN erzeugt keine scharfen, individuellen Zeichen, sondern eher plausibel wirkende Muster, und auch die Einpassung ist rein geometrisch, ohne Beleuchtung, Schatten oder Bildrauschen des Originals zu berücksichtigen. Um die generierten Kennzeichen wirklich an die Aufnahmebedingungen anzupassen, würde sich ein Style-Transfer-Ansatz anbieten, der Farbgebung und Textur des Zielbilds auf das generierte Kennzeichen überträgt<sup><a href="#source-5">5</a></sup>. Für eine Übungsaufgabe zeigt das Ergebnis aber bereits deutlich, dass sich die Grundidee, Kennzeichen automatisiert zu erkennen und realistisch zu anonymisieren, mit vertretbarem Aufwand umsetzen lässt.

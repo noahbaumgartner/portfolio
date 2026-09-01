@@ -39,7 +39,7 @@
 			<h2 class="post-sources-title">Quellen</h2>
 			<ol class="post-sources-list">
 				{#each post.sources as source, i}
-					<li id={`quelle-${i + 1}`}>
+					<li id={`source-${i + 1}`}>
 						<span class="post-sources-index">[{i + 1}]</span>
 						<Link href={source.url}>{source.title}</Link>
 					</li>
@@ -217,10 +217,17 @@
 	.post-body :global(sup a) {
 		color: var(--color-text-secondary);
 		text-decoration: none;
+		border-radius: 3px;
+		outline: none;
 	}
 
 	.post-body :global(sup a:hover) {
 		text-decoration: underline;
+	}
+
+	.post-body :global(sup a:focus-visible) {
+		outline: 2px solid var(--color-ink);
+		outline-offset: 1px;
 	}
 
 	:global(.post-sources) {

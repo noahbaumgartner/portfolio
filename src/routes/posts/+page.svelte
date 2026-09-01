@@ -38,6 +38,9 @@
 
 	.posts-grid :global(.preview) {
 		width: 100%;
+	}
+
+	.posts-grid :global(.preview-inner) {
 		max-width: 650px;
 	}
 
@@ -62,7 +65,7 @@
 			gap: 30px;
 		}
 
-		.posts-grid :global(.preview) {
+		.posts-grid :global(.preview-inner) {
 			max-width: none;
 		}
 	}

@@ -13,11 +13,18 @@
         cursor: pointer;
         text-decoration: underline;
         text-underline-offset: 4px;
+        border-radius: 4px;
+        outline: none;
         transition: opacity 200ms;
     }
 
     .link:hover {
         opacity: 0.6;
+    }
+
+    .link:focus-visible {
+        outline: 2px solid var(--color-ink);
+        outline-offset: 2px;
     }
 
     .link--light {
@@ -26,5 +33,9 @@
 
     .link--dark {
         color: var(--color-on-inverse-secondary);
+    }
+
+    .link--dark:focus-visible {
+        outline-color: var(--color-on-inverse);
     }
 </style>
