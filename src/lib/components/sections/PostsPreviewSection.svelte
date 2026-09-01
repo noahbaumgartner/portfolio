@@ -99,6 +99,13 @@
         text-decoration: none;
         color: inherit;
         user-select: none;
+        border-radius: 6px;
+        outline: none;
+    }
+
+    .post-card:focus-visible {
+        outline: 2px solid var(--color-ink);
+        outline-offset: 2px;
     }
 
     .post-image-wrap {

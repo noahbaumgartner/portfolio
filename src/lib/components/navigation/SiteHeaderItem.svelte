@@ -13,10 +13,17 @@
         line-height: 28px;
         color: var(--color-text);
         text-decoration: none;
+        border-radius: 4px;
+        outline: none;
         transition: opacity 200ms;
     }
 
     .item:hover {
         opacity: 0.6;
+    }
+
+    .item:focus-visible {
+        outline: 2px solid var(--color-ink);
+        outline-offset: 2px;
     }
 </style>

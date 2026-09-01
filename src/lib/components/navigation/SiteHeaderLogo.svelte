@@ -8,6 +8,13 @@
     .logo {
         flex-shrink: 0;
         text-decoration: none;
+        border-radius: 4px;
+        outline: none;
+    }
+
+    .logo:focus-visible {
+        outline: 2px solid var(--color-ink);
+        outline-offset: 2px;
     }
 
     .logo-text {

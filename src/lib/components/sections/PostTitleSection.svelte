@@ -203,7 +203,8 @@
     }
 
     .post-gif-toggle:focus-visible {
-        box-shadow: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--color-ink);
+        outline: 2px solid var(--color-ink);
+        outline-offset: 2px;
     }
 
     .post-gif-toggle :global(.post-gif-toggle-icon) {

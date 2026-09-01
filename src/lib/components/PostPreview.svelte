@@ -20,28 +20,41 @@
 </script>
 
 <a href={`/posts/${post.slug}`} data-sveltekit-preload-data class="preview">
-    <div class="preview-image-wrap">
-        <MeshGradient colors={post.colors} seed={post.title} class="preview-image" />
-        {#if Icon}
-            <div class="preview-icon-badge">
-                <Icon size={20} />
-            </div>
-        {/if}
-    </div>
-    <div class="preview-info">
-        <p class="preview-headline"><span class="preview-title">{post.title}:</span> {post.description}</p>
-        <span class="preview-period">{post.period}</span>
+    <div class="preview-inner">
+        <div class="preview-image-wrap">
+            <MeshGradient colors={post.colors} seed={post.title} class="preview-image" />
+            {#if Icon}
+                <div class="preview-icon-badge">
+                    <Icon size={20} />
+                </div>
+            {/if}
+        </div>
+        <div class="preview-info">
+            <p class="preview-headline"><span class="preview-title">{post.title}:</span> {post.description}</p>
+            <span class="preview-period">{post.period}</span>
+        </div>
     </div>
 </a>
 
 <style>
     .preview {
-        display: flex;
-        align-items: center;
-        gap: 20px;
+        display: block;
         text-decoration: none;
         color: inherit;
         user-select: none;
+        border-radius: 6px;
+        outline: none;
+    }
+
+    .preview:focus-visible {
+        outline: 2px solid var(--color-ink);
+        outline-offset: 2px;
+    }
+
+    .preview-inner {
+        display: flex;
+        align-items: center;
+        gap: 20px;
     }
 
     .preview-image-wrap {
