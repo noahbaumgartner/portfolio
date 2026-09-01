@@ -1,13 +1,13 @@
 <script lang="ts">
-    import Image from "../ui/Image.svelte";
-    import Link from "../ui/Link.svelte";
+    import Image from "../ui/image/Image.svelte";
+    import Link from "../ui/link/Link.svelte";
 </script>
 
 <section class="intro-wrapper page-padding">
     <div class="intro">
         <div class="intro-text-card">
-            <p>Ich bin Noah Baumgartner, ein leidenschaftlicher Fullstack-Softwareentwickler mit über fünf Jahren Erfahrung. Ich liebe es, innovative digitale Lösungen zu gestalten und mich fachlich wie persönlich ständig weiterzuentwickeln.</p>
-            <p>In meiner Freizeit gehe ich vielfältigen Hobbys und Interessen nach, die mich inspirieren und ausgleichen. Ich engagiere mich bei der freiwilligen <Link href="https://feuerwehr-oberriet.ch/">Feuerwehr Oberriet</Link>, bin aktiv im Turnverein <Link href="https://www.stvkriessern.ch/">STV Kriessern</Link> und setze mich gemeinsam mit Freunden im Verein <Link href="https://schollabar.ch/">Kriessner Schollabar</Link> ein.</p>
+            <p>Ich bin Noah Baumgartner, ein leidenschaftlicher Fullstack-Softwareentwickler mit über sechs Jahren Erfahrung. Ich liebe es, innovative digitale Lösungen zu gestalten und mich fachlich wie persönlich ständig weiterzuentwickeln.</p>
+            <p>Aktuell arbeite ich bei <Link href="https://www.b-3.ch/">B3 Digital</Link> und vertiefe mein Wissen berufsbegleitend im Master of Science in Engineering mit Schwerpunkt Künstliche Intelligenz und maschinelles Lernen an der <Link href="https://www.zhaw.ch">ZHAW</Link>.</p>
         </div>
         <Image src="/images/me.webp" class="intro-image" />
     </div>

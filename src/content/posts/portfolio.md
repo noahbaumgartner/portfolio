@@ -11,7 +11,7 @@ icon: person-standing
 ---
 
 <script>
-    import Link from '$lib/components/ui/Link.svelte'
+    import Link from '$lib/components/ui/link/Link.svelte'
 </script>
 
 Diese Webseite ist mein persönliches Portfolio und gleichzeitig das Projekt, das du dir gerade ansiehst. Ich habe sie gebaut, um einen digitalen Lebenslauf zu haben, der jederzeit aktuell ist, und um mich vertieft mit Svelte auseinanderzusetzen.

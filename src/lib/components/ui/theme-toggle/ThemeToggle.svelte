@@ -1,9 +1,9 @@
 <script lang="ts">
     import { onMount } from 'svelte';
     import { Sun, Moon, Monitor } from '@lucide/svelte';
-    import Button from './Button.svelte';
-    import ContextMenu from './context-menu/ContextMenu.svelte';
-    import ContextMenuItem from './context-menu/ContextMenuItem.svelte';
+    import Button from '../button/Button.svelte';
+    import ContextMenu from '../context-menu/ContextMenu.svelte';
+    import ContextMenuItem from '../context-menu/ContextMenuItem.svelte';
 
     type ThemeChoice = 'light' | 'dark' | 'system';
 

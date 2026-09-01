@@ -9,12 +9,12 @@
 {#if href}
     <a {href} {target} rel={target ? 'noopener' : undefined} data-sveltekit-preload-data class="button button--{variant} button--{size}" class:button--icon-only={iconOnly} class:button--no-icon={!Icon}>
         {#if Icon}<Icon class="button-icon" />{/if}
-        {#if children}{@render children()}{/if}
+        {#if children}<span class="button-label">{@render children()}</span>{/if}
     </a>
 {:else}
     <button type="button" {onclick} class="button button--{variant} button--{size}" class:button--icon-only={iconOnly} class:button--no-icon={!Icon}>
         {#if Icon}<Icon class="button-icon" />{/if}
-        {#if children}{@render children()}{/if}
+        {#if children}<span class="button-label">{@render children()}</span>{/if}
     </button>
 {/if}
 
@@ -24,6 +24,7 @@
         align-items: center;
         justify-content: center;
         gap: 6px;
+        min-width: 0;
         box-sizing: border-box;
         border: none;
         border-radius: 10px;
@@ -36,8 +37,16 @@
         transition: background-color 200ms ease, color 200ms ease;
     }
 
+    .button-label {
+        overflow: hidden;
+        min-width: 0;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
     .button:focus-visible {
-        box-shadow: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--color-ink);
+        outline: 2px solid var(--color-ink);
+        outline-offset: 2px;
     }
 
     .button--lg {
@@ -71,6 +80,7 @@
     .button :global(.button-icon) {
         width: 16px;
         height: 16px;
+        flex-shrink: 0;
     }
 
     .button--primary {

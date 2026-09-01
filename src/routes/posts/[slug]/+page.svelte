@@ -2,9 +2,9 @@
 	import { ArrowLeft, ArrowRight } from '@lucide/svelte';
 	import PostTitleSection from '$lib/components/sections/PostTitleSection.svelte';
 	import Section from '$lib/components/sections/Section.svelte';
-	import Button from '$lib/components/ui/Button.svelte';
-	import Link from '$lib/components/ui/Link.svelte';
-	import TableOfContents from '$lib/components/ui/TableOfContents.svelte';
+	import Button from '$lib/components/ui/button/Button.svelte';
+	import Link from '$lib/components/ui/link/Link.svelte';
+	import TableOfContents from '$lib/components/ui/table-of-contents/TableOfContents.svelte';
 
 	let { data } = $props();
 	let { Content, post, previous, next } = $derived(data);
@@ -39,7 +39,7 @@
 			<h2 class="post-sources-title">Quellen</h2>
 			<ol class="post-sources-list">
 				{#each post.sources as source, i}
-					<li id={`quelle-${i + 1}`}>
+					<li id={`source-${i + 1}`}>
 						<span class="post-sources-index">[{i + 1}]</span>
 						<Link href={source.url}>{source.title}</Link>
 					</li>
@@ -124,7 +124,7 @@
 		.post-layout {
 			display: grid;
 			grid-template-columns: minmax(120px, 1fr) minmax(0, 1000px) minmax(120px, 1fr);
-			column-gap: 16px;
+			column-gap: 32px;
 		}
 
 		.post-toc {
@@ -217,10 +217,17 @@
 	.post-body :global(sup a) {
 		color: var(--color-text-secondary);
 		text-decoration: none;
+		border-radius: 3px;
+		outline: none;
 	}
 
 	.post-body :global(sup a:hover) {
 		text-decoration: underline;
+	}
+
+	.post-body :global(sup a:focus-visible) {
+		outline: 2px solid var(--color-ink);
+		outline-offset: 1px;
 	}
 
 	:global(.post-sources) {

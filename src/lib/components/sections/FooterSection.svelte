@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Link from "../ui/Link.svelte";
+	import Link from "../ui/link/Link.svelte";
 </script>
 
 <div class="footer-wrapper page-padding section-gap">
