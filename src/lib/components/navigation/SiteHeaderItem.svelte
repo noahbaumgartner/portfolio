@@ -13,14 +13,10 @@
         line-height: 28px;
         color: var(--color-text);
         text-decoration: none;
-        transition: color 200ms ease;
+        transition: opacity 200ms;
     }
 
-    :global(.nav-items--desktop:has(.item:hover) .item:not(:hover)) {
-        color: var(--color-text-faint);
-    }
-
-    :global(.nav-items--mobile) .item:hover {
-        color: var(--color-text-faint);
+    .item:hover {
+        opacity: 0.6;
     }
 </style>

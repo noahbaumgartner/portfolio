@@ -13,7 +13,7 @@
         cursor: pointer;
         text-decoration: underline;
         text-underline-offset: 4px;
-        transition: opacity 300ms;
+        transition: opacity 200ms;
     }
 
     .link:hover {
