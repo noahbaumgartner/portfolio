@@ -9,7 +9,7 @@
             <p>Ich bin Noah Baumgartner, ein leidenschaftlicher Fullstack-Softwareentwickler mit über sechs Jahren Erfahrung. Ich liebe es, innovative digitale Lösungen zu gestalten und mich fachlich wie persönlich ständig weiterzuentwickeln.</p>
             <p>Aktuell arbeite ich bei <Link href="https://www.b-3.ch/">B3 Digital</Link> und vertiefe mein Wissen berufsbegleitend im Master of Science in Engineering mit Schwerpunkt Künstliche Intelligenz und maschinelles Lernen an der <Link href="https://www.zhaw.ch">ZHAW</Link>.</p>
         </div>
-        <Image src="/images/me.webp" class="intro-image" />
+        <Image src="/images/me-climbing.webp" class="intro-image" />
     </div>
 </section>
 
@@ -31,6 +31,7 @@
         display: flex;
         flex-direction: column;
         gap: 16px;
+        max-width: 900px;
     }
 
     :global(.intro-image) {
@@ -55,6 +56,10 @@
 
         .intro-text-card {
             flex: 1 1 0;
+        }
+
+        :global(.intro-image) {
+            margin-left: auto;
         }
     }
 
