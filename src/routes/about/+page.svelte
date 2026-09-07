@@ -13,8 +13,15 @@
 	<meta name="og:description" content="Erfahre mehr über mich, meine Erfahrungen und meine Leidenschaften." />
 </svelte:head>
 
-<TitleSection title="Über mich" />
+<TitleSection title="Über mich" class="about-title-section" />
 <AboutIntroSection />
 <AboutWorkExperienceSection />
 <AboutHobbiesSection />
 <AboutEducationSection />
+
+<style>
+	:global(.about-title-section .title) {
+		max-width: 900px;
+		margin-inline: auto;
+	}
+</style>

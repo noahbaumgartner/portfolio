@@ -1,8 +1,8 @@
 <script lang="ts">
-    let { title }: { title: string } = $props();
+    let { title, class: className }: { title: string; class?: string } = $props();
 </script>
 
-<section class="title-wrapper page-padding">
+<section class={["title-wrapper page-padding", className]}>
     <div class="title-box">
         <h1 class="title">{title}</h1>
     </div>
