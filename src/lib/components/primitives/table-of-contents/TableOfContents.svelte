@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { tick } from 'svelte';
+	import { SvelteSet } from 'svelte/reactivity';
 	import { ChevronDown } from '@lucide/svelte';
 
 	let {
@@ -34,7 +35,7 @@
 		if (!container) return;
 
 		const headings = Array.from(container.querySelectorAll('h1, h2')) as HTMLElement[];
-		const usedIds = new Set<string>();
+		const usedIds = new SvelteSet<string>();
 
 		items = headings.map((heading) => {
 			if (!heading.id) {

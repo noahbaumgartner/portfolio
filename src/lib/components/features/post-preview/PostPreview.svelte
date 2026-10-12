@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { Component } from 'svelte';
 	import type { PostDTO } from '$lib/dtos/PostDTO';
 	import {
 		Compass,
@@ -17,7 +18,7 @@
 		orientation = 'horizontal'
 	}: { post: PostDTO; orientation?: 'vertical' | 'horizontal' } = $props();
 
-	const icons: Record<string, any> = {
+	const icons: Record<string, Component> = {
 		compass: Compass,
 		wheat: Wheat,
 		'person-standing': PersonStanding,

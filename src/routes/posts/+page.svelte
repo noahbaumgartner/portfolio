@@ -1,23 +1,29 @@
 <script lang="ts">
-	import { Section } from "@noahbaumgartner/svelte-ui";
-	import PostPreview from "$lib/components/features/post-preview/PostPreview.svelte";
-	import TitleSection from "$lib/components/sections/TitleSection.svelte";
+	import { Section } from '@noahbaumgartner/svelte-ui';
+	import PostPreview from '$lib/components/features/post-preview/PostPreview.svelte';
+	import TitleSection from '$lib/components/sections/TitleSection.svelte';
 
 	let { data } = $props();
 	let { posts } = $derived(data);
 </script>
 
 <svelte:head>
-    <title>Noah Baumgartner | Beiträge</title>
+	<title>Noah Baumgartner | Beiträge</title>
 	<meta name="og:title" content="Beiträge" />
-    <meta name="description" content="Auf dieser Seite findest du eine Übersicht meiner Projekte und weiterer Beiträge." />
-    <meta name="og:description" content="Auf dieser Seite findest du eine Übersicht meiner Projekte und weiterer Beiträge." />
+	<meta
+		name="description"
+		content="Auf dieser Seite findest du eine Übersicht meiner Projekte und weiterer Beiträge."
+	/>
+	<meta
+		name="og:description"
+		content="Auf dieser Seite findest du eine Übersicht meiner Projekte und weiterer Beiträge."
+	/>
 </svelte:head>
 
 <TitleSection title="Beiträge" />
 <Section width="full" surface={false} padded={false} class="posts-wrapper">
 	<div class="posts-grid">
-		{#each posts as post}
+		{#each posts as post (post.slug)}
 			<PostPreview {post} />
 		{/each}
 	</div>
