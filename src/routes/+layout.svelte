@@ -1,14 +1,27 @@
 <script lang="ts">
 	import './layout.css';
+	import '@noahbaumgartner/svelte-ui/tokens.css';
 	import 'katex/dist/katex.min.css';
-	import SiteHeader from '$lib/components/navigation/SiteHeader.svelte';
-	import SiteHeaderItem from '$lib/components/navigation/SiteHeaderItem.svelte';
-	import ThemeToggle from '$lib/components/ui/theme-toggle/ThemeToggle.svelte';
+	import { page } from '$app/state';
+	import { Button, Navbar, NavigationMenuItem } from '@noahbaumgartner/svelte-ui';
+	import { Menu, X } from '@lucide/svelte';
+	import SiteHeaderLogo from '$lib/components/navigation/SiteHeaderLogo.svelte';
+	import ThemeToggle from '$lib/components/features/theme-toggle/ThemeToggle.svelte';
 	import Footer from '$lib/components/sections/FooterSection.svelte';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 	import { onMount } from 'svelte';
 
 	let { children } = $props();
+
+	const navigation = [
+		{ href: '/', label: 'Start' },
+		{ href: '/about', label: 'Über mich' },
+		{ href: '/posts', label: 'Beiträge' }
+	];
+
+	function isActive(href: string) {
+		return href === '/' ? page.url.pathname === '/' : page.url.pathname.startsWith(href);
+	}
 	injectAnalytics();
 
 	let fontsLoaded = $state(false);
@@ -43,22 +56,34 @@
 	<div class="loading-screen" class:loading-screen--hidden={fontsLoaded}></div>
 {/if}
 
-<SiteHeader>
-	{#snippet left()}
-		<SiteHeaderItem href="/">Start</SiteHeaderItem>
-		<SiteHeaderItem href="/about">Über mich</SiteHeaderItem>
-		<SiteHeaderItem href="/posts">Beiträge</SiteHeaderItem>
+{#snippet navItems()}
+	{#each navigation as item (item.href)}
+		<NavigationMenuItem href={item.href} active={isActive(item.href)}>{item.label}</NavigationMenuItem>
+	{/each}
+{/snippet}
+
+<Navbar class="site-navbar" label="Hauptnavigation">
+	{#snippet logo()}
+		<SiteHeaderLogo />
 	{/snippet}
-	{#snippet right()}
+	{#snippet actions()}
 		<ThemeToggle />
 	{/snippet}
-</SiteHeader>
+	{#snippet trigger(props, open)}
+		<Button
+			{...props}
+			variant="secondary"
+			size="lg"
+			icon={open ? X : Menu}
+			label={open ? 'Menü schliessen' : 'Menü öffnen'}
+		/>
+	{/snippet}
+	{@render navItems()}
+</Navbar>
 <main class="main">
 	{@render children()}
 </main>
-<footer>
-	<Footer	/>
-</footer>
+<Footer />
 
 <style>
 	.loading-screen {
@@ -74,6 +99,30 @@
 	}
 
 	.main {
-		padding-top: 64px;
+		flex: 1 0 auto;
+	}
+
+	/* Same page gutters and max width as the sections below the bar. The Navbar
+	   uses the gutter for the bar and the mobile menu alike. */
+	:global(.site-navbar) {
+		--navbar-gutter: 24px;
+	}
+
+	:global(.site-navbar .navbar-bar) {
+		box-sizing: content-box;
+		max-width: 1280px;
+		margin-inline: auto;
+	}
+
+	@media (min-width: 640px) {
+		:global(.site-navbar) {
+			--navbar-gutter: 40px;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		:global(.site-navbar) {
+			--navbar-gutter: 64px;
+		}
 	}
 </style>

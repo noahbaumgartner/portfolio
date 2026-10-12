@@ -1,9 +1,8 @@
 <script lang="ts">
-    import Link from "../ui/link/Link.svelte";
+    import { Link, Section } from '@noahbaumgartner/svelte-ui';
 </script>
 
-<section class="contact-wrapper">
-    <div class="contact-inner page-padding">
+<Section width="full" class="contact-wrapper">
         <div class="contact">
             <h2 class="contact-title">Kontakt</h2>
             <p>
@@ -11,10 +10,9 @@
                 Web: <Link href="/">https://noahbaumgartner.ch</Link>
             </p>
         </div>
-    </div>
-</section>
+</Section>
 
-<section class="disclaimer-wrapper page-padding">
+<Section width="full" surface={false} padded={false} class="disclaimer-wrapper">
     <div class="disclaimer">
         <h2 class="disclaimer-title">Haftungsausschluss</h2>
         <ol class="disclaimer-list">
@@ -36,21 +34,15 @@
             </li>
         </ol>
     </div>
-</section>
+</Section>
 
 <style>
-    .contact-wrapper {
-        background-color: var(--color-surface);
+    :global(.contact-wrapper) {
+        --section-padding-block: 40px;
         margin-bottom: 24px;
     }
 
-    .contact-inner {
-        padding-block: 40px;
-    }
-
     .contact {
-        margin-inline: auto;
-        max-width: 1280px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -62,7 +54,7 @@
         margin-top: 0;
     }
 
-    .disclaimer-wrapper {
+    :global(.disclaimer-wrapper) {
         margin-bottom: 24px;
     }
 
@@ -94,7 +86,7 @@
         gap: 8px;
         padding: 24px;
         border: 1px solid var(--color-border);
-        border-radius: 6px;
+        border-radius: 10px;
     }
 
     .disclaimer-card h3 {
@@ -108,18 +100,18 @@
     }
 
     @media (min-width: 640px) {
-        .contact-wrapper {
+        :global(.contact-wrapper) {
             margin-bottom: 40px;
         }
 
-        .disclaimer-wrapper {
+        :global(.disclaimer-wrapper) {
             margin-bottom: 40px;
         }
     }
 
     @media (min-width: 768px) {
-        .contact-inner {
-            padding-block: 64px;
+        :global(.contact-wrapper) {
+            --section-padding-block: 64px;
         }
 
         .disclaimer-list {
@@ -133,11 +125,11 @@
     }
 
     @media (min-width: 1024px) {
-        .contact-wrapper {
+        :global(.contact-wrapper) {
             margin-bottom: 64px;
         }
 
-        .disclaimer-wrapper {
+        :global(.disclaimer-wrapper) {
             margin-bottom: 64px;
         }
     }
