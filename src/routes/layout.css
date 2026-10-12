@@ -206,7 +206,9 @@ body {
 	font-family: 'Inter', sans-serif;
 	background-color: var(--color-bg);
 	color: var(--color-text);
-	transition: background-color 200ms ease, color 200ms ease;
+	transition:
+		background-color 200ms ease,
+		color 200ms ease;
 }
 
 ::selection {

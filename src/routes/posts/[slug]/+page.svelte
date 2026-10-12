@@ -106,7 +106,7 @@
 		<Section class="section-gap post-sources">
 			<h2 class="post-sources-title">Quellen</h2>
 			<ol class="post-sources-list">
-				{#each post.sources as source, i}
+				{#each post.sources as source, i (source.url)}
 					<li id={`source-${i + 1}`}>
 						<span class="post-sources-index">[{i + 1}]</span>
 						<Link href={source.url}>{source.title}</Link>

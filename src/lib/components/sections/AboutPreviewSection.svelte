@@ -3,82 +3,89 @@
 </script>
 
 <Section width="full" surface={false} padded={false} class="section-gap">
-    <div class="about">
-        <div class="about-header">
-            <h2 class="about-title">Über mich</h2>
-            <Link href="/about">Mehr erfahren</Link>
-        </div>
+	<div class="about">
+		<div class="about-header">
+			<h2 class="about-title">Über mich</h2>
+			<Link href="/about">Mehr erfahren</Link>
+		</div>
 
-        <div class="about-body">
-            <div class="about-text">
-                <span>
-                    Wenn ich nicht gerade an neuen Features für buildagil arbeite oder für mein Studium lerne, beschäftige ich mich mit privaten Projekten. Ich bin Entwickler aus Leidenschaft und immer auf der Suche nach der nächsten technischen Herausforderung.
-                </span>
-            </div>
-            <Image src="/images/me.webp" alt="Porträt von Noah Baumgartner" ratio={1} class="about-image" />
-        </div>
-    </div>
+		<div class="about-body">
+			<div class="about-text">
+				<span>
+					Wenn ich nicht gerade an neuen Features für buildagil arbeite oder für mein Studium lerne,
+					beschäftige ich mich mit privaten Projekten. Ich bin Entwickler aus Leidenschaft und immer
+					auf der Suche nach der nächsten technischen Herausforderung.
+				</span>
+			</div>
+			<Image
+				src="/images/me.webp"
+				alt="Porträt von Noah Baumgartner"
+				ratio={1}
+				class="about-image"
+			/>
+		</div>
+	</div>
 </Section>
 
 <style>
-    .about {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 24px;
-    }
+	.about {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 24px;
+	}
 
-    .about-header {
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-        width: 100%;
-    }
+	.about-header {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		width: 100%;
+	}
 
-    .about-header :global(.link) {
-        font-size: 14px;
-    }
+	.about-header :global(.link) {
+		font-size: 14px;
+	}
 
-    .about-title {
-        font-weight: 500;
-        font-size: 22px;
-    }
+	.about-title {
+		font-weight: 500;
+		font-size: 22px;
+	}
 
-    .about-body {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        width: 100%;
-    }
+	.about-body {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+		width: 100%;
+	}
 
-    .about-text {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-        padding-block: 5px;
-        max-width: 544px;
-    }
+	.about-text {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 16px;
+		padding-block: 5px;
+		max-width: 544px;
+	}
 
-    :global(.about-image) {
-        width: min(100%, 288px);
-        flex-shrink: 0;
-        align-self: center;
-    }
+	:global(.about-image) {
+		width: min(100%, 288px);
+		flex-shrink: 0;
+		align-self: center;
+	}
 
-    @media (min-width: 768px) {
-        .about-body {
-            flex-direction: row;
-            align-items: center;
-            gap: 72px;
-        }
+	@media (min-width: 768px) {
+		.about-body {
+			flex-direction: row;
+			align-items: center;
+			gap: 72px;
+		}
 
-        :global(.about-image) {
-            order: -1;
-        }
+		:global(.about-image) {
+			order: -1;
+		}
 
-        .about-text {
-            padding-block: 0;
-        }
-    }
+		.about-text {
+			padding-block: 0;
+		}
+	}
 </style>

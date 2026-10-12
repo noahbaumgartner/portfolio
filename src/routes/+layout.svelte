@@ -47,9 +47,27 @@
 	<meta name="og:url" content="https://noahbaumgartner.ch" />
 	<meta name="og:image" content="https://noahbaumgartner.ch/images/og.jpg" />
 
-	<link rel="preload" href="/fonts/Outfit.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-	<link rel="preload" href="/fonts/Inter.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-	<link rel="preload" href="/fonts/SourceCodePro.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link
+		rel="preload"
+		href="/fonts/Outfit.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin="anonymous"
+	/>
+	<link
+		rel="preload"
+		href="/fonts/Inter.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin="anonymous"
+	/>
+	<link
+		rel="preload"
+		href="/fonts/SourceCodePro.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin="anonymous"
+	/>
 </svelte:head>
 
 {#if showScreen}
@@ -58,7 +76,9 @@
 
 {#snippet navItems()}
 	{#each navigation as item (item.href)}
-		<NavigationMenuItem href={item.href} active={isActive(item.href)}>{item.label}</NavigationMenuItem>
+		<NavigationMenuItem href={item.href} active={isActive(item.href)}
+			>{item.label}</NavigationMenuItem
+		>
 	{/each}
 {/snippet}
 
@@ -73,7 +93,6 @@
 		<Button
 			{...props}
 			variant="secondary"
-			size="lg"
 			icon={open ? X : Menu}
 			label={open ? 'Menü schliessen' : 'Menü öffnen'}
 		/>
