@@ -20,7 +20,7 @@ sources:
 ---
 
 <script>
-    import Link from '$lib/components/ui/link/Link.svelte'
+    import Link from '$lib/components/primitives/link/Link.svelte'
 </script>
 
 Für ein Modul zu Computer Vision habe ich als Übungsaufgabe eine kleine Pipeline gebaut, die Kontrollschilder auf Fotos automatisch erkennt und durch künstlich erzeugte, nicht mehr lesbare Kennzeichen ersetzt, ähnlich wie Gesichter oder Kennzeichen, die auf Strassenfotos unkenntlich gemacht werden. Die Aufgabe war in fünf Teilschritte gegliedert, von der reinen Erkennung bis zum realistischen Ersetzen der Kennzeichen. Es handelt sich dabei ausdrücklich um eine Übungsarbeit und keinen fertigen Produktionscode, trotzdem funktioniert die Grundidee bereits erstaunlich gut.

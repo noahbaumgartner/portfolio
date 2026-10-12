@@ -1,5 +1,5 @@
 <script lang="ts">
-	import PostPreview from "$lib/components/PostPreview.svelte";
+	import PostPreview from "$lib/components/features/post-preview/PostPreview.svelte";
 	import TitleSection from "$lib/components/sections/TitleSection.svelte";
 
 	let { data } = $props();

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Link from "../ui/link/Link.svelte";
-	import Image from "../ui/image/Image.svelte";
+	import Link from "../primitives/link/Link.svelte";
+	import Image from "../primitives/image/Image.svelte";
 </script>
 
 <section class="about-wrapper page-padding section-gap">

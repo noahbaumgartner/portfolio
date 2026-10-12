@@ -18,7 +18,7 @@ sources:
 ---
 
 <script>
-    import Link from '$lib/components/ui/link/Link.svelte'
+    import Link from '$lib/components/primitives/link/Link.svelte'
 </script>
 
 Für ein Modul zu Deep Learning an der ZHAW habe ich mich als Übungsaufgabe damit beschäftigt, wie ein Modell zu einem Foto selbstständig einen passenden Satz in natürlicher Sprache generiert, ähnlich der automatischen Bildbeschreibung, wie man sie etwa von Google Fotos kennt. Verlangt war die Implementierung und der Vergleich von zwei unterschiedlichen Architekturen unter identischen Bedingungen, ergänzt um eigene Erweiterungen.
