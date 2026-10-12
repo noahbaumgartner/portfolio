@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Link from "../ui/link/Link.svelte";
+    import { Entry, Link, Section } from '@noahbaumgartner/svelte-ui';
 
     const educations = [
         {
@@ -33,41 +33,27 @@
     ];
 </script>
 
-<section class="education-wrapper section-gap">
-    <div class="education-inner page-padding">
-        <div class="education">
-            <div class="education-header">
-                <h2 class="education-title">Ausbildung</h2>
-            </div>
+<Section width="full" class="section-gap">
+    <div class="education">
+        <div class="education-header">
+            <h2 class="education-title">Ausbildung</h2>
+        </div>
 
-            <div class="education-list">
-                {#each educations as education}
-                    <div class="education-card">
-                        <div class="education-heading">
-                            <h3 class="education-role">{education.title}</h3>
-                            <span class="education-period">{education.period}</span>
-                        </div>
-                        <p class="education-description">{education.description}</p>
+        <div class="education-list">
+            {#each educations as education}
+                <Entry title={education.title} meta={education.period}>
+                    {education.description}
+                    {#snippet footer()}
                         <Link href={education.url}>{education.institution}</Link>
-                    </div>
-                {/each}
-            </div>
+                    {/snippet}
+                </Entry>
+            {/each}
         </div>
     </div>
-</section>
+</Section>
 
 <style>
-    .education-wrapper {
-        background-color: var(--color-surface);
-    }
-
-    .education-inner {
-        padding-block: 24px;
-    }
-
     .education {
-        margin-inline: auto;
-        max-width: 1280px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -93,45 +79,6 @@
         width: 100%;
     }
 
-    .education-card {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        gap: 10px;
-        padding: 24px;
-        border: 1px solid var(--color-border-strong);
-        border-radius: 6px;
-    }
-
-    .education-heading {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: baseline;
-        gap: 8px;
-    }
-
-    .education-role {
-        font-size: 20px;
-        font-weight: 500;
-    }
-
-    .education-period {
-        font-size: 14px;
-        color: var(--color-text-muted);
-        white-space: nowrap;
-    }
-
-    .education-description {
-        max-width: 640px;
-    }
-
-    @media (min-width: 640px) {
-        .education-inner {
-            padding-block: 40px;
-        }
-    }
-
     @media (min-width: 768px) {
         .education-list {
             grid-template-columns: repeat(2, 1fr);
@@ -142,16 +89,6 @@
             grid-column: 1 / -1;
             width: calc(50% - 12px);
             margin-inline: auto;
-        }
-
-        .education-card {
-            padding: 32px;
-        }
-    }
-
-    @media (min-width: 1024px) {
-        .education-inner {
-            padding-block: 64px;
         }
     }
 </style>

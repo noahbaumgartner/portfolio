@@ -1,20 +1,19 @@
 <script lang="ts">
-    import Image from "../ui/image/Image.svelte";
-    import Link from "../ui/link/Link.svelte";
+    import { Image, Link, Section } from '@noahbaumgartner/svelte-ui';
 </script>
 
-<section class="intro-wrapper page-padding">
+<Section width="full" surface={false} padded={false} class="intro-wrapper">
     <div class="intro">
         <div class="intro-text-card">
             <p>Ich bin Noah Baumgartner, ein leidenschaftlicher Fullstack-Softwareentwickler mit über sechs Jahren Erfahrung. Ich liebe es, innovative digitale Lösungen zu gestalten und mich fachlich wie persönlich ständig weiterzuentwickeln.</p>
             <p>Aktuell arbeite ich bei <Link href="https://www.b-3.ch/">B3 Digital</Link> und vertiefe mein Wissen berufsbegleitend im Master of Science in Engineering mit Schwerpunkt Künstliche Intelligenz und maschinelles Lernen an der <Link href="https://www.zhaw.ch">ZHAW</Link>.</p>
         </div>
-        <Image src="/images/me-climbing.webp" class="intro-image" />
+        <Image src="/images/me-climbing.webp" alt="Noah Baumgartner beim Klettern" ratio={1} class="intro-image" />
     </div>
-</section>
+</Section>
 
 <style>
-    .intro-wrapper {
+    :global(.intro-wrapper) {
         margin-bottom: 24px;
     }
 
@@ -36,13 +35,11 @@
 
     :global(.intro-image) {
         width: min(100%, 288px);
-        aspect-ratio: 1;
-        border-radius: 6px;
         flex-shrink: 0;
     }
 
     @media (min-width: 640px) {
-        .intro-wrapper {
+        :global(.intro-wrapper) {
             margin-bottom: 40px;
         }
     }
@@ -64,7 +61,7 @@
     }
 
     @media (min-width: 1024px) {
-        .intro-wrapper {
+        :global(.intro-wrapper) {
             margin-bottom: 64px;
         }
     }

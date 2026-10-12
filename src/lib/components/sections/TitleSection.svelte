@@ -1,12 +1,14 @@
 <script lang="ts">
+    import { Section } from '@noahbaumgartner/svelte-ui';
+
     let { title, class: className }: { title: string; class?: string } = $props();
 </script>
 
-<section class={["title-wrapper page-padding", className]}>
+<Section width="full" surface={false} padded={false} class={["title-wrapper", className]}>
     <div class="title-box">
         <h1 class="title">{title}</h1>
     </div>
-</section>
+</Section>
 
 <style>
     .title-box {
