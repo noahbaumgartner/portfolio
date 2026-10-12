@@ -1,5 +1,7 @@
 <script lang="ts">
-	let { children, href }: { children: any; href?: string } = $props();
+	import type { Snippet } from 'svelte';
+
+	let { children, href }: { children: Snippet; href?: string } = $props();
 
 	const target = $derived(href?.startsWith('http') ? '_blank' : undefined);
 </script>

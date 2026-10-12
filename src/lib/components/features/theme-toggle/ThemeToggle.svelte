@@ -28,7 +28,7 @@
 
 <ContextMenu align="end">
 	{#snippet trigger(props)}
-		<Button {...props} variant="ghost" size="lg" icon={icons[choice]} label="Design wählen" />
+		<Button {...props} variant="ghost" icon={icons[choice]} label="Design wählen" />
 	{/snippet}
 	<ContextMenuItem icon={Sun} selected={choice === 'light'} onclick={() => select('light')}
 		>Hell</ContextMenuItem
