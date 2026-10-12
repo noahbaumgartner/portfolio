@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Section } from "@noahbaumgartner/svelte-ui";
 	import PostPreview from "$lib/components/features/post-preview/PostPreview.svelte";
 	import TitleSection from "$lib/components/sections/TitleSection.svelte";
 
@@ -14,16 +15,16 @@
 </svelte:head>
 
 <TitleSection title="Beiträge" />
-<section class="posts-wrapper page-padding">
+<Section width="full" surface={false} padded={false} class="posts-wrapper">
 	<div class="posts-grid">
 		{#each posts as post}
 			<PostPreview {post} />
 		{/each}
 	</div>
-</section>
+</Section>
 
 <style>
-	.posts-wrapper {
+	:global(.posts-wrapper) {
 		margin-bottom: 24px;
 	}
 
@@ -36,16 +37,13 @@
 		gap: 24px;
 	}
 
-	.posts-grid :global(.preview) {
+	.posts-grid :global(.preview-card) {
 		width: 100%;
-	}
-
-	.posts-grid :global(.preview-inner) {
 		max-width: 650px;
 	}
 
 	@media (min-width: 640px) {
-		.posts-wrapper {
+		:global(.posts-wrapper) {
 			margin-bottom: 40px;
 		}
 
@@ -55,7 +53,7 @@
 	}
 
 	@media (min-width: 1024px) {
-		.posts-wrapper {
+		:global(.posts-wrapper) {
 			margin-bottom: 64px;
 		}
 
@@ -65,7 +63,7 @@
 			gap: 30px;
 		}
 
-		.posts-grid :global(.preview-inner) {
+		.posts-grid :global(.preview-card) {
 			max-width: none;
 		}
 	}

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Link from "../primitives/link/Link.svelte";
+    import { Link, Section } from '@noahbaumgartner/svelte-ui';
 
     function animateGreeting(node: HTMLElement) {
         const texts = ["Hallo, ich bin Noah", "Software Entwickler", "Student"];
@@ -46,8 +46,7 @@
     }
 </script>
 
-<section class="hero-wrapper page-padding">
-    <div class="hero">
+<Section class="hero">
         <div class="hero-content">
             <span class="hero-greeting">
                 <span {@attach animateGreeting} class="hero-greeting-text"></span>
@@ -57,18 +56,13 @@
                 Ich entwickle Software bei der <Link href="https://b-3.ch">B3 Digital</Link> und absolviere meinen MSc an der <Link href="https://zhaw.ch">ZHAW</Link>.
             </span>
         </div>
-    </div>
-</section>
+</Section>
 
 <style>
-    .hero {
+    :global(.hero) {
         position: relative;
-        margin-inline: auto;
-        max-width: 1280px;
         min-height: 400px;
         padding: 60px 24px;
-        background-color: var(--color-surface);
-        border-radius: 6px;
         display: flex;
         align-items: center;
         justify-content: center;

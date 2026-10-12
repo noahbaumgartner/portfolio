@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Pause, Play } from '@lucide/svelte';
-	import OverlayButton from '../../primitives/overlay-button/OverlayButton.svelte';
+	import { Button } from '@noahbaumgartner/svelte-ui';
 
 	let { src, alt = '', aspectRatio = '15 / 8' } = $props();
 
@@ -58,7 +58,9 @@
 	{/if}
 
 	{#if mediaType !== 'image'}
-		<OverlayButton
+		<Button
+			variant="overlay"
+			size="lg"
 			icon={playing ? Pause : Play}
 			label={playing ? 'Pausieren' : 'Abspielen'}
 			onclick={toggle}
