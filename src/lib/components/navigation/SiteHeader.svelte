@@ -2,7 +2,7 @@
     import { slide } from 'svelte/transition';
     import { Menu, X } from '@lucide/svelte';
     import SiteHeaderLogo from './SiteHeaderLogo.svelte';
-    import Button from '../ui/button/Button.svelte';
+    import Button from '../primitives/button/Button.svelte';
 
     let { left, right } = $props();
     let mobileNavActive = $state(false);

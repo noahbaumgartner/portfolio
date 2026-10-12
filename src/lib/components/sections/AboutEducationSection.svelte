@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Link from "../ui/link/Link.svelte";
+    import Link from "../primitives/link/Link.svelte";
 
     const educations = [
         {

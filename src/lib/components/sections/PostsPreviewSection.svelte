@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Compass, Wheat, PersonStanding, PartyPopper, Scale, Search, Car, Image } from '@lucide/svelte';
-	import MeshGradient from "../MeshGradient.svelte";
-	import Link from "../ui/link/Link.svelte";
+	import MeshGradient from "../primitives/mesh-gradient/MeshGradient.svelte";
+	import Link from "../primitives/link/Link.svelte";
 
     let { posts } = $props();
 

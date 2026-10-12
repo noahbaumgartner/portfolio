@@ -31,7 +31,7 @@ sources:
 ---
 
 <script>
-    import Link from '$lib/components/ui/link/Link.svelte'
+    import Link from '$lib/components/primitives/link/Link.svelte'
 </script>
 
 Für meine Bachelorarbeit an der ZHAW habe ich zusammen mit einem Studienkollegen ein System entwickelt, das Suchanfragen nicht mehr nach exakten Wörtern, sondern nach ihrer Bedeutung beantwortet: Man findet also auch dann das Richtige, wenn man nicht genau die im Dokument verwendeten Begriffe eintippt. Wir haben dieses System konzipiert, prototypisch umgesetzt und anschliessend sowohl technisch als auch mit echten Nutzenden getestet.
