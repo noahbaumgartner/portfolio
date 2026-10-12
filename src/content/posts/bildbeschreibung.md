@@ -7,14 +7,14 @@ gif: '/images/posts/image-captioning/attention-hero.jpg'
 colors: '#ecdfc9,#e8834a,#1f2a44'
 icon: image
 sources:
-    - title: 'He et al.: Deep Residual Learning for Image Recognition (ResNet)'
-      url: 'https://arxiv.org/abs/1512.03385'
-    - title: 'Vinyals et al.: Show and Tell: A Neural Image Caption Generator'
-      url: 'https://arxiv.org/abs/1411.4555'
-    - title: 'Xu et al.: Show, Attend and Tell: Neural Image Caption Generation with Visual Attention'
-      url: 'https://arxiv.org/abs/1502.03044'
-    - title: 'Papineni et al.: BLEU: a Method for Automatic Evaluation of Machine Translation'
-      url: 'https://aclanthology.org/P02-1040/'
+  - title: 'He et al.: Deep Residual Learning for Image Recognition (ResNet)'
+    url: 'https://arxiv.org/abs/1512.03385'
+  - title: 'Vinyals et al.: Show and Tell: A Neural Image Caption Generator'
+    url: 'https://arxiv.org/abs/1411.4555'
+  - title: 'Xu et al.: Show, Attend and Tell: Neural Image Caption Generation with Visual Attention'
+    url: 'https://arxiv.org/abs/1502.03044'
+  - title: 'Papineni et al.: BLEU: a Method for Automatic Evaluation of Machine Translation'
+    url: 'https://aclanthology.org/P02-1040/'
 ---
 
 <script>

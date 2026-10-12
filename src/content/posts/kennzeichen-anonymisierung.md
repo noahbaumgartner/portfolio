@@ -7,16 +7,16 @@ gif: '/images/posts/license-plate-anonymization/detection.jpg'
 colors: '#ebe0c9,#d8b869,#26221b'
 icon: car
 sources:
-    - title: 'Goodfellow et al.: Generative Adversarial Networks'
-      url: 'https://arxiv.org/abs/1406.2661'
-    - title: 'Radford, Metz & Chintala: Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks (DCGAN)'
-      url: 'https://arxiv.org/abs/1511.06434'
-    - title: 'Canny: A Computational Approach to Edge Detection'
-      url: 'https://doi.org/10.1109/TPAMI.1986.4767851'
-    - title: 'Duda & Hart: Use of the Hough Transformation to Detect Lines and Curves in Pictures'
-      url: 'https://dl.acm.org/doi/10.1145/361237.361242'
-    - title: 'Johnson, Alahi & Fei-Fei: Perceptual Losses for Real-Time Style Transfer and Super-Resolution'
-      url: 'https://arxiv.org/abs/1603.08155'
+  - title: 'Goodfellow et al.: Generative Adversarial Networks'
+    url: 'https://arxiv.org/abs/1406.2661'
+  - title: 'Radford, Metz & Chintala: Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks (DCGAN)'
+    url: 'https://arxiv.org/abs/1511.06434'
+  - title: 'Canny: A Computational Approach to Edge Detection'
+    url: 'https://doi.org/10.1109/TPAMI.1986.4767851'
+  - title: 'Duda & Hart: Use of the Hough Transformation to Detect Lines and Curves in Pictures'
+    url: 'https://dl.acm.org/doi/10.1145/361237.361242'
+  - title: 'Johnson, Alahi & Fei-Fei: Perceptual Losses for Real-Time Style Transfer and Super-Resolution'
+    url: 'https://arxiv.org/abs/1603.08155'
 ---
 
 <script>

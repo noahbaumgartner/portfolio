@@ -1,27 +1,29 @@
-<a href="/" class="logo">
-    <span class="logo-text" data-sveltekit-preload-data>
-        noahbaumgartner
-    </span>
+<script lang="ts">
+	import { resolve } from '$app/paths';
+</script>
+
+<a href={resolve('/')} class="logo">
+	<span class="logo-text" data-sveltekit-preload-data> noahbaumgartner </span>
 </a>
 
 <style>
-    .logo {
-        flex-shrink: 0;
-        text-decoration: none;
-        border-radius: 4px;
-        outline: none;
-    }
+	.logo {
+		flex-shrink: 0;
+		text-decoration: none;
+		border-radius: 4px;
+		outline: none;
+	}
 
-    .logo:focus-visible {
-        outline: 2px solid var(--color-ink);
-        outline-offset: 2px;
-    }
+	.logo:focus-visible {
+		outline: 2px solid var(--color-ink);
+		outline-offset: 2px;
+	}
 
-    .logo-text {
-        font-family: 'Outfit', sans-serif;
-        font-size: 18px;
-        font-weight: 600;
-        color: var(--color-text);
-        cursor: pointer;
-    }
+	.logo-text {
+		font-family: 'Outfit', sans-serif;
+		font-size: 18px;
+		font-weight: 600;
+		color: var(--color-text);
+		cursor: pointer;
+	}
 </style>
