@@ -1,9 +1,8 @@
 <script lang="ts">
-	import Link from "../primitives/link/Link.svelte";
-	import Image from "../primitives/image/Image.svelte";
+	import { Image, Link, Section } from '@noahbaumgartner/svelte-ui';
 </script>
 
-<section class="about-wrapper page-padding section-gap">
+<Section width="full" surface={false} padded={false} class="section-gap">
     <div class="about">
         <div class="about-header">
             <h2 class="about-title">Über mich</h2>
@@ -16,15 +15,13 @@
                     Wenn ich nicht gerade an neuen Features für buildagil arbeite oder für mein Studium lerne, beschäftige ich mich mit privaten Projekten. Ich bin Entwickler aus Leidenschaft und immer auf der Suche nach der nächsten technischen Herausforderung.
                 </span>
             </div>
-            <Image src="/images/me.webp" class="about-image" />
+            <Image src="/images/me.webp" alt="Porträt von Noah Baumgartner" ratio={1} class="about-image" />
         </div>
     </div>
-</section>
+</Section>
 
 <style>
     .about {
-        margin-inline: auto;
-        max-width: 1280px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -65,8 +62,6 @@
 
     :global(.about-image) {
         width: min(100%, 288px);
-        aspect-ratio: 1;
-        border-radius: 6px;
         flex-shrink: 0;
         align-self: center;
     }

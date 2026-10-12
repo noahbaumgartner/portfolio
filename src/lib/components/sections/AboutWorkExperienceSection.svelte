@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Link from "../primitives/link/Link.svelte";
+    import { Entry, Link, Section } from '@noahbaumgartner/svelte-ui';
 
     const experiences = [
         {
@@ -26,41 +26,27 @@
     ];
 </script>
 
-<section class="experience-wrapper section-gap">
-    <div class="experience-inner page-padding">
-        <div class="experience">
-            <div class="experience-header">
-                <h2 class="experience-title">Berufserfahrung</h2>
-            </div>
+<Section width="full" class="section-gap">
+    <div class="experience">
+        <div class="experience-header">
+            <h2 class="experience-title">Berufserfahrung</h2>
+        </div>
 
-            <div class="experience-list">
-                {#each experiences as experience}
-                    <div class="experience-card">
-                        <div class="experience-heading">
-                            <h3 class="experience-role">{experience.title}</h3>
-                            <span class="experience-period">{experience.period}</span>
-                        </div>
-                        <p class="experience-description">{experience.description}</p>
+        <div class="experience-list">
+            {#each experiences as experience}
+                <Entry title={experience.title} meta={experience.period}>
+                    {experience.description}
+                    {#snippet footer()}
                         <Link href={experience.url}>{experience.company}</Link>
-                    </div>
-                {/each}
-            </div>
+                    {/snippet}
+                </Entry>
+            {/each}
         </div>
     </div>
-</section>
+</Section>
 
 <style>
-    .experience-wrapper {
-        background-color: var(--color-surface);
-    }
-
-    .experience-inner {
-        padding-block: 24px;
-    }
-
     .experience {
-        margin-inline: auto;
-        max-width: 1280px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -86,45 +72,6 @@
         width: 100%;
     }
 
-    .experience-card {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        gap: 10px;
-        padding: 24px;
-        border: 1px solid var(--color-border-strong);
-        border-radius: 6px;
-    }
-
-    .experience-heading {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: baseline;
-        gap: 8px;
-    }
-
-    .experience-role {
-        font-size: 20px;
-        font-weight: 500;
-    }
-
-    .experience-period {
-        font-size: 14px;
-        color: var(--color-text-muted);
-        white-space: nowrap;
-    }
-
-    .experience-description {
-        max-width: 640px;
-    }
-
-    @media (min-width: 640px) {
-        .experience-inner {
-            padding-block: 40px;
-        }
-    }
-
     @media (min-width: 768px) {
         .experience-list {
             grid-template-columns: repeat(2, 1fr);
@@ -135,16 +82,6 @@
             grid-column: 1 / -1;
             width: calc(50% - 12px);
             margin-inline: auto;
-        }
-
-        .experience-card {
-            padding: 32px;
-        }
-    }
-
-    @media (min-width: 1024px) {
-        .experience-inner {
-            padding-block: 64px;
         }
     }
 </style>

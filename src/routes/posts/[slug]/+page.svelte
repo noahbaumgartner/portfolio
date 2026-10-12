@@ -1,9 +1,7 @@
 <script>
 	import { ArrowLeft, ArrowRight } from '@lucide/svelte';
 	import PostTitleSection from '$lib/components/sections/PostTitleSection.svelte';
-	import Section from '$lib/components/primitives/section/Section.svelte';
-	import Button from '$lib/components/primitives/button/Button.svelte';
-	import Link from '$lib/components/primitives/link/Link.svelte';
+	import { Button, Link, Section } from '@noahbaumgartner/svelte-ui';
 	import TableOfContents from '$lib/components/primitives/table-of-contents/TableOfContents.svelte';
 	import Lightbox from '$lib/components/features/lightbox/Lightbox.svelte';
 
@@ -13,6 +11,7 @@
 	let bodyEl = $state();
 	let lightboxSrc = $state();
 	let lightboxAlt = $state('');
+	let lightboxAspect = $state();
 
 	const EXPAND_ICON =
 		'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="post-img-expand-icon"><path d="M15 3h6v6" /><path d="m21 3-7 7" /><path d="m3 21 7-7" /><path d="M9 21H3v-6" /></svg>';
@@ -39,7 +38,7 @@
 			expandButton.innerHTML = EXPAND_ICON;
 			expandButton.addEventListener('click', (event) => {
 				event.stopPropagation();
-				openLightbox(image.src, image.alt);
+				openLightbox(image);
 			});
 			wrapper.appendChild(expandButton);
 		});
@@ -53,7 +52,7 @@
 					}
 				}
 			},
-			{ rootMargin: '0px 0px -10% 0px', threshold: 0.1 }
+			{ rootMargin: '0px 0px 300px 0px', threshold: 0 }
 		);
 
 		images.forEach((image) => observer.observe(image));
@@ -61,14 +60,16 @@
 		return () => observer.disconnect();
 	});
 
-	function openLightbox(src, alt) {
-		lightboxSrc = src;
-		lightboxAlt = alt;
+	function openLightbox(image) {
+		lightboxAspect =
+			image.clientWidth && image.clientHeight ? image.clientWidth / image.clientHeight : undefined;
+		lightboxSrc = image.src;
+		lightboxAlt = image.alt;
 	}
 
 	function handleBodyClick(event) {
 		if (event.target instanceof HTMLImageElement) {
-			openLightbox(event.target.src, event.target.alt);
+			openLightbox(event.target);
 		}
 	}
 
@@ -84,23 +85,25 @@
 </div>
 <PostTitleSection {post} />
 <div class="post-content-spacer">
-	<Section class="post-content">
-		<div class="post-layout">
-			<aside class="post-toc">
-				<div class="post-toc-sticky">
-					{#key post.slug}
-						<TableOfContents container={bodyEl} />
-					{/key}
+	<Section width="full" surface={false} padded={false} class="section-gap">
+		<div class="post-content">
+			<div class="post-layout">
+				<aside class="post-toc">
+					<div class="post-toc-sticky">
+						{#key post.slug}
+							<TableOfContents container={bodyEl} />
+						{/key}
+					</div>
+				</aside>
+				<div class="post-body" bind:this={bodyEl} onclick={handleBodyClick}>
+					<Content />
 				</div>
-			</aside>
-			<div class="post-body" bind:this={bodyEl} onclick={handleBodyClick}>
-				<Content />
 			</div>
 		</div>
 	</Section>
 
 	{#if post.sources?.length}
-		<Section class="post-sources">
+		<Section class="section-gap post-sources">
 			<h2 class="post-sources-title">Quellen</h2>
 			<ol class="post-sources-list">
 				{#each post.sources as source, i}
@@ -114,7 +117,7 @@
 	{/if}
 
 	{#if previous || next}
-		<div class="post-nav-wrapper page-padding">
+		<Section width="full" surface={false} padded={false} class="post-nav-wrapper">
 			<nav class="post-nav" aria-label="Beitragsnavigation">
 				{#if previous}
 					<Button variant="secondary" size="lg" icon={ArrowLeft} href={`/posts/${previous.slug}`}
@@ -129,11 +132,11 @@
 					</div>
 				{/if}
 			</nav>
-		</div>
+		</Section>
 	{/if}
 </div>
 
-<Lightbox src={lightboxSrc} alt={lightboxAlt} onclose={closeLightbox} />
+<Lightbox src={lightboxSrc} alt={lightboxAlt} aspect={lightboxAspect} onclose={closeLightbox} />
 
 <style>
 	.mobile-toc-sticky {
@@ -164,13 +167,10 @@
 		}
 	}
 
-	:global(.post-content) {
+	.post-content {
 		display: block;
-		padding: 0;
-	}
-
-	:global(.post-content.section-box) {
-		background-color: transparent;
+		margin-inline: auto;
+		max-width: 1280px;
 	}
 
 	.post-layout {
@@ -188,10 +188,6 @@
 	}
 
 	@media (min-width: 640px) {
-		:global(.post-content) {
-			max-width: none;
-		}
-
 		.post-layout {
 			display: grid;
 			grid-template-columns: minmax(120px, 1fr) minmax(0, 1000px) minmax(120px, 1fr);
@@ -268,7 +264,7 @@
 		max-width: 1000px;
 		margin-block: 48px;
 		margin-inline: auto;
-		border-radius: 6px;
+		border-radius: 10px;
 	}
 
 	.post-body :global(.post-img-wrap) {
@@ -278,7 +274,7 @@
 		max-width: 1000px;
 		margin-block: 48px;
 		margin-inline: auto;
-		border-radius: 6px;
+		border-radius: 10px;
 		overflow: hidden;
 	}
 
@@ -430,7 +426,7 @@
 		font-variant-numeric: tabular-nums;
 	}
 
-	.post-nav-wrapper {
+	:global(.post-nav-wrapper) {
 		/* Matches .section-gap's top spacing so this reads as the same
 		   rhythm as the gap between any two sections on the site. */
 		margin-top: 30px;
@@ -449,7 +445,7 @@
 	}
 
 	@media (min-width: 640px) {
-		.post-nav-wrapper {
+		:global(.post-nav-wrapper) {
 			margin-top: 40px;
 		}
 
@@ -462,7 +458,7 @@
 	}
 
 	@media (min-width: 1024px) {
-		.post-nav-wrapper {
+		:global(.post-nav-wrapper) {
 			margin-top: 64px;
 		}
 

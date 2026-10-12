@@ -1,9 +1,9 @@
 <script lang="ts">
-    import Link from "../primitives/link/Link.svelte";
+    import { Link, Section } from '@noahbaumgartner/svelte-ui';
 </script>
 
-<section class="hobbies-wrapper section-gap">
-    <div class="hobbies-inner page-padding">
+<Section width="full" surface={false} padded={false} class="hobbies-wrapper section-gap">
+    <div class="hobbies-inner">
         <div class="hobbies">
             <h2 class="hobbies-title">Freizeit</h2>
             <div class="hobbies-text">
@@ -11,10 +11,10 @@
             </div>
         </div>
     </div>
-</section>
+</Section>
 
 <style>
-    .hobbies-wrapper {
+    :global(.hobbies-wrapper) {
         background-color: var(--color-bg);
     }
 

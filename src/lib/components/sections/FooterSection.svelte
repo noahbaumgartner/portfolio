@@ -1,102 +1,29 @@
 <script lang="ts">
-	import Link from "../primitives/link/Link.svelte";
+	import { Footer, FooterColumn, Link } from '@noahbaumgartner/svelte-ui';
 </script>
 
 <div class="footer-wrapper page-padding section-gap">
-    <div class="footer">
-        <div class="footer-message">
-            <h2 class="footer-title">Danke fürs<br>Vorbeischauen.</h2>
-        </div>
-        <div class="footer-columns">
-            <div class="footer-column">
-                <span class="footer-heading">Weiteres</span>
-                <Link href="/imprint" variant="dark">Impressum</Link>
-            </div>
-            <div class="footer-column">
-                <span class="footer-heading">Social Media</span>
-                <Link href="https://www.instagram.com/noahbaumgartner/" variant="dark">Instagram</Link>
-                <Link href="https://www.linkedin.com/in/noahbaumgartner/" variant="dark">LinkedIn</Link>
-            </div>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <span class="footer-copyright">© 2025 Noah Baumgartner</span>
-    </div>
+	<Footer title={'Danke fürs\nVorbeischauen.'} copyright="Noah Baumgartner">
+		<FooterColumn heading="Weiteres">
+			<Link href="/imprint">Impressum</Link>
+		</FooterColumn>
+		<FooterColumn heading="Social Media">
+			<Link href="https://www.instagram.com/noahbaumgartner/">Instagram</Link>
+			<Link href="https://www.linkedin.com/in/noahbaumgartner/">LinkedIn</Link>
+		</FooterColumn>
+	</Footer>
 </div>
 
 <style>
-    .footer-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        margin-bottom: 0;
-    }
+	.footer-wrapper {
+		/* The page sets the gap above the footer with its own bottom margin; as a
+		   flex item of <body> the footer's margin would add to it, not collapse. */
+		margin-block: 0;
+		padding-bottom: 20px;
+	}
 
-    .footer {
-        margin-inline: auto;
-        width: 100%;
-        max-width: 1280px;
-        min-height: 256px;
-        border-radius: 6px;
-        background-color: var(--color-surface-inverse);
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        padding: 40px;
-    }
-
-    .footer-title {
-        color: var(--color-on-inverse);
-        user-select: none;
-    }
-
-    .footer-bottom {
-        margin-inline: auto;
-        width: 100%;
-        max-width: 1280px;
-        padding-bottom: 20px;
-        text-align: center;
-    }
-
-    .footer-copyright {
-        font-size: 14px;
-        color: var(--color-text-muted);
-        user-select: none;
-    }
-
-    .footer-columns {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        flex-grow: 1;
-    }
-
-    .footer-column {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        flex-grow: 1;
-        color: var(--color-on-inverse-muted);
-    }
-
-    .footer-heading {
-        font-weight: 700;
-        color: var(--color-on-inverse);
-        user-select: none;
-    }
-
-    @media (min-width: 640px) {
-        .footer {
-            flex-direction: row;
-        }
-
-        .footer-message {
-            flex-grow: 1;
-        }
-
-        .footer-columns {
-            flex-direction: row;
-        }
-    }
+	.footer-wrapper > :global(.footer) {
+		margin-inline: auto;
+		max-width: 1280px;
+	}
 </style>

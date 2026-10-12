@@ -1,12 +1,13 @@
 <script lang="ts">
-	import { Github, Globe } from '@lucide/svelte';
-	import Button from '$lib/components/primitives/button/Button.svelte';
+	import { Globe } from '@lucide/svelte';
+	import { Button, Section } from '@noahbaumgartner/svelte-ui';
+	import GithubIcon from '$lib/components/icons/GithubIcon.svelte';
 	import MediaPreview from '$lib/components/features/media-preview/MediaPreview.svelte';
 
 	let { post } = $props();
 </script>
 
-<section class="post-title-wrapper page-padding">
+<Section width="full" surface={false} padded={false} class="post-title-wrapper">
 	<div class="post-title-box">
 		<span class="post-period">{post.period}</span>
 		<h1 class="post-title">{post.title}</h1>
@@ -24,15 +25,15 @@
 		{#if post.github || post.url}
 			<div class="post-title-actions">
 				{#if post.github}
-					<Button variant="ghost" size="md" icon={Github} href={post.github} />
+					<Button variant="ghost" size="md" icon={GithubIcon} href={post.github} label="GitHub" />
 				{/if}
 				{#if post.url}
-					<Button variant="ghost" size="md" icon={Globe} href={post.url} />
+					<Button variant="ghost" size="md" icon={Globe} href={post.url} label="Webseite" />
 				{/if}
 			</div>
 		{/if}
 	</div>
-</section>
+</Section>
 
 <style>
 	.post-title-box {
@@ -75,7 +76,7 @@
 		min-width: 0;
 		border: none;
 		height: 1px;
-		background-color: color-mix(in srgb, var(--base), var(--ink) 6%);
+		background-color: var(--color-surface);
 	}
 
 	.post-title-actions {

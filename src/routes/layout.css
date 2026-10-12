@@ -1,94 +1,78 @@
-/* Color system: every gray is a mix between a base color and an ink color at
-   a given step. Light mode mixes toward black on a white base; dark mode
-   mixes toward white on a near-black base — flipping the two variables is
-   the whole theme switch. Components should always reference the semantic
-   --color-* tokens below, never raw hex values, so dark mode stays free. */
+/* The base color tokens (--color-bg, --color-surface, --color-text, ...) and
+   the light/dark switch (--ui-base / --ui-ink) come from
+   @noahbaumgartner/svelte-ui, imported in +layout.svelte. Only the site's own
+   inverse tokens live here. Components should always reference semantic
+   --color-* tokens, never raw hex values, so dark mode stays free. */
 :root {
-	--base: #fff;
-	--ink: #000;
-
-	--color-bg: var(--base);
-	--color-surface: color-mix(in srgb, var(--base), var(--ink) 6%);
-	--color-border: color-mix(in srgb, var(--base), var(--ink) 10%);
-	--color-border-strong: color-mix(in srgb, var(--base), var(--ink) 17%);
-	--color-text-faint: color-mix(in srgb, var(--base), var(--ink) 36%);
-	--color-text-muted: color-mix(in srgb, var(--base), var(--ink) 55%);
-	--color-text-secondary: color-mix(in srgb, var(--base), var(--ink) 75%);
-	--color-emphasis: color-mix(in srgb, var(--base), var(--ink) 85%);
-	--color-text: var(--ink);
-	--color-ink: var(--ink);
-	--color-base: var(--base);
-
-	/* Inverse surface: the site's decorative accent panels (footer, dark hero
+	/* Inverse surface: the site's decorative accent panels (dark Section
 	   variant) always contrast against the page — dark card on a light page,
 	   light card on a dark page — so they mix in the opposite direction from
-	   the regular surface tokens above. */
-	--color-surface-inverse: var(--ink);
-	--color-surface-inverse-accent: color-mix(in srgb, var(--ink), var(--base) 15%);
-	--color-on-inverse: var(--base);
-	--color-on-inverse-secondary: color-mix(in srgb, var(--ink), var(--base) 83%);
-	--color-on-inverse-muted: color-mix(in srgb, var(--ink), var(--base) 64%);
+	   the regular surface tokens. */
+	--color-surface-inverse: var(--ui-ink);
+	--color-surface-inverse-accent: color-mix(in srgb, var(--ui-ink), var(--ui-base) 15%);
+	--color-on-inverse: var(--ui-base);
+	--color-on-inverse-secondary: color-mix(in srgb, var(--ui-ink), var(--ui-base) 83%);
+	--color-on-inverse-muted: color-mix(in srgb, var(--ui-ink), var(--ui-base) 64%);
 }
 
 @media (prefers-color-scheme: dark) {
 	:root:not([data-theme='light']) {
-		--base: #0a0a0a;
-		--ink: #fff;
-		--color-bg: #0a0a0a;
-		/* Softened: a pure invert here would flip the footer/dark-Section
-		   card to stark white, which reads wrong against the dark page. */
-		--color-surface-inverse: color-mix(in srgb, var(--ink), var(--base) 20%);
+		/* Softened: a pure invert here would flip the dark-Section card to
+		   stark white, which reads wrong against the dark page. */
+		--color-surface-inverse: color-mix(in srgb, var(--ui-ink), var(--ui-base) 20%);
 	}
 }
 
 :root[data-theme='dark'] {
-	--base: #0a0a0a;
-	--ink: #fff;
-	--color-bg: #0a0a0a;
-	--color-surface-inverse: color-mix(in srgb, var(--ink), var(--base) 20%);
+	--color-surface-inverse: color-mix(in srgb, var(--ui-ink), var(--ui-base) 20%);
 }
 
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-	margin: 0;
-}
+/* The reset sits in its own layer below the library's `svelte-ui` layer, so
+   the library's components win over it. Unlayered rules would beat every
+   layer, e.g. `a { text-decoration: inherit }` removed the Link underline. */
+@layer reset {
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+		margin: 0;
+	}
 
-html {
-	-webkit-text-size-adjust: 100%;
-}
+	html {
+		-webkit-text-size-adjust: 100%;
+	}
 
-body {
-	line-height: 1.5;
-	-webkit-font-smoothing: antialiased;
-}
+	body {
+		line-height: 1.5;
+		-webkit-font-smoothing: antialiased;
+	}
 
-ol,
-ul {
-	list-style: none;
-	padding: 0;
-}
+	ol,
+	ul {
+		list-style: none;
+		padding: 0;
+	}
 
-img,
-picture,
-video,
-canvas,
-svg {
-	display: block;
-	max-width: 100%;
-}
+	img,
+	picture,
+	video,
+	canvas,
+	svg {
+		display: block;
+		max-width: 100%;
+	}
 
-a {
-	color: inherit;
-	text-decoration: inherit;
-}
+	a {
+		color: inherit;
+		text-decoration: inherit;
+	}
 
-button,
-input,
-textarea,
-select {
-	font: inherit;
+	button,
+	input,
+	textarea,
+	select {
+		font: inherit;
+	}
 }
 
 @font-face {
@@ -213,6 +197,12 @@ select {
 }
 
 body {
+	/* Keeps the footer at the bottom of the viewport on short pages; <main>
+	   (see +layout.svelte) takes the remaining height. */
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	min-height: 100dvh;
 	font-family: 'Inter', sans-serif;
 	background-color: var(--color-bg);
 	color: var(--color-text);

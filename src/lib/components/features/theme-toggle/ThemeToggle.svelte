@@ -1,9 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { Sun, Moon, Monitor } from '@lucide/svelte';
-	import Button from '../../primitives/button/Button.svelte';
-	import ContextMenu from '../../primitives/context-menu/ContextMenu.svelte';
-	import ContextMenuItem from '../../primitives/context-menu/ContextMenuItem.svelte';
+	import { Button, ContextMenu, ContextMenuItem } from '@noahbaumgartner/svelte-ui';
 
 	type ThemeChoice = 'light' | 'dark' | 'system';
 
@@ -29,8 +27,8 @@
 </script>
 
 <ContextMenu align="end">
-	{#snippet trigger(toggle)}
-		<Button variant="ghost" size="lg" icon={icons[choice]} onclick={toggle} />
+	{#snippet trigger(props)}
+		<Button {...props} variant="ghost" size="lg" icon={icons[choice]} label="Design wählen" />
 	{/snippet}
 	<ContextMenuItem icon={Sun} selected={choice === 'light'} onclick={() => select('light')}
 		>Hell</ContextMenuItem
