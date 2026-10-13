@@ -3,7 +3,7 @@
 </script>
 
 <div class="footer-wrapper page-padding section-gap">
-	<Footer title="Danke fürs\nVorbeischauen." copyright="Noah Baumgartner">
+	<Footer title={'Danke fürs\nVorbeischauen.'} copyright="Noah Baumgartner">
 		<FooterColumn heading="Weiteres">
 			<Link href="/imprint">Impressum</Link>
 		</FooterColumn>
