@@ -134,6 +134,11 @@
 		margin-inline: auto;
 	}
 
+	/* The logo is set in Outfit; the mobile menu follows it instead of the body font */
+	:global(.site-navbar .navbar-panel) {
+		font-family: 'Outfit', sans-serif;
+	}
+
 	@media (min-width: 640px) {
 		:global(.site-navbar) {
 			--navbar-gutter: 40px;
