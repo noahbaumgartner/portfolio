@@ -93,6 +93,7 @@
 		<Button
 			{...props}
 			variant="secondary"
+			size="lg"
 			icon={open ? X : Menu}
 			label={open ? 'Menü schliessen' : 'Menü öffnen'}
 		/>
