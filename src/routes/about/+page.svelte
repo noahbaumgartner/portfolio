@@ -1,9 +1,9 @@
 <script lang="ts">
-	import TitleSection from '$lib/components/sections/TitleSection.svelte';
-	import AboutIntroSection from '$lib/components/sections/AboutIntroSection.svelte';
-	import AboutHobbiesSection from '$lib/components/sections/AboutHobbiesSection.svelte';
-	import AboutWorkExperienceSection from '$lib/components/sections/AboutWorkExperienceSection.svelte';
-	import AboutEducationSection from '$lib/components/sections/AboutEducationSection.svelte';
+	import AboutHeroSection from '$lib/sections/AboutHeroSection.svelte';
+	import AboutIntroSection from '$lib/sections/AboutIntroSection.svelte';
+	import AboutHobbiesSection from '$lib/sections/AboutHobbiesSection.svelte';
+	import AboutWorkExperienceSection from '$lib/sections/AboutWorkExperienceSection.svelte';
+	import AboutEducationSection from '$lib/sections/AboutEducationSection.svelte';
 </script>
 
 <svelte:head>
@@ -19,15 +19,8 @@
 	/>
 </svelte:head>
 
-<TitleSection title="Über mich" class="about-title-section" />
+<AboutHeroSection />
 <AboutIntroSection />
 <AboutWorkExperienceSection />
 <AboutHobbiesSection />
 <AboutEducationSection />
-
-<style>
-	:global(.about-title-section .title) {
-		max-width: 900px;
-		margin-inline: auto;
-	}
-</style>

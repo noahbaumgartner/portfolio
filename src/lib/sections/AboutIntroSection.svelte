@@ -2,9 +2,10 @@
 	import { Image, Link, Section } from '@noahbaumgartner/svelte-ui';
 </script>
 
-<Section width="full" surface={false} padded={false} class="intro-wrapper">
+<Section width="full" padded={false} class="section-gap">
 	<div class="intro">
-		<div class="intro-text-card">
+		<div class="intro-text">
+			<h2 class="section-title">Wer ich bin</h2>
 			<p>
 				Ich bin Noah Baumgartner, ein leidenschaftlicher Fullstack-Softwareentwickler mit über sechs
 				Jahren Erfahrung. Ich liebe es, innovative digitale Lösungen zu gestalten und mich fachlich
@@ -26,56 +27,31 @@
 </Section>
 
 <style>
-	:global(.intro-wrapper) {
-		margin-bottom: 24px;
-	}
-
 	.intro {
 		margin-inline: auto;
 		max-width: 1280px;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
-		gap: 32px;
+		gap: 40px;
 	}
 
-	.intro-text-card {
+	.intro-text {
 		display: flex;
 		flex-direction: column;
 		gap: 16px;
-		max-width: 900px;
+		max-width: 520px;
 	}
 
 	:global(.intro-image) {
-		width: min(100%, 288px);
-		flex-shrink: 0;
-	}
-
-	@media (min-width: 640px) {
-		:global(.intro-wrapper) {
-			margin-bottom: 40px;
-		}
+		width: 100%;
 	}
 
 	@media (min-width: 768px) {
 		.intro {
-			flex-direction: row;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
 			align-items: center;
-			gap: 48px;
-		}
-
-		.intro-text-card {
-			flex: 1 1 0;
-		}
-
-		:global(.intro-image) {
-			margin-left: auto;
-		}
-	}
-
-	@media (min-width: 1024px) {
-		:global(.intro-wrapper) {
-			margin-bottom: 64px;
+			gap: 64px;
 		}
 	}
 </style>

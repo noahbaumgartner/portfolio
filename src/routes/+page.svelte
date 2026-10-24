@@ -1,7 +1,7 @@
 <script lang="ts">
-	import AboutPreviewSection from '$lib/components/sections/AboutPreviewSection.svelte';
-	import HeroSection from '$lib/components/sections/HeroSection.svelte';
-	import PostsPreviewSection from '$lib/components/sections/PostsPreviewSection.svelte';
+	import AboutPreviewSection from '$lib/sections/AboutPreviewSection.svelte';
+	import HeroSection from '$lib/sections/HeroSection.svelte';
+	import PostsPreviewSection from '$lib/sections/PostsPreviewSection.svelte';
 
 	let { data } = $props();
 	let { posts } = $derived(data);

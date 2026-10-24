@@ -2,19 +2,20 @@
 	import { Image, Link, Section } from '@noahbaumgartner/svelte-ui';
 </script>
 
-<Section width="full" surface={false} padded={false} class="section-gap">
+<Section width="full" padded={false} class="section-gap">
 	<div class="about">
 		<div class="about-header">
-			<h2 class="about-title">Über mich</h2>
+			<h2 class="section-title">Über mich</h2>
 			<Link href="/about">Mehr erfahren</Link>
 		</div>
 
 		<div class="about-body">
 			<div class="about-text">
 				<span>
-					Wenn ich nicht gerade an neuen Features für buildagil arbeite oder für mein Studium lerne,
-					beschäftige ich mich mit privaten Projekten. Ich bin Entwickler aus Leidenschaft und immer
-					auf der Suche nach der nächsten technischen Herausforderung.
+					Ich arbeite als Entwickler bei B3 Digital, wo ich an buildagil, unserem eigenen Produkt,
+					mitentwickle und interne Prozesse verbessere. Daneben lerne ich für mein Studium und setze
+					private Projekte um. Ich bin Entwickler aus Leidenschaft und immer auf der Suche nach der
+					nächsten technischen Herausforderung.
 				</span>
 			</div>
 			<Image
@@ -37,18 +38,13 @@
 
 	.about-header {
 		display: flex;
-		align-items: baseline;
+		align-items: center;
 		justify-content: space-between;
 		width: 100%;
 	}
 
 	.about-header :global(.link) {
 		font-size: 14px;
-	}
-
-	.about-title {
-		font-weight: 500;
-		font-size: 22px;
 	}
 
 	.about-body {

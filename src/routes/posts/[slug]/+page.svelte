@@ -1,17 +1,30 @@
-<script>
+<script lang="ts">
 	import { ArrowLeft, ArrowRight } from '@lucide/svelte';
-	import PostTitleSection from '$lib/components/sections/PostTitleSection.svelte';
-	import { Button, Link, Section } from '@noahbaumgartner/svelte-ui';
-	import TableOfContents from '$lib/components/primitives/table-of-contents/TableOfContents.svelte';
-	import Lightbox from '$lib/components/features/lightbox/Lightbox.svelte';
+	import PostTitleSection from '$lib/sections/PostTitleSection.svelte';
+	import { Button, Lightbox, Link, Section, TableOfContents } from '@noahbaumgartner/svelte-ui';
 
 	let { data } = $props();
 	let { Content, post, previous, next } = $derived(data);
 
-	let bodyEl = $state();
-	let lightboxSrc = $state();
+	let bodyEl = $state<HTMLElement>();
+	let lightboxSrc = $state<string>();
 	let lightboxAlt = $state('');
-	let lightboxAspect = $state();
+	let lightboxAspect = $state<number>();
+	let navbarHeight = $state(64);
+
+	// The navbar height is content-driven and differs on real devices, so the
+	// sticky mobile TOC tracks it instead of assuming a fixed offset.
+	$effect(() => {
+		const navbar = document.querySelector('.site-navbar');
+		if (!navbar) return;
+
+		const update = () => (navbarHeight = navbar.getBoundingClientRect().height);
+		update();
+
+		const observer = new ResizeObserver(update);
+		observer.observe(navbar);
+		return () => observer.disconnect();
+	});
 
 	const EXPAND_ICON =
 		'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="post-img-expand-icon"><path d="M15 3h6v6" /><path d="m21 3-7 7" /><path d="m3 21 7-7" /><path d="M9 21H3v-6" /></svg>';
@@ -60,14 +73,14 @@
 		return () => observer.disconnect();
 	});
 
-	function openLightbox(image) {
+	function openLightbox(image: HTMLImageElement) {
 		lightboxAspect =
 			image.clientWidth && image.clientHeight ? image.clientWidth / image.clientHeight : undefined;
 		lightboxSrc = image.src;
 		lightboxAlt = image.alt;
 	}
 
-	function handleBodyClick(event) {
+	function handleBodyClick(event: MouseEvent) {
 		if (event.target instanceof HTMLImageElement) {
 			openLightbox(event.target);
 		}
@@ -78,14 +91,14 @@
 	}
 </script>
 
-<div class="mobile-toc-sticky">
+<div class="mobile-toc-sticky" style:top="{navbarHeight}px">
 	{#key post.slug}
 		<TableOfContents container={bodyEl} variant="mobile" />
 	{/key}
 </div>
 <PostTitleSection {post} />
 <div class="post-content-spacer">
-	<Section width="full" surface={false} padded={false} class="section-gap">
+	<Section width="full" padded={false} class="section-gap">
 		<div class="post-content">
 			<div class="post-layout">
 				<aside class="post-toc">
@@ -117,7 +130,7 @@
 	{/if}
 
 	{#if previous || next}
-		<Section width="full" surface={false} padded={false} class="post-nav-wrapper">
+		<Section width="full" padded={false} class="post-nav-wrapper">
 			<nav class="post-nav" aria-label="Beitragsnavigation">
 				{#if previous}
 					<Button variant="secondary" size="lg" icon={ArrowLeft} href={`/posts/${previous.slug}`}
@@ -136,12 +149,18 @@
 	{/if}
 </div>
 
-<Lightbox src={lightboxSrc} alt={lightboxAlt} aspect={lightboxAspect} onclose={closeLightbox} />
+<Lightbox
+	src={lightboxSrc}
+	alt={lightboxAlt}
+	aspect={lightboxAspect}
+	label="Bild"
+	closeLabel="Schliessen"
+	onclose={closeLightbox}
+/>
 
 <style>
 	.mobile-toc-sticky {
 		position: sticky;
-		top: 64px;
 		z-index: 40;
 	}
 

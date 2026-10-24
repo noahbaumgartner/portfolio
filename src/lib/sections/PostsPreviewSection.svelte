@@ -1,21 +1,32 @@
 <script lang="ts">
-	import { Link, Section } from '@noahbaumgartner/svelte-ui';
-	import PostPreview from '$lib/components/features/post-preview/PostPreview.svelte';
+	import { Link, MeshGradient, PreviewCard, Section } from '@noahbaumgartner/svelte-ui';
+	import { postIcons } from '$lib/postIcons';
 
 	let { posts } = $props();
 </script>
 
-<Section width="full" surface={false} padded={false} class="posts-wrapper section-gap">
+<Section width="full" padded={false} class="posts-wrapper section-gap">
 	<div class="posts">
 		<div class="posts-header">
-			<h2 class="posts-title">Beiträge</h2>
+			<h2 class="section-title">Beiträge</h2>
 			<Link href="/posts">Alle Beiträge</Link>
 		</div>
 
 		<div class="post-list-clip">
 			<div class="post-list">
 				{#each posts.slice(0, 4) as post (post.slug)}
-					<PostPreview {post} orientation="vertical" />
+					<PreviewCard
+						href={`/posts/${post.slug}`}
+						title={post.title}
+						description={post.description}
+						meta={post.period}
+						icon={postIcons[post.icon]}
+						orientation="vertical"
+					>
+						{#snippet media()}
+							<MeshGradient colors={post.colors} seed={post.title} />
+						{/snippet}
+					</PreviewCard>
 				{/each}
 			</div>
 		</div>
@@ -34,18 +45,13 @@
 
 	.posts-header {
 		display: flex;
-		align-items: baseline;
+		align-items: center;
 		justify-content: space-between;
 		width: 100%;
 	}
 
 	.posts-header :global(.link) {
 		font-size: 14px;
-	}
-
-	.posts-title {
-		font-weight: 500;
-		font-size: 22px;
 	}
 
 	/* Always a single, horizontally scrollable row of fixed-width cards, which
