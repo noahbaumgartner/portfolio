@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ImprintSection from '$lib/components/sections/ImprintSection.svelte';
+	import ImprintSection from '$lib/sections/ImprintSection.svelte';
 	import { PageHeader } from '@noahbaumgartner/svelte-ui';
 </script>
 

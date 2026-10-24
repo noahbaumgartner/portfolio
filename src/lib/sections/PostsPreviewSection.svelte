@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Link, Section } from '@noahbaumgartner/svelte-ui';
-	import PostPreview from '$lib/components/features/post-preview/PostPreview.svelte';
+	import { Link, MeshGradient, PreviewCard, Section } from '@noahbaumgartner/svelte-ui';
+	import { postIcons } from '$lib/postIcons';
 
 	let { posts } = $props();
 </script>
@@ -15,7 +15,18 @@
 		<div class="post-list-clip">
 			<div class="post-list">
 				{#each posts.slice(0, 4) as post (post.slug)}
-					<PostPreview {post} orientation="vertical" />
+					<PreviewCard
+						href={`/posts/${post.slug}`}
+						title={post.title}
+						description={post.description}
+						meta={post.period}
+						icon={postIcons[post.icon]}
+						orientation="vertical"
+					>
+						{#snippet media()}
+							<MeshGradient colors={post.colors} seed={post.title} />
+						{/snippet}
+					</PreviewCard>
 				{/each}
 			</div>
 		</div>

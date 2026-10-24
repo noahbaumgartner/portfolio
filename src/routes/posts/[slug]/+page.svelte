@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { ArrowLeft, ArrowRight } from '@lucide/svelte';
-	import PostTitleSection from '$lib/components/sections/PostTitleSection.svelte';
+	import PostTitleSection from '$lib/sections/PostTitleSection.svelte';
 	import { Button, Lightbox, Link, Section, TableOfContents } from '@noahbaumgartner/svelte-ui';
 
 	let { data } = $props();

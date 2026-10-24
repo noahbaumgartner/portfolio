@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Globe } from '@lucide/svelte';
-	import { Button, MediaPreview, PageHeader } from '@noahbaumgartner/svelte-ui';
-	import GithubIcon from '$lib/components/icons/GithubIcon.svelte';
+	import { Button, GithubIcon, MediaPreview, PageHeader } from '@noahbaumgartner/svelte-ui';
 
 	let { post } = $props();
 </script>

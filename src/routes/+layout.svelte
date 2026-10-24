@@ -2,11 +2,11 @@
 	import './layout.css';
 	import '@noahbaumgartner/svelte-ui/tokens.css';
 	import 'katex/dist/katex.min.css';
+	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import { Button, Navbar, NavigationMenuItem, ThemeToggle } from '@noahbaumgartner/svelte-ui';
 	import { Menu, X } from '@lucide/svelte';
-	import SiteHeaderLogo from '$lib/components/navigation/SiteHeaderLogo.svelte';
-	import Footer from '$lib/components/sections/FooterSection.svelte';
+	import Footer from '$lib/sections/FooterSection.svelte';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 	import { onMount } from 'svelte';
 
@@ -92,7 +92,7 @@ Den Code findest du unter https://github.com/noahbaumgartner/portfolio`,
 
 <Navbar class="site-navbar" label="Hauptnavigation">
 	{#snippet logo()}
-		<SiteHeaderLogo />
+		<a href={resolve('/')} class="logo" data-sveltekit-preload-data>noahbaumgartner</a>
 	{/snippet}
 	{#snippet actions()}
 		<ThemeToggle labels={{ light: 'Design: Hell', dark: 'Design: Dunkel' }} />
@@ -114,7 +114,6 @@ Den Code findest du unter https://github.com/noahbaumgartner/portfolio`,
 <Footer />
 
 <style>
-
 	.loading-screen {
 		position: fixed;
 		inset: 0;
@@ -141,6 +140,22 @@ Den Code findest du unter https://github.com/noahbaumgartner/portfolio`,
 		box-sizing: content-box;
 		max-width: 1280px;
 		margin-inline: auto;
+	}
+
+	.logo {
+		flex-shrink: 0;
+		font-family: 'Outfit', sans-serif;
+		font-size: 18px;
+		font-weight: 600;
+		color: var(--color-text);
+		text-decoration: none;
+		border-radius: 4px;
+		outline: none;
+	}
+
+	.logo:focus-visible {
+		outline: 2px solid var(--color-ink);
+		outline-offset: 2px;
 	}
 
 	/* The logo is set in Outfit; the mobile menu follows it instead of the body font */
