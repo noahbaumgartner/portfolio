@@ -9,13 +9,13 @@ Noah Baumgartner's personal portfolio site: SvelteKit 5 + TypeScript, content-dr
 ## Commands
 
 ```bash
-npm run dev             # start dev server (vite)
+npm run dev             # start dev server (vp dev, Vite+)
 npm run build           # production build
 npm run preview         # preview production build
 npm run check           # svelte-kit sync + svelte-check (type checking)
 npm run check:watch     # type checking in watch mode
-npm run format          # prettier --write .
-npm run lint            # prettier --check . && eslint .
+npm run format          # vp fmt (Oxfmt)
+npm run lint            # vp fmt --check && vp lint (Oxlint)
 ```
 
 There is no test suite/runner configured in this project.
@@ -52,6 +52,6 @@ Svelte 5 runes syntax is used throughout (`$props()`, `$state()`, `$derived()`),
 
 ### Styling conventions
 
-- Tabs for indentation, single quotes, no trailing commas, 100 print width — enforced by Prettier (`.prettierrc`, `prettier-plugin-svelte`).
+- Tabs for indentation, single quotes, no trailing commas, 100 print width — enforced by Oxfmt (`fmt` block in `vite.config.ts`).
 - Component-scoped `<style>` blocks per `.svelte` file; global overrides use `:global(...)`.
 - Responsive breakpoints used consistently across components: `640px` (sm), `1024px` (lg).
