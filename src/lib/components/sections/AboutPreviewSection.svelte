@@ -2,10 +2,10 @@
 	import { Image, Link, Section } from '@noahbaumgartner/svelte-ui';
 </script>
 
-<Section width="full" surface={false} padded={false} class="section-gap">
+<Section width="full" padded={false} class="section-gap">
 	<div class="about">
 		<div class="about-header">
-			<h2 class="about-title">Über mich</h2>
+			<h2 class="section-title">Über mich</h2>
 			<Link href="/about">Mehr erfahren</Link>
 		</div>
 
@@ -37,18 +37,13 @@
 
 	.about-header {
 		display: flex;
-		align-items: baseline;
+		align-items: center;
 		justify-content: space-between;
 		width: 100%;
 	}
 
 	.about-header :global(.link) {
 		font-size: 14px;
-	}
-
-	.about-title {
-		font-weight: 500;
-		font-size: 22px;
 	}
 
 	.about-body {

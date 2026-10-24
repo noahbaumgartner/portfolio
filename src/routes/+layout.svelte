@@ -3,10 +3,9 @@
 	import '@noahbaumgartner/svelte-ui/tokens.css';
 	import 'katex/dist/katex.min.css';
 	import { page } from '$app/state';
-	import { Button, Navbar, NavigationMenuItem } from '@noahbaumgartner/svelte-ui';
+	import { Button, Navbar, NavigationMenuItem, ThemeToggle } from '@noahbaumgartner/svelte-ui';
 	import { Menu, X } from '@lucide/svelte';
 	import SiteHeaderLogo from '$lib/components/navigation/SiteHeaderLogo.svelte';
-	import ThemeToggle from '$lib/components/features/theme-toggle/ThemeToggle.svelte';
 	import Footer from '$lib/components/sections/FooterSection.svelte';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 	import { onMount } from 'svelte';
@@ -28,6 +27,18 @@
 	let showScreen = $state(true);
 
 	onMount(() => {
+		console.log(
+			String.raw`%c       _
+ _ __ | |__
+| '_ \| '_ \
+| | | | |_) |
+|_| |_|_.__/
+%c
+Den Code findest du unter https://github.com/noahbaumgartner/portfolio`,
+			'font: 14px monospace',
+			'font: 12px monospace'
+		);
+
 		document.fonts.ready.then(() => {
 			fontsLoaded = true;
 			setTimeout(() => {
@@ -39,9 +50,6 @@
 
 <svelte:head>
 	<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
-	<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon-48x48.png" />
-	<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png" />
-	<link rel="icon" type="image/png" sizes="144x144" href="/images/favicon-144x144.png" />
 
 	<title>Noah Baumgartner | Portfolio</title>
 	<meta name="og:url" content="https://noahbaumgartner.ch" />
@@ -87,7 +95,7 @@
 		<SiteHeaderLogo />
 	{/snippet}
 	{#snippet actions()}
-		<ThemeToggle />
+		<ThemeToggle labels={{ light: 'Design: Hell', dark: 'Design: Dunkel' }} />
 	{/snippet}
 	{#snippet trigger(props, open)}
 		<Button
@@ -106,6 +114,7 @@
 <Footer />
 
 <style>
+
 	.loading-screen {
 		position: fixed;
 		inset: 0;

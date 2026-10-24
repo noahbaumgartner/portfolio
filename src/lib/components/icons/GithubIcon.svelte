@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { LucideProps } from '@lucide/svelte';
+	import type { IconProps } from '@lucide/svelte';
 
 	// Lucide dropped its brand icons in v1, so the GitHub mark lives here. It
 	// takes the same props as a Lucide icon so it can be passed as `icon`.
-	let { size = 24, strokeWidth = 2, class: className, ...rest }: LucideProps = $props();
+	let { size = 24, strokeWidth = 2, class: className, ...rest }: IconProps = $props();
 </script>
 
 <svg

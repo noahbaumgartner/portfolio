@@ -1,10 +1,13 @@
 <script lang="ts">
-	import { Section } from '@noahbaumgartner/svelte-ui';
+	import { MediaQuery } from 'svelte/reactivity';
+	import { PageHeader, Section } from '@noahbaumgartner/svelte-ui';
 	import PostPreview from '$lib/components/features/post-preview/PostPreview.svelte';
-	import TitleSection from '$lib/components/sections/TitleSection.svelte';
 
 	let { data } = $props();
 	let { posts } = $derived(data);
+
+	// Compact horizontal cards on phones, where a full-width image per post fills a screen.
+	const wide = new MediaQuery('min-width: 640px');
 </script>
 
 <svelte:head>
@@ -20,18 +23,27 @@
 	/>
 </svelte:head>
 
-<TitleSection title="Beiträge" />
-<Section width="full" surface={false} padded={false} class="posts-wrapper">
+<PageHeader eyebrow="Beiträge" description="Eine Übersicht meiner Projekte und weiterer Beiträge.">
+	{#snippet title()}
+		Was ich gebaut<br />und aufgeschrieben habe.
+	{/snippet}
+</PageHeader>
+<Section width="full" padded={false} class="posts-wrapper">
 	<div class="posts-grid">
 		{#each posts as post (post.slug)}
-			<PostPreview {post} />
+			<PostPreview {post} orientation={wide.current ? 'vertical' : 'horizontal'} />
 		{/each}
 	</div>
 </Section>
 
 <style>
 	:global(.posts-wrapper) {
-		margin-bottom: 24px;
+		margin-block: 30px 24px;
+	}
+
+	/* The library caps vertical cards at 380px; let them fill their grid column instead. */
+	.posts-grid :global(.preview-card--vertical) {
+		max-width: none;
 	}
 
 	.posts-grid {
@@ -39,38 +51,28 @@
 		max-width: 1280px;
 		display: grid;
 		grid-template-columns: 1fr;
-		justify-items: start;
 		gap: 24px;
-	}
-
-	.posts-grid :global(.preview-card) {
-		width: 100%;
-		max-width: 650px;
 	}
 
 	@media (min-width: 640px) {
 		:global(.posts-wrapper) {
-			margin-bottom: 40px;
+			margin-block: 40px;
 		}
 
 		.posts-grid {
-			gap: 40px;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 48px 40px;
 		}
 	}
 
 	@media (min-width: 1024px) {
 		:global(.posts-wrapper) {
-			margin-bottom: 64px;
+			margin-block: 64px;
 		}
 
 		.posts-grid {
-			grid-template-columns: repeat(2, 1fr);
-			justify-items: stretch;
-			gap: 30px;
-		}
-
-		.posts-grid :global(.preview-card) {
-			max-width: none;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 64px;
 		}
 	}
 </style>

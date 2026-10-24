@@ -1,68 +1,35 @@
 <script lang="ts">
 	import { Globe } from '@lucide/svelte';
-	import { Button, Section } from '@noahbaumgartner/svelte-ui';
+	import { Button, MediaPreview, PageHeader } from '@noahbaumgartner/svelte-ui';
 	import GithubIcon from '$lib/components/icons/GithubIcon.svelte';
-	import MediaPreview from '$lib/components/features/media-preview/MediaPreview.svelte';
 
 	let { post } = $props();
 </script>
 
-<Section width="full" surface={false} padded={false} class="post-title-wrapper">
-	<div class="post-title-box">
-		<span class="post-period">{post.period}</span>
-		<h1 class="post-title">{post.title}</h1>
-		<p class="post-description">{post.description}</p>
-
-		{#if post.gif}
-			<div class="post-gif">
-				<MediaPreview src={post.gif} alt={post.title} />
-			</div>
-		{/if}
-	</div>
-
-	<div class="post-title-footer">
-		<hr class="post-title-divider" />
-		{#if post.github || post.url}
-			<div class="post-title-actions">
-				{#if post.github}
-					<Button variant="ghost" size="md" icon={GithubIcon} href={post.github} label="GitHub" />
-				{/if}
-				{#if post.url}
-					<Button variant="ghost" size="md" icon={Globe} href={post.url} label="Webseite" />
-				{/if}
-			</div>
-		{/if}
-	</div>
-</Section>
+<PageHeader eyebrow={post.period} title={post.title} description={post.description}>
+	{#if post.gif}
+		<div class="post-gif">
+			<MediaPreview src={post.gif} alt={post.title} playLabel="Abspielen" pauseLabel="Pausieren" />
+		</div>
+	{/if}
+	{#snippet footer()}
+		<div class="post-title-footer">
+			<hr class="post-title-divider" />
+			{#if post.github || post.url}
+				<div class="post-title-actions">
+					{#if post.github}
+						<Button variant="ghost" size="md" icon={GithubIcon} href={post.github} label="GitHub" />
+					{/if}
+					{#if post.url}
+						<Button variant="ghost" size="md" icon={Globe} href={post.url} label="Webseite" />
+					{/if}
+				</div>
+			{/if}
+		</div>
+	{/snippet}
+</PageHeader>
 
 <style>
-	.post-title-box {
-		margin-inline: auto;
-		max-width: 1280px;
-		padding: 56px 0 30px;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		user-select: none;
-	}
-
-	.post-period {
-		font-size: 14px;
-		font-weight: 500;
-		margin-bottom: 4px;
-	}
-
-	.post-title {
-		text-align: center;
-	}
-
-	.post-description {
-		margin-top: 8px;
-		max-width: 440px;
-		text-align: center;
-		color: var(--color-text-secondary);
-	}
-
 	.post-title-footer {
 		display: flex;
 		align-items: center;
@@ -94,10 +61,6 @@
 	}
 
 	@media (min-width: 640px) {
-		.post-title-box {
-			padding: 72px 0 40px;
-		}
-
 		.post-gif {
 			margin-top: 40px;
 		}
@@ -111,10 +74,6 @@
 	}
 
 	@media (min-width: 1024px) {
-		.post-title-box {
-			padding-bottom: 64px;
-		}
-
 		.post-gif {
 			margin-top: 64px;
 		}
