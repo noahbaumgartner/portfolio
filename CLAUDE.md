@@ -45,10 +45,7 @@ There are also `--color-surface-inverse*` / `--color-on-inverse*` tokens for dec
 ### Component structure
 
 - **UI library**: all generic components (`Button`, `Link`, `Image`, `MeshGradient`, `ContextMenu`, `PreviewCard`, `Footer`, `Section`, `PageHeader`, `Timeline`, `TableOfContents`, `Lightbox`, `MediaPreview`, `ThemeToggle`, etc.; the library ships no icons, those come from `@lucide/svelte`) live in the `@noahbaumgartner/svelte-ui` package (separate repo at `../svelte-ui`). New generic components go there, not into this repo. Only portfolio-specific code stays here.
-- `src/lib/components/features/` — portfolio-specific, DTO-aware widgets, e.g. `post-preview/PostPreview` (post card, wraps the library's `PreviewCard`). One subfolder per component.
-- `src/lib/components/icons/` — brand icons the icon library lacks (`GithubIcon`).
-- `src/lib/components/navigation/` — site-specific navigation pieces (`SiteHeaderLogo`); the header bar itself is the library's `Navbar`, composed in `src/routes/+layout.svelte`.
-- `src/lib/components/sections/` — page-section-level components composed into routes (`HeroSection`, `AboutIntroSection`, `PostsPreviewSection`, `PostTitleSection`, `FooterSection`, etc.), portfolio-specific (DTO-aware) composition. The library's `Section` is the generic wrapper (padding/max-width/box + `light`/`dark` variant) most sections build on.
+- `src/lib/sections/` — page-section-level components composed into routes (`HeroSection`, `AboutIntroSection`, `PostsPreviewSection`, `PostTitleSection`, `FooterSection`, etc.), portfolio-specific (DTO-aware) composition. The library's `Section` is the generic wrapper (padding/max-width/box + `light`/`dark` variant) most sections build on.
 - Routes under `src/routes/` are thin: they load data in `+page.ts` and compose section components in `+page.svelte`.
 
 Svelte 5 runes syntax is used throughout (`$props()`, `$state()`, `$derived()`), including snippets (`{#snippet ...}` / `{@render ...}`) for slot-like composition (see `Button.svelte`, `SiteHeader.svelte` usage in `+layout.svelte`).

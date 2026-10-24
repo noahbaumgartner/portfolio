@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { MediaQuery } from 'svelte/reactivity';
-	import { PageHeader, Section } from '@noahbaumgartner/svelte-ui';
-	import PostPreview from '$lib/components/features/post-preview/PostPreview.svelte';
+	import { MeshGradient, PageHeader, PreviewCard, Section } from '@noahbaumgartner/svelte-ui';
+	import { postIcons } from '$lib/postIcons';
 
 	let { data } = $props();
 	let { posts } = $derived(data);
@@ -31,7 +31,18 @@
 <Section width="full" padded={false} class="posts-wrapper">
 	<div class="posts-grid">
 		{#each posts as post (post.slug)}
-			<PostPreview {post} orientation={wide.current ? 'vertical' : 'horizontal'} />
+			<PreviewCard
+				href={`/posts/${post.slug}`}
+				title={post.title}
+				description={post.description}
+				meta={post.period}
+				icon={postIcons[post.icon]}
+				orientation={wide.current ? 'vertical' : 'horizontal'}
+			>
+				{#snippet media()}
+					<MeshGradient colors={post.colors} seed={post.title} />
+				{/snippet}
+			</PreviewCard>
 		{/each}
 	</div>
 </Section>
