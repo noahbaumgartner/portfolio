@@ -57,6 +57,15 @@
 		max-width: none;
 	}
 
+	.posts-grid :global(.preview-card--horizontal .preview-card-headline) {
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 4;
+		line-clamp: 4;
+		overflow: hidden;
+		overflow-wrap: anywhere;
+	}
+
 	.posts-grid {
 		margin-inline: auto;
 		max-width: 1280px;
