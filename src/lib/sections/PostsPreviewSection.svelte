@@ -83,7 +83,7 @@
 
 	.post-list :global(.preview-card) {
 		flex: 0 0 auto;
-		width: 330px;
+		width: min(330px, 72vw);
 		user-select: none;
 	}
 
