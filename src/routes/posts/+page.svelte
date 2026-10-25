@@ -25,7 +25,7 @@
 
 <PageHeader eyebrow="Beiträge" description="Eine Übersicht meiner Projekte und weiterer Beiträge.">
 	{#snippet title()}
-		Was ich gebaut<br />und aufgeschrieben habe.
+		Projekte<br />und Gedanken.
 	{/snippet}
 </PageHeader>
 <Section width="full" padded={false} class="posts-wrapper">
