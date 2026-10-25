@@ -49,8 +49,6 @@ Den Code findest du unter https://github.com/noahbaumgartner/portfolio`,
 </script>
 
 <svelte:head>
-	<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
-
 	<title>Noah Baumgartner | Portfolio</title>
 	<meta name="og:url" content="https://noahbaumgartner.ch" />
 	<meta name="og:image" content="https://noahbaumgartner.ch/images/og.jpg" />

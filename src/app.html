@@ -13,6 +13,25 @@
 				} catch (e) {}
 			})();
 		</script>
+		<!-- The favicon follows the site theme (ThemeToggle), not just the device theme. -->
+		<link id="favicon" rel="icon" type="image/svg+xml" href="/images/favicon-light.svg" />
+		<script>
+			(function () {
+				var root = document.documentElement;
+				var link = document.getElementById('favicon');
+				var media = matchMedia('(prefers-color-scheme: dark)');
+				function update() {
+					var theme = root.dataset.theme || (media.matches ? 'dark' : 'light');
+					link.href = '/images/favicon-' + theme + '.svg';
+				}
+				update();
+				media.addEventListener('change', update);
+				new MutationObserver(update).observe(root, {
+					attributes: true,
+					attributeFilter: ['data-theme']
+				});
+			})();
+		</script>
 		<!-- Layer order must be declared before any stylesheet: the reset (layout.css)
 		     sits below the component library so its components win over it. -->
 		<style>
