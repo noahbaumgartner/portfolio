@@ -7,6 +7,7 @@ url: 'https://bettenhof.ch/'
 gif: '/videos/posts/bettenhof.mp4'
 colors: '#eef3e9,#dbe7d1,#2d4128'
 icon: wheat
+category: project
 ---
 
 <script>

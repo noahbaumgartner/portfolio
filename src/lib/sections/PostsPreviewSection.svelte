@@ -89,13 +89,13 @@
 
 	@media (min-width: 640px) {
 		.post-list {
-			gap: 40px;
+			gap: 24px;
 		}
 	}
 
 	@media (min-width: 1024px) {
 		.post-list {
-			gap: 64px;
+			gap: 40px;
 		}
 	}
 </style>

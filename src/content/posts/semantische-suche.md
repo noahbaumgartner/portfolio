@@ -4,7 +4,9 @@ month: 6
 title: 'Semantische Suche'
 description: 'Konzeption und prototypische Entwicklung einer semantischen Suche im Rahmen meiner Bachelorarbeit.'
 colors: '#d7e0f8,#b9c8f2,#26305c'
+gif: '/images/posts/semantische-suche/hero.webp'
 icon: search
+category: study
 sources:
   - title: 'IBM: What is Vector Embedding?'
     url: 'https://www.ibm.com/think/topics/vector-embedding'

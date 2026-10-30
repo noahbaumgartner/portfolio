@@ -7,6 +7,7 @@ github: https://github.com/ZHAW-PM4-Compass/compass
 gif: '/videos/posts/compass.png'
 colors: '#c9d6e1,#e2e8e0,#a3b4c5'
 icon: compass
+category: study
 ---
 
 <script>

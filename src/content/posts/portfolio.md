@@ -8,6 +8,7 @@ github: https://github.com/noahbaumgartner/portfolio
 gif: '/videos/posts/portfolio.gif'
 colors: '#d9d9d9,#c2c2c2,#141414'
 icon: person-standing
+category: project
 ---
 
 <script>

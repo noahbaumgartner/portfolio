@@ -6,6 +6,7 @@ description: 'Übungsprojekt zu automatisch generierten Bildbeschreibungen mit C
 gif: '/images/posts/image-captioning/attention-hero.jpg'
 colors: '#ecdfc9,#e8834a,#1f2a44'
 icon: image
+category: study
 sources:
   - title: 'He et al.: Deep Residual Learning for Image Recognition (ResNet)'
     url: 'https://arxiv.org/abs/1512.03385'

@@ -5,30 +5,107 @@
 	let { post } = $props();
 </script>
 
-<PageHeader eyebrow={post.period} title={post.title} description={post.description}>
-	{#if post.gif}
-		<div class="post-gif">
-			<MediaPreview src={post.gif} alt={post.title} playLabel="Abspielen" pauseLabel="Pausieren" />
-		</div>
+<div
+	class="post-title"
+	style:--glow-color={post.colors[1] ?? post.colors[0]}
+	style:--glow-deep={post.colors[2] ?? post.colors[1] ?? post.colors[0]}
+>
+	{#if !post.gif}
+		<div class="post-title-glow post-title-glow--page" aria-hidden="true"></div>
 	{/if}
-	{#snippet footer()}
-		<div class="post-title-footer">
-			<hr class="post-title-divider" />
-			{#if post.github || post.url}
-				<div class="post-title-actions">
-					{#if post.github}
-						<Button variant="ghost" size="md" icon={GithubIcon} href={post.github} label="GitHub" />
-					{/if}
-					{#if post.url}
-						<Button variant="ghost" size="md" icon={Globe} href={post.url} label="Webseite" />
-					{/if}
-				</div>
-			{/if}
-		</div>
-	{/snippet}
-</PageHeader>
+	<PageHeader eyebrow={post.period} title={post.title} description={post.description}>
+		{#if post.gif}
+			<div class="post-gif">
+				<div class="post-title-glow post-title-glow--media" aria-hidden="true"></div>
+				<MediaPreview
+					src={post.gif}
+					alt={post.title}
+					playLabel="Abspielen"
+					pauseLabel="Pausieren"
+				/>
+			</div>
+		{/if}
+		{#snippet footer()}
+			<div class="post-title-footer">
+				<hr class="post-title-divider" />
+				{#if post.github || post.url}
+					<div class="post-title-actions">
+						{#if post.github}
+							<Button
+								variant="ghost"
+								size="md"
+								icon={GithubIcon}
+								href={post.github}
+								label="GitHub"
+							/>
+						{/if}
+						{#if post.url}
+							<Button variant="ghost" size="md" icon={Globe} href={post.url} label="Webseite" />
+						{/if}
+					</div>
+				{/if}
+			</div>
+		{/snippet}
+	</PageHeader>
+</div>
 
 <style>
+	/* Clips the glow at the sides only, so it can bleed past the viewport edge without
+	   causing a horizontal scrollbar, while its soft top and bottom are never cut off. */
+	.post-title {
+		position: relative;
+		isolation: isolate;
+		overflow-x: clip;
+	}
+
+	/* Soft circle in the post's own accent colour (second of its three colours, with a bit of
+	   the third so pale palettes still show), fading out fully towards its edge. */
+	.post-title-glow {
+		position: absolute;
+		z-index: -1;
+		left: 50%;
+		aspect-ratio: 1;
+		translate: -50% -50%;
+		border-radius: 50%;
+		background: radial-gradient(
+			circle closest-side,
+			color-mix(
+					in srgb,
+					color-mix(in srgb, var(--glow-color) 80%, var(--glow-deep)) 45%,
+					transparent
+				)
+				0%,
+			transparent 100%
+		);
+		pointer-events: none;
+	}
+
+	/* With a header image most of the circle sits behind the image, with its centre a bit
+	   below the image's top edge, so its top never reaches past the start of the header. */
+	.post-title-glow--media {
+		top: 0;
+		width: 90%;
+		translate: -50% -35%;
+	}
+
+	/* Without one it sits behind the title, with its top edge at the start of the header so
+	   nothing of it vanishes under the navbar. */
+	.post-title-glow--page {
+		--glow-size: clamp(480px, 55vw, 800px);
+		top: calc(var(--glow-size) / 2);
+		width: var(--glow-size);
+	}
+
+	@media (prefers-color-scheme: dark) {
+		:root:not([data-theme='light']) .post-title-glow {
+			opacity: 0.7;
+		}
+	}
+
+	:root[data-theme='dark'] .post-title-glow {
+		opacity: 0.7;
+	}
+
 	.post-title-footer {
 		display: flex;
 		align-items: center;
@@ -53,6 +130,7 @@
 	}
 
 	.post-gif {
+		position: relative;
 		width: 100%;
 		max-width: 1000px;
 		margin-inline: auto;

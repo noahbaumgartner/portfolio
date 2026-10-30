@@ -11,6 +11,7 @@ export const load = async ({ params }) => {
 			title: metadata.title,
 			description: metadata.description,
 			icon: metadata.icon,
+			category: metadata.category,
 			period: `${new Date(metadata.year, metadata.month - 1).toLocaleString('de-DE', { month: 'long' })} ${metadata.year}`,
 			url: metadata.url || '',
 			github: metadata.github || '',

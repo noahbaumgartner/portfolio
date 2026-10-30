@@ -7,5 +7,5 @@
 	<title>Noah Baumgartner | Impressum</title>
 </svelte:head>
 
-<PageHeader title="Impressum" />
+<PageHeader eyebrow="Rechtliches" title="Impressum" />
 <ImprintSection />

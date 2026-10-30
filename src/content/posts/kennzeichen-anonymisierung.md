@@ -6,6 +6,7 @@ description: 'Übungsprojekt zur automatischen Erkennung und Anonymisierung von 
 gif: '/images/posts/license-plate-anonymization/detection.jpg'
 colors: '#ebe0c9,#d8b869,#26221b'
 icon: car
+category: study
 sources:
   - title: 'Goodfellow et al.: Generative Adversarial Networks'
     url: 'https://arxiv.org/abs/1406.2661'
