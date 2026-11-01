@@ -8,7 +8,7 @@
 			subtitle: 'B3 Digital',
 			href: 'https://www.b-3.ch/',
 			description:
-				'Bei B3 Digital bin ich als Fullstack Software Entwickler tätig, wo ich vor allem an der Web-Applikation buildagil arbeite.'
+				'Bei B3 Digital bin ich als Fullstack Softwareentwickler und -architekt tätig, wo ich an der Web-Applikation buildagil arbeite sowie an innovativen internen Lösungen.'
 		},
 		{
 			period: 'Mai 2023 - Juli 2023',
@@ -16,7 +16,7 @@
 			subtitle: 'Swisscom',
 			href: 'https://www.swisscom.ch',
 			description:
-				'Als SAP PI Consultant bei Swisscom sammelte ich wertvolle Erfahrungen in der Integration von SAP-Systemen, bevor ich mich für eine neue berufliche Herausforderung entschied.'
+				'Als SAP PI Consultant bei Swisscom sammelte ich wertvolle Erfahrungen in der Integration von SAP-Systemen.'
 		},
 		{
 			period: 'August 2016 - April 2023',

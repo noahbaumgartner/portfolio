@@ -8,7 +8,7 @@
 			subtitle: 'Zürcher Hochschule für Angewandte Wissenschaften',
 			href: 'https://www.zhaw.ch',
 			description:
-				'Masterstudium mit Vertiefung im Bereich Künstliche Intelligenz und maschinelles Lernen.'
+				'Masterstudium in Informatik mit Schwerpunkt auf Software Engineering und Künstlicher Intelligenz.'
 		},
 		{
 			period: '2021 - 2025',
