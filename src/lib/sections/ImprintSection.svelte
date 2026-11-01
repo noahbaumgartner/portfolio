@@ -27,7 +27,7 @@
 		<dl class="rows">
 			<div class="row contact-row">
 				<dt class="label">E-Mail</dt>
-				<dd><Link href="mailto:noahbaumg@outlook.com">noahbaumg@outlook.com</Link></dd>
+				<dd><Link href="mailto:noah@nb.digital">noah@nb.digital</Link></dd>
 			</div>
 			<div class="row contact-row">
 				<dt class="label">Web</dt>
