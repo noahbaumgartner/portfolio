@@ -23,6 +23,12 @@
 					<div class="about-glow" aria-hidden="true"></div>
 					<Image
 						src="/images/me.webp"
+						srcset="/images/me-288.webp 288w, /images/me-480.webp 480w, /images/me.webp 640w"
+						sizes="min(100vw - 48px, 288px)"
+						width={640}
+						height={640}
+						loading="eager"
+						fetchpriority="high"
 						alt="Porträt von Noah Baumgartner"
 						ratio={1}
 						class="about-image"

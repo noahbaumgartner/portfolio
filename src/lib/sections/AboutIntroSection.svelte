@@ -22,6 +22,14 @@
 				<div class="intro-glow" aria-hidden="true"></div>
 				<Image
 					src="/images/me-climbing.webp"
+					srcset="
+						/images/me-climbing-288.webp 288w,
+						/images/me-climbing-480.webp 480w,
+						/images/me-climbing.webp     640w
+					"
+					sizes="(min-width: 768px) 45vw, calc(100vw - 48px)"
+					width={640}
+					height={640}
 					alt="Noah Baumgartner beim Klettern"
 					ratio={1}
 					class="intro-image"

@@ -67,13 +67,6 @@ Den Code findest du unter https://github.com/noahbaumgartner/portfolio`,
 		type="font/woff2"
 		crossorigin="anonymous"
 	/>
-	<link
-		rel="preload"
-		href="/fonts/SourceCodePro.woff2"
-		as="font"
-		type="font/woff2"
-		crossorigin="anonymous"
-	/>
 </svelte:head>
 
 {#if showScreen}
