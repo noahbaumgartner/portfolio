@@ -20,7 +20,11 @@ const config = {
 			rehypePlugins: [rehypeKatexSvelte]
 		})
 	],
-	kit: { adapter: adapter() },
+	kit: {
+		// adapter-vercel 6 only knows Node 20/22/24 and refuses to auto-detect
+		// the runtime when building on Node 26, so pin the function runtime.
+		adapter: adapter({ runtime: 'nodejs24.x' })
+	},
 	extensions: ['.svelte', '.md']
 };
 

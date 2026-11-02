@@ -11,7 +11,7 @@ This portfolio is built using a modern, high-performance stack focused on develo
 - Styling: CSS
 - Package Manager: npm
 - Build Tooling: vite
-- Runtime Environment: Node.js v24+
+- Runtime Environment: Node.js v26+
 - Deployment: Vercel
 
 ## ⚙️ Getting started
@@ -22,7 +22,7 @@ Follow these instructions to get a local copy of the project up and running for 
 
 Ensure you have the following installed on your system:
 
-- Node.js: Version v24 or higher. You can verify your version with: `node -v`
+- Node.js: Version v26 or higher. You can verify your version with: `node -v`
 - npm: Ships with Node.js. You can verify your version with: `npm -v`
 
 ### Local Development Environment
