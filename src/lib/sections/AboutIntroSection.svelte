@@ -42,7 +42,7 @@
 
 	.intro {
 		margin-inline: auto;
-		max-width: 1280px;
+		max-width: var(--content-max-width);
 		display: flex;
 		flex-direction: column;
 		gap: 40px;

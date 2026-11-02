@@ -189,7 +189,7 @@
 	.post-content {
 		display: block;
 		margin-inline: auto;
-		max-width: 1280px;
+		max-width: var(--content-max-width);
 	}
 
 	.post-layout {

@@ -18,7 +18,7 @@
 <style>
 	.hobbies {
 		margin-inline: auto;
-		max-width: 1280px;
+		max-width: var(--content-max-width);
 		padding-block: 40px;
 		display: flex;
 		flex-direction: column;

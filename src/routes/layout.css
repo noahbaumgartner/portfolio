@@ -4,6 +4,11 @@
    inverse tokens live here. Components should always reference semantic
    --color-* tokens, never raw hex values, so dark mode stays free. */
 :root {
+	/* Width of the page content between the gutters. Also fed to the library's
+	   Section, which would otherwise cap its content at 1280px. */
+	--content-max-width: 1376px;
+	--section-max-width: var(--content-max-width);
+
 	/* Inverse surface: the site's decorative accent panels (dark Section
 	   variant) always contrast against the page — dark card on a light page,
 	   light card on a dark page — so they mix in the opposite direction from

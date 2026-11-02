@@ -211,7 +211,7 @@
 		isolation: isolate;
 	}
 
-	/* As wide as the page content (max 1280px), so the streaks never reach past the container
+	/* As wide as the page content (max 1376px), so the streaks never reach past the container
 	   edges on wide screens. Extends a little below the header and fades out towards all
 	   edges, so the streaks never end in a hard line. */
 	.posts-hero-streaks {
@@ -220,7 +220,7 @@
 		top: 0;
 		left: 50%;
 		translate: -50% 0;
-		width: min(100%, 1280px);
+		width: min(100%, var(--content-max-width));
 		height: calc(100% + 60px);
 		color: var(--color-text);
 		opacity: 0.55;

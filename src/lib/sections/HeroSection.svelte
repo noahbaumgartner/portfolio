@@ -77,19 +77,28 @@
 </div>
 
 <style>
+	/* Same width as the content of the sections below (page gutters, max 1376px), so the grid
+	   stays inside the container. The header's own Section gutter is dropped, as the hero
+	   already sits inside the gutters. */
 	.hero {
+		--hero-gutter: 24px;
+		--section-inline: 0px;
 		position: relative;
+		width: min(100% - 2 * var(--hero-gutter), var(--content-max-width));
+		margin-inline: auto;
 		padding-block: 32px;
 	}
 
 	@media (min-width: 640px) {
 		.hero {
+			--hero-gutter: 40px;
 			padding-block: 48px;
 		}
 	}
 
 	@media (min-width: 1024px) {
 		.hero {
+			--hero-gutter: 64px;
 			padding-block: 64px;
 		}
 	}

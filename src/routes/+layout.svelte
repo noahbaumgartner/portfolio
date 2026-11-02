@@ -136,7 +136,7 @@ Den Code findest du unter https://github.com/noahbaumgartner/portfolio`,
 
 	:global(.site-navbar .navbar-bar) {
 		box-sizing: content-box;
-		max-width: 1280px;
+		max-width: var(--content-max-width);
 		margin-inline: auto;
 	}
 
