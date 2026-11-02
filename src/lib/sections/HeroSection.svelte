@@ -134,16 +134,34 @@
 		}
 	}
 
-	/* Spotlight that follows the pointer. */
+	/* Spotlight that follows the pointer. It also fades out slightly towards all four edges,
+	   so the lit grid never ends in a hard line at the border of the hero. */
 	.hero-grid--hover {
 		--grid-line: color-mix(in srgb, var(--color-text) 32%, transparent);
+		--grid-edge: 48px;
 		opacity: var(--grid-opacity, 0);
 		transition: opacity 0.3s ease;
-		mask-image: radial-gradient(
-			circle 160px at var(--grid-x, 50%) var(--grid-y, 50%),
-			#000 0%,
-			transparent 100%
-		);
+		mask-image:
+			radial-gradient(
+				circle 160px at var(--grid-x, 50%) var(--grid-y, 50%),
+				#000 0%,
+				transparent 100%
+			),
+			linear-gradient(
+				to right,
+				transparent,
+				#000 var(--grid-edge),
+				#000 calc(100% - var(--grid-edge)),
+				transparent
+			),
+			linear-gradient(
+				to bottom,
+				transparent,
+				#000 var(--grid-edge),
+				#000 calc(100% - var(--grid-edge)),
+				transparent
+			);
+		mask-composite: intersect;
 	}
 
 	/* Fixed height, so the title keeps its size while the typing animation has not
