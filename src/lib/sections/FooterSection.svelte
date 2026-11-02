@@ -6,6 +6,7 @@
 	<Footer title={'Danke fürs\nVorbeischauen.'} copyright="Noah Baumgartner">
 		<FooterColumn heading="Weiteres">
 			<Link href="/imprint">Impressum</Link>
+			<Link href="/privacy">Datenschutz</Link>
 		</FooterColumn>
 		<FooterColumn heading="Social Media">
 			<Link href="https://www.instagram.com/noahbaumgartner/">Instagram</Link>

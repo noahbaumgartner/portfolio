@@ -3,7 +3,7 @@
 
 	const disclaimers = [
 		{
-			title: 'Kontakt',
+			title: 'Haftung für Inhalte',
 			text: 'Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Gewähr für die Aktualität, Vollständigkeit und Richtigkeit der bereitgestellten Informationen. Jegliche Haftungsansprüche gegen uns, die sich auf Schäden materieller oder ideeller Art beziehen, verursacht durch die Nutzung oder Nichtnutzung der dargebotenen Inhalte bzw. durch Nutzung fehlerhafter und unvollständiger Informationen, sind grundsätzlich ausgeschlossen.'
 		},
 		{
