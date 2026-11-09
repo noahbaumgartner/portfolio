@@ -47,7 +47,7 @@ Die Rohwerte $e_{t,i}$ stammen dabei aus einem kleinen neuronalen Netz, das den 
 Als Datengrundlage diente der <Link href="https://www.kaggle.com/datasets/adityajn105/flickr8k">Flickr8k-Datensatz</Link> mit rund 6'500 Trainingsbildern und je fünf menschlichen Referenzbeschreibungen pro Bild, was nach der Vorverarbeitung 32'365 Bild-Text-Paare ergibt. Der Wortschatz wurde ausschliesslich aus den Trainingsdaten aufgebaut, um jegliches Data Leakage zu vermeiden, und umfasst 2'649 Tokens. Trainiert wurde mit Adam, einer Lernrate von 4e-4, Batch-Grösse 64 und bis zu 8 Epochen, abgesichert durch Dropout, Gradient Clipping und Early Stopping auf Basis von BLEU-4 mit einer Geduld von drei Epochen.
 
 <figure>
-<img src="/images/posts/image-captioning/training-curves.png" alt="Trainingskurven beider Modelle: Trainingsverlust, Validierungs-Perplexität und BLEU-4 über die Epochen, jeweils für Show and Tell und Show, Attend and Tell." />
+<img src="/images/posts/image-captioning/training-curves.png" width="1489" height="808" alt="Trainingskurven beider Modelle: Trainingsverlust, Validierungs-Perplexität und BLEU-4 über die Epochen, jeweils für Show and Tell und Show, Attend and Tell." />
 <figcaption>Trainingsverlust, Perplexität und BLEU-4 über die Epochen für beide Architekturen.</figcaption>
 </figure>
 
@@ -62,7 +62,7 @@ $$
 Eine tiefere Perplexität bedeutet, dass das Modell den nächsten Wörtern im Schnitt eine höhere Wahrscheinlichkeit zuweist. Auf dem Testset erreicht das Attention-Modell mit einer Perplexität von 17.04 und einem BLEU-4-Wert von 0.180 bessere BLEU-Werte als das einfachere Show-and-Tell-Modell mit 16.57 Perplexität und 0.152 BLEU-4<sup><a href="#source-4">4</a></sup>. Der Vorsprung fällt besonders bei den höhergradigen BLEU-Metriken ins Gewicht, welche zusammenhängende Wortfolgen statt einzelner Wörter bewerten, was zur Erwartung passt, dass gezielte Aufmerksamkeit auf einzelne Bildregionen zu kohärenteren Formulierungen führt.
 
 <figure>
-<img src="/images/posts/image-captioning/caption-comparison.jpg" alt="Fünf Testbilder mit den generierten Bildbeschreibungen beider Modelle sowie der menschlichen Referenzbeschreibung im Vergleich." />
+<img src="/images/posts/image-captioning/caption-comparison.jpg" width="1991" height="1083" alt="Fünf Testbilder mit den generierten Bildbeschreibungen beider Modelle sowie der menschlichen Referenzbeschreibung im Vergleich." />
 <figcaption>Dieselben Testbilder, einmal mit den Beschreibungen des einfachen Modells und einmal mit jenen des Attention-Modells. Bei den beiden Hunden erkennt nur das Attention-Modell, dass es sich um zwei Tiere handelt.</figcaption>
 </figure>
 
@@ -71,7 +71,7 @@ Eine tiefere Perplexität bedeutet, dass das Modell den nächsten Wörtern im Sc
 Um den Attention-Mechanismus sichtbar zu machen, habe ich die 7×7-Gewichtungskarte für jedes generierte Wort auf die ursprüngliche Bildgrösse hochskaliert und über das Bild gelegt. Bei konkreten Substantiven konzentriert sich die Aufmerksamkeit meist klar auf die passende Bildregion, bei Füllwörtern wie "in" oder "the" verteilt sie sich dagegen deutlich diffuser über das Bild.
 
 <figure>
-<img src="/images/posts/image-captioning/attention-detail.jpg" alt="Zwölf Ausschnitte desselben Bilds mit je einer Attention-Heatmap, eine pro generiertem Wort der Bildbeschreibung 'a man in a red jacket is jumping in the snow'." />
+<img src="/images/posts/image-captioning/attention-detail.jpg" width="1770" height="595" alt="Zwölf Ausschnitte desselben Bilds mit je einer Attention-Heatmap, eine pro generiertem Wort der Bildbeschreibung 'a man in a red jacket is jumping in the snow'." />
 <figcaption>Attention-Heatmap pro generiertem Wort: Bei "man" und "jacket" liegt der Fokus klar auf der Person am Eis.</figcaption>
 </figure>
 

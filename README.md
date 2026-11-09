@@ -1,3 +1,5 @@
+<img src="static/images/og.jpg" alt="noahbaumgartner" width="100%">
+
 # Portfolio
 
 Source code of my personal portfolio, live at [noahbaumgartner.ch](https://noahbaumgartner.ch). It presents who I am and my professional background, and collects my projects and other work as posts: websites and apps as well as coursework from my studies. The site content is written in German.

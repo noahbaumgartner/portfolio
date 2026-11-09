@@ -80,6 +80,61 @@
 	}
 }
 
+/* Placeholder and fade-in for images and videos, driven by `data-media` which
+   `trackMediaLoading` (src/lib/attachments/mediaLoading.ts) sets on the container.
+   The container needs `position: relative`; the shimmer is a pseudo-element over it,
+   so it also covers the media's own flat surface background. */
+[data-media]::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	border-radius: 10px;
+	background: linear-gradient(
+			100deg,
+			var(--color-surface) 35%,
+			color-mix(in srgb, var(--color-surface) 40%, var(--color-bg)) 50%,
+			var(--color-surface) 65%
+		)
+		0 0 / 300% 100%;
+	opacity: 0;
+	transition: opacity 400ms ease-out;
+	pointer-events: none;
+}
+
+[data-media] :is(img, video) {
+	transition: opacity 400ms ease-out;
+}
+
+[data-media='loading']::after {
+	opacity: 1;
+	animation: media-shimmer 1.6s linear infinite;
+}
+
+/* !important: the post body's own reveal rule for images is more specific. */
+[data-media='loading'] :is(img, video) {
+	opacity: 0 !important;
+}
+
+@keyframes media-shimmer {
+	from {
+		background-position: 100% 0;
+	}
+	to {
+		background-position: -100% 0;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	[data-media]::after,
+	[data-media] :is(img, video) {
+		transition: none;
+	}
+
+	[data-media='loading']::after {
+		animation: none;
+	}
+}
+
 @font-face {
 	font-family: 'Inter';
 	font-style: normal;

@@ -41,7 +41,7 @@ $$
 Diese Parametrisierung erlaubt es auch, senkrechte Kanten ohne Sonderfall zu erfassen. Aus den Schnittpunkten der vier gefundenen Geraden ergeben sich die vier Eckpunkte des Kennzeichens, mit denen sich über eine perspektivische Transformation ein sauber ausgerichteter, entzerrter Ausschnitt erzeugen lässt.
 
 <figure>
-<img src="/images/posts/license-plate-anonymization/crops.png" alt="Sechs freigestellte und perspektivisch entzerrte Kennzeichen-Ausschnitte in unterschiedlichen Farben und Formaten." />
+<img src="/images/posts/license-plate-anonymization/crops.png" width="1236" height="452" alt="Sechs freigestellte und perspektivisch entzerrte Kennzeichen-Ausschnitte in unterschiedlichen Farben und Formaten." />
 <figcaption>Über Canny-Kantenerkennung und Hough-Transformation entzerrte Kennzeichen-Ausschnitte, unabhängig von Land oder Farbgebung.</figcaption>
 </figure>
 
@@ -56,7 +56,7 @@ $$
 Der Diskriminator versucht diesen Ausdruck zu maximieren, indem er echte Bilder als echt und generierte als gefälscht erkennt, während der Generator ihn zu minimieren versucht, indem er den Diskriminator möglichst gut täuscht. Architektonisch orientiert sich mein Generator und Diskriminator an einem DCGAN mit transponierten beziehungsweise gewöhnlichen Convolutions, Batch-Normalization und einem 64-dimensionalen latenten Vektor als Eingabe<sup><a href="#source-2">2</a></sup>. Trainiert wurde das Netz für 150 Epochen auf den zuvor zugeschnittenen Kennzeichen.
 
 <figure>
-<img src="/images/posts/license-plate-anonymization/gan-samples.png" alt="Vier vom GAN generierte, kennzeichenähnliche Bilder mit verwaschenen, aber plausibel wirkenden Zeichenfolgen." />
+<img src="/images/posts/license-plate-anonymization/gan-samples.png" width="1200" height="300" alt="Vier vom GAN generierte, kennzeichenähnliche Bilder mit verwaschenen, aber plausibel wirkenden Zeichenfolgen." />
 <figcaption>Vier vom trainierten GAN generierte Kennzeichen nach 150 Trainings-Epochen. Die Struktur passt, einzelne Zeichen bleiben unscharf.</figcaption>
 </figure>
 
@@ -65,7 +65,7 @@ Der Diskriminator versucht diesen Ausdruck zu maximieren, indem er echte Bilder 
 Im letzten Schritt werden Erkennung, Zuschnitt und Generierung zusammengeführt: Für jedes erkannte Kennzeichen generiert das GAN eine neue Bildprobe, die anschliessend perspektivisch auf die exakte Form und Grösse des Original-Kennzeichens verzerrt und über eine Maske ins Ursprungsbild eingesetzt wird. So bleibt die Position im Bild erhalten, nur der Inhalt des Kennzeichens ändert sich.
 
 <figure>
-<img src="/images/posts/license-plate-anonymization/before-after.jpg" alt="Vergleich desselben Fotos vor und nach der Anonymisierung. Links ist das echte Kennzeichen lesbar, rechts wurde es durch ein generiertes, unleserliches Kennzeichen ersetzt." />
+<img src="/images/posts/license-plate-anonymization/before-after.jpg" width="1440" height="536" alt="Vergleich desselben Fotos vor und nach der Anonymisierung. Links ist das echte Kennzeichen lesbar, rechts wurde es durch ein generiertes, unleserliches Kennzeichen ersetzt." />
 <figcaption>Das echte Kennzeichen wurde durch eine generierte, nicht mehr identifizierbare Variante ersetzt, Position und Perspektive bleiben erhalten.</figcaption>
 </figure>
 

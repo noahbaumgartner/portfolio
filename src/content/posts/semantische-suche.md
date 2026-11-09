@@ -53,7 +53,7 @@ $$
 Der Wert liegt zwischen $-1$ und $1$, wobei $1$ bedeutet, dass beide Vektoren exakt in dieselbe Richtung zeigen und damit inhaltlich am ähnlichsten sind.
 
 <figure>
-<img src="/images/posts/semantische-suche/vektorraum.svg" alt="Ein Dokument wird in Chunks aufgeteilt, über ein Embedding-Modell in Vektoren umgewandelt und im Vektorraum abgelegt, wo ähnliche Bedeutungen nahe beieinanderliegen." />
+<img src="/images/posts/semantische-suche/vektorraum.svg" width="1000" height="480" alt="Ein Dokument wird in Chunks aufgeteilt, über ein Embedding-Modell in Vektoren umgewandelt und im Vektorraum abgelegt, wo ähnliche Bedeutungen nahe beieinanderliegen." />
 <figcaption>Text wird über ein Embedding-Modell in Vektoren umgewandelt, die im Vektorraum nach Bedeutung gruppiert sind.</figcaption>
 </figure>
 
@@ -70,7 +70,7 @@ Die entstehenden Vektoren landen zusammen mit Metadaten in einer Vektordatenbank
 Konzeptionell haben wir zwischen einer Indexierungs- und einer Such-Pipeline unterschieden. Diese Trennung war zentral, da beide Prozesse unterschiedliche Anforderungen haben: Die Indexierung soll asynchron im Hintergrund laufen und beliebig skalieren können, während die Suche auf möglichst tiefe Latenz ausgelegt sein muss.
 
 <figure>
-<img src="/images/posts/semantische-suche/architektur.svg" alt="Architekturdiagramm mit Indexierungs-Pipeline (Inhalt geändert, Text extrahieren, Chunking, Embedding, Vektordatenbank) und Such-Pipeline (Suchanfrage, Abfrage-Erweiterung, Embedding, Vektorsuche mit Filter, Resultate)." />
+<img src="/images/posts/semantische-suche/architektur.svg" width="1100" height="430" alt="Architekturdiagramm mit Indexierungs-Pipeline (Inhalt geändert, Text extrahieren, Chunking, Embedding, Vektordatenbank) und Such-Pipeline (Suchanfrage, Abfrage-Erweiterung, Embedding, Vektorsuche mit Filter, Resultate)." />
 <figcaption>Indexierungs- und Such-Pipeline laufen getrennt, teilen sich aber dieselbe Vektordatenbank.</figcaption>
 </figure>
 

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Globe } from '@lucide/svelte';
 	import { Button, GithubIcon, MediaPreview, PageHeader } from '@noahbaumgartner/svelte-ui';
+	import { mediaLoading } from '$lib/attachments/mediaLoading';
 
 	let { post } = $props();
 </script>
@@ -15,7 +16,7 @@
 	{/if}
 	<PageHeader eyebrow={post.period} title={post.title} description={post.description}>
 		{#if post.gif}
-			<div class="post-gif">
+			<div class="post-gif" {@attach mediaLoading}>
 				<div class="post-title-glow post-title-glow--media" aria-hidden="true"></div>
 				<MediaPreview
 					src={post.gif}

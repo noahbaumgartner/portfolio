@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Image, Link, Section } from '@noahbaumgartner/svelte-ui';
+	import { mediaLoading } from '$lib/attachments/mediaLoading';
 </script>
 
 <div class="about-wrap">
@@ -19,7 +20,7 @@
 						nach der nächsten technischen Herausforderung.
 					</span>
 				</div>
-				<div class="about-media">
+				<div class="about-media" {@attach mediaLoading}>
 					<div class="about-glow" aria-hidden="true"></div>
 					<Image
 						src="/images/me.webp"

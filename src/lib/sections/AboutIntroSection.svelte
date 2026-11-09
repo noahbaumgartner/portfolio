@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Image, Link, Section } from '@noahbaumgartner/svelte-ui';
+	import { mediaLoading } from '$lib/attachments/mediaLoading';
 </script>
 
 <div class="intro-wrap">
@@ -18,7 +19,7 @@
 					Intelligence an der <Link href="https://www.zhaw.ch">ZHAW</Link>.
 				</p>
 			</div>
-			<div class="intro-media">
+			<div class="intro-media" {@attach mediaLoading}>
 				<div class="intro-glow" aria-hidden="true"></div>
 				<Image
 					src="/images/me-climbing.webp"

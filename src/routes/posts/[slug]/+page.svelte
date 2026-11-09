@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { ArrowLeft, ArrowRight } from '@lucide/svelte';
+	import { trackMediaLoading } from '$lib/attachments/mediaLoading';
 	import PostTitleSection from '$lib/sections/PostTitleSection.svelte';
 	import { Button, Lightbox, Link, Section, TableOfContents } from '@noahbaumgartner/svelte-ui';
 
@@ -33,6 +34,7 @@
 		if (!bodyEl) return;
 
 		const images = Array.from(bodyEl.querySelectorAll('img'));
+		const stopTracking: (() => void)[] = [];
 
 		images.forEach((image) => {
 			image.classList.add('post-img-reveal');
@@ -56,6 +58,10 @@
 			wrapper.appendChild(expandButton);
 		});
 
+		bodyEl
+			.querySelectorAll<HTMLElement>('.post-img-wrap')
+			.forEach((wrapper) => stopTracking.push(trackMediaLoading(wrapper)));
+
 		const observer = new IntersectionObserver(
 			(entries) => {
 				for (const entry of entries) {
@@ -70,7 +76,10 @@
 
 		images.forEach((image) => observer.observe(image));
 
-		return () => observer.disconnect();
+		return () => {
+			observer.disconnect();
+			stopTracking.forEach((stop) => stop());
+		};
 	});
 
 	function openLightbox(image: HTMLImageElement) {
