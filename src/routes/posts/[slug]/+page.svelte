@@ -289,6 +289,7 @@
 	.post-body :global(img) {
 		display: block;
 		width: 100%;
+		height: auto;
 		max-width: 1000px;
 		margin-block: 48px;
 		margin-inline: auto;
@@ -309,6 +310,7 @@
 	.post-body :global(.post-img-wrap img) {
 		display: block;
 		width: 100%;
+		height: auto;
 		max-width: none;
 		margin: 0;
 		border-radius: 0;
