@@ -1,14 +1,10 @@
 /* The base color tokens (--color-bg, --color-surface, --color-text, ...) and
    the light/dark switch (--ui-base / --ui-ink) come from
-   @noahbaumgartner/svelte-ui, imported in +layout.svelte. Only the site's own
-   inverse tokens live here. Components should always reference semantic
-   --color-* tokens, never raw hex values, so dark mode stays free. */
+   @noahbaumgartner/svelte-ui, imported in +layout.svelte, as are the reset and
+   the content width (base.css). Only the site's own inverse tokens live here.
+   Components should always reference semantic --color-* tokens, never raw hex
+   values, so dark mode stays free. */
 :root {
-	/* Width of the page content between the gutters. Also fed to the library's
-	   Section, which would otherwise cap its content at 1280px. */
-	--content-max-width: 1376px;
-	--section-max-width: var(--content-max-width);
-
 	/* Inverse surface: the site's decorative accent panels (dark Section
 	   variant) always contrast against the page — dark card on a light page,
 	   light card on a dark page — so they mix in the opposite direction from
@@ -30,54 +26,6 @@
 
 :root[data-theme='dark'] {
 	--color-surface-inverse: color-mix(in srgb, var(--ui-ink), var(--ui-base) 20%);
-}
-
-/* The reset sits in its own layer below the library's `svelte-ui` layer, so
-   the library's components win over it. Unlayered rules would beat every
-   layer, e.g. `a { text-decoration: inherit }` removed the Link underline. */
-@layer reset {
-	*,
-	*::before,
-	*::after {
-		box-sizing: border-box;
-		margin: 0;
-	}
-
-	html {
-		-webkit-text-size-adjust: 100%;
-	}
-
-	body {
-		line-height: 1.5;
-		-webkit-font-smoothing: antialiased;
-	}
-
-	ol,
-	ul {
-		list-style: none;
-		padding: 0;
-	}
-
-	img,
-	picture,
-	video,
-	canvas,
-	svg {
-		display: block;
-		max-width: 100%;
-	}
-
-	a {
-		color: inherit;
-		text-decoration: inherit;
-	}
-
-	button,
-	input,
-	textarea,
-	select {
-		font: inherit;
-	}
 }
 
 /* Placeholder and fade-in for images and videos, driven by `data-media` which

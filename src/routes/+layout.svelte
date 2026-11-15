@@ -1,6 +1,7 @@
 <script lang="ts">
 	import './layout.css';
 	import '@noahbaumgartner/svelte-ui/tokens.css';
+	import '@noahbaumgartner/svelte-ui/base.css';
 	import 'katex/dist/katex.min.css';
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';

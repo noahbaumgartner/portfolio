@@ -36,7 +36,7 @@ Posts live as Markdown files in `src/content/posts/*.md` with YAML frontmatter (
 
 ### Theming
 
-Single-token CSS color system: the base tokens come from `@noahbaumgartner/svelte-ui/tokens.css` (imported in `+layout.svelte`), where every color is `color-mix()` between a `--base` and `--ink` variable. [src/routes/layout.css](src/routes/layout.css) only adds the site-specific inverse tokens on top. Light/dark mode is just swapping which of `--base`/`--ink` is white vs. near-black — components should always consume the semantic `--color-*` tokens (`--color-bg`, `--color-surface`, `--color-text`, `--color-border`, etc.), never raw hex values.
+Single-token CSS color system: the base tokens come from `@noahbaumgartner/svelte-ui/tokens.css` (imported in `+layout.svelte`), where every color is `color-mix()` between a `--ui-base` and `--ui-ink` variable. The reset and the content width (`--content-max-width`) come from `@noahbaumgartner/svelte-ui/base.css`. [src/routes/layout.css](src/routes/layout.css) only adds the site-specific inverse tokens on top. Light/dark mode is just swapping which of `--ui-base`/`--ui-ink` is white vs. near-black — components should always consume the semantic `--color-*` tokens (`--color-bg`, `--color-surface`, `--color-text`, `--color-border`, etc.), never raw hex values.
 
 Theme selection is handled client-side by the library's `ThemeToggle`: it starts with the system theme (`prefers-color-scheme`), the button toggles between `light` and `dark`, and the choice is written to `document.documentElement.dataset.theme` and persisted in `localStorage('theme')`. Without a stored choice it keeps following the system.
 
