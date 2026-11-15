@@ -136,7 +136,6 @@ Den Code findest du unter https://github.com/noahbaumgartner/portfolio`,
 
 	.logo {
 		flex-shrink: 0;
-		font-family: 'Outfit', sans-serif;
 		font-size: 18px;
 		font-weight: 600;
 		color: var(--color-text);
@@ -150,9 +149,9 @@ Den Code findest du unter https://github.com/noahbaumgartner/portfolio`,
 		outline-offset: 2px;
 	}
 
-	/* The logo is set in Outfit; the mobile menu follows it instead of the body font */
+	/* The logo is set in the display font; the mobile menu follows it instead of the body font */
 	:global(.site-navbar .navbar-panel) {
-		font-family: 'Outfit', sans-serif;
+		font-family: var(--font-display);
 	}
 
 	@media (min-width: 640px) {

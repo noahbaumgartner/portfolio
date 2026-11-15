@@ -34,7 +34,7 @@
 
 	.statement {
 		max-width: 800px;
-		font-family: 'Outfit', sans-serif;
+		font-family: var(--font-display);
 		font-size: clamp(22px, 2vw + 14px, 32px);
 		font-weight: 500;
 		line-height: 1.3;

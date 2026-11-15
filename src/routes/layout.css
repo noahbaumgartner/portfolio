@@ -5,27 +5,30 @@
    Components should always reference semantic --color-* tokens, never raw hex
    values, so dark mode stays free. */
 :root {
+	--ui-font-sans: 'Inter', sans-serif;
+	--ui-font-display: 'Outfit', sans-serif;
+
 	/* Inverse surface: the site's decorative accent panels (dark Section
 	   variant) always contrast against the page — dark card on a light page,
 	   light card on a dark page — so they mix in the opposite direction from
 	   the regular surface tokens. */
-	--color-surface-inverse: var(--ui-ink);
-	--color-surface-inverse-accent: color-mix(in srgb, var(--ui-ink), var(--ui-base) 15%);
-	--color-on-inverse: var(--ui-base);
-	--color-on-inverse-secondary: color-mix(in srgb, var(--ui-ink), var(--ui-base) 83%);
-	--color-on-inverse-muted: color-mix(in srgb, var(--ui-ink), var(--ui-base) 64%);
+	--color-surface-inverse: var(--color-ink);
+	--color-surface-inverse-accent: color-mix(in srgb, var(--color-ink), var(--color-base) 15%);
+	--color-on-inverse: var(--color-base);
+	--color-on-inverse-secondary: color-mix(in srgb, var(--color-ink), var(--color-base) 83%);
+	--color-on-inverse-muted: color-mix(in srgb, var(--color-ink), var(--color-base) 64%);
 }
 
 @media (prefers-color-scheme: dark) {
 	:root:not([data-theme='light']) {
 		/* Softened: a pure invert here would flip the dark-Section card to
 		   stark white, which reads wrong against the dark page. */
-		--color-surface-inverse: color-mix(in srgb, var(--ui-ink), var(--ui-base) 20%);
+		--color-surface-inverse: color-mix(in srgb, var(--color-ink), var(--color-base) 20%);
 	}
 }
 
 :root[data-theme='dark'] {
-	--color-surface-inverse: color-mix(in srgb, var(--ui-ink), var(--ui-base) 20%);
+	--color-surface-inverse: color-mix(in srgb, var(--color-ink), var(--color-base) 20%);
 }
 
 /* Placeholder and fade-in for images and videos, driven by `data-media` which
@@ -211,7 +214,6 @@ body {
 	flex-direction: column;
 	min-height: 100vh;
 	min-height: 100dvh;
-	font-family: 'Inter', sans-serif;
 	background-color: var(--color-bg);
 	color: var(--color-text);
 	transition:
@@ -230,19 +232,18 @@ body {
 }
 
 h1 {
-	font-family: 'Outfit', sans-serif;
 	font-size: clamp(30px, 5vw + 10px, 60px);
 	font-weight: 500;
 }
 
 h2 {
-	font-family: 'Outfit', sans-serif;
+	font-family: var(--font-display);
 	font-size: 1.25rem;
 	font-weight: 600;
 }
 
 h3 {
-	font-family: 'Outfit', sans-serif;
+	font-family: var(--font-display);
 	font-size: 1.125rem;
 	font-weight: 600;
 }
