@@ -7,7 +7,8 @@ import {
 	Scale,
 	Search,
 	Car,
-	Image
+	Image,
+	Orbit
 } from '@lucide/svelte';
 
 export const postIcons: Record<string, Component> = {
@@ -18,5 +19,6 @@ export const postIcons: Record<string, Component> = {
 	scale: Scale,
 	search: Search,
 	car: Car,
-	image: Image
+	image: Image,
+	orbit: Orbit
 };
