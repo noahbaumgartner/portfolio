@@ -355,8 +355,8 @@
 		border: none;
 		border-radius: 50%;
 		background-color: color-mix(in srgb, var(--color-surface) 70%, transparent);
-		backdrop-filter: blur(8px);
 		-webkit-backdrop-filter: blur(8px);
+		backdrop-filter: blur(8px);
 		color: var(--color-text);
 		outline: none;
 		cursor: pointer;
