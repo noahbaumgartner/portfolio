@@ -10,7 +10,8 @@ import {
 	Image,
 	Orbit,
 	Flame,
-	Utensils
+	Utensils,
+	Component as ComponentIcon
 } from '@lucide/svelte';
 
 export const postIcons: Record<string, Component> = {
@@ -24,5 +25,6 @@ export const postIcons: Record<string, Component> = {
 	image: Image,
 	orbit: Orbit,
 	flame: Flame,
-	utensils: Utensils
+	utensils: Utensils,
+	component: ComponentIcon
 };
