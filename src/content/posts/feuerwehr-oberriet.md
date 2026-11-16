@@ -24,8 +24,6 @@ Die bisherige Seite basierte auf <Link href="https://wordpress.org/">WordPress</
 
 Ich habe mich bewusst gegen ein fertiges Theme samt Plugin-Sammlung entschieden und stattdessen ein eigenes Block-Theme entwickelt, das im Look der Feuerwehr gehalten ist: weiss, schwarz und Feuerwehrrot, mit den Schriften Inter und Outfit. Sämtliche Funktionen stecken im Theme selbst, die Seite läuft ohne zusätzliche Plugins. Das hält sie schlank und verhindert, dass ein Plugin-Update die Seite plötzlich zerschiesst.
 
-Entwickelt habe ich lokal in einer <Link href="https://www.docker.com/">Docker</Link>-Umgebung. Neue Versionen des Themes spiele ich zuerst auf eine separate Testseite beim Hoster <Link href="https://www.hostpoint.ch/">Hostpoint</Link> ein und erst nach der Prüfung auf die Live-Seite. Vor jedem Deployment lege ich eine Sicherung des vorherigen Stands an, sodass sich ein Fehler jederzeit zurückspielen lässt.
-
 <h1>Inhalte</h1>
 
 Für die wiederkehrenden Inhalte gibt es im WordPress-Admin ein eigenes Menü «Feuerwehr», in dem alles an einem Ort gepflegt wird:
