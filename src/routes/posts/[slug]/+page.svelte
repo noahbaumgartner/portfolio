@@ -277,6 +277,31 @@
 		margin-bottom: 16px;
 	}
 
+	.post-body :global(ul),
+	.post-body :global(ol) {
+		max-width: 660px;
+		margin-inline: auto;
+		padding-inline-start: 1.5rem;
+		line-height: 1.8;
+	}
+
+	.post-body :global(ul) {
+		list-style: disc;
+	}
+
+	.post-body :global(ol) {
+		list-style: decimal;
+	}
+
+	.post-body :global(ul:not(:last-child)),
+	.post-body :global(ol:not(:last-child)) {
+		margin-bottom: 16px;
+	}
+
+	.post-body :global(li:not(:last-child)) {
+		margin-bottom: 8px;
+	}
+
 	.post-body :global(.katex-display) {
 		max-width: 660px;
 		margin-inline: auto;
