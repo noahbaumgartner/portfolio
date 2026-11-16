@@ -5,7 +5,7 @@ title: 'Portfolio'
 description: 'Persönliches Portfolio mit Projektübersicht und Infos zu meiner Person.'
 url: 'https://noahbaumgartner.ch/'
 github: https://github.com/noahbaumgartner/portfolio
-gif: '/videos/posts/portfolio.gif'
+gif: '/images/posts/portfolio/hero.webp'
 colors: '#d9d9d9,#c2c2c2,#141414'
 icon: person-standing
 category: project

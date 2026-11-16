@@ -4,7 +4,7 @@ month: 11
 title: 'Dinoo'
 description: 'Offline-Bestellsystem für Vereinsanlässe: Bestellung am Handy, Küchenzettel vom Bondrucker und Abrechnung bar oder per TWINT.'
 github: https://github.com/noahbaumgartner/dinoo
-gif: '/videos/posts/dinoo.mp4'
+gif: '/images/posts/dinoo/hero.webp'
 colors: '#f6f1e7,#e4d7bd,#6b5535'
 icon: utensils
 category: project
